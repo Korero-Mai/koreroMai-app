@@ -3,7 +3,7 @@ const { connect } = require('react-redux')
 const { Link } = require('react-router')
 
 //components
-const NewUser = require('./newUser')
+const NewUserButton = require('./NewUserButton')
 
 
 
@@ -12,9 +12,8 @@ const App = (props) => {
 	return (
 		<div>
 
+		<NewUserButton />
 			<p> Hellllooooo WEKA!!! </p>
-			<Link to="/newUser" >
-				<button>New User</button>
 
 			<Link to='/userprofile'>
 				userprofile
