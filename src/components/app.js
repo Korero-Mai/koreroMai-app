@@ -7,7 +7,10 @@ const App = (props) => {
 	return (
 		<div>
 			<p> Hellllooooo WEKA!!! </p>
-			{props.childern}
+			<Link to='/userprofile'>
+				userprofile
+			</Link>
+			{props.children}
 		</div>
 	)
 }
