@@ -10,12 +10,13 @@ const App = (props) => {
 	return (
 
 		<div>
-			<AppBar title="Drink Splitter" />
+			<AppBar title='Drink Splitter' />
+			<LeftNav />
 
 			<Link to='/userprofile'>
 				userprofile
 			</Link>
-			
+
 			{props.children}
 		</div>
 	)
@@ -23,3 +24,11 @@ const App = (props) => {
 
 //module.exports = connect((state) => state)(App)
 module.exports = App
+
+// <mui.LeftNav
+//     ref='leftNav'
+//     menuItems={menuItems}
+// 	  docked={false} />
+// <mui.AppBar
+//     title='Default'
+//     onLeftIconButtonTouchTap={this._toggleNav} />
