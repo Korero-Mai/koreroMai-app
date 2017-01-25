@@ -14,28 +14,28 @@ module.exports = function (db) {
   app.use(bodyParser.urlencoded({ extended: false }))
   app.use(cookieParser())
 
-  // if (app.get('env') === 'development') {
-  //   // bundle client/index.js
-  //   // and serve it at GET /bundle.js
-  //   const webpackDevMiddleware = require('webpack-dev-middleware')
-  //   const config = require('./webpack.config')
-  //   const webpack = require('webpack')
-  //   const compiler = webpack(config)
-  //   const livereload = require('livereload')
-  //   const lrserver = livereload.createServer()
-  //
-  //   lrserver.watch([
-  //     __dirname + "/public",
-  //     __dirname + "/src",
-  //   ])
-  //
-  //   app.use(require('inject-lr-script')())
-  //
-  //   app.use(webpackDevMiddleware(compiler, {
-  //     noInfo: true,
-  //     publicPath: config.output.publicPath
-  //   }))
-  // }
+  if (app.get('env') === 'development') {
+    // bundle client/index.js
+    // and serve it at GET /bundle.js
+    const webpackDevMiddleware = require('webpack-dev-middleware')
+    const config = require('./webpack.config')
+    const webpack = require('webpack')
+    const compiler = webpack(config)
+    const livereload = require('livereload')
+    const lrserver = livereload.createServer()
+
+    lrserver.watch([
+      __dirname + "/public",
+      __dirname + "/src",
+    ])
+
+    app.use(require('inject-lr-script')())
+
+    app.use(webpackDevMiddleware(compiler, {
+      noInfo: true,
+      publicPath: config.output.publicPath
+    }))
+  }
 
 
   // static files
