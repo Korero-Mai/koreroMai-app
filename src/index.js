@@ -9,12 +9,8 @@ const initialState = require('../state')
 
 //Top Level Components
 const App = require('./components/app')
-<<<<<<< HEAD
 const NightOut = require('./components/containers/nightOutPage')
-=======
 const UserProfile = require('./components/userProfile')
->>>>>>> a77e27b88781cb8929be815633a32a485e5fce16
-
 const store = createStore(reducer, initialState)
 
 const Root = ({store}) => {
@@ -27,6 +23,7 @@ const Root = ({store}) => {
 						<Route path='/nightout' component={NightOut} />
 					</Route>
 				</Router>
+			</Provider>
 	)
 }
 
