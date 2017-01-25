@@ -6,7 +6,6 @@ const App = (props) => {
 	console.log('props', props);
 	return (
 		<div>
-			<p> Hellllooooo WEKA!!! </p>
 			<Link to='/userprofile'>
 				userprofile
 			</Link>
