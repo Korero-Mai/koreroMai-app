@@ -14,7 +14,7 @@ const initialState = require('../state')
 //Top Level Components
 const App = require('./components/app')
 
-const NewUser = require('./components/containers/newUser')
+const NewUser = require('./components/containers/newUserPage')
 const NightOut = require('./components/containers/nightOutPage')
 const UserProfile = require('./components/userProfile')
 
@@ -29,7 +29,7 @@ const Root = ({store}) => {
 					<Route path = '/newUser' component={NewUser} />
 					<Route path='/userprofile' component={UserProfile} />
 					<Route path='/nightout' component={NightOut} />
-					
+
 				</Router>
 			</Provider>
 	)
