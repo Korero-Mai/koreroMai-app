@@ -1,16 +1,19 @@
 {
-  "name": "drink_splitter",
+  "name": "Drink-Splitter",
   "version": "1.0.0",
   "description": "Drink Splitter",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "knex": "knex"
+    "knex": "knex",
+    "start": "node ./bin/www",
+    "dev": "node-dev ./bin/www"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/TexMix-Drink-Splitter/Drink-Splitter.git"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
@@ -19,8 +22,14 @@
   "homepage": "https://github.com/TexMix-Drink-Splitter/Drink-Splitter#readme",
   "dependencies": {
     "knex": "^0.12.6",
-    "sqlite3": "^3.1.8"
+    "sqlite3": "^3.1.8",
+    "body-parser": "^1.16.0",
+    "cookie-parser": "^1.4.3",
+    "debug": "^2.6.0",
+    "express": "^4.14.0",
+    "morgan": "^1.7.0"
   },
-  "devDependencies": {},
-  "keywords": []
+  "devDependencies": {
+    "node-dev": "^3.1.3"
+  }
 }
