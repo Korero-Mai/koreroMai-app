@@ -10,6 +10,7 @@ const initialState = require('../state')
 
 //Top Level Components
 const App = require('./components/app')
+const UserProfile = require('./components/userProfile')
 
 const store = createStore(reducer, initialState)
 
@@ -17,7 +18,9 @@ const Root = ({store}) => {
 	return (
 			<Provider store = {store}>
 				<Router history = {hashHistory}>
-					<Route path = '/' component={App} />
+					<Route path = '/' component={App}>
+						<Route path='/userprofile' component={UserProfile} />
+					</Route>
 				</Router>
 			</Provider>
 	)
