@@ -2,7 +2,6 @@ const React = require('react')
 const ReactDOM = require('react-dom')
 const { Provider } = require('react-redux')
 const { createStore } = require('redux')
-const createHistory = require('history').createHashHistory
 const { Router, Route, IndexRoute, hashHistory } = require('react-router')
 
 const reducer = require('./reducer')
@@ -10,16 +9,17 @@ const initialState = require('../state')
 
 //Top Level Components
 const App = require('./components/app')
+const NightOut = require('./components/containers/nightOutPage')
 
 const store = createStore(reducer, initialState)
 
 const Root = ({store}) => {
 	return (
-			<Provider store = {store}>
-				<Router history = {hashHistory}>
-					<Route path = '/' component={App} />
+
+				<Router history={hashHistory}>
+					<Route path='/' component={App} />
+					<Route path='nightout' component={NightOut} />
 				</Router>
-			</Provider>
 	)
 }
 
