@@ -3,10 +3,9 @@ const { connect } = require('react-redux')
 const { Link } = require('react-router')
 
 const App = (props) => {
-
+	console.log('props', props);
 	return (
 		<div>
-			<p> Hellllooooo WEKA!!! </p>
 			<Link to='/userprofile'>
 				userprofile
 			</Link>
@@ -15,4 +14,5 @@ const App = (props) => {
 	)
 }
 
-module.exports = connect((state) => state)(App)
+//module.exports = connect((state) => state)(App)
+module.exports = App

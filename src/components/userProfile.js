@@ -8,7 +8,7 @@ const UserProfile = (props) => {
   return (
     <div>
       <p>
-        {userName}'s profile
+        {userName}s profile
       </p>
     </div>
   )
