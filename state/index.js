@@ -1,3 +1,6 @@
 module.exports = {
-	userName: 'TexMix'
+	userName: 'TexMix',
+
+	users: {
+	}
 }
