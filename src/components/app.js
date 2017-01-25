@@ -11,7 +11,6 @@ const App = (props) => {
 
 		<div>
 			<AppBar title='Drink Splitter' />
-			<LeftNav />
 
 			<Link to='/userprofile'>
 				userprofile
