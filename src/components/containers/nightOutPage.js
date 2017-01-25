@@ -12,7 +12,6 @@ const NightOut = (props) => {
 			</div><br/>
 			<form>
 				<table>
-
 					<thead>
 						<tr>
 							<th>
