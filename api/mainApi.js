@@ -14,7 +14,10 @@ module.exports = function(db) {
     // db.get()
   }
 
-  function post(req, res, next) {}
+  function post(req, res, next){
+    console.log('mainAPi req.body: 'req.body)
+    // db.addUser('users',req)
+  }
 
   return route;
 };

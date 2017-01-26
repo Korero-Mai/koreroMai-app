@@ -23,11 +23,10 @@ const NewUser = React.createClass({
 	}
 
 	if(userName.length>0){
-		request.post('api/v1/newUserPage')
+		request.post('/api/v1/main')
 		.send({newUserData})
 		.end((err, data)=>{
-			console.log('post from newUserPage newUserData:',newUserData);
-			this.props.store.dispatch({type: 'POST_NEW_USER', payload: data.body})
+			console.log('post from newUserPage newUserData:',newUserData, err);
 		})
 		this.refs.userName.input.value = ''
 		this.refs.email.input.value = ''
