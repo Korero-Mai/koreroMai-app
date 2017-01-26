@@ -1,16 +1,26 @@
 const React = require('react')
 const { connect } = require('react-redux')
 const { Link } = require('react-router')
-const { AppBar } = require('material-ui')
+const { AppBar, MenuItem, Drawer } = require('material-ui')
 
 
 
 const App = (props) => {
 	console.log('props', props);
+
+	const menuItems = [
+		{route: 'newUser', text: 'New User'},
+		{route, 'nightsout', text: 'View night out'}
+	]
+
 	return (
 
 		<div>
-			<AppBar title='Drink Splitter' />
+			<AppBar title='Drink Splitter'>
+				<Drawer
+					docked={false}
+					MenuItem={menuItems} />
+			</AppBar>
 
 			<Link to='/userprofile'>
 				userprofile
