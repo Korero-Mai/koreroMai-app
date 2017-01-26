@@ -27,7 +27,6 @@ const App = (props) => {
 					<ul className="navList">
 						<li className="navListItem"><Link to="/">Home</Link></li>
 						<li className="navListItem"><Link to="/nightout">Current Night Out</Link></li>
-						<li className="navListItem"><Link to="/userprofile">Your Profile</Link></li>
 	          <li className="navListItem"><Link to="/userslist">Users List</Link></li>
 						<li id='logout' className="navListItem" onClick={() => props.dispatch({type:'LOGOUT'})}>Log Out</li>
 					</ul>
