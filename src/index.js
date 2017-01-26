@@ -19,6 +19,7 @@ const NightOut = require('./components/containers/nightOutPage')
 const NewNightOut = require('./components/containers/newNightOut')
 const UserProfile = require('./components/userProfile')
 const UsersList = require('./components/usersList')
+const Home = require('./components/home')
 
 const store = createStore(reducer, initialState)
 
@@ -28,7 +29,9 @@ const Root = ({store}) => {
 			<Provider store = {store}>
 				<Router history = {hashHistory}>
 					<Route path = '/' component={App}>
+						<IndexRoute component={Home} />
 						<Route path = '/newUser' component={NewUser} />
+
 						<Route path='/userprofile' component={UserProfile} />
 						<Route path='/nightout' component={NightOut} />
 						<Route path='/newnightout' component={NewNightOut} />
