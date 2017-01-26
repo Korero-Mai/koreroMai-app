@@ -9,7 +9,7 @@ const ShowPastNights = require('./showPastNights')
 const UserProfile = (props) => {
   const { userName, amountOwed, amountOwing, showingPastNights, dispatch } = props
   return (
-    <div>
+    <div className="userProfile">
       <h1>
         {userName + "'s"} profile
       </h1>

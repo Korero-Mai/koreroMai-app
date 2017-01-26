@@ -2,12 +2,10 @@ const React = require('react')
 const ReactDOM = require('react-dom')
 const { Provider } = require('react-redux')
 const { createStore } = require('redux')
-
 const createHistory = require('history').createHashHistory
-
 const { Router, Route, IndexRoute, hashHistory } = require('react-router')
-const request = require('superagent')
 const { MuiThemeProvider } = require('material-ui/styles')
+const request = require('superagent')
 const reducer = require('./reducer')
 const initialState = require('../state')
 
@@ -48,10 +46,11 @@ document.addEventListener('DOMContentLoaded', () => {
 			<Root store={store}/>,
 			root
 		)
-	request('/api/v1/main', (err, res) => {
+	request('/api/v1/resources', (err, res) => {
 		console.log("body", res.body);
 		store.dispatch({type:'UPDATE_USERS', payload: res.body})
 	})
+
 })
 
 // <Route path = 'new-user' component={NewUser} />
