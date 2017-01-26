@@ -1,5 +1,5 @@
-const main = require('./mainApi')
+const resources = require('./resources')
 
 module.exports = {
-  main
+  resources
 }

@@ -1,17 +1,35 @@
 const React = require('react')
 const { connect } = require('react-redux')
-const { link } = require('react-router')
+const { Link } = require('react-router')
 const _ = require('lodash')
+const NewUser = require('./containers/newUserPage')
+const { RaisedButton } = require('material-ui')
+const Welcome = require('./welcome')
+const Login = require('./login')
+const UserProfile = require ('./userProfile')
+
 
 const Home = (props) => {
-
-  return (
-    <div>
-      <h3 className="welcome">Kia ora! Welcome to Drink Splitter</h3>
-      <p>We will help you figure out which one of your friends owes you for the drinks on your night out.</p>
-      <p><i>Disclaimer: Drink Splitter takes no responsibility for unpaid bills or dodgy friends.</i></p>
+  const notLoggedIn = (
+    <div className="welcome">
+      <Welcome />
+        <Login />
+        <div className='homePageButton'>
+          <NewUser {...props} />
+        </div>
     </div>
   )
+  const loggedIn = (
+    <div className="welcome">
+      <Welcome />
+      <UserProfile />
+    </div>
+  )
+
+  return props.userName
+    ?loggedIn
+    :notLoggedIn
+
 }
 
 module.exports = connect((state) => state)(Home)

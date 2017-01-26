@@ -4,28 +4,66 @@ body {
 
 h1 {
   font-size: 3em;
+  display: inline-block;
+  text-align: center;
+
+}
+#logoHeader {
+  margin: auto;
+  width: 35%
 }
 
 img {
+  display: inline-block;
   float: right;
 }
-
-.welcome {
-  text-align: center;
+.homePageButton {
+  display: inline-block;
+  margin: 1em;
 }
-
+.welcome {
+  margin: auto;
+  text-align: center;
+  border-width: medium;
+  border-color: black;
+  border-style: solid;
+  width: 50%;
+  margin-top: 2em;
+  padding: 1em;
+  padding-bottom: 2em;
+}
+.navBar {
+  margin: auto;
+}
 .navList {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
     background-color: #333;
+    width: 100%
+}
+.nightOutUsers {
+  margin: auto;
+  padding: 1em;
+  text-align: center;
+  width: 90%;
+  margin-top: 2em;
 }
 
 .navListItem {
-    float: left;
+  display: inline-block;
+  width: 19%
 }
-
+#logout {
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+  #logout:hover {
+    background-color: #111;
+  }
 .navListItem a {
     display: block;
     color: white;
@@ -37,4 +75,11 @@ img {
 /* Change the link color to #111 (black) on hover */
 .navListItem a:hover {
     background-color: #111;
+}
+.userProfile {
+  margin: auto;
+  padding: 1em;
+  text-align: center;
+  width: 90%;
+  margin-top: 2em;
 }

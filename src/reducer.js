@@ -1,8 +1,8 @@
 const clone = require('clone')
 
 module.exports = function (state, action){
-	const newState = clone(state)
 
+	const newState = clone(state)
 
 	switch (action.type) {
 
@@ -10,10 +10,20 @@ module.exports = function (state, action){
 			newState.showingPastNights = !state.showingPastNights
 			break;
 
+		case 'DISPLAY_REGISTER_FORM':
+			newState.showingRegisterForm = true
+			break;
+
 		case 'UPDATE_USERS':
 			newState.users = action.payload
-			console.log(newState)
+			break;
 
+		case "LOGOUT":
+			newState.userName = null
+			break;
+
+		case "LOGIN":
+			newState.userName = 'TexMix'
 			break;
 
     case 'ADDS_PERSON_TO_NEW_GROUP':
@@ -21,9 +31,8 @@ module.exports = function (state, action){
       break;
 
 		default:
-		return newState
+			return newState
 	}
 
 	return newState
-
 }
