@@ -21,9 +21,15 @@ const App = (props) => {
 					<li className="navListItem"><Link to="/">Home</Link></li>
 					<li className="navListItem"><Link to="/userprofile">Your Profile</Link></li>
 					<li className="navListItem"><Link to="/nightout">Current Night Out</Link></li>
-          <li className="navListItem"><Link to="/newUser"><NewUserLink /></Link></li>
+          <li className="navListItem"><Link to="/newUser">New User</Link></li>
 				</ul>
 			</nav>
+			<h3>
+				Kia ora! Welcome to Drink Splitter - the app to help you figure out which one of your friends owes you for the drinks on your night out.
+			</h3>
+
+			<p>Disclaimer: Drink Splitter takes no responsibility for unpaid bills or dodgy friends.</p>
+			
 			{props.children}
 		</div>
 	)
