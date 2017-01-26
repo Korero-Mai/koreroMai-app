@@ -3,6 +3,9 @@ const { connect } = require('react-redux')
 const { Link } = require('react-router')
 
 
+//components
+const NewUserLink = require('./NewUserLink')
+
 const App = (props) => {
 
 //If we want to make Userslist an admin page only fecthing data on load
@@ -26,9 +29,9 @@ const App = (props) => {
 					<li><Link to="/userprofile">Your Profile</Link></li>
 					<li><Link to="/nightout">Current Night Out</Link></li>
 					<li><Link to="/usersList">Users List</Link></li>
+					<li><Link to="/newUser"><NewUserLink /></Link></li>
 				</ul>
 			</nav>
-
 			{props.children}
 		</div>
 	)
