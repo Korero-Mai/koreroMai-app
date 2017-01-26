@@ -24,7 +24,7 @@ console.log(namesForDisplay);
     <div>
       <p>nice</p>
       <div>
-      <p>{(moment().format('dddd DD MMMM YY'))}</p>
+      <p>{(moment().format('dddd DD MMMM YYYY'))}</p>
         <h1>Add people to your group</h1>
         {
           namesForDisplay.map((name) => {
