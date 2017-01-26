@@ -6,7 +6,8 @@ const _ = require('lodash')
 
 
 const NewNightOut = (props) => {
-  const initialState = {
+
+const initialState = {
 
     userNames : {
       1: {id:1, name: 'Lucas'},
@@ -14,6 +15,7 @@ const NewNightOut = (props) => {
       3: {id:3, name: 'Janie'}
     }
   }
+
   return (
     <div>
       <p>nice</p>
@@ -22,9 +24,9 @@ const NewNightOut = (props) => {
 
       <ul>
       {
-        _.map(
-          props.initialState, (name) => {
-          return <li>{userNames.name}</li>
+        _.map(initialState.userNames, (name) => {
+          return <li>{name.name}</li>
+          
         })
       }
       </ul>
