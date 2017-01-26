@@ -12,7 +12,14 @@ module.exports = function (state, action){
 
 		case 'UPDATE_USERS':
 			newState.users = action.payload
+			break;
 
+		case 'UPDATE_NIGHTS':
+			newState.nights = action.payload
+			break;
+
+		case 'UPDATE_USERS_NIGHTS':
+			newState.users_nights = action.payload
 			break;
 
 		default:

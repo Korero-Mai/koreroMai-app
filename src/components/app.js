@@ -16,7 +16,7 @@ const App = (props) => {
 // end action with rendering newstate --> userList.js
 // behold the list
 
-	console.log('props', props);
+	// console.log('props', props);
 
 	return (
 

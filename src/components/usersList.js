@@ -6,7 +6,10 @@ import {Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColu
 
 const UsersList = (props) => {
 
+  console.log(props);
+
   const users = props.users
+  const nights = props.nights
 
   return (
 
