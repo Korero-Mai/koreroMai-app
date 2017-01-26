@@ -16,7 +16,6 @@ const store = createStore(reducer, initialState)
 
 const Root = ({store}) => {
 	return (
-		<MuiThemeProvider>
 			<Provider store = {store}>
 				<Router history = {hashHistory}>
 					<Route path = '/' component={App}>
@@ -25,7 +24,6 @@ const Root = ({store}) => {
 					</Route>
 				</Router>
 			</Provider>
-		</MuiThemeProvider>
 	)
 }
 
