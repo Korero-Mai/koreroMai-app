@@ -11,7 +11,7 @@ const NightOut = (props) => {
 			<div>
 				TOTAL FOR NIGHT
 			</div><br/>
-			</form>
+			<form>
 				<table>
 					<thead>
 						<tr>
@@ -24,9 +24,18 @@ const NightOut = (props) => {
 						</tr>
 					</thead>
 					<tbody>
+						<tr>
+							<td>
+								PersonA
+							</td>
+							<td>
+								<input type="radio" name="payer" />
+							</td>
+						</tr>
 					</tbody>
 				</table>
 			</form>
+
 
 
 
