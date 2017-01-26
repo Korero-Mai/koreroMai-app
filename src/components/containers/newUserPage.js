@@ -22,15 +22,12 @@ const NewUser = React.createClass({
     }
 
     if (userName.length > 0) {
-      request.post('api/v1/newUserPage')
+      request.post('api/v1/users')
       .send({newUserData})
       .end((err, data) => {
         this.props.store.dispatch({type: 'POST_NEW_USER', payload: data.body})
       })
-      this.refs.userName.input.value = ''
-      this.refs.email.input.value = ''
-      this.refs.password.input.value = ''
-      this.refs.confirmPassword.input.value = ''
+      
     } else {
       this.refs.userName.focus()
     }
@@ -62,26 +59,3 @@ const NewUser = React.createClass({
 })
 
 module.exports = connect((state) => state)(NewUser)
-
-// return (
-//   <RaisedButton className='button' onClick={() => dispatch({type: 'DISPLAY_REGISTER_FORM'} )}>Register </RaisedButton>
-// )
-// <div>
-//   <TextField
-//     disabled={true}
-//     hintText="User Name"
-//   /><br />
-//   <TextField
-//     disabled={true}
-//     hintText="Email"
-//   /><br />
-//   <TextField
-//     disabled={true}
-//     hintText="Password"
-//   /><br />
-//   <TextField
-//     disabled={true}
-//     hintText="Confirm Password"
-//   /><br />
-//   <RaisedButton label="Submit" style={style} />
-// </div>
