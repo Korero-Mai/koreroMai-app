@@ -3,6 +3,7 @@ const { connect } = require('react-redux')
 const { link } = require('react-router')
 
 const NightOut = (props) => {
+	console.log('props', props);
 	return (
 		<div>
 			<h1>Night Out </h1>

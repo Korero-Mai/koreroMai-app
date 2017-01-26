@@ -40,6 +40,7 @@
     "react-router": "^3.0.2",
     "redux": "^3.6.0",
     "sqlite3": "^3.1.8",
+    "superagent": "^3.4.0",
     "webpack": "^1.14.0",
     "webpack-dev-middleware": "^1.9.0"
   },

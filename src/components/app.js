@@ -21,8 +21,7 @@ const App = (props) => {
 	)
 }
 
-//module.exports = connect((state) => state)(App)
-module.exports = App
+module.exports = connect((state) => state)(App)
 
 // <mui.LeftNav
 //     ref='leftNav'
