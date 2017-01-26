@@ -13,7 +13,7 @@ console.log("this is props", props);
   const namesForDisplay = _.map(userNames, (user) => {
     user.color = user.going
       ?'blue'
-      :'red'
+      :'white'
     return user
   })
 
@@ -22,21 +22,22 @@ console.log(namesForDisplay);
 
   return (
     <div>
-      <p>nice</p>
-      <div>
-      <p>{(moment().format('dddd DD MMMM YY'))}</p>
+      <div className='welcome'>
+      <h2>{(moment().format('dddd DD MMMM YY'))}</h2>
         <h1>Add people to your group</h1>
-        {
-          namesForDisplay.map((name) => {
-            return <FlatButton style={{color: name.color}} onClick={()=> dispatch({type:'ADDS_PERSON_TO_NEW_GROUP', payload: name.id})}>
-              {name.name}
-            </FlatButton>
+          <div>{
+            namesForDisplay.map((name) => {
+              return <FlatButton style={{backgroundColor: name.color}} onClick={()=> dispatch({type:'ADDS_PERSON_TO_NEW_GROUP', payload: name.id})}>
+                {name.name}
+              </FlatButton>
 
-          })
-        }
+            })
+          }
+          </div>
+          <br />
+          <button>submit</button>
       </div>
 
-      <button>submit</button>
     </div>
   )
 }

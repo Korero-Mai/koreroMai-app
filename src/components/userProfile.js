@@ -15,9 +15,11 @@ const UserProfile = (props) => {
       </h1>
       <br />
       <div className='homePageButton'>
-        <RaisedButton >
-          Start New Night
-        </RaisedButton>
+        <Link to="/newnightout">
+          <RaisedButton >
+              Start New Night
+          </RaisedButton>
+        </Link>
       </div>
       <br />
       <div>
