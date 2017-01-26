@@ -6,7 +6,13 @@ module.exports = {
 	pastNights: [
 		{
 			nightId: 641,
-			participants: []
+			participants: ['Jim', 'Tim'],
+			amountOwing: 550
+		},
+		{
+			nightId: 641,
+			participants: ['Kim', 'Tim'],
+			amountOwing: 500
 		}
 	]
 }
