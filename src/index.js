@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			<Root store={store}/>,
 			root
 		)
-	request('/api/v1/resources', (err, res) => {
+	request('/api/v1/users', (err, res) => {
 		console.log("body", res.body);
 		store.dispatch({type:'UPDATE_USERS', payload: res.body})
 	})
