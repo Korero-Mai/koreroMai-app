@@ -5,9 +5,8 @@ const { FlatButton, RaisedButton } = require('material-ui')
 
 const ShowPastNights = require('./showPastNights')
 
-
 const UserProfile = (props) => {
-  const { userName, amountOwed, amountOwing, showingPastNights, dispatch } = props
+  const { userName, amountOwed, amountOwing, dispatch } = props
   return (
     <div className='userProfile'>
       <h1>
@@ -15,7 +14,7 @@ const UserProfile = (props) => {
       </h1>
       <br />
       <div className='homePageButton'>
-        <Link to="/newnightout">
+        <Link to='/newnightout'>
           <RaisedButton >
               Start New Night
           </RaisedButton>
@@ -23,13 +22,12 @@ const UserProfile = (props) => {
       </div>
       <br />
       <div>
-        Amount Owed: ${amountOwed/100}<br /><br/>
-        Amount Owing: ${amountOwing/100}<br /><br/>
+        Amount Owed: ${amountOwed / 100}<br /><br />
+        Amount Owing: ${amountOwing / 100}<br /><br />
       </div>
       <ShowPastNights {...props} />
     </div>
   )
 }
-
 
 module.exports = connect((state) => state)(UserProfile)

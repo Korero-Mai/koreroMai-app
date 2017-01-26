@@ -4,8 +4,8 @@ const reducer = require('../../src/reducer')
 
 test('UPDATE_USERS | the user list gets updated based on the state', t => {
 	const state = {
-		users:{
-			1:{
+		users: {
+			1: {
 				name: 'lilly'
 			}
 		}
@@ -13,14 +13,14 @@ test('UPDATE_USERS | the user list gets updated based on the state', t => {
 	freeze(state)
 
 	const expectedState = {
-		users:{
-			1:{
+		users: {
+			1: {
 				name: 'lilly'
 			},
-			2:{
+			2: {
 				name: 'james'
 			},
-		 	3:{
+		 	3: {
 				name: 'ana'
 			}
 		}
@@ -30,13 +30,13 @@ test('UPDATE_USERS | the user list gets updated based on the state', t => {
 		type: 'UPDATE_USERS',
 		payload:
 		{
-			1:{
+			1: {
 				name: 'lilly'
 			},
-			2:{
+			2: {
 			name: 'james'
 			},
-			3:{
+			3: {
 			name: 'ana'
 			}
 		}
