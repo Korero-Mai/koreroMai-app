@@ -6,6 +6,7 @@
   "scripts": {
     "test": "tape test/**/*.js | tap-diff",
     "knex": "knex",
+    "test-db":"ava test/**/*.js --serial --verbose",
     "start": "node ./bin/www",
     "dev": "node-dev ./bin/www"
   },
@@ -21,6 +22,7 @@
   },
   "homepage": "https://github.com/TexMix-Drink-Splitter/Drink-Splitter#readme",
   "dependencies": {
+    "ava": "^0.17.0",
     "body-parser": "^1.16.0",
     "clone": "^2.1.0",
     "cookie-parser": "^1.4.3",
