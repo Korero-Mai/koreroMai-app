@@ -12,7 +12,6 @@ module.exports = function (state, action){
 
 		case 'UPDATE_USERS':
 			newState.users = action.payload
-			console.log(newState)
 
 		default:
 		return Object.assign({}, state)
