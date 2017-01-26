@@ -31,7 +31,7 @@ module.exports = function (state, action){
       break;
 
 		default:
-		return newState
+			return newState
 	}
 
 	return newState

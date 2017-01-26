@@ -57,8 +57,8 @@ const NewUser = React.createClass({
 		)
 
 		return showingRegisterForm
-		?newUserForm
-		:registerButton
+			?newUserForm
+			:registerButton
 
 	}
 })

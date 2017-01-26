@@ -9,7 +9,6 @@ const { FlatButton } = require('material-ui')
 const NewNightOut = (props) => {
 const  { userNames, dispatch } = props
 
-console.log("this is props", props);
   const namesForDisplay = _.map(userNames, (user) => {
     user.color = user.going
       ?'blue'
@@ -17,13 +16,12 @@ console.log("this is props", props);
     return user
   })
 
-console.log(namesForDisplay);
 
 
   return (
     <div>
       <div className='welcome'>
-      <h2>{(moment().format('dddd DD MMMM YY'))}</h2>
+      <h2>{(moment().format('dddd DD MMMM YYYY'))}</h2>
         <h1>Add people to your group</h1>
           <div>{
             namesForDisplay.map((name) => {
