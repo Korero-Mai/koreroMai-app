@@ -7,12 +7,13 @@ const { AppBar } = require('material-ui')
 
 const App = (props) => {
 
+//If we want to make Userslist an admin page only fecthing data on load
 //if props.location is UsersList
 // fetch relevant data
 // dispatch action (type: userlist payload: relevant data)
 //in the action : define newstate filling with relevant data
-// end action with rendering newstate --> usreList.js
-// vehold the list
+// end action with rendering newstate --> userList.js
+// behold the list
 
 	return (
 
