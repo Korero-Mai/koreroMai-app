@@ -4,6 +4,7 @@ body {
 
 h1 {
   font-size: 3em;
+  text-align: center;
 }
 
 img {
@@ -11,9 +12,17 @@ img {
 }
 
 .welcome {
+  margin: auto;
   text-align: center;
+  border-width: medium;
+  border-color: black;
+  border-style: solid;
+  width: 50%;
+  margin-top: 2em;
 }
-
+.navBar {
+  margin: auto;
+}
 .navList {
     list-style-type: none;
     margin: 0;
@@ -23,7 +32,9 @@ img {
 }
 
 .navListItem {
-    float: left;
+  display: inline-block;
+  width: 10%
+
 }
 
 .navListItem a {
@@ -37,4 +48,14 @@ img {
 /* Change the link color to #111 (black) on hover */
 .navListItem a:hover {
     background-color: #111;
+}
+.userProfile {
+  margin: auto;
+  padding: 1em;
+  text-align: center;
+  border-width: medium;
+  border-color: black;
+  border-style: solid;
+  width: 50%;
+  margin-top: 2em;
 }
