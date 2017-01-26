@@ -4,6 +4,7 @@ const { Provider } = require('react-redux')
 const { createStore } = require('redux')
 const { Router, Route, IndexRoute, hashHistory } = require('react-router')
 const request = require('superagent')
+const { MuiThemeProvider } = require('material-ui/styles')
 const reducer = require('./reducer')
 const initialState = require('../state')
 
@@ -16,7 +17,7 @@ const store = createStore(reducer, initialState)
 
 const Root = ({store}) => {
 	return (
-
+		<MuiThemeProvider>
 			<Provider store = {store}>
 				<Router history = {hashHistory}>
 					<Route path = '/' component={App}>
@@ -26,6 +27,7 @@ const Root = ({store}) => {
 					</Route>
 				</Router>
 			</Provider>
+		</MuiThemeProvider>
 	)
 }
 
