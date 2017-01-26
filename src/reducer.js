@@ -3,7 +3,7 @@ const clone = require('clone')
 
 module.exports = function (state, action){
 	const newState = {}
-	
+
 	switch (action.type) {
 
 		case 'DISPLAY_PAST_NIGHTS':
@@ -12,7 +12,6 @@ module.exports = function (state, action){
 
 		case 'UPDATE_USERS':
 			newState.users = action.payload
-			console.log(newState)
 
 			break;
 

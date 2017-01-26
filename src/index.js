@@ -42,12 +42,14 @@ const Root = ({store}) => {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+	console.log('DOMContentLoaded');
 	const root = document.querySelector('#app')
 		ReactDOM.render(
 			<Root store={store}/>,
 			root
 		)
 	request('/api/v1/main', (err, res) => {
+		console.log("body", res.body);
 		store.dispatch({type:'UPDATE_USERS', payload: res.body})
 	})
 })
