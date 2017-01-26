@@ -1,8 +1,8 @@
-
 const clone = require('clone')
 
 module.exports = function (state, action){
-	const newState = {}
+
+	const newState = clone(state)
 
 	switch (action.type) {
 
@@ -26,9 +26,13 @@ module.exports = function (state, action){
 			newState.userName = 'TexMix'
 			break;
 
+    case 'ADDS_PERSON_TO_NEW_GROUP':
+      newState.userNames[action.payload].going = !newState.userNames[action.payload].going
+      break;
 
 		default:
-		return Object.assign({}, state)
+		return newState
 	}
-	return Object.assign({}, state, newState)
+
+	return newState
 }
