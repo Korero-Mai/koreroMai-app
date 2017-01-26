@@ -10,6 +10,9 @@ parser: "babel-eslint"
 rules:
   no-tabs: 0
   semi: 0
+  indent: 0
+  key-spacing: 1
+  no-multiple-empty-lines: 0
   space-before-function-paren: 0
   react/jsx-no-duplicate-props: 2
   react/jsx-uses-vars: 2
