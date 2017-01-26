@@ -1,5 +1,16 @@
-module.exports = function (state){
+module.exports = function (state, action){
+	switch (action.type) {
+		case 'DISPLAY_PAST_NIGHTS':
+			const newState = {}
+			newState.showingPastNights = !state.showingPastNights
+			return Object.assign({}, state, newState)
 
+			break;
+
+		default:
+		return Object.assign({}, state)
+
+	}
 	// function reducer(state,action) {
 	//
 	// 	const newState=clone(state)
