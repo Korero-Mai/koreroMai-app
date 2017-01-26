@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/TexMix-Drink-Splitter/Drink-Splitter#readme",
   "dependencies": {
+    "axios": "^0.15.3",
     "body-parser": "^1.16.0",
     "clone": "^2.1.0",
     "cookie-parser": "^1.4.3",
@@ -39,6 +40,7 @@
     "react-router": "^3.0.2",
     "redux": "^3.6.0",
     "sqlite3": "^3.1.8",
+    "superagent": "^3.4.0",
     "webpack": "^1.14.0",
     "webpack-dev-middleware": "^1.9.0"
   },

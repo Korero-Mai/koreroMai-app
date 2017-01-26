@@ -3,7 +3,7 @@ const ReactDOM = require('react-dom')
 const { Provider } = require('react-redux')
 const { createStore } = require('redux')
 const { Router, Route, IndexRoute, hashHistory } = require('react-router')
-
+const request = require('superagent')
 const reducer = require('./reducer')
 const initialState = require('../state')
 
@@ -36,7 +36,6 @@ document.addEventListener('DOMContentLoaded', () => {
 			root
 		)
 	request('/api/v1/main', (err, res) => {
-		console.log('err, res', res.body, err);
-		// store.dispatch({type:'UPDATE_USERS', payload: res.body})
+		store.dispatch({type:'UPDATE_USERS', payload: res.body})
 	})
 })

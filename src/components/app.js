@@ -16,6 +16,10 @@ const App = (props) => {
 			<Link to='/userprofile'>
 				userprofile
 			</Link>
+			<br />
+			<Link to='/userslist'>
+				userslist
+			</Link>
 			{props.children}
 		</div>
 	)
