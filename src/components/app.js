@@ -11,7 +11,8 @@ const App = (props) => {
 	return (
 
 		<div>
-
+			<img src="http://www.kofusion.com/wp-content/uploads/2009/02/featured_drinks.jpg" width='100px'/>
+			<h1>Drink Splitter</h1>
 			<nav>
 				<ul>
 					<li><Link to="/">Home</Link></li>
