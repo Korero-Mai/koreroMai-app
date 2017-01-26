@@ -4,21 +4,21 @@ const { link } = require('react-router')
 
 const NightOut = (props) => {
 	return (
-		<div>
+		<div className='welcome'>
 			<h1>Night Out </h1>
 
 			<div>
 				TOTAL FOR NIGHT
-			</div><br/>
-			<form>
-				<table>
+			</div><br />
+			<form >
+				<table className='nightOutUsers'>
 					<thead>
 						<tr>
 							<th>
 								Names
 							</th>
 							<th>
-								Person picking up tab
+								Who Paid?
 							</th>
 						</tr>
 					</thead>

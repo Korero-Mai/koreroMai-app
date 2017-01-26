@@ -14,7 +14,7 @@ const ShowPastNights = (props) => {
         </FlatButton>
       </div>
       <div>
-        <table>
+        <table className='userProfile'>
           <tr>
             <th>Night Id |</th>
             <th>Participants |</th>
