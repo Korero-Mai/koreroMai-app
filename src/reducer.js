@@ -10,8 +10,22 @@ module.exports = function (state, action){
 			newState.showingPastNights = !state.showingPastNights
 			break;
 
+		case 'DISPLAY_REGISTER_FORM':
+			newState.showingRegisterForm = true
+			break;
+
 		case 'UPDATE_USERS':
 			newState.users = action.payload
+			break;
+
+		case "LOGOUT":
+			newState.userName = null
+			break;
+
+		case "LOGIN":
+			newState.userName = 'TexMix'
+			break;
+
 
 		default:
 		return Object.assign({}, state)

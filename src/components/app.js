@@ -18,16 +18,18 @@ const App = (props) => {
 	return (
 
 		<div>
-			<img src="http://www.kofusion.com/wp-content/uploads/2009/02/featured_drinks.jpg" width='100px'/>
-			<h1>Drink Splitter</h1>
+			<div id='logoHeader'>
+				<h1>Drink Splitter</h1>
+				<img src="http://www.kofusion.com/wp-content/uploads/2009/02/featured_drinks.jpg" width='100px'/>
+			</div>
 			<div className="navBar">
 				<nav>
 					<ul className="navList">
 						<li className="navListItem"><Link to="/">Home</Link></li>
-						<li className="navListItem"><Link to="/userprofile">Your Profile</Link></li>
 						<li className="navListItem"><Link to="/nightout">Current Night Out</Link></li>
-	          <li className="navListItem"><Link to="/newUser">New User</Link></li>
+						<li className="navListItem"><Link to="/userprofile">Your Profile</Link></li>
 	          <li className="navListItem"><Link to="/userslist">Users List</Link></li>
+						<li id='logout' className="navListItem" onClick={() => props.dispatch({type:'LOGOUT'})}>Log Out</li>
 					</ul>
 				</nav>
 			</div>

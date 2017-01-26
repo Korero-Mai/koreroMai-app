@@ -4,10 +4,17 @@ body {
 
 h1 {
   font-size: 3em;
+  display: inline-block;
   text-align: center;
+
+}
+#logoHeader {
+  margin: auto;
+  width: 30%
 }
 
 img {
+  display: inline-block;
   float: right;
 }
 
@@ -19,6 +26,7 @@ img {
   border-style: solid;
   width: 50%;
   margin-top: 2em;
+  padding-bottom: 2em;
 }
 .navBar {
   margin: auto;
@@ -29,14 +37,20 @@ img {
     padding: 0;
     overflow: hidden;
     background-color: #333;
+    width: 100%
 }
 
 .navListItem {
   display: inline-block;
-  width: 10%
+  width: 19%
 
 }
-
+#logout {
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
 .navListItem a {
     display: block;
     color: white;
