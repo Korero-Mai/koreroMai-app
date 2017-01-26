@@ -10,7 +10,6 @@ const request = require('superagent')
 const NewUser = React.createClass({
 	handleSubmit:function(e){
 		e.preventDefault()
-	console.log("this.refs.userName",this.refs.userName.value);
 	const userName = this.refs.userName.value
 	const email = this.refs.email.value
 	const password = this.refs.password.value

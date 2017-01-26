@@ -7,10 +7,14 @@ const { Link } = require('react-router')
 const NewUserLink = require('./NewUserLink')
 
 const App = (props) => {
-	console.log('props', props);
 
-
-
+//If we want to make Userslist an admin page only fecthing data on load
+//if props.location is UsersList
+// fetch relevant data
+// dispatch action (type: userlist payload: relevant data)
+//in the action : define newstate filling with relevant data
+// end action with rendering newstate --> userList.js
+// behold the list
 	return (
 
 		<div>
@@ -22,6 +26,7 @@ const App = (props) => {
 					<li className="navListItem"><Link to="/userprofile">Your Profile</Link></li>
 					<li className="navListItem"><Link to="/nightout">Current Night Out</Link></li>
           <li className="navListItem"><Link to="/newUser">New User</Link></li>
+          <li className="navListItem"><Link to="/userslist">Users List</Link></li>
 				</ul>
 			</nav>
 			<h3>
@@ -29,7 +34,7 @@ const App = (props) => {
 			</h3>
 
 			<p>Disclaimer: Drink Splitter takes no responsibility for unpaid bills or dodgy friends.</p>
-			
+
 			{props.children}
 		</div>
 	)
