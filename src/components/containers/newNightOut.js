@@ -12,7 +12,7 @@ const initialState = {
     userNames : {
       1: {id:1, name: 'Lucas'},
       2: {id:2, name: 'Meghan'},
-      3: {id:3, name: 'Janie'}
+      3: {id:3, name: 'Alice'}
     }
   }
 
@@ -22,14 +22,14 @@ const initialState = {
       <p>{(moment().format('dddd DD MMMM YY'))}</p>
       <h1>Add people to your group</h1>
 
-      <ul>
+      <div>
       {
         _.map(initialState.userNames, (name) => {
-          return <li>{name.name}</li>
-          
+          return <button onclick="addPersonToGroup">{name.name}</button>
+
         })
       }
-      </ul>
+      </div>
 
       <button>submit</button>
     </div>
