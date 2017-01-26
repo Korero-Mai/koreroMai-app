@@ -1,6 +1,7 @@
 const React = require('react')
 const { connect } = require('react-redux')
 const { link } = require('react-router')
+const AddUser = require('../addUser')
 
 const NightOut = (props) => {
 	return (
@@ -49,7 +50,7 @@ const NightOut = (props) => {
 				</table>
 			</form><br/>
 			<div>
-				ADD ANOTHER PERSON
+				<AddUser />
 			</div>
 		</div>
 
