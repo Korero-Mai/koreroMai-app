@@ -1,3 +1,4 @@
+
 const React = require('react')
 const { connect } = require('react-redux')
 const { Link } = require('react-router')
@@ -25,15 +26,19 @@ const NewUser = React.createClass({
       request.post('api/v1/users')
       .send({newUserData})
       .end((err, data) => {
-        this.props.store.dispatch({type: 'POST_NEW_USER', payload: data.body})
+        console.log('.push we-re hitting the if');
+        this.props.router.push('/nightout')
+        if (err) {
+          alert('Oh no! error', err);
+        }
       })
-      
     } else {
       this.refs.userName.focus()
     }
   },
   render: function () {
     const {showingRegisterForm, dispatch} = this.props
+    console.log('this.props', this.props);
     const newUserForm = (
       <div>
         <h2>New User Form</h2>
