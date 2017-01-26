@@ -3,51 +3,22 @@ const { connect } = require('react-redux')
 const { link } = require('react-router')
 
 const NightOut = (props) => {
-	console.log('props', props);
 	return (
-		<div>
+		<div className='welcome'>
 			<h1>Night Out </h1>
 
 			<div>
 				TOTAL FOR NIGHT
-			</div><br/>
-			<form>
-				<table>
+			</div><br />
+			<form >
+				<table className='nightOutUsers'>
 					<thead>
 						<tr>
 							<th>
 								Names
 							</th>
 							<th>
-								Person picking up tab
-							</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>
-								PersonA
-							</td>
-							<td>
-								<input type="radio" name="payer" />
-							</td>
-						</tr>
-					</tbody>
-				</table>
-			</form>
-
-
-
-
-			<form>
-				<table>
-					<thead>
-						<tr>
-							<th>
-								Names
-							</th>
-							<th>
-								Person picking up tab
+								Who Paid?
 							</th>
 						</tr>
 					</thead>

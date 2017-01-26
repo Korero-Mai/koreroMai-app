@@ -9,11 +9,13 @@ const Login = (props) => {
   return (
     <div>
         <form>
-          <p>Name:</p><input type='text' placeholder='User Name' />
-          <p>Password:</p><input type='text' placeholder='Password' />
-          <br/>
-          <br/>
-          <RaisedButton onClick={() => props.dispatch({type:'LOGIN'})} className='button'>Login </RaisedButton>
+          <div>
+            Name:
+            <input className='homePageButton' type='text' placeholder='User Name' />
+            Password:
+            <input className='homePageButton' type='text' placeholder='Password' />
+          </div>
+          <RaisedButton onClick={() => props.dispatch({type:'LOGIN'})} >Login </RaisedButton>
         </form>
     </div>
   )

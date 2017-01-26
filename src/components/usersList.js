@@ -7,7 +7,6 @@ import {Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColu
 const UsersList = (props) => {
 
   const users = props.users
-  console.log('props', props);
 
   return (
 

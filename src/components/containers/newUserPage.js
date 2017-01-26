@@ -9,7 +9,6 @@ const request = require('superagent')
 
 const NewUser = React.createClass({
 	handleSubmit:function(e){
-		console.log('this.submit');
 		e.preventDefault()
 		const userName = this.refs.userName.value
 		const email = this.refs.email.value
@@ -26,7 +25,6 @@ const NewUser = React.createClass({
 			request.post('api/v1/newUserPage')
 			.send({newUserData})
 			.end((err, data)=>{
-				console.log('post from newUserPage newUserData:',newUserData);
 				this.props.store.dispatch({type: 'POST_NEW_USER', payload: data.body})
 			})
 			this.refs.userName.input.value = ''
@@ -40,7 +38,6 @@ const NewUser = React.createClass({
 	},
 	render: function(){
 		const {showingRegisterForm, dispatch} = this.props
-		console.log('Register', showingRegisterForm);
 		const newUserForm = (
 			<div>
 			<h2>New User Form</h2>
@@ -54,7 +51,9 @@ const NewUser = React.createClass({
 			</div>
 		)
 		const registerButton = (
-			<RaisedButton className='button' onClick={() => dispatch({type: 'DISPLAY_REGISTER_FORM'} )}>Register </RaisedButton>
+			<div className='homePageButton'>
+				<RaisedButton className='homePageButton' onClick={() => dispatch({type: 'DISPLAY_REGISTER_FORM'})}>Register </RaisedButton>
+			</div>
 		)
 
 		return showingRegisterForm

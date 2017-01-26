@@ -13,10 +13,10 @@ const Home = (props) => {
   const notLoggedIn = (
     <div className="welcome">
       < Welcome />
-      < Login />
-      <div className='NewUserForm'>
-        < NewUser {...props} />
-      </div>
+        < Login />
+        <div className='homePageButton'>
+          < NewUser {...props} />
+        </div>
     </div>
   )
   const loggedIn = (
