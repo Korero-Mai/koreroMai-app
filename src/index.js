@@ -20,7 +20,9 @@ const UsersList = require('./components/usersList')
 const Home = require('./components/home')
 
 const store = createStore(reducer, initialState)
-
+store.subscribe(()=> {
+	console.log('LOGGING', store.getState())
+})
 const Root = ({store}) => {
 	return (
 		<MuiThemeProvider>
@@ -49,6 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		root
 	)
 	request('/api/v1/users', (err, res) => {
+		console.log('this is res.body',res.body)
 		store.dispatch({type:'UPDATE_USERS', payload: res.body})
 	})
 })
