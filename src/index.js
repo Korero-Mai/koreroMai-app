@@ -6,6 +6,7 @@ const { createStore } = require('redux')
 const createHistory = require('history').createHashHistory
 
 const { Router, Route, IndexRoute, hashHistory } = require('react-router')
+const { MuiThemeProvider } = require('material-ui/styles')
 
 
 const reducer = require('./reducer')
@@ -22,7 +23,7 @@ const store = createStore(reducer, initialState)
 
 const Root = ({store}) => {
 	return (
-
+		<MuiThemeProvider>
 			<Provider store = {store}>
 				<Router history = {hashHistory}>
 					<Route path = '/' component={App}/>
@@ -32,6 +33,7 @@ const Root = ({store}) => {
 
 				</Router>
 			</Provider>
+		</MuiThemeProvider>
 	)
 }
 
@@ -41,6 +43,10 @@ document.addEventListener('DOMContentLoaded', () => {
 			<Root store={store}/>,
 			root
 		)
+	request('/api/v1/main', (err, res) => {
+		console.log('err, res', res.body, err);
+		// store.dispatch({type:'UPDATE_USERS', payload: res.body})
+	})
 })
 
 // <Route path = 'new-user' component={NewUser} />
