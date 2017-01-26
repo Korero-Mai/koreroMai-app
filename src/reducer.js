@@ -1,35 +1,29 @@
-module.exports = function (state){
-
-	// function reducer(state,action) {
-	//
-	// 	const newState=clone(state)
-	// 	switch (action.type) {
-	//
-	// 		case 'GET_ALL_USERS':
-	// 			newState.users = action.payload
-	// 			return newState
-	//
-	// 		default:
-	// 			return state
-	// 	}
-	// }
-}
-
 const clone = require('clone')
-const _ = require('lodash')
 
-module.exports = function (state, action) {
-  const newState = clone(state)
-  return newState
-}
+module.exports = function (state, action){
+	const newState = clone(state)
 
-function reducer (state, action) {
-  const newState = clone(state)
 
-  switch (action.type) {
+	switch (action.type) {
+
+		case 'DISPLAY_PAST_NIGHTS':
+			newState.showingPastNights = !state.showingPastNights
+			break;
+
+		case 'UPDATE_USERS':
+			newState.users = action.payload
+			console.log(newState)
+
+			break;
 
     case 'ADDS_PERSON_TO_NEW_GROUP':
-    console.log("this is the reducer", reducer);
-      return newState
-  }
+      newState.userNames[action.payload].going = !newState.userNames[action.payload].going
+      break;
+
+		default:
+		return newState
+	}
+
+	return newState
+
 }

@@ -7,31 +7,33 @@ const { FlatButton } = require('material-ui')
 
 
 const NewNightOut = (props) => {
+const  { userNames, dispatch } = props
 
-const initialState = {
+console.log("this is props", props);
+  const namesForDisplay = _.map(userNames, (user) => {
+    user.color = user.going
+      ?'blue'
+      :'red'
+    return user
+  })
 
-    userNames : {
-      1: {id:1, name: 'Lucas', going: true},
-      2: {id:2, name: 'Meghan', going: true},
-      3: {id:3, name: 'Alice', going: false}
-    }
-  }
+console.log(namesForDisplay);
+
 
   return (
     <div>
       <p>nice</p>
-      <p>{(moment().format('dddd DD MMMM YY'))}</p>
-      <h1>Add people to your group</h1>
-
       <div>
-      {
-        _.map(initialState.userNames, (name) => {
-          return <FlatButton onClick={()=> props.dispatch({type:'ADDS_PERSON_TO_NEW_GROUP'})}>
-            {name.name}
-          </FlatButton>
+      <p>{(moment().format('dddd DD MMMM YY'))}</p>
+        <h1>Add people to your group</h1>
+        {
+          namesForDisplay.map((name) => {
+            return <FlatButton style={{color: name.color}} onClick={()=> dispatch({type:'ADDS_PERSON_TO_NEW_GROUP', payload: name.id})}>
+              {name.name}
+            </FlatButton>
 
-        })
-      }
+          })
+        }
       </div>
 
       <button>submit</button>

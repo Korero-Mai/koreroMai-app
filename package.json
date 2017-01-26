@@ -31,12 +31,9 @@
     "inject-lr-script": "^2.1.0",
     "knex": "^0.12.6",
     "livereload": "^0.6.0",
-
     "lodash": "^4.17.4",
     "moment": "^2.17.1",
-
     "material-ui": "^0.16.7",
-
     "morgan": "^1.7.0",
     "mui": "^1.0.0",
     "react": "^15.4.2",
