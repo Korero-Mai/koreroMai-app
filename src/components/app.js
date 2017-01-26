@@ -3,6 +3,9 @@ const { connect } = require('react-redux')
 const { Link } = require('react-router')
 
 
+//components
+const NewUserLink = require('./NewUserLink')
+
 const App = (props) => {
 	console.log('props', props);
 
@@ -18,9 +21,9 @@ const App = (props) => {
 					<li className="navListItem"><Link to="/">Home</Link></li>
 					<li className="navListItem"><Link to="/userprofile">Your Profile</Link></li>
 					<li className="navListItem"><Link to="/nightout">Current Night Out</Link></li>
+          <li className="navListItem"><Link to="/newUser"><NewUserLink /></Link></li>
 				</ul>
 			</nav>
-
 			{props.children}
 		</div>
 	)
