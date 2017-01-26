@@ -29,7 +29,7 @@ function reducer (state, action) {
   switch (action.type) {
 
     case 'ADDS_PERSON_TO_NEW_GROUP':
-    
+    console.log("this is the reducer", reducer);
       return newState
   }
 }
