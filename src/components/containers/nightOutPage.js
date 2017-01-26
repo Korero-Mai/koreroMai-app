@@ -11,6 +11,25 @@ const NightOut = (props) => {
 			<div>
 				TOTAL FOR NIGHT
 			</div><br/>
+			</form>
+				<table>
+					<thead>
+						<tr>
+							<th>
+								Names
+							</th>
+							<th>
+								Person picking up tab
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+					</tbody>
+				</table>
+			</form>
+
+
+
 			<form>
 				<table>
 					<thead>

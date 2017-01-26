@@ -5,20 +5,30 @@ const { FlatButton } = require('material-ui')
 
 
 const ShowPastNights = (props) => {
+  const { dispatch, pastNights } = props
   const nightsShowing = (
     <div>
-    <div>
-    <FlatButton>
-    - Hide Past Nights
-    </FlatButton>
-    </div>
-    Past nights!
+      <div>
+        <FlatButton onClick={() => dispatch({type: 'DISPLAY_PAST_NIGHTS'})}>
+          - Hide Past Nights
+        </FlatButton>
+      </div>
+      <div>
+        <table>
+          <tr>
+            <th>Night Id |</th>
+            <th>Participants |</th>
+            <th>Amount Owing</th>
+          </tr>
+          {pastNights.map(tablePastNight)}
+        </table>
+      </div>
     </div>
   )
 
   const nightsHidden = (
     <div>
-      <FlatButton>
+      <FlatButton onClick={() => dispatch({type: 'DISPLAY_PAST_NIGHTS'})}>
         + Show Past Nights
       </FlatButton>
     </div>
@@ -27,6 +37,20 @@ const ShowPastNights = (props) => {
   return props.showingPastNights
     ? nightsShowing
     : nightsHidden
+}
+
+function tablePastNight(night){
+  let stringOfParticipants = ''
+  night.participants.forEach(participant => {
+    stringOfParticipants += `${participant}, `
+  })
+  return (
+    <tr>
+      <td>{night.nightId}</td>
+      <td>{stringOfParticipants}</td>
+      <td>${night.amountOwing/100}</td>
+    </tr>
+  )
 }
 
 
