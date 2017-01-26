@@ -13,7 +13,7 @@ console.log("this is props", props);
   const namesForDisplay = _.map(users, (user) => {
     user.color = user.going
       ?'blue'
-      :'red'
+      :'white'
     return user
   })
 
@@ -28,7 +28,7 @@ console.log(namesForDisplay);
         <h1>Add people to your group</h1>
         {
           namesForDisplay.map((name) => {
-            return <FlatButton style={{color: name.color}} onClick={()=> dispatch({type:'ADDS_PERSON_TO_NEW_GROUP', payload: name.id})}>
+            return <FlatButton style={{backgroundColor: name.color}} onClick={()=> dispatch({type:'ADDS_PERSON_TO_NEW_GROUP', payload: name.id})}>
               {name.name}
             </FlatButton>
 
