@@ -26,10 +26,11 @@ const Root = ({store}) => {
 		<MuiThemeProvider>
 			<Provider store = {store}>
 				<Router history = {hashHistory}>
-					<Route path = '/' component={App}/>
-					<Route path = '/newUser' component={NewUser} />
-					<Route path='/userprofile' component={UserProfile} />
-					<Route path='/nightout' component={NightOut} />
+					<Route path = '/' component={App}>
+						<Route path = '/newUser' component={NewUser} />
+						<Route path='/userprofile' component={UserProfile} />
+						<Route path='/nightout' component={NightOut} />
+					</Route>
 
 				</Router>
 			</Provider>
