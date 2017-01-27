@@ -9,6 +9,11 @@ const App = (props) => {
 	const location = props.location.pathname
 	const {userName, dispatch} = props
 
+	// if (props.location.pathname === 'usersList') {
+	// 	return request('/api/v1/users', (err, res) => {
+	// 		dispatch({type:'UPDATE_NIGHTS', payload: res.body})
+	// }
+
 	return (
 		<div>
 			<div id='logoHeader'>

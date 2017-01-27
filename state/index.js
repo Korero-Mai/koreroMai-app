@@ -4,6 +4,10 @@ module.exports = {
 	},
 	amountOwed: 4635,
 	amountOwing: 1050,
+	nights: [
+	],
+	users_nights: [
+	],
 	showingPastNights: false,
 	showingRegisterForm: false,
 	pastNights: [

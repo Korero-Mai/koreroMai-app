@@ -19,7 +19,21 @@ test.afterEach.always(() => {
   return testKnex.migrate.rollback()
 })
 
-test.only('Add new user | it should add a new user into the data base', (t) => {
+test.only("Count total number of nights out for a user", (t) => {
+  t.plan()
+
+  //arrange
+  const expectedCount = 2
+  const userID = 1
+  //action
+  return db.countNightsByUser(userID)
+    .then((count) =>  {
+      //assert
+      t.is(expectedCount, count)
+    })
+})
+
+test('Add new user | it should add a new user into the data base', (t) => {
    t.plan(1)
 
  // arrange

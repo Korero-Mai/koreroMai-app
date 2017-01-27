@@ -4,10 +4,10 @@ const route = express.Router();
 module.exports = function(db) {
 
   route.get("/users", getUsers);
+  route.post("/users", postNewUser);
   route.get("/nights", getNights);
   route.get("/users_nights", getUsersNights);
   route.post("/", post);
-  route.post("/users", postNewUser);
 
   function getUsers(req, res, next) {
     db.findAll('users')
