@@ -33,7 +33,7 @@ module.exports = function (state, action){
 			break;
 
     case 'ADDS_PERSON_TO_NEW_GROUP':
-      newState.userNames[action.payload].going = !newState.userNames[action.payload].going
+      newState.users[action.payload].going = !newState.users[action.payload].going
       break;
 
 		case 'USER_PAYING':

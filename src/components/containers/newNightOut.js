@@ -13,27 +13,29 @@ const NewNightOut = (props) => {
 
   const namesForDisplay = _.map(users, (user) => {
     user.color = user.going
-      ?'blue'
+      ?'pink'
       :'white'
     return user
   })
 
   console.log(namesForDisplay);
 
-
   return (
-    <div>
+    <div className='welcome'>
       <p>{(moment().format('dddd DD MMMM YYYY'))}</p>
       <h1>Add people to your group</h1>
-      {
-        namesForDisplay.map((name) => {
-          return <FlatButton style={{backgroundColor: name.color}} onClick={()=> dispatch({type:'ADDS_PERSON_TO_NEW_GROUP', payload: name.id})}>
-            {name.name}
-          </FlatButton>
+      <div >
 
-        })
-      }
-      <button>submit</button>
+        {
+          namesForDisplay.map((name) => {
+            return <FlatButton style={{backgroundColor: name.color, margin:'10px', width: '20%'}} onClick={()=> dispatch({type:'ADDS_PERSON_TO_NEW_GROUP', payload: name.id})}>
+              {name.name}<br/><br/>
+            </FlatButton>
+
+          })
+        }<br/><br/>
+        <button>submit</button>
+      </div>
     </div>
   )
 }
