@@ -29,11 +29,20 @@ module.exports = function (state, action){
 
 		case "LOGIN":
 			newState.userName = action.payload
-			console.log('state', newState)
 			break;
+
 
     case 'ADDS_PERSON_TO_NEW_GROUP':
       newState.users[action.payload].going = !newState.users[action.payload].going
+
+    case 'ADDS_PERSON_TO_CURRENT_NIGHT':
+			if(newState.currentNight.users.hasOwnProperty(action.payload)){
+				delete newState.currentNight.users[action.payload]
+			} else {
+	      newState.currentNight.users[action.payload] = newState.users[action.payload]
+				newState.currentNight.users[action.payload].paying = false
+			}
+
       break;
 
 		case 'USER_PAYING':

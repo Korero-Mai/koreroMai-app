@@ -6,6 +6,7 @@ const _ = require('lodash')
 const { FlatButton } = require('material-ui')
 
 
+<<<<<<< HEAD
 const NewNightOut = (props) => {
   const  { users, dispatch } = props
 
@@ -15,11 +16,38 @@ const NewNightOut = (props) => {
     user.color = user.going
       ?'pink'
       :'white'
+
+class NewNightOut extends React.Component {
+  render() {
+    const  { users, dispatch, currentNight } = this.props
+    const namesForDisplay = _.map(users, (user) => {
+      user.color = currentNight.users.hasOwnProperty(user.id)
+        ?'pink'
+        :'white'
+
     return user
-  })
+    })
 
-  console.log(namesForDisplay);
+    return (
+      <div className='welcome'>
+        <p>{(moment().format('dddd DD MMMM YYYY'))}</p>
+        <h1>Add people to your group</h1>
+        {
+          namesForDisplay.map((name) => {
+            return <FlatButton style={{backgroundColor: name.color}} onClick={()=> dispatch({type:'ADDS_PERSON_TO_CURRENT_NIGHT', payload: name.id})}>
+              {name.name}
+            </FlatButton>
 
+          })
+        }
+        <Link to='nightout'>
+          <button>submit</button>
+        </Link>
+      </div>
+    )
+  }
+
+<<<<<<< HEAD
   return (
     <div className='welcome'>
       <p>{(moment().format('dddd DD MMMM YYYY'))}</p>
@@ -38,6 +66,7 @@ const NewNightOut = (props) => {
       </div>
     </div>
   )
+=======
+>>>>>>> 4f3aa1f23df88dc66b62e94972ce600a98afcae8
 }
-
 module.exports =  connect((state) => state)(NewNightOut)
