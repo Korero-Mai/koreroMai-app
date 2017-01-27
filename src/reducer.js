@@ -1,5 +1,5 @@
 const clone = require('clone')
-
+const _ = require('lodash')
 module.exports = function (state, action){
 
 	const newState = clone(state)
@@ -15,7 +15,8 @@ module.exports = function (state, action){
 			break;
 
 		case 'UPDATE_USERS':
-			newState.users = action.payload
+			const ids = _.map(action.payload, 'id')
+			newState.users = _.zipObject(ids, action.payload)
 			break;
 
 		case "LOGOUT":
