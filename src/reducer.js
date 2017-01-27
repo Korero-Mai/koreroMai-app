@@ -30,6 +30,16 @@ module.exports = function (state, action){
       newState.userNames[action.payload].going = !newState.userNames[action.payload].going
       break;
 
+		case 'USER_PAYING':
+			newState.currentNight.personPaying = newState.currentNight.personPaying === action.payload
+				? null
+				: action.payload
+			Object.keys(newState.currentNight.users).forEach(userKey => {
+				newState.currentNight.users[userKey].paying = newState.currentNight.users[userKey].id === newState.currentNight.personPaying
+			})
+
+			break;
+
 		default:
 			return newState
 	}

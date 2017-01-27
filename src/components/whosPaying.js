@@ -13,11 +13,10 @@ const WhosPaying = (props) => {
       : 'white'
     return users[userKey]
   })
-  console.log('users for diplay', usersForDisplay);
   return (
     <div>
     <h2>Who is going to pick up the bill?</h2>
-    {usersForDisplay.map(user => <FlatButton style={backgroundColor: {user.color}}>{user.name}</FlatButton>)}
+    {usersForDisplay.map(user => <FlatButton key={user.id} style={{backgroundColor: user.color}} onClick={() => {dispatch({type: 'USER_PAYING', payload: user.id})}}>{user.name}</FlatButton>)}
     </div>
   )
 }
