@@ -8,9 +8,10 @@ const { FlatButton } = require('material-ui')
 
 class NewNightOut extends React.Component {
   render() {
-  const  { users, dispatch } = this.props
+  const  { users, dispatch, currentNight } = this.props
+  console.log('some string: ', currentNight);
     const namesForDisplay = _.map(users, (user) => {
-      user.color = user.going
+      user.color = currentNight.users.hasOwnProperty(user.id)
         ?'pink'
         :'white'
     return user
@@ -22,15 +23,18 @@ class NewNightOut extends React.Component {
         <h1>Add people to your group</h1>
         {
           namesForDisplay.map((name) => {
-            return <FlatButton style={{backgroundColor: name.color}} onClick={()=> dispatch({type:'ADDS_PERSON_TO_NEW_GROUP', payload: name.id})}>
+            return <FlatButton style={{backgroundColor: name.color}} onClick={()=> dispatch({type:'ADDS_PERSON_TO_CURRENT_NIGHT', payload: name.id})}>
               {name.name}
             </FlatButton>
 
           })
         }
-        <button>submit</button>
+        <Link to='nightout'>
+          <button>submit</button>
+        </Link>
       </div>
     )
   }
+
 }
 module.exports =  connect((state) => state)(NewNightOut)
