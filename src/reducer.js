@@ -14,6 +14,10 @@ module.exports = function (state, action){
 			newState.showingRegisterForm = true
 			break;
 
+    case 'DISPLAY_ADD_USER':
+      newState.showingAddUser = !state.showingAddUser
+      break;
+
 		case 'UPDATE_USERS':
 			const ids = _.map(action.payload, 'id')
 			newState.users = _.zipObject(ids, action.payload)
@@ -39,7 +43,6 @@ module.exports = function (state, action){
 			Object.keys(newState.currentNight.users).forEach(userKey => {
 				newState.currentNight.users[userKey].paying = newState.currentNight.users[userKey].id === newState.currentNight.personPaying
 			})
-
 			break;
 
 		default:

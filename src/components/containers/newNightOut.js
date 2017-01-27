@@ -7,9 +7,10 @@ const { FlatButton } = require('material-ui')
 
 
 const NewNightOut = (props) => {
-const  { users, dispatch } = props
+  const  { users, dispatch } = props
 
-console.log("this is props", props);
+  console.log("this is props", props);
+
   const namesForDisplay = _.map(users, (user) => {
     user.color = user.going
       ?'blue'
@@ -17,7 +18,7 @@ console.log("this is props", props);
     return user
   })
 
-console.log(namesForDisplay);
+  console.log(namesForDisplay);
 
 
   return (

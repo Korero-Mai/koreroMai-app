@@ -6,6 +6,7 @@ module.exports = {
 	amountOwing: 1050,
 	showingPastNights: false,
 	showingRegisterForm: false,
+  showingAddUser: false,
 	pastNights: [
 		{
 			nightId: 641,
@@ -27,5 +28,6 @@ module.exports = {
 		personPaying: null,
 		total: 4655
 	},
+
 
 }
