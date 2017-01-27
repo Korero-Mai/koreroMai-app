@@ -26,9 +26,14 @@ const Home = (props) => {
     </div>
   )
 
-  return props.userName
+  if (props.userName === 'admin') {
+    return loggedIn
+  } else {
+    return props.userName
     ?loggedIn
     :notLoggedIn
+  }
+
 
 }
 

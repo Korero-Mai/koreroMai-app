@@ -16,8 +16,6 @@ const  { userNames, dispatch } = props
     return user
   })
 
-
-
   return (
     <div>
       <div className='welcome'>
@@ -25,10 +23,14 @@ const  { userNames, dispatch } = props
         <h1>Add people to your group</h1>
           <div>{
             namesForDisplay.map((name) => {
-              return <FlatButton style={{backgroundColor: name.color}} onClick={()=> dispatch({type:'ADDS_PERSON_TO_NEW_GROUP', payload: name.id})}>
-                {name.name}
-              </FlatButton>
-
+              return
+                  <FlatButton
+                    style={{backgroundColor: name.color}}
+                    onClick={()=> dispatch(
+                      {type:'ADDS_PERSON_TO_NEW_GROUP', payload: name.id}
+                    )}>
+                    {name.name}
+                  </FlatButton>
             })
           }
           </div>

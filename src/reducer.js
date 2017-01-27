@@ -24,6 +24,7 @@ module.exports = function (state, action){
 
 		case 'UPDATE_USERS_NIGHTS':
 			newState.users_nights = action.payload
+			break;
 
 		case "LOGOUT":
 			newState.userName = null

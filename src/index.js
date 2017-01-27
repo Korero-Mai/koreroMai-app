@@ -53,12 +53,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	request('/api/v1/users', (err, res) => {
 		store.dispatch({type:'UPDATE_USERS', payload: res.body})
 	})
-	request('/api/v1/nights', (err, res) => {
-		store.dispatch({type:'UPDATE_NIGHTS', payload: res.body})
-	})
-	request('/api/v1/users_nights', (err, res) => {
-		store.dispatch({type:'UPDATE_USERS_NIGHTS', payload: res.body})
-	})
 })
 
 // <Route path = 'new-user' component={NewUser} />
