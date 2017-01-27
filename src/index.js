@@ -20,7 +20,8 @@ const UsersList = require('./components/usersList')
 const Home = require('./components/home')
 
 const store = createStore(reducer, initialState)
-
+store.subscribe(()=> {
+})
 const Root = ({store}) => {
 	return (
 		<MuiThemeProvider>
