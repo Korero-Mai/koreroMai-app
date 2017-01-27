@@ -25,7 +25,6 @@ module.exports = function (state, action){
 
 		case "LOGIN":
 			newState.userName = action.payload
-			console.log('state', newState)
 			break;
 
     case 'ADDS_PERSON_TO_NEW_GROUP':

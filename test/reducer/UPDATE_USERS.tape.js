@@ -28,6 +28,7 @@ test('UPDATE_USERS | the user list gets updated based on the state', t => {
 
 	const action = {
 		type: 'UPDATE_USERS',
+		// Duplication test? This doesn't work!
 		payload:
 		{
 			1: {
