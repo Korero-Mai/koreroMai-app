@@ -27,7 +27,7 @@ const NewUser = React.createClass({
       .end((err, data) => {
         this.props.store.dispatch({type: 'POST_NEW_USER', payload: data.body})
       })
-      
+
     } else {
       this.refs.userName.focus()
     }
