@@ -8,8 +8,7 @@ const { FlatButton } = require('material-ui')
 
 class NewNightOut extends React.Component {
   render() {
-  const  { users, dispatch, currentNight } = this.props
-  console.log('some string: ', currentNight);
+    const  { users, dispatch, currentNight } = this.props
     const namesForDisplay = _.map(users, (user) => {
       user.color = currentNight.users.hasOwnProperty(user.id)
         ?'pink'
