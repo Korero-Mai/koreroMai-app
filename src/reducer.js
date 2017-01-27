@@ -1,7 +1,7 @@
 const clone = require('clone')
 const _ = require('lodash')
 module.exports = function (state, action){
-
+	console.log('action', action);
 	const newState = clone(state)
 
 	switch (action.type) {
@@ -24,12 +24,23 @@ module.exports = function (state, action){
 			break;
 
 		case "LOGIN":
-			newState.userName = 'TexMix'
+			newState.userName = action.payload
+			console.log('state', newState)
 			break;
 
     case 'ADDS_PERSON_TO_NEW_GROUP':
       newState.users[action.payload].going = !newState.users[action.payload].going
       break;
+
+		case 'USER_PAYING':
+			newState.currentNight.personPaying = newState.currentNight.personPaying === action.payload
+				? null
+				: action.payload
+			Object.keys(newState.currentNight.users).forEach(userKey => {
+				newState.currentNight.users[userKey].paying = newState.currentNight.users[userKey].id === newState.currentNight.personPaying
+			})
+
+			break;
 
 		default:
 			return newState

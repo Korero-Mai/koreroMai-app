@@ -1,5 +1,5 @@
 module.exports = {
-	userName: 'TexMix',
+	userName: null,
 	users: {
 	},
 	amountOwed: 4635,
@@ -17,5 +17,15 @@ module.exports = {
 			participants: ['Kim', 'Tim'],
 			amountOwing: 500
 		}
-	]
+	],
+	currentNight: {
+		users: {
+			1: {id:1, name: 'Lucas', paying: false},
+			2: {id:2, name: 'Meghan', paying: false},
+			3: {id:3, name: 'Alice', paying: false}
+		},
+		personPaying: null,
+		total: 4655
+	},
+
 }

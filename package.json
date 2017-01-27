@@ -4,12 +4,12 @@
   "description": "Drink Splitter",
   "main": "index.js",
   "scripts": {
-    "test": "tape test/**/*.js | tap-diff",
+    "test": "tape test/**/*.tape.js | tap-diff",
     "knex": "knex",
-    "test-db":"ava test/**/*.js --serial --verbose",
+    "test-ava":"ava test/**/*.ava.js --serial --verbose",
     "start": "node ./bin/www",
     "dev": "node-dev ./bin/www",
-    "lint": "eslint . || true"  
+    "lint": "eslint . || true"
 
   },
   "repository": {
