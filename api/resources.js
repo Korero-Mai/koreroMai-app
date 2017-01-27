@@ -31,7 +31,6 @@ module.exports = function(db) {
   }
 
   function postNewUser(req, res, next){
-    console.log('post req.body: ',req.body.newUserData)
     db.addUser('users',req.body.newUserData)
     .then((users)=>{
       res.json(users)

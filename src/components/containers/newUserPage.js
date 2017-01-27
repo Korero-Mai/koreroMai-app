@@ -26,7 +26,6 @@ const NewUser = React.createClass({
       request.post('api/v1/users')
       .send({newUserData})
       .end((err, data) => {
-        console.log('.push we-re hitting the if');
         this.props.router.push('/nightout')
         if (err) {
           alert('Oh no! error', err);
@@ -38,7 +37,6 @@ const NewUser = React.createClass({
   },
   render: function () {
     const {showingRegisterForm, dispatch} = this.props
-    console.log('this.props', this.props);
     const newUserForm = (
       <div>
         <h2>New User Form</h2>
