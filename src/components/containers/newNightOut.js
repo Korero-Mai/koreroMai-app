@@ -12,7 +12,7 @@ const  { users, dispatch } = props
 console.log("this is props", props);
   const namesForDisplay = _.map(users, (user) => {
     user.color = user.going
-      ?'blue'
+      ?'pink'
       :'white'
     return user
   })
