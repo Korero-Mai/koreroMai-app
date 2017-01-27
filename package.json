@@ -7,6 +7,7 @@
     "test": "tape test/**/*.tape.js | tap-diff",
     "knex": "knex",
     "test-ava": "ava test/**/*.ava.js --serial --verbose",
+    "postinstall":"webpack -p",
     "start": "node ./bin/www",
     "dev": "node-dev ./bin/www",
     "lint": "eslint . || true"
