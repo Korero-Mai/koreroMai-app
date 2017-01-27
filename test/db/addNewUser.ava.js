@@ -20,7 +20,7 @@ test.afterEach.always(() => {
 })
 
 test.only("Count total number of nights out for a user", (t) => {
-  t.plan()
+  t.plan(1)
 
   //arrange
   const expectedCount = 2
@@ -28,7 +28,7 @@ test.only("Count total number of nights out for a user", (t) => {
   //action
   return db.countNightsByUser(userID)
     .then((count) =>  {
-      //assert
+  //assert
       t.is(expectedCount, count)
     })
 })

@@ -1,3 +1,5 @@
+const _ = require('lodash')
+
 module.exports= function(knex) {
 	return {
 
@@ -16,5 +18,16 @@ module.exports= function(knex) {
 				.select()
 			})
 		},
+
+		countNightsByUser: function() {
+			return knex('users_nights')
+				.count('nights_id as totalNights')
+				.select('user_id')
+				.groupBy('user_id')
+				.then((count) => {
+					console.log(count)
+					return count
+				})
+		}
 	}
 }

@@ -4,13 +4,12 @@
   "description": "Drink Splitter",
   "main": "index.js",
   "scripts": {
-    "test": "tape test/**/*.js | tap-diff",
+    "test": "tape test/**/*.tape.js | tap-diff",
     "knex": "knex",
-    "test-db":"ava test/**/*.js --serial --verbose",
+    "test-ava": "ava test/**/*.ava.js --serial --verbose",
     "start": "node ./bin/www",
     "dev": "node-dev ./bin/www",
-    "lint": "eslint . || true"  
-
+    "lint": "eslint . || true"
   },
   "repository": {
     "type": "git",
@@ -36,10 +35,11 @@
     "knex": "^0.12.6",
     "livereload": "^0.6.0",
     "lodash": "^4.17.4",
-    "moment": "^2.17.1",
     "material-ui": "^0.16.7",
+    "moment": "^2.17.1",
     "morgan": "^1.7.0",
     "mui": "^1.0.0",
+    "pg": "^6.1.2",
     "react": "^15.4.2",
     "react-appbar": "^2.0.0",
     "react-dom": "^15.4.2",

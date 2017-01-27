@@ -7,22 +7,25 @@ import {Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColu
 
 const UsersList = (props) => {
 
-  const {userName, users, nights, users_nights, dispatch} = props
+  const {userName, admin, users, nights, users_nights, dispatch} = props
 
   if (userName != 'admin') {
     return <img src="http://i.imgur.com/Hm7Xj.gif" />
   } else {
 
-    if (nights.length === 0) {
-      request('/api/v1/nights', (err, res) => {
-    		dispatch({type:'UPDATE_NIGHTS', payload: res.body})
-    	})
-      request('/api/v1/users_nights', (err, res) => {
-    		dispatch({type:'UPDATE_USERS_NIGHTS', payload: res.body})
-    	})
+    if (admin.totalNights.length != 0) {
+      request('/api/v1/admin', (err, res) => {
+        console.log("body", res.body)
+      	dispatch({type:'UPDATE_STATE_ADMIN', payload: res.body})
+      })
     }
 
-    console.log(props)
+    console.log("props", props)
+    function searchTotal(id){
+      return  admin.totalNights.filter((night) => {
+        return night.id === id
+      })[0]
+    }
 
     return (
       <Table>
@@ -43,7 +46,9 @@ const UsersList = (props) => {
                 <TableRowColumn>{user.id}</TableRowColumn>
                 <TableRowColumn>{user.name}</TableRowColumn>
                 <TableRowColumn>01/01/2017</TableRowColumn>
-                <TableRowColumn>10</TableRowColumn>
+                <TableRowColumn>
+                  {searchTotal(user.id)}
+                </TableRowColumn>
                 <TableRowColumn>100 $</TableRowColumn>
                 <TableRowColumn>0 $</TableRowColumn>
               </TableRow>
@@ -54,5 +59,6 @@ const UsersList = (props) => {
     )
   }
 }
+
 
 module.exports = connect((state) => state)(UsersList)

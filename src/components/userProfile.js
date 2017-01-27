@@ -13,6 +13,7 @@ const UserProfile = (props) => {
       <h1>
         {userName + "'s"} profile
       </h1>
+
       <br />
       <div className='homePageButton'>
         <Link to='/newnightout'>
@@ -25,6 +26,7 @@ const UserProfile = (props) => {
       <div>
         Amount Owed: ${amountOwed / 100}<br /><br />
         Amount Owing: ${amountOwing / 100}<br /><br />
+
       </div>
       <ShowPastNights {...props} />
     </div>

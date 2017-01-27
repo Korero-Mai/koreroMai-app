@@ -8,6 +8,7 @@ module.exports = function(db) {
   route.get("/nights", getNights);
   route.get("/users_nights", getUsersNights);
   route.post("/", post);
+  route.get("/admin", getAdmin)
 
   function getUsers(req, res, next) {
     db.findAll('users')
@@ -30,9 +31,18 @@ module.exports = function(db) {
       })
   }
 
+  function getAdmin(req, res, next) {
+    db.countNightsByUser()
+      .then((count) => {
+        res.json(count)
+      })
+  }
+
   function postNewUser(req, res, next){
-    console.log('post req.body: ',req.body.newUserData)
     db.addUser('users',req.body.newUserData)
+    .then((users)=>{
+      res.json(users)
+    })
 
   }
 
