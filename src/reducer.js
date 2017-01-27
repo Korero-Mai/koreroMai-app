@@ -1,7 +1,7 @@
 const clone = require('clone')
 const _ = require('lodash')
 module.exports = function (state, action){
-
+	console.log('action', action);
 	const newState = clone(state)
 
 	switch (action.type) {
@@ -24,7 +24,8 @@ module.exports = function (state, action){
 			break;
 
 		case "LOGIN":
-			newState.userName = 'TexMix'
+			newState.userName = action.payload
+			console.log('state', newState)
 			break;
 
     case 'ADDS_PERSON_TO_NEW_GROUP':

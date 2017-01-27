@@ -1,5 +1,5 @@
 module.exports = {
-	userName: 'TexMix',
+	userName: null,
 	users: {
 	},
 	amountOwed: 4635,
