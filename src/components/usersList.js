@@ -22,18 +22,18 @@ const UsersList = (props) => {
         </TableRow>
       </TableHeader>
       <TableBody>
-          {_.map(users, (user) => {
-            return (
-              <TableRow>
-                <TableRowColumn>{user.id}</TableRowColumn>
-                <TableRowColumn>{user.name}</TableRowColumn>
-                <TableRowColumn>01/01/2017</TableRowColumn>
-                <TableRowColumn>10</TableRowColumn>
-                <TableRowColumn>100 $</TableRowColumn>
-                <TableRowColumn>0 $</TableRowColumn>
-              </TableRow>
-            )
-          })}
+        {_.map(users, (user) => {
+          return (
+            <TableRow>
+              <TableRowColumn>{user.id}</TableRowColumn>
+              <TableRowColumn>{user.name}</TableRowColumn>
+              <TableRowColumn>01/01/2017</TableRowColumn>
+              <TableRowColumn>10</TableRowColumn>
+              <TableRowColumn>100 $</TableRowColumn>
+              <TableRowColumn>0 $</TableRowColumn>
+            </TableRow>
+          )
+        })}
       </TableBody>
     </Table>
   )

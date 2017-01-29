@@ -43,7 +43,9 @@ module.exports = function (db) {
 
   // routes
 
-  app.use('/api/v1/resources', api.resources(db))
+
+  app.use('/api/v1/', api.resources(db))
+
 
   // catch 404 and forward to error handler
   app.use(function(req, res, next) {

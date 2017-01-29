@@ -1,89 +1,28 @@
 const React = require('react')
 const { connect } = require('react-redux')
 const { link } = require('react-router')
+const AddAnotherUser = require('../addAnotherUser')
+
+const WhosPaying = require('../whosPaying')
 
 const NightOut = (props) => {
-	console.log('props', props);
+	const { currentNight } = props
+	const { total } = currentNight
 	return (
-		<div>
+		<div className='welcome'>
 			<h1>Night Out </h1>
 
 			<div>
-				TOTAL FOR NIGHT
-			</div><br/>
-			<form>
-				<table>
-					<thead>
-						<tr>
-							<th>
-								Names
-							</th>
-							<th>
-								Person picking up tab
-							</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>
-								PersonA
-							</td>
-							<td>
-								<input type="radio" name="payer" />
-							</td>
-						</tr>
-					</tbody>
-				</table>
-			</form>
-
-
-
-
-			<form>
-				<table>
-					<thead>
-						<tr>
-							<th>
-								Names
-							</th>
-							<th>
-								Person picking up tab
-							</th>
-						</tr>
-					</thead>
-
-					<tbody>
-						<tr>
-							<td>
-								PersonA
-							</td>
-							<td>
-
-								<input type="radio" name="payer" />
-
-							</td>
-						</tr>
-						<tr>
-							<td>
-								PersonB
-							</td>
-							<td>
-
-								<input type="radio" name="payer" />
-
-							</td>
-						</tr>
-					</tbody>
-
-				</table>
-			</form><br/>
+				TOTAL FOR NIGHT: ${total/100}
+			</div><br />
+			<WhosPaying {...props} /><br/><br/>
 			<div>
-				ADD ANOTHER PERSON
-			</div>
+				<AddAnotherUser />
+			</div><br/>
 		</div>
 
 	)
 }
 
 //module.exports = connect((state) => state)(NightOut)
-module.exports = NightOut
+module.exports = connect((state) => state)(NightOut)

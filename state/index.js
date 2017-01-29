@@ -1,11 +1,12 @@
 module.exports = {
-	userName: 'TexMix',
+	userName: null,
 	users: {
 	},
 	amountOwed: 4635,
 	amountOwing: 1050,
 	showingPastNights: false,
 	showingRegisterForm: false,
+  showingAddUser: false,
 	pastNights: [
 		{
 			nightId: 641,
@@ -17,5 +18,13 @@ module.exports = {
 			participants: ['Kim', 'Tim'],
 			amountOwing: 500
 		}
-	]
+	],
+	currentNight: {
+		users: {
+		},
+		personPaying: null,
+		total: 4655
+	},
+
+
 }

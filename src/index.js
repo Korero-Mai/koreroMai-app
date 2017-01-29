@@ -14,12 +14,14 @@ const App = require('./components/app')
 
 const NewUser = require('./components/containers/newUserPage')
 const NightOut = require('./components/containers/nightOutPage')
+const NewNightOut = require('./components/containers/newNightOut')
 const UserProfile = require('./components/userProfile')
 const UsersList = require('./components/usersList')
 const Home = require('./components/home')
 
 const store = createStore(reducer, initialState)
-
+store.subscribe(()=> {
+})
 const Root = ({store}) => {
 	return (
 		<MuiThemeProvider>
@@ -28,9 +30,10 @@ const Root = ({store}) => {
 					<Route path = '/' component={App}>
 						<IndexRoute component={Home} />
 						<Route path = '/newUser' component={NewUser} />
-						<Route path = '/userprofile' component={UserProfile} />
-						<Route path = '/nightout' component={NightOut} />
-						<Route path = '/userslist' component={UsersList} />
+						<Route path='/userprofile' component={UserProfile} />
+						<Route path='/nightout' component={NightOut} />
+						<Route path='/newnightout' component={NewNightOut} />
+						<Route path='/userslist' component={UsersList} />
 					</Route>
 
 				</Router>
@@ -42,15 +45,13 @@ const Root = ({store}) => {
 document.addEventListener('DOMContentLoaded', () => {
 	console.log('DOMContentLoaded');
 	const root = document.querySelector('#app')
-		ReactDOM.render(
-			<Root store={store}/>,
-			root
-		)
-	request('/api/v1/resources', (err, res) => {
-		console.log("body", res.body);
+	ReactDOM.render(
+		<Root store={store}/>,
+		root
+	)
+	request('/api/v1/users', (err, res) => {
 		store.dispatch({type:'UPDATE_USERS', payload: res.body})
 	})
-
 })
 
 // <Route path = 'new-user' component={NewUser} />

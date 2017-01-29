@@ -10,14 +10,17 @@ h1 {
 }
 #logoHeader {
   margin: auto;
-  width: 30%
+  width: 35%
 }
 
 img {
   display: inline-block;
   float: right;
 }
-
+.homePageButton {
+  display: inline-block;
+  margin: 1em;
+}
 .welcome {
   margin: auto;
   text-align: center;
@@ -26,6 +29,7 @@ img {
   border-style: solid;
   width: 50%;
   margin-top: 2em;
+  padding: 1em;
   padding-bottom: 2em;
 }
 .navBar {
@@ -39,11 +43,17 @@ img {
     background-color: #333;
     width: 100%
 }
+.nightOutUsers {
+  margin: auto;
+  padding: 1em;
+  text-align: center;
+  width: 90%;
+  margin-top: 2em;
+}
 
 .navListItem {
   display: inline-block;
-  width: 24%
-
+  width: 19%
 }
 #logout {
   color: white;
@@ -51,6 +61,9 @@ img {
   padding: 14px 16px;
   text-decoration: none;
 }
+  #logout:hover {
+    background-color: #111;
+  }
 .navListItem a {
     display: block;
     color: white;
@@ -67,9 +80,10 @@ img {
   margin: auto;
   padding: 1em;
   text-align: center;
-  border-width: medium;
-  border-color: black;
-  border-style: solid;
-  width: 50%;
+  width: 90%;
   margin-top: 2em;
+}
+
+.userList {
+  padding: 50px;
 }

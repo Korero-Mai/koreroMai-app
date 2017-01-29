@@ -12,17 +12,17 @@ const UserProfile = require ('./userProfile')
 const Home = (props) => {
   const notLoggedIn = (
     <div className="welcome">
-      < Welcome />
-      < Login />
-      <div className='NewUserForm'>
-        < NewUser {...props} />
-      </div>
+      <Welcome />
+        <Login />
+        <div className='homePageButton'>
+          <NewUser {...props} />
+        </div>
     </div>
   )
   const loggedIn = (
     <div className="welcome">
-      < Welcome />
-      < UserProfile />
+      <Welcome />
+      <UserProfile />
     </div>
   )
 
