@@ -1,5 +1,7 @@
-const express = require("express");
-const route = express.Router();
+const express = require("express")
+const route = express.Router()
+const bcrypt = require('bcryptjs')
+
 
 module.exports = function(db) {
 
@@ -31,14 +33,23 @@ module.exports = function(db) {
   }
 
   function postNewUser(req, res, next){
-    db.addUser('users',req.body.newUserData)
-    .then((users)=>{
-      res.json(users)
+    const password = req.body.newUserData.password
+    bcrypt.genSalt(10, function (err, salt) {
+      bcrypt.hash(password, salt, function(err, hash) {
+        req.body.newUserData.password = hash
+        db.addUser('users',req.body.newUserData)
+          .then((users)=>{
+            res.json(users)
+          })
+      })
     })
 
   }
 
-  function post(req, res, next) {}
+  function post (req, res, next) {}
+
+
+
 
   return route;
 };
