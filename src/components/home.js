@@ -13,7 +13,7 @@ const Home = (props) => {
   const notLoggedIn = (
     <div className="welcome">
       <Welcome />
-        <Login />
+        <Login router={props.router} />
         <div className='homePageButton'>
           <NewUser {...props} />
         </div>

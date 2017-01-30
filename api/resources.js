@@ -14,6 +14,15 @@ module.exports = function(db) {
 
   function login(req,res, next) {
     const email = req.body.email
+    db.findUserByEmail(email)
+      .then(user => {
+        if (!user) {
+          res.json({error: 'user not found'})
+        } else {
+          res.json(user)
+        }
+
+      })
   }
 
   function getUsers(req, res, next) {

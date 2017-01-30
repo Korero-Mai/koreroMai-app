@@ -3,8 +3,21 @@ const { connect } = require('react-redux')
 const { Link } = require('react-router')
 const _ = require('lodash')
 const { RaisedButton } = require('material-ui')
+const request = require('superagent')
 
 class Login extends React.Component {
+  handleClick () {
+    console.log('this', this)
+    const email = this.refs.email.value
+    const password = this.refs.password.value
+
+    request.post('api/v1/users/login')
+      .send({email, password})
+      .end((err, response) => {
+        this.props.router.push(`users/${response.body.id}/profile`)
+      })
+  }
+
   // componentDidMount () {  //lifecycle method
   //   console.log('I am now in the DOM')
   // }
@@ -19,12 +32,12 @@ class Login extends React.Component {
       <div>
         <form>
           <div>
-          Name:
-          <input className='homePageButton' type='text' ref='loginName' placeholder='User Name' />
+          Email:
+          <input className='homePageButton' type='text' ref='email' placeholder='email' />
           Password:
-          <input className='homePageButton' type='text' placeholder='Password' />
+          <input className='homePageButton' type='text' ref='password' placeholder='Password' />
           </div>
-          <RaisedButton onClick={() => dispatch({type: 'LOGIN', payload: this.refs.loginName.value})} >Login </RaisedButton>
+          <RaisedButton onClick={this.handleClick.bind(this)} >Login </RaisedButton>
         </form>
       </div>
     )
