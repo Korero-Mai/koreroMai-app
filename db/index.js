@@ -5,16 +5,21 @@ module.exports= function(knex) {
 			return knex(table).select()
 		},
 
+
 		addUser: function(table, input) {
-			const formattedData = {
-				name: input.userName
-			}
 			return knex(table)
-			.insert(formattedData)
+			.insert(input)
 			.then(function(){
 				return knex(table)
 				.select()
+				.where({name: input.name})
 			})
 		},
+
+		findWhereNameIs: function(table, input) {
+			return knex(table)
+				.select()
+				.where({name: input})
+		}
 	}
 }

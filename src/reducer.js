@@ -1,7 +1,6 @@
 const clone = require('clone')
 const _ = require('lodash')
 module.exports = function (state, action){
-	console.log('action', action);
 	const newState = clone(state)
 
 	switch (action.type) {
@@ -12,6 +11,7 @@ module.exports = function (state, action){
 
 		case 'DISPLAY_REGISTER_FORM':
 			newState.showingRegisterForm = true
+			newState.authErr = null
 			break;
 
     case 'DISPLAY_ADD_USER':
@@ -29,6 +29,11 @@ module.exports = function (state, action){
 
 		case "LOGIN":
 			newState.userName = action.payload
+			newState.authErr = null
+			break;
+
+		case 'AUTH_ERR':
+			newState.authErr = action.payload
 			break;
 
 
