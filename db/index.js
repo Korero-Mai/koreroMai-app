@@ -11,13 +11,16 @@ module.exports = function (knex) {
 				email: input.email
 			}
 			return knex(table)
-			console.log(input)
 			.insert(formattedData)
-			.then(function() {
+			.then(function(ids) {
+				console.log('id', ids);
 				return knex(table)
-				.select()
-				.where ({name: input.name})
+				.select('name', 'id')
+				.where ({id: ids[0]})
 			})
+		},
+		find: function (table, input) {
+			
 		}
 	}
 }

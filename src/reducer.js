@@ -23,6 +23,10 @@ module.exports = function (state, action){
 			newState.users = _.zipObject(ids, action.payload)
 			break;
 
+		case 'UPDATE_USER':
+			newState.users[action.payload.id] = action.payload
+			break;
+
 		case "LOGOUT":
 			newState.userName = null
 			break;

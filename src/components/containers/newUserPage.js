@@ -24,7 +24,12 @@ const NewUser = React.createClass({
 
       request.post('api/v1/users')
       .send({newUserData})
-      .then(() => this.props.dispatch({type: 'LOGIN', payload: userName}))
+      .then((response) => {
+        const user = response.body[0]
+        // console.log('user', response);
+        this.props.dispatch({type: 'UPDATE_USER', payload: user})
+        this.props.router.push(`/users/${user.id}/profile`)
+      })
     } else {
       this.refs.userName.focus()
     }

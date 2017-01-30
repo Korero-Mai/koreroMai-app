@@ -10,6 +10,11 @@ module.exports = function(db) {
   route.get("/users_nights", getUsersNights);
   route.post("/", post);
   route.post("/users", postNewUser);
+  route.post('/users/login', login)
+
+  function login(req,res, next) {
+    const email = req.body.email
+  }
 
   function getUsers(req, res, next) {
     db.findAll('users')
@@ -38,8 +43,9 @@ module.exports = function(db) {
       bcrypt.hash(password, salt, function(err, hash) {
         req.body.newUserData.password = hash
         db.addUser('users',req.body.newUserData)
-          .then((users)=>{
-            res.json(users)
+          .then((user)=>{
+            console.log('user in resource.js', user);
+            res.json(user)
           })
       })
     })
