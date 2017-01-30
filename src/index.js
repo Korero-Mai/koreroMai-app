@@ -16,7 +16,7 @@ const NewUser = require('./components/users/new')
 const NightOut = require('./components/containers/nightOutPage')
 const NewNightOut = require('./components/containers/newNightOut')
 const UsersProfile = require('./components/users/profile')
-const UsersList = require('./components/users/list')
+const UsersIndex = require('./components/users/index')
 const Home = require('./components/home')
 
 const store = createStore(reducer, initialState)
