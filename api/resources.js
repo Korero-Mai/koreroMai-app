@@ -39,6 +39,16 @@ module.exports = function(db) {
       })
   }
 
+  function userProfile(req, res, next) {
+    const id = req.body.id
+    console.log('resources.js req', req.body.id);
+    db.findAll('users')
+    // .where('id': user.id)
+      .then((users) => {
+        res.json(users)
+      })
+  }
+
   function nights(req, res, next) {
     db.findAll('nights')
       .then((nights) => {

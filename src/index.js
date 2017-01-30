@@ -30,11 +30,11 @@ const Root = ({store}) => {
 				<Router history = {hashHistory}>
 					<Route path = '/' component={App}>
 						<IndexRoute component={Home} />
-						<Route path = '/newUser' component={NewUser} />
+						<Route path='/users' component={UsersList} />
+						<Route path = '/users/new' component={NewUser} />
 						<Route path='/users/:id/profile' component={UserProfile} />
-						<Route path='/nightout' component={NightOut} />
-						<Route path='/newnightout' component={NewNightOut} />
-						<Route path='/userslist' component={UsersList} />
+						<Route path='/night' component={NightOut} />
+						<Route path='/night/new' component={NewNightOut} />
 					</Route>
 
 				</Router>
