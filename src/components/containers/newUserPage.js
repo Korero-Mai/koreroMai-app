@@ -24,12 +24,7 @@ const NewUser = React.createClass({
 
       request.post('api/v1/users')
       .send({newUserData})
-      .end((err, data) => {
-        this.props.router.push('/nightout')
-        if (err) {
-          //alert('Oh no! error', err);
-        }
-      })
+      .then(() => this.props.dispatch({type: 'LOGIN', payload: userName}))
     } else {
       this.refs.userName.focus()
     }

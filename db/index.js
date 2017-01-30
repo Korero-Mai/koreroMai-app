@@ -10,12 +10,13 @@ module.exports = function (knex) {
 				password: input.password,
 				email: input.email
 			}
-			console.log('formattedData', formattedData)
 			return knex(table)
+			console.log(input)
 			.insert(formattedData)
 			.then(function() {
 				return knex(table)
 				.select()
+				.where ({name: input.name})
 			})
 		}
 	}
