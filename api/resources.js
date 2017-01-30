@@ -1,16 +1,18 @@
-const express = require("express")
+const express = require('express')
 const route = express.Router()
 const bcrypt = require('bcryptjs')
 
 
 module.exports = function(db) {
 
-  route.get("/users", getUsers);
-  route.get("/nights", getNights);
-  route.get("/users_nights", getUsersNights);
-  route.post("/", post);
-  route.post("/users", postNewUser);
-  route.post('/users/login', login)
+  // route.get('/users', getUsers); //gets all the users
+  route.get('/users/:id/profile') //display a specific user
+  route.get('/nights', getNights); //display all of the nights info
+  // route.get('/users_nights', getUsersNights);
+  route.get('/users/:id/nights', getUsersNights); //get a users nights
+  route.post('/', post);   //what does this do?
+  route.post('/users/new', postNewUser);   //post a new user
+  route.post('/users/login', login) //login a user
 
   function login(req, res, next) {
     const email = req.body.email
