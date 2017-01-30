@@ -3,8 +3,6 @@ const React = require('react')
 const { connect } = require('react-redux')
 const { Link } = require('react-router')
 
-const ReactDOM = require('react-dom')
-const {TextField} = require('material-ui')
 const {RaisedButton} = require('material-ui')
 const request = require('superagent')
 
@@ -14,7 +12,7 @@ const NewUser = React.createClass({
     const userName = this.refs.userName.value
     const email = this.refs.email.value
     const password = this.refs.password.value
-    const confirmPassword = this.refs.confirmPassword.value
+    // const confirmPassword = this.refs.confirmPassword.value
 
     const newUserData = {
       'userName': userName,
@@ -23,13 +21,14 @@ const NewUser = React.createClass({
     }
 
     if (userName.length > 0) {
+
       request.post('api/v1/users')
       .send({newUserData})
-      .end((err, data) => {
-        this.props.router.push('/nightout')
-        if (err) {
-          alert('Oh no! error', err);
-        }
+      .then((response) => {
+        const user = response.body[0]
+        // console.log('user', response);
+        this.props.dispatch({type: 'UPDATE_USER', payload: user})
+        this.props.router.push(`/users/${user.id}/profile`)
       })
     } else {
       this.refs.userName.focus()
@@ -44,7 +43,6 @@ const NewUser = React.createClass({
           <p>Name:</p><input type='text' ref='userName' placeholder='User Name' />
           <p>Email:</p><input type='text' ref='email' placeholder='email' />
           <p>Password:</p><input type='text' ref='password' placeholder='password' />
-          <p>Confirm Password:</p><input type='text' ref='confirmPassword' placeholder='Confirm password' />
           <button onClick={this.handleSubmit} className='button'>Create Account</button>
         </form>
       </div>
@@ -62,3 +60,8 @@ const NewUser = React.createClass({
 })
 
 module.exports = connect((state) => state)(NewUser)
+
+
+
+// <p>Confirm Password:</p><input type='text' ref='confirmPassword' placeholder='Confirm password' />
+//

@@ -21,6 +21,7 @@ const Home = require('./components/home')
 
 const store = createStore(reducer, initialState)
 store.subscribe(()=> {
+	console.log('loggin state', store.getState());
 })
 const Root = ({store}) => {
 	return (
@@ -30,7 +31,7 @@ const Root = ({store}) => {
 					<Route path = '/' component={App}>
 						<IndexRoute component={Home} />
 						<Route path = '/newUser' component={NewUser} />
-						<Route path='/userprofile' component={UserProfile} />
+						<Route path='/users/:id/profile' component={UserProfile} />
 						<Route path='/nightout' component={NightOut} />
 						<Route path='/newnightout' component={NewNightOut} />
 						<Route path='/userslist' component={UsersList} />
