@@ -12,16 +12,22 @@ module.exports = function(db) {
   route.post("/users", postNewUser);
   route.post('/users/login', login)
 
-  function login(req,res, next) {
+  function login(req, res, next) {
     const email = req.body.email
+    const entered_password = req.body.password
     db.findUserByEmail(email)
       .then(user => {
         if (!user) {
           res.json({error: 'user not found'})
         } else {
-          res.json(user)
+          bcrypt.compare(entered_password, user.password, function(err, response) {
+            if (response) {
+              res.json({id: user.id, login: true})
+            } else {
+              res.json({login: false})
+            }
+          });
         }
-
       })
   }
 

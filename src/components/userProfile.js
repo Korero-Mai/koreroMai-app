@@ -8,8 +8,6 @@ const ShowPastNights = require('./showPastNights')
 const UserProfile = (props) => {
   const { amountOwed, amountOwing, dispatch, routeParams, users } = props
   const userName = users[routeParams.id].name
-
-  console.log("oobjject", userName);
   return (
     <div>
       <h1>

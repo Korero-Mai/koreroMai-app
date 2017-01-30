@@ -14,17 +14,13 @@ class Login extends React.Component {
     request.post('api/v1/users/login')
       .send({email, password})
       .end((err, response) => {
-        this.props.router.push(`users/${response.body.id}/profile`)
+        if (response.body.login){
+          this.props.router.push(`users/${response.body.id}/profile`)
+        } else  {
+          alert("Wrong password or username")
+        }
       })
   }
-
-  // componentDidMount () {  //lifecycle method
-  //   console.log('I am now in the DOM')
-  // }
-  //
-  // componentWillUnmount () {  //lifecycle method
-  //   console.log('I am about to be removed from the DOM')
-  // }
 
   render () {
     const { dispatch } = this.props
