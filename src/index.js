@@ -12,11 +12,11 @@ const initialState = require('../state')
 //Top Level Components
 const App = require('./components/app')
 
-const NewUser = require('./components/containers/newUserPage')
+const NewUser = require('./components/users/new')
 const NightOut = require('./components/containers/nightOutPage')
 const NewNightOut = require('./components/containers/newNightOut')
-const UserProfile = require('./components/userProfile')
-const UsersList = require('./components/usersList')
+const UsersProfile = require('./components/users/profile')
+const UsersIndex = require('./components/users/index')
 const Home = require('./components/home')
 
 const store = createStore(reducer, initialState)
@@ -31,10 +31,10 @@ const Root = ({store}) => {
 					<Route path = '/' component={App}>
 						<IndexRoute component={Home} />
 						<Route path = '/newUser' component={NewUser} />
-						<Route path='/users/:id/profile' component={UserProfile} />
+						<Route path='/users/:id/profile' component={UsersProfile} />
 						<Route path='/nightout' component={NightOut} />
 						<Route path='/newnightout' component={NewNightOut} />
-						<Route path='/userslist' component={UsersList} />
+						<Route path='/userslist' component={UsersIndex} />
 					</Route>
 
 				</Router>
