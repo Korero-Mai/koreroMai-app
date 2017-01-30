@@ -6,7 +6,7 @@ const NewLink = (props) => {
 
 	return (
 		<div>
-    <Link to="/newUser"> New User </Link>
+    <Link to="/user/new"> New User </Link>
 		</div>
 	)
 }

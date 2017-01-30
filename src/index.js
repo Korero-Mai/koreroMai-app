@@ -12,7 +12,7 @@ const initialState = require('../state')
 //Top Level Components
 const App = require('./components/app')
 
-const NewUser = require('./components/containers/newUserPage')
+const NewUser = require('./components/users/new')
 const NightOut = require('./components/containers/nightOutPage')
 const NewNightOut = require('./components/containers/newNightOut')
 const UsersProfile = require('./components/users/profile')

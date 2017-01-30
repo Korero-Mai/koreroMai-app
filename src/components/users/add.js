@@ -3,7 +3,7 @@ const { connect } = require('react-redux')
 const { Link } = require('react-router')
 const _ = require('lodash')
 const { RaisedButton } = require('material-ui')
-const NameForDisplay = require('./nameForDisplay')
+const NameForDisplay = require('../nameForDisplay')
 
 const AddUser = (props) => {
 
