@@ -6,7 +6,7 @@ const NewUser = require('./containers/newUserPage')
 const { RaisedButton } = require('material-ui')
 const Welcome = require('./welcome')
 const Login = require('./login')
-const UserProfile = require ('./userProfile')
+const UsersProfile = require ('./users/profile')
 
 
 const Home = (props) => {
@@ -22,7 +22,7 @@ const Home = (props) => {
   const loggedIn = (
     <div className="welcome">
       <Welcome />
-      <UserProfile />
+      <UsersProfile />
     </div>
   )
 

@@ -4,7 +4,7 @@ const { Link } = require('react-router')
 
 
 //components
-const NewUserLink = require('./NewUserLink')
+const NewLink = require('./newLink')
 
 const App = (props) => {
 

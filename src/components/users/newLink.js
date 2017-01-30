@@ -2,7 +2,7 @@ const React = require('react')
 const { connect } = require('react-redux')
 const { Link } = require('react-router')
 
-const NewUserLink = (props) => {
+const NewLink = (props) => {
 
 	return (
 		<div>
@@ -11,4 +11,4 @@ const NewUserLink = (props) => {
 	)
 }
 
-module.exports = connect((state) => state)(NewUserLink)
+module.exports = connect((state) => state)(NewLink)

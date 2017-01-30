@@ -5,7 +5,7 @@ const _ = require('lodash')
 const { RaisedButton } = require('material-ui')
 const NameForDisplay = require('./nameForDisplay')
 
-const AddAnotherUser = (props) => {
+const AddUser = (props) => {
 
   const { dispatch, showingAddUser } = props
 
@@ -35,7 +35,7 @@ const AddAnotherUser = (props) => {
     : hideAddUser
 }
 
-module.exports = connect((state) => state)(AddAnotherUser)
+module.exports = connect((state) => state)(AddUser)
 
 
 
