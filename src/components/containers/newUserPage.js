@@ -68,8 +68,8 @@ const NewUser = React.createClass({
         <form>
           <p>Name:</p><input type='text' ref='name' placeholder='User Name' />
           <p>Email:</p><input type='text' ref='email' placeholder='email' />
-          <p>Password:</p><input type='text' ref='password' placeholder='password' />
-          <p>Confirm Password:</p><input type='text' ref='confirmPassword' placeholder='Confirm password' /><br />
+          <p>Password:</p><input type='password' ref='password' placeholder='password' />
+          <p>Confirm Password:</p><input type='password' ref='confirmPassword' placeholder='Confirm password' /><br />
           <RaisedButton className='homePageButton' onClick={this.handleSubmit} >Create Account</RaisedButton>
         </form>
       </div>

@@ -34,13 +34,7 @@ const Login = React.createClass ({
 
 
   },
-  // componentDidMount () {  //lifecycle method
-  //   console.log('I am now in the DOM')
-  // }
-  //
-  // componentWillUnmount () {  //lifecycle method
-  //   console.log('I am about to be removed from the DOM')
-  // }
+
 
   render: function() {
     const { dispatch } = this.props
@@ -53,7 +47,7 @@ const Login = React.createClass ({
               Name:
               <input className='homePageButton' type='text' ref='loginName' placeholder='User Name' />
               Password:
-              <input className='homePageButton' type='text' ref='passwordEntry' placeholder='Password' />
+              <input className='homePageButton' type='password' ref='passwordEntry' placeholder='Password' />
           </div>
           <RaisedButton onClick={this.handleSubmit} >Login </RaisedButton>
           <AuthErr  {...this.props} />
