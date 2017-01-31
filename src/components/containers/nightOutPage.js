@@ -1,7 +1,7 @@
 const React = require('react')
 const { connect } = require('react-redux')
 const { link } = require('react-router')
-const AddAnotherUser = require('../addAnotherUser')
+const AddUser = require('../users/add')
 
 const WhosPaying = require('../whosPaying')
 
@@ -17,7 +17,7 @@ const NightOut = (props) => {
 			</div><br />
 			<WhosPaying {...props} /><br/><br/>
 			<div>
-				<AddAnotherUser />
+				<AddUser />
 			</div><br/>
 		</div>
 

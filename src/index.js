@@ -12,17 +12,19 @@ const initialState = require('../state')
 //Top Level Components
 const App = require('./components/app')
 
-const NewUser = require('./components/containers/newUserPage')
-const NightOut = require('./components/containers/nightOutPage')
-const NewNightOut = require('./components/containers/newNightOut')
-const UserProfile = require('./components/userProfile')
-const UsersList = require('./components/usersList')
+const NewUser = require('./components/users/new')
+const NightOutView = require('./components/nightsOut/view')
+const UsersIndex = require('./components/users/index')
+const NewNight = require('./components/nightsOut/new')
+const UserProfile = require('./components/users/profile')
 const Home = require('./components/home')
 
 const store = createStore(reducer, initialState)
+
 store.subscribe(()=> {
 	console.log('loggin state', store.getState());
 })
+
 const Root = ({store}) => {
 	return (
 		<MuiThemeProvider>
@@ -30,13 +32,12 @@ const Root = ({store}) => {
 				<Router history = {hashHistory}>
 					<Route path = '/' component={App}>
 						<IndexRoute component={Home} />
-						<Route path='/users' component={UsersList} />
-						<Route path = '/users/new' component={NewUser} />
-						<Route path='/users/:id/profile' component={UserProfile} />
-						<Route path='/night' component={NightOut} />
-						<Route path='/night/new' component={NewNightOut} />
-					</Route>
-
+							<Route path='/users' component={UsersIndex} />
+							<Route path = '/users/new' component={NewUser} />
+							<Route path='/users/:id/profile' component={UserProfile} />
+							<Route path='/nightsout/:id' component={NightOutView} />
+							<Route path='/nightsout/new' component={NewNight} />
+						</Route>
 				</Router>
 			</Provider>
 		</MuiThemeProvider>
@@ -54,6 +55,3 @@ document.addEventListener('DOMContentLoaded', () => {
 		store.dispatch({type:'UPDATE_USERS', payload: res.body})
 	})
 })
-
-// <Route path = 'new-user' component={NewUser} />
-// <NewUser/>
