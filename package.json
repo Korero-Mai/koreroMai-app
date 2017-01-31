@@ -38,6 +38,7 @@
     "debug": "^2.6.0",
     "deep-freeze": "0.0.1",
     "express": "^4.14.0",
+    "express-session": "^1.15.0",
     "history": "^4.5.1",
     "inject-lr-script": "^2.1.0",
     "knex": "^0.12.6",

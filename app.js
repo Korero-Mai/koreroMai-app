@@ -3,6 +3,7 @@ const path = require('path')
 const logger = require('morgan')
 const cookieParser = require('cookie-parser')
 const bodyParser = require('body-parser')
+const session = require('express-session')
 const api = require('./api')
 
 
@@ -13,6 +14,13 @@ module.exports = function (db) {
   app.use(bodyParser.json())
   app.use(bodyParser.urlencoded({ extended: false }))
   app.use(cookieParser())
+  app.set('trust proxy', 1) // trust first proxy
+  app.use(session({
+  secret: 'keyboard cat',
+  resave: false,
+  saveUninitialized: true,
+  cookie: { secure: false }
+  }))
 
   if (app.get('env') === 'development') {
     // bundle client/index.js

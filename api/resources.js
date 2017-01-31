@@ -52,7 +52,10 @@ module.exports = function(db) {
         if(users.length){
           bcrypt.compare(req.body.password, users[0].hash, (err, response) => {
             if(err) throw(err)
-            if(response === true){
+            if(response){
+              const { id, name } = users[0]
+              req.session.userId = id
+              req.session.userName = name
               res.json(users[0])
             }else{
               res.json(false)
@@ -63,14 +66,12 @@ module.exports = function(db) {
   }
 
   function confirmUniqueUserName(req, res, next){
-    console.log('req.body', req.body);
     db.findWhereNameIs('users', req.body.name)
       .then(users => {
         console.log('users and stuff', users);
         const isUserNameUnique = users.length
           ? true
           : false
-        console.log(isUserNameUnique);
         res.json(isUserNameUnique)
       })
   }
