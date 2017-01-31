@@ -1,9 +1,18 @@
 module.exports = {
-	userName: null,
+	admin: {
+		totalNights: [
+
+		]
+	},
+	userName: 'admin',
 	users: {
 	},
 	amountOwed: 4635,
 	amountOwing: 1050,
+	nights: [
+	],
+	users_nights: [
+	],
 	showingPastNights: false,
 	showingRegisterForm: false,
   showingAddUser: false,

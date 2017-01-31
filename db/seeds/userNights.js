@@ -8,6 +8,8 @@ exports.seed = function(knex, Promise) {
         knex('users_nights').insert({id: 1, user_id: 1, nights_id: 1, amount_paid: 20.00}),
         knex('users_nights').insert({id: 2, user_id: 2, nights_id: 1, amount_paid: 20.00}),
         knex('users_nights').insert({id: 3, user_id: 3, nights_id: 1, amount_paid: 20.00}),
+        knex('users_nights').insert({id: 4, user_id: 1, nights_id: 2, amount_paid: 20.00}),
+        knex('users_nights').insert({id: 5, user_id: 2, nights_id: 2, amount_paid: 20.00}),
       ]);
     });
 };

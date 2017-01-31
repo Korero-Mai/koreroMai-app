@@ -23,6 +23,14 @@ module.exports = function (state, action){
 			newState.users = _.zipObject(ids, action.payload)
 			break;
 
+		case 'UPDATE_NIGHTS':
+			newState.nights = action.payload
+			break;
+
+		case 'UPDATE_USERS_NIGHTS':
+			newState.users_nights = action.payload
+      break;
+
 		case 'UPDATE_USER':
 			newState.users[action.payload.id] = action.payload
 			break;
@@ -48,6 +56,11 @@ module.exports = function (state, action){
 			}
 
       break;
+
+		case 'UPDATE_STATE_ADMIN' :
+			console.log("action", action.payload)
+			newState.admin.totalNights = action.payload
+		break;
 
 		case 'USER_PAYING':
 			newState.currentNight.personPaying = newState.currentNight.personPaying === action.payload

@@ -6,9 +6,11 @@ const bcrypt = require('bcryptjs')
 module.exports = function(db) {
 
   route.get("/users", getUsers);
+  route.post("/users", postNewUser);
   route.get("/nights", getNights);
   route.get("/users_nights", getUsersNights);
   route.post("/", post);
+  route.get("/admin", getAdmin)
   route.post("/users", postNewUser);
   route.post('/users/login', login)
 
@@ -49,6 +51,13 @@ module.exports = function(db) {
     db.findAll('users_nights')
       .then((users_nights) => {
         res.json(users_nights)
+      })
+  }
+
+  function getAdmin(req, res, next) {
+    db.countNightsByUser()
+      .then((count) => {
+        res.json(count)
       })
   }
 
