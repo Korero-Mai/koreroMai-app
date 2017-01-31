@@ -4,7 +4,7 @@ const { link } = require('react-router')
 const _ = require('lodash')
 import {Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn} from 'material-ui/Table'
 
-const UsersList = (props) => {
+const UsersIndex = (props) => {
 
   const users = props.users
 
@@ -39,4 +39,4 @@ const UsersList = (props) => {
   )
 }
 
-module.exports = connect((state) => state)(UsersList)
+module.exports = connect((state) => state)(UsersIndex)

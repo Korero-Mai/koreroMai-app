@@ -14,7 +14,7 @@ const App = require('./components/app')
 
 const NewUser = require('./components/users/new')
 const NightOut = require('./components/containers/nightOutPage')
-const NewNightOut = require('./components/containers/newNightOut')
+const NewNightsOut = require('./components/nightsOut/new')
 const UsersProfile = require('./components/users/profile')
 const UsersIndex = require('./components/users/index')
 const Home = require('./components/home')
@@ -33,7 +33,7 @@ const Root = ({store}) => {
 						<Route path = '/newUser' component={NewUser} />
 						<Route path='/users/:id/profile' component={UsersProfile} />
 						<Route path='/nightout' component={NightOut} />
-						<Route path='/newnightout' component={NewNightOut} />
+						<Route path='/newnightout' component={NewNightsOut} />
 						<Route path='/userslist' component={UsersIndex} />
 					</Route>
 
