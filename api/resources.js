@@ -2,6 +2,7 @@ const bcrypt = require('bcryptjs')
 const express = require("express");
 const route = express.Router();
 
+
 module.exports = function(db) {
 
   route.get("/users", getUsers);
@@ -9,8 +10,9 @@ module.exports = function(db) {
   route.get("/users_nights", getUsersNights);
   route.post("/", post);
   route.post("/users", postNewUser);
-  route.post("/login", login);
-  route.post("/register", confirmUniqueUserName)
+  route.post("/users/register", confirmUniqueEmail)
+  route.post('/users/login', login)
+
 
   function getUsers(req, res, next) {
     db.findAll('users')
@@ -34,49 +36,55 @@ module.exports = function(db) {
   }
 
   function postNewUser(req, res, next){
-    const { name, password } = req.body.newUserData
-    bcrypt.genSalt(10, (err, salt) => {
-      bcrypt.hash(password, salt, (err, hash) => {
-        const formattedData = { name, hash }
-        db.addUser('users', formattedData)
-        .then((users)=>{
-          res.json(users)
-        })
+
+    const password = req.body.newUserData.password
+    bcrypt.genSalt(10, function (err, salt) {
+      bcrypt.hash(password, salt, function(err, hash) {
+        req.body.newUserData.password = hash
+        db.addUser('users',req.body.newUserData)
+          .then((user)=>{
+            res.json(user)
+          })
       })
     })
   }
 
-  function login(req, res, next){
-    db.findWhereNameIs('users', req.body.name)
-      .then(users => {
-        if(users.length){
-          bcrypt.compare(req.body.password, users[0].hash, (err, response) => {
-            if(err) throw(err)
-            if(response){
-              const { id, name } = users[0]
-              req.session.userId = id
-              req.session.userName = name
-              res.json(users[0])
-            }else{
-              res.json(false)
-            }
-          })
-        }
-      })
+  function login(req, res, next) {
+    const email = req.body.email
+    const entered_password = req.body.password
+    db.findUserByEmail(email)
+    .then(user => {
+      const { name, id, password } = user[0]
+      if (!user[0]) {
+        res.json({error: 'Invalid Email/password'})
+      } else {
+        bcrypt.compare(entered_password, password, function(err, response) {
+          if (response) {
+            req.session.userId = id
+            req.session.userName = name
+            res.json({id: id, login: true})
+          } else {
+            res.json({login: false, error: 'Invalid email/Password'})
+          }
+        });
+      }
+    })
   }
 
-  function confirmUniqueUserName(req, res, next){
-    db.findWhereNameIs('users', req.body.name)
+  function confirmUniqueEmail(req, res, next){
+    db.findUserByEmail(req.body.email)
       .then(users => {
-        console.log('users and stuff', users);
-        const isUserNameUnique = users.length
+        const isEmailUnique = users.length
           ? true
           : false
-        res.json(isUserNameUnique)
+        res.json(isEmailUnique)
       })
   }
 
-  function post(req, res, next) {}
+  function post (req, res, next) {}
+
+
+
 
   return route;
 };

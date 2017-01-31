@@ -1,25 +1,27 @@
-module.exports= function(knex) {
+module.exports = function (knex) {
 	return {
-
-		findAll: function(table) {
-			return knex(table).select()
+		findAll: function (table) {
+		return knex(table).select()
 		},
 
-
-		addUser: function(table, input) {
+		addUser: function (table, input) {
+			const formattedData = {
+				name: input.userName,
+				password: input.password,
+				email: input.email
+			}
 			return knex(table)
-			.insert(input)
-			.then(function(){
+			.insert(formattedData)
+			.then(function(ids) {
 				return knex(table)
-				.select()
-				.where({name: input.name})
+				.select('name', 'id')
+				.where ({id: ids[0]})
 			})
 		},
-
-		findWhereNameIs: function(table, input) {
-			return knex(table)
+		findUserByEmail: function (email) {
+			return knex('users')
 				.select()
-				.where({name: input})
+				.where('email', email)
 		}
 	}
 }

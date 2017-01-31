@@ -5,7 +5,6 @@ const _ = require('lodash')
 const { FlatButton } = require('material-ui')
 
 const AuthErr = (props) => {
-  console.log({props});
   const { authErr, dispatch } = props
 
   const isErr = (
