@@ -4,7 +4,7 @@ module.exports = {
 
 		]
 	},
-	userName: 'admin',
+	userName: null,
 	users: {
 	},
 	amountOwed: 4635,
