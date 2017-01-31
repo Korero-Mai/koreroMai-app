@@ -7,6 +7,7 @@
     "test": "tape test/**/*.tape.js | tap-diff",
     "knex": "knex",
     "test-ava": "ava test/**/*.ava.js --serial --verbose",
+    "postinstall":"webpack --config webpack.production.config.js --progress -p",
     "start": "node ./bin/www",
     "dev": "node-dev ./bin/www",
     "lint": "eslint . || true"
@@ -50,15 +51,16 @@
     "superagent": "^3.4.0",
     "superagent-as-promised": "^4.0.0",
     "webpack": "^1.14.0",
-    "webpack-dev-middleware": "^1.9.0"
-  },
-  "devDependencies": {
+    "webpack-dev-middleware": "^1.9.0",
     "babel-core": "^6.21.0",
     "babel-eslint": "^7.1.1",
     "babel-loader": "^6.2.10",
     "babel-plugin-transform-object-rest-spread": "^6.20.2",
     "babel-preset-es2015": "^6.22.0",
-    "babel-preset-react": "^6.22.0",
+    "babel-preset-react": "^6.22.0"
+  },
+  "devDependencies": {
+
     "eslint": "^3.14.1",
     "eslint-config-standard": "^6.2.1",
     "eslint-plugin-jsx-a11y": "^3.0.2",

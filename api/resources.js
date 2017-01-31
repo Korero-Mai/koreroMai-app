@@ -1,5 +1,7 @@
-const express = require("express");
-const route = express.Router();
+const express = require("express")
+const route = express.Router()
+const bcrypt = require('bcryptjs')
+
 
 module.exports = function(db) {
 
@@ -9,6 +11,27 @@ module.exports = function(db) {
   route.get("/users_nights", getUsersNights);
   route.post("/", post);
   route.get("/admin", getAdmin)
+  route.post("/users", postNewUser);
+  route.post('/users/login', login)
+
+  function login(req, res, next) {
+    const email = req.body.email
+    const entered_password = req.body.password
+    db.findUserByEmail(email)
+      .then(user => {
+        if (!user) {
+          res.json({error: 'user not found'})
+        } else {
+          bcrypt.compare(entered_password, user.password, function(err, response) {
+            if (response) {
+              res.json({id: user.id, login: true})
+            } else {
+              res.json({login: false})
+            }
+          });
+        }
+      })
+  }
 
   function getUsers(req, res, next) {
     db.findAll('users')
@@ -39,14 +62,24 @@ module.exports = function(db) {
   }
 
   function postNewUser(req, res, next){
-    db.addUser('users',req.body.newUserData)
-    .then((users)=>{
-      res.json(users)
+    const password = req.body.newUserData.password
+    bcrypt.genSalt(10, function (err, salt) {
+      bcrypt.hash(password, salt, function(err, hash) {
+        req.body.newUserData.password = hash
+        db.addUser('users',req.body.newUserData)
+          .then((user)=>{
+            console.log('user in resource.js', user);
+            res.json(user)
+          })
+      })
     })
 
   }
 
-  function post(req, res, next) {}
+  function post (req, res, next) {}
+
+
+
 
   return route;
 };

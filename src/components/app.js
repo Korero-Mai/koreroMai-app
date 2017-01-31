@@ -3,8 +3,9 @@ const { connect } = require('react-redux')
 const { Link } = require('react-router')
 const request = require('superagent')
 
-// components
-const NewUserLink = require('./NewUserLink')
+//components
+const NewLink = require('./users/newLink')
+
 const App = (props) => {
 	const location = props.location.pathname
 	const {userName, dispatch} = props

@@ -15,6 +15,7 @@ module.exports = {
 	],
 	showingPastNights: false,
 	showingRegisterForm: false,
+  showingAddUser: false,
 	pastNights: [
 		{
 			nightId: 641,
@@ -29,12 +30,10 @@ module.exports = {
 	],
 	currentNight: {
 		users: {
-			1: {id:1, name: 'Lucas', paying: false},
-			2: {id:2, name: 'Meghan', paying: false},
-			3: {id:3, name: 'Alice', paying: false}
 		},
 		personPaying: null,
 		total: 4655
 	},
+
 
 }
