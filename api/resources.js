@@ -57,7 +57,7 @@ module.exports = function(db) {
       })
   }
 
-  function postNewUser(req, res, next){
+  function userNew(req, res, next){
     const password = req.body.newUserData.password
     bcrypt.genSalt(10, function (err, salt) {
       bcrypt.hash(password, salt, function(err, hash) {

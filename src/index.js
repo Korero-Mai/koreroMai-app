@@ -36,8 +36,8 @@ const Root = ({store}) => {
 							<Route path='/users' component={UsersIndex} />
 							<Route path = '/users/new' component={NewUser} />
 							<Route path='/users/:id/profile' component={UserProfile} />
-							<Route path='/nightsout/:id' component={NightOutView} />
 							<Route path='/nightsout/new' component={NewNight} />
+							<Route path='/nightsout/:id' component={NightOutView} />
 						</Route>
 				</Router>
 			</Provider>

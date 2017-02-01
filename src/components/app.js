@@ -14,6 +14,7 @@ const App = (props) => {
 	// 	return request('/api/v1/users', (err, res) => {
 	// 		dispatch({type:'UPDATE_NIGHTS', payload: res.body})
 	// }
+	const nightsOutId = 5 //
 
 	return (
 		<div>
@@ -25,8 +26,8 @@ const App = (props) => {
 				<nav>
 					<ul className="navList">
 						<li className="navListItem"><Link to="/">Home</Link></li>
-						<li className="navListItem"><Link to="/nightout">Current Night Out</Link></li>
-						<li className="navListItem"><Link to="/newnightout">New Night Out</Link></li>
+						<li className="navListItem"><Link to={`/nightsOut/${nightsOutId}`}>Current Night Out</Link></li>
+						<li className="navListItem"><Link to="/nightsOut/new">New Night Out</Link></li>
 						<li id='logout' className="navListItem" onClick={() => props.dispatch({type:'LOGOUT'})}>Log Out</li>
 					</ul>
 				</nav>
