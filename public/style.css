@@ -1,5 +1,6 @@
 body {
   background-color: white;
+  font-family: 'Raleway', sans-serif;
 }
 
 h1 {
@@ -53,7 +54,10 @@ img {
 
 .navListItem {
   display: inline-block;
-  width: 19%
+
+  cursor: pointer;
+  width: 24.35%
+
 }
 #logout {
   color: white;
@@ -86,4 +90,9 @@ img {
 
 .userList {
   padding: 50px;
+}
+
+.authErr {
+  color: red;
+  padding: 1vh;
 }

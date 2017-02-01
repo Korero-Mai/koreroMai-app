@@ -1,9 +1,11 @@
-const express = require('express')
-const route = express.Router()
+
 const bcrypt = require('bcryptjs')
+const express = require("express");
+const route = express.Router();
 
 
 module.exports = function(db) {
+
 
   route.get('/users', users); //gets all the users
   route.get('/users/:id/profile', userProfile) //display a specific user
@@ -12,25 +14,10 @@ module.exports = function(db) {
   route.post('/', post);   //what does this do?
   route.post('/users/new', userNew);   //post a new user
   route.post('/users/login', login) //login a user
+  route.get("/admin", getAdmin)
+  route.post("/users/register", confirmUniqueEmail)
 
-  function login(req, res, next) {
-    const email = req.body.email
-    const entered_password = req.body.password
-    db.findUserByEmail(email)
-      .then(user => {
-        if (!user) {
-          res.json({error: 'user not found'})
-        } else {
-          bcrypt.compare(entered_password, user.password, function(err, response) {
-            if (response) {
-              res.json({id: user.id, login: true})
-            } else {
-              res.json({login: false})
-            }
-          });
-        }
-      })
-  }
+
 
   function users(req, res, next) {
     db.findAll('users')
@@ -62,19 +49,57 @@ module.exports = function(db) {
       })
   }
 
-  function userNew(req, res, next){
+
+  function getAdmin(req, res, next) {
+    db.countNightsByUser()
+      .then((count) => {
+        res.json(count)
+      })
+  }
+
+  function postNewUser(req, res, next){
     const password = req.body.newUserData.password
     bcrypt.genSalt(10, function (err, salt) {
       bcrypt.hash(password, salt, function(err, hash) {
         req.body.newUserData.password = hash
         db.addUser('users',req.body.newUserData)
           .then((user)=>{
-            console.log('user in resource.js', user);
             res.json(user)
           })
       })
     })
+  }
 
+  function login(req, res, next) {
+    const email = req.body.email
+    const entered_password = req.body.password
+    db.findUserByEmail(email)
+    .then(user => {
+      const { name, id, password } = user[0]
+      if (!user[0]) {
+        res.json({error: 'Invalid Email/password'})
+      } else {
+        bcrypt.compare(entered_password, password, function(err, response) {
+          if (response) {
+            req.session.userId = id
+            req.session.userName = name
+            res.json({id: id, login: true})
+          } else {
+            res.json({login: false, error: 'Invalid email/Password'})
+          }
+        });
+      }
+    })
+  }
+
+  function confirmUniqueEmail(req, res, next){
+    db.findUserByEmail(req.body.email)
+      .then(users => {
+        const isEmailUnique = users.length
+          ? true
+          : false
+        res.json(isEmailUnique)
+      })
   }
 
   function post (req, res, next) {}

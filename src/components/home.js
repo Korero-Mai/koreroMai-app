@@ -1,35 +1,13 @@
 const React = require('react')
 const { connect } = require('react-redux')
-const { Link } = require('react-router')
-const _ = require('lodash')
-const NewUser = require('./users/new')
-const { RaisedButton } = require('material-ui')
-const Welcome = require('./welcome')
-const Login = require('./login')
-const UsersProfile = require ('./users/profile')
 
+const NotLoggedIn = require('./NotLoggedIn')
+const LoggedIn = require('./LoggedIn')
 
-const Home = (props) => {
-  const notLoggedIn = (
-    <div className="welcome">
-      <Welcome />
-        <Login router={props.router} />
-        <div className='homePageButton'>
-          <NewUser {...props} />
-        </div>
-    </div>
-  )
-  const loggedIn = (
-    <div className="welcome">
-      <Welcome />
-      <UsersProfile />
-    </div>
-  )
-
+function Home(props) {
   return props.userName
-    ?loggedIn
-    :notLoggedIn
-
+    ?<LoggedIn />
+    :<NotLoggedIn {...props} router={props.router}/>
 }
 
 module.exports = connect((state) => state)(Home)

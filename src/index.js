@@ -1,7 +1,7 @@
 const React = require('react')
 const ReactDOM = require('react-dom')
 const { Provider } = require('react-redux')
-const { createStore } = require('redux')
+const { createStore, applyMiddleware, compose } = require('redux')
 const createHistory = require('history').createHashHistory
 const { Router, Route, IndexRoute, hashHistory } = require('react-router')
 const { MuiThemeProvider } = require('material-ui/styles')
@@ -19,7 +19,8 @@ const NewNight = require('./components/nightsOut/new')
 const UserProfile = require('./components/users/profile')
 const Home = require('./components/home')
 
-const store = createStore(reducer, initialState)
+
+const store = createStore(reducer, initialState, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 
 store.subscribe(()=> {
 	console.log('loggin state', store.getState());
@@ -47,10 +48,12 @@ const Root = ({store}) => {
 document.addEventListener('DOMContentLoaded', () => {
 	console.log('DOMContentLoaded');
 	const root = document.querySelector('#app')
+
 	ReactDOM.render(
 		<Root store={store}/>,
 		root
 	)
+
 	request('/api/v1/users', (err, res) => {
 		store.dispatch({type:'UPDATE_USERS', payload: res.body})
 	})

@@ -1,12 +1,22 @@
 module.exports = {
+	admin: {
+		totalNights: [
+
+		]
+	},
 	userName: null,
 	users: {
 	},
 	amountOwed: 4635,
 	amountOwing: 1050,
+	nights: [
+	],
+	users_nights: [
+	],
 	showingPastNights: false,
 	showingRegisterForm: false,
   showingAddUser: false,
+	authErr: null,
 	pastNights: [
 		{
 			nightId: 641,

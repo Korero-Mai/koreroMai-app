@@ -1,7 +1,6 @@
 const clone = require('clone')
 const _ = require('lodash')
 module.exports = function (state, action){
-	console.log('action', action);
 	const newState = clone(state)
 
 	switch (action.type) {
@@ -12,6 +11,7 @@ module.exports = function (state, action){
 
 		case 'DISPLAY_REGISTER_FORM':
 			newState.showingRegisterForm = true
+			newState.authErr = null
 			break;
 
     case 'DISPLAY_ADD_USER':
@@ -23,6 +23,14 @@ module.exports = function (state, action){
 			newState.users = _.zipObject(ids, action.payload)
 			break;
 
+		case 'UPDATE_NIGHTS':
+			newState.nights = action.payload
+			break;
+
+		case 'UPDATE_USERS_NIGHTS':
+			newState.users_nights = action.payload
+      break;
+
 		case 'UPDATE_USER':
 			newState.users[action.payload.id] = action.payload
 			break;
@@ -33,6 +41,11 @@ module.exports = function (state, action){
 
 		case "LOGIN":
 			newState.userName = action.payload
+			newState.authErr = null
+			break;
+
+		case 'AUTH_ERR':
+			newState.authErr = action.payload
 			break;
 
 
@@ -48,6 +61,11 @@ module.exports = function (state, action){
 			}
 
       break;
+
+		case 'UPDATE_STATE_ADMIN' :
+			console.log("action", action.payload)
+			newState.admin.totalNights = action.payload
+		break;
 
 		case 'USER_PAYING':
 			newState.currentNight.personPaying = newState.currentNight.personPaying === action.payload

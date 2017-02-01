@@ -1,4 +1,6 @@
+
 module.exports = function (knex) {
+
 	return {
 		findAll: function (table) {
 		return knex(table).select()
@@ -13,16 +15,27 @@ module.exports = function (knex) {
 			return knex(table)
 			.insert(formattedData)
 			.then(function(ids) {
-				console.log('id', ids);
 				return knex(table)
 				.select('name', 'id')
 				.where ({id: ids[0]})
 			})
 		},
+
+		countNightsByUser: function() {
+			return knex('users_nights')
+				.count('nights_id as totalNights')
+				.select('user_id')
+				.groupBy('user_id')
+				.then((count) => {
+					console.log(count)
+					return count
+				})
+      },
+
 		findUserByEmail: function (email) {
-			return knex('users').select()
+			return knex('users')
+				.select()
 				.where('email', email)
-				.then(users => users[0])
 		}
 	}
 }

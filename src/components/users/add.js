@@ -1,44 +1,17 @@
 const React = require('react')
 const { connect } = require('react-redux')
-const { Link } = require('react-router')
-const _ = require('lodash')
-const { RaisedButton } = require('material-ui')
-const NameForDisplay = require('../nameForDisplay')
 
-const AddUser = (props) => {
-
+function AddUser(props) {
   const { dispatch, showingAddUser } = props
-
-    const showAddUser = (
-    <div>
-      <RaisedButton onClick={()=> dispatch({type:'DISPLAY_ADD_USER'})}>
-        - Add another person
-      </RaisedButton>
-
-      <h3>Add another person to your night</h3>
-
-
-      <NameForDisplay /><br/><br/>
-      <button>submit</button>
-
-    </div>
-  )
-
-  const hideAddUser = (
-    <div>
-      <RaisedButton onClick={()=> dispatch({type:'DISPLAY_ADD_USER'})}> + Add another person</RaisedButton>
-    </div>
-  )
+  const HideAddUser = require ('./HideAddUser')
+  const ShowAddUser = require ('./ShowAddUser')
 
   return props.showingAddUser
-    ? showAddUser
-    : hideAddUser
+    ? <ShowAddUser dispatch={dispatch}/>
+    : <HideAddUser dispatch={dispatch}/>
 }
 
 module.exports = connect((state) => state)(AddUser)
-
-
-
 
 // {
 //   namesForDisplay.map((name) => {
