@@ -12,8 +12,7 @@ class NewNightOut extends React.Component {
       user.color = currentNight.users.hasOwnProperty(user.id)
         ?'pink'
         :'white'
-
-    return user
+      return user
     })
 
     return (
@@ -22,8 +21,10 @@ class NewNightOut extends React.Component {
         <h1>Add people to your group</h1>
         {
           namesForDisplay.map((name) => {
-            return <FlatButton style={{backgroundColor: name.color, margin:'10px', width: '20%'}} onClick={()=> dispatch({type:'ADDS_PERSON_TO_CURRENT_NIGHT', payload: name.id})}>
-              {name.name}
+            return <FlatButton
+              style={{backgroundColor: name.color, margin:'10px', width: '20%'}}
+              onClick={()=> dispatch({type:'ADDS_PERSON_TO_CURRENT_NIGHT', payload: name.id})}>
+                {name.name}
             </FlatButton>
 
           })
@@ -35,4 +36,5 @@ class NewNightOut extends React.Component {
     )
   }
 }
+
 module.exports =  connect((state) => state)(NewNightOut)

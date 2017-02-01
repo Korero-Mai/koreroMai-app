@@ -54,8 +54,10 @@ img {
 
 .navListItem {
   display: inline-block;
-  width: 19.5%;
+
   cursor: pointer;
+  width: 24.35%
+
 }
 #logout {
   color: white;
