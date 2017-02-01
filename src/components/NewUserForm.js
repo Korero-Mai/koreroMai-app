@@ -9,13 +9,16 @@ module.exports = class NewUserForm extends React.Component {
       const userName = this.refs.userName.value
       const email = this.refs.email.value
       const password = this.refs.password.value
-      const confirmPassword = this.refs.password.value
+      const confirmPassword = this.refs.confirmPassword.value
       const newUserData = { userName, password, email, confirmPassword }
 
       function isEmailInvalid(email){
         const arr = email.split('@');
         if(arr.length === 2 && arr[1] !== ('')){
-          return false
+          const arr2 = arr[1].split('.')
+          if (arr2.length > 1){
+            return false
+          }
         }
         return true
       }
