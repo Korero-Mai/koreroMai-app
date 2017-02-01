@@ -4,7 +4,7 @@ const { Link } = require('react-router')
 const { FlatButton } = require('material-ui')
 
 
-const WhosPaying = (props) => {
+const Paying = (props) => {
   const { currentNight, dispatch } = props
   const { users } = currentNight
   const usersForDisplay = Object.keys(users).map(userKey => {
@@ -22,4 +22,4 @@ const WhosPaying = (props) => {
 }
 
 
-module.exports = WhosPaying
+module.exports = Paying

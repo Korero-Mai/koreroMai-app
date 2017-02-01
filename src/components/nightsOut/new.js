@@ -5,7 +5,7 @@ const moment = require('moment')
 const _ = require('lodash')
 const { FlatButton } = require('material-ui')
 
-class NewNightOut extends React.Component {
+class NewNightsOut extends React.Component {
   render() {
     const  { users, dispatch, currentNight } = this.props
     const namesForDisplay = _.map(users, (user) => {
@@ -35,4 +35,4 @@ class NewNightOut extends React.Component {
     )
   }
 }
-module.exports =  connect((state) => state)(NewNightOut)
+module.exports =  connect((state) => state)(NewNightsOut)

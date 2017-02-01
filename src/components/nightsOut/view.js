@@ -3,7 +3,7 @@ const { connect } = require('react-redux')
 const { link } = require('react-router')
 const AddUser = require('../users/add')
 
-const WhosPaying = require('../whosPaying')
+const Paying = require('../users/paying')
 
 const NightOut = (props) => {
 	const { currentNight } = props
@@ -15,7 +15,7 @@ const NightOut = (props) => {
 			<div>
 				TOTAL FOR NIGHT: ${total/100}
 			</div><br />
-			<WhosPaying {...props} /><br/><br/>
+			<Paying {...props} /><br/><br/>
 			<div>
 				<AddUser />
 			</div><br/>
