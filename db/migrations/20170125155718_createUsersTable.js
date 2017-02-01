@@ -5,6 +5,7 @@ exports.up = function(knex, Promise) {
     t.string('name');
     t.string('email');
     t.string('password');
+
   })
 };
 

@@ -15,7 +15,6 @@ module.exports = function (knex) {
 			return knex(table)
 			.insert(formattedData)
 			.then(function(ids) {
-				console.log('id', ids);
 				return knex(table)
 				.select('name', 'id')
 				.where ({id: ids[0]})
@@ -34,10 +33,9 @@ module.exports = function (knex) {
       },
 
 		findUserByEmail: function (email) {
-			return knex('users').select()
+			return knex('users')
+				.select()
 				.where('email', email)
-				.then(users => users[0])
-
 		}
 	}
 }

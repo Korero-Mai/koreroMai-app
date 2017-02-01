@@ -9,7 +9,7 @@ const UserProfile = (props) => {
   const { amountOwed, amountOwing, dispatch, routeParams, users } = props
   const userName = users[routeParams.id].name
   return (
-    <div>
+    <div className='welcome'>
       <h1>
         {userName + "'s"} profile
       </h1>

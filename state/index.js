@@ -16,6 +16,7 @@ module.exports = {
 	showingPastNights: false,
 	showingRegisterForm: false,
   showingAddUser: false,
+	authErr: null,
 	pastNights: [
 		{
 			nightId: 641,

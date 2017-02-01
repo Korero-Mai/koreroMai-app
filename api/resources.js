@@ -1,6 +1,6 @@
-const express = require("express")
-const route = express.Router()
 const bcrypt = require('bcryptjs')
+const express = require("express");
+const route = express.Router();
 
 
 module.exports = function(db) {
@@ -12,26 +12,9 @@ module.exports = function(db) {
   route.post("/", post);
   route.get("/admin", getAdmin)
   route.post("/users", postNewUser);
+  route.post("/users/register", confirmUniqueEmail)
   route.post('/users/login', login)
 
-  function login(req, res, next) {
-    const email = req.body.email
-    const entered_password = req.body.password
-    db.findUserByEmail(email)
-      .then(user => {
-        if (!user) {
-          res.json({error: 'user not found'})
-        } else {
-          bcrypt.compare(entered_password, user.password, function(err, response) {
-            if (response) {
-              res.json({id: user.id, login: true})
-            } else {
-              res.json({login: false})
-            }
-          });
-        }
-      })
-  }
 
   function getUsers(req, res, next) {
     db.findAll('users')
@@ -62,18 +45,49 @@ module.exports = function(db) {
   }
 
   function postNewUser(req, res, next){
+
     const password = req.body.newUserData.password
     bcrypt.genSalt(10, function (err, salt) {
       bcrypt.hash(password, salt, function(err, hash) {
         req.body.newUserData.password = hash
         db.addUser('users',req.body.newUserData)
           .then((user)=>{
-            console.log('user in resource.js', user);
             res.json(user)
           })
       })
     })
+  }
 
+  function login(req, res, next) {
+    const email = req.body.email
+    const entered_password = req.body.password
+    db.findUserByEmail(email)
+    .then(user => {
+      const { name, id, password } = user[0]
+      if (!user[0]) {
+        res.json({error: 'Invalid Email/password'})
+      } else {
+        bcrypt.compare(entered_password, password, function(err, response) {
+          if (response) {
+            req.session.userId = id
+            req.session.userName = name
+            res.json({id: id, login: true})
+          } else {
+            res.json({login: false, error: 'Invalid email/Password'})
+          }
+        });
+      }
+    })
+  }
+
+  function confirmUniqueEmail(req, res, next){
+    db.findUserByEmail(req.body.email)
+      .then(users => {
+        const isEmailUnique = users.length
+          ? true
+          : false
+        res.json(isEmailUnique)
+      })
   }
 
   function post (req, res, next) {}
