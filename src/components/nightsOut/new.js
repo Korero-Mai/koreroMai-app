@@ -5,7 +5,7 @@ const moment = require('moment')
 const _ = require('lodash')
 const { FlatButton } = require('material-ui')
 
-class NewNightOut extends React.Component {
+class NewNight extends React.Component {
   render() {
     const  { users, dispatch, currentNight } = this.props
     const namesForDisplay = _.map(users, (user) => {
@@ -29,12 +29,12 @@ class NewNightOut extends React.Component {
 
           })
         }
-        <Link to='nightout'>
+        <Link to='nightsout'>
           <button>submit</button>
         </Link>
       </div>
-    )
+    )  // TODO - fix this to redirect you to nightsout/5?
   }
 }
 
-module.exports =  connect((state) => state)(NewNightOut)
+module.exports =  connect((state) => state)(NewNight)

@@ -1,3 +1,4 @@
+
 const bcrypt = require('bcryptjs')
 const express = require("express");
 const route = express.Router();
@@ -5,37 +6,49 @@ const route = express.Router();
 
 module.exports = function(db) {
 
-  route.get("/users", getUsers);
-  route.post("/users", postNewUser);
-  route.get("/nights", getNights);
-  route.get("/users_nights", getUsersNights);
-  route.post("/", post);
+
+  route.get('/users', users); //gets all the users
+  route.get('/users/:id/profile', userProfile) //display a specific user
+  route.get('/nights', nights); //display all of the nights info
+  route.get('/users/:id/nights', userNight); //get a users nights
+  route.post('/', post);   //what does this do?
+  route.post('/users/new', userNew);   //post a new user
+  route.post('/users/login', login) //login a user
   route.get("/admin", getAdmin)
-  route.post("/users", postNewUser);
   route.post("/users/register", confirmUniqueEmail)
-  route.post('/users/login', login)
 
 
-  function getUsers(req, res, next) {
+
+  function users(req, res, next) {
     db.findAll('users')
       .then((users) => {
         res.json(users)
       })
   }
 
-  function getNights(req, res, next) {
+  function userProfile(req, res, next) {
+    console.log('resources.js req', req.body.id);
+    db.findAll('users')
+      .where({id: user.id})
+      .then((users) => {
+        res.json(users)
+      })
+  }
+
+  function nights(req, res, next) {
     db.findAll('nights')
       .then((nights) => {
         res.json(nights)
       })
   }
 
-  function getUsersNights(req, res, next) {
+  function userNight(req, res, next) {
     db.findAll('users_nights')
       .then((users_nights) => {
         res.json(users_nights)
       })
   }
+
 
   function getAdmin(req, res, next) {
     db.countNightsByUser()
@@ -44,8 +57,7 @@ module.exports = function(db) {
       })
   }
 
-  function postNewUser(req, res, next){
-
+  function userNew(req, res, next){
     const password = req.body.newUserData.password
     bcrypt.genSalt(10, function (err, salt) {
       bcrypt.hash(password, salt, function(err, hash) {
