@@ -10,6 +10,7 @@ const initialState = require('../state')
 //Top Level Components
 const App = require('./components/app')
 const Home = require('./components/home')
+const Users = require('./components/users')
 
 const store = createStore(reducer, initialState, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 
@@ -23,6 +24,7 @@ const Root = ({store}) => {
 			<Router history = {hashHistory}>
 				<Route path = '/' component={App}>
 					<IndexRoute component={Home} />
+						<Route path = '/users' component={Users} />
 				</Route>
 			</Router>
 		</Provider>

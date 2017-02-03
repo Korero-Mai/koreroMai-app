@@ -3,7 +3,10 @@ const { connect } = require('react-redux')
 
 function Home(props) {
   return (
-    <div>Home</div>
+    <div>
+      <h1>Home</h1>
+      <p>Welcome!</p>
+    </div>
   )
 }
 
