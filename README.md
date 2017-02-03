@@ -11,4 +11,8 @@ This is my attempt for a barebone React/Redux/React-router setup. When I mean ba
 - A minimal API endpoints setup
 - A test folder with example tests for client, database and reducers. Switches between tape and ava, choose the one you like best
 
-And that's pretty much all. 
+And that's pretty much all.
+
+#Ideas to make it better? Glaring mistakes? Let's make it better!
+
+But let's keep it small.
