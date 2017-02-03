@@ -14,6 +14,8 @@ module.exports = function (db) {
   app.use(bodyParser.json())
   app.use(bodyParser.urlencoded({ extended: false }))
   app.use(cookieParser())
+
+  //session config
   app.set('trust proxy', 1) // trust first proxy
   app.use(session({
   secret: 'keyboard cat',
@@ -50,10 +52,7 @@ module.exports = function (db) {
   app.use('/', express.static(path.join(__dirname, 'public')))
 
   // routes
-
-
   app.use('/api/v1/', api.resources(db))
-
 
   // catch 404 and forward to error handler
   app.use(function(req, res, next) {
