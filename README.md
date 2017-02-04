@@ -5,7 +5,7 @@ This is my attempt for a barebone React/Redux/React-router setup. When I mean ba
 #What's in it
 
 - A minimal React setup
-- A minimal Redux setup
+- A minimal Redux setup, with a minimal combinedReducers() setup
 - A minimal react-router setup
 - A minimal Express server
 - A minimal database setup using knex
