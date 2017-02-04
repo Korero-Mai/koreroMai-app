@@ -1,4 +1,4 @@
-const online = (state = false, action) => {
+module.exports = function online(state = false, action) {
 
 	switch (action.type) {
 
@@ -9,5 +9,3 @@ const online = (state = false, action) => {
 			return state
 	}
 }
-
-export default online

@@ -15,7 +15,7 @@ const Users = require('./components/users')
 const store = createStore(reducer, initialState, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 
 store.subscribe(()=> {
-	console.log('loggin state', store.getState());
+	console.log('Index.js state log', store.getState());
 })
 
 const Root = ({store}) => {
