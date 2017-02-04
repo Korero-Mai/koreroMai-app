@@ -1,4 +1,4 @@
-const {combineReducers} = require('redux')
+import { combineReducers } from 'redux'
 import online from './online'
 
 export default combineReducers({
