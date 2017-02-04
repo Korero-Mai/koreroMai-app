@@ -1,5 +1,3 @@
 module.exports = {
-	online: {
-		status: false
-	}
+	online: false
 }

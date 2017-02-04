@@ -1,12 +1,13 @@
-module.exports = function online(state = {}, action){
+const online = (state = false, action) => {
 
 	switch (action.type) {
 
-		case 'TOOGLE_ONLINE':
- 			return {...state, !action.thing}
- 			break;
+		case 'TOGGLE_ONLINE':
+ 			return !state
 
 		default:
-			return newState
+			return state
 	}
 }
+
+export default online
