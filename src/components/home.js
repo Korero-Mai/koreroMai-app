@@ -6,6 +6,7 @@ function Home(props) {
     <div>
       <h1>Home</h1>
       <p>Welcome!</p>
+      <button onClick={() => props.dispatch({type: 'TOGGLE_ONLINE', online: false})}>Toggle online</button>
     </div>
   )
 }

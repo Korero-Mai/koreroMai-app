@@ -1,3 +1,3 @@
 module.exports = {
-	actionType: false
+	// online: false --> having an inital state is optional, as we define the default value in the reducers. I think.
 }

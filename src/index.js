@@ -4,7 +4,7 @@ const { Provider } = require('react-redux')
 const { createStore, applyMiddleware, compose } = require('redux')
 const createHistory = require('history').createHashHistory
 const { Router, Route, IndexRoute, hashHistory } = require('react-router')
-const reducer = require('./reducer')
+const reducer = require('./reducers')
 const initialState = require('../state')
 
 //Top Level Components
@@ -15,7 +15,7 @@ const Users = require('./components/users')
 const store = createStore(reducer, initialState, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 
 store.subscribe(()=> {
-	console.log('loggin state', store.getState());
+	console.log('Index.js state log', store.getState());
 })
 
 const Root = ({store}) => {
