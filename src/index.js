@@ -4,7 +4,7 @@ const { Provider } = require('react-redux')
 const { createStore, applyMiddleware, compose } = require('redux')
 const createHistory = require('history').createHashHistory
 const { Router, Route, IndexRoute, hashHistory } = require('react-router')
-const reducer = require('./reducer')
+const reducer = require('./reducers')
 const initialState = require('../state')
 
 //Top Level Components

@@ -1,3 +1,5 @@
 module.exports = {
-	actionType: false
+	online: {
+		status: false
+	}
 }
