@@ -6,8 +6,10 @@ module.exports = function(state = {}, action) {
 		case 'GET_STICK':
       return {...state, stick: true}
 
-		case 'RESET_INVENTORY':
-      return {...state}
+    case 'RESET_ADVENTURE':
+      return {
+        gold: 0
+      }
 
 		default:
 			return state

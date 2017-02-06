@@ -1,12 +1,12 @@
 const React = require('react')
 const { connect } = require('react-redux')
-const step1path1 = require('../components/step1path1')
+const Step1path1 = require('../components/step1path1')
 
 function Adventure(props) {
   return (
     <div>
       <h1>Adventure</h1>
-      <step1path1 />
+      <Step1path1 />
     </div>
   )
 }

@@ -3,6 +3,7 @@ const { connect } = require('react-redux')
 const { Link } = require('react-router')
 
 function Home(props) {
+  console.log(props);
   return (
     <div>
       <h1>Choose React</h1>
