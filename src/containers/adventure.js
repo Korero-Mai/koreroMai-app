@@ -1,13 +1,12 @@
 const React = require('react')
 const { connect } = require('react-redux')
+const step1path1 = require('../components/step1path1')
 
 function Adventure(props) {
   return (
     <div>
       <h1>Adventure</h1>
-      <p>You see a stick on the ground</p>
-      <button>Take it</button>
-      <button>Leave it</button>
+      <step1path1 />
     </div>
   )
 }
