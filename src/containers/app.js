@@ -7,8 +7,8 @@ const App = (props) => {
 		<div>
 			<div className="navBar">
 				<nav>
-						<Link to="/"><button>Home</button></Link>
-						<Link to="/adventure"><button>Adventure</button></Link>
+						<Link to="/"><button onClick={() => props.dispatch({type: 'RESET_STEP_AND_PATH', payload: [1, 1]})}>Home</button></Link>
+						<Link to="/adventure"><button onClick={() => props.dispatch({type: 'UPDATE_STEP_AND_PATH', payload: [1, 1]})}>Adventure</button></Link>
 				</nav>
 			</div>
 			<br />
