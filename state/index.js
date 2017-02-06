@@ -1,3 +1,11 @@
 module.exports = {
-	// online: false --> having an inital state is optional, as we define the default value in the reducers. I think.
+event: {
+  step: null, // vertical step
+  path: null //horizontal choices
+},
+inventory: {
+  gold: 0,
+  stick: false
+},
+score: null
 }

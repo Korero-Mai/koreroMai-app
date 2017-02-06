@@ -13,3 +13,17 @@ function Adventure(props) {
 }
 
 module.exports = connect((state) => state)(Adventure)
+
+//   const currentStep = switch ([event.step, event.path]) {
+//   case [1, 1] :
+//   return <step1path1 />
+//
+//
+//     break;
+//   default:
+//
+// }
+//
+// <step1path1 />
+// <step2path1 />
+// <step2path2 />
