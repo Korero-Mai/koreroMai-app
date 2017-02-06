@@ -1,6 +1,6 @@
 const { combineReducers } = require('redux')
-const online = require('./online')
+const situation = require('./situation')
 
 module.exports = combineReducers({
-  online
+  situation
 })

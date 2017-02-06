@@ -7,7 +7,7 @@ function Home(props) {
     <div>
       <h1>Choose React</h1>
       <p>Choose your own adventure! In React!</p>
-      <Link to="adventure"><button onClick={() => props.dispatch({type: 'SET_STEP_AND_PATH', payload: (1, 1)})}>Start!</button></Link>
+      <Link to="adventure"><button onClick={() => props.dispatch({type: 'UPDATE_STEP_AND_PATH', payload: [1, 1]})}>Start!</button></Link>
     </div>
   )
 }
