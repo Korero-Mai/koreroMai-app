@@ -15,7 +15,7 @@
 //
 //   const action = {
 //     type: 'UPDATE_USERS',
-//     payload: [
+//     situation: [
 //   {
 //     "id": 1,
 //     "name": "lilly"

@@ -1,20 +1,23 @@
-module.exports = function(state = {}, action) {
+module.exports = function(state = null, action) {
 
-	switch (action.type) {
+  switch (action.type) {
 
-		case 'UPDATE_STEP_AND_PATH':
-      return {...state, step: action.payload[0], path: action.payload[1]}
+    case 'UPDATE_SITUATION':
+      return action.situation
 
-		case 'RESET_STEP_AND_PATH':
-      return {...state, step: null, path: null}
+    case 'GET_STICK':
+      return action.situation
 
-		case 'RESET_ADVENTURE':
-      return {
-        step: null,
-        path: null
-      }
+    case 'SKIP_STICK':
+      return action.situation
 
-		default:
-			return state
-	}
+    case 'RESET_SITUATION':
+      return null
+
+    case 'RESET_ADVENTURE':
+      return null
+
+    default:
+      return state
+  }
 }

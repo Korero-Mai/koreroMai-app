@@ -12,3 +12,5 @@ function Adventure(props) {
 }
 
 module.exports = connect((state) => state)(Adventure)
+
+//logic in reducers : if 
