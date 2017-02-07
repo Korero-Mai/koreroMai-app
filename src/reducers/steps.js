@@ -2,7 +2,9 @@ const steps = {
     11: {
       text: "You see a stick on the ground",
       button1: "Take it",
-      button2: "Leave it"
+      button2: "Leave it",
+      button1Action: {type:'GET_STICK', situation: 21},
+      button2Action: {type:'SKIP_STICK', situation: 22}
     },
     21: {
       text: "An evil chicken bar your way",
