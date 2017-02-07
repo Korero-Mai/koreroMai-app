@@ -33,6 +33,8 @@ function Adventure(props) {
         <p>{text}</p>
         <button onClick={() => props.dispatch(button1Action)}>{button1}</button>
         <button onClick={() => props.dispatch(button2Action)}>{button2}</button>
+        <br />
+        <br />
         <div>
           Inventory :
           {inventoryBox}
