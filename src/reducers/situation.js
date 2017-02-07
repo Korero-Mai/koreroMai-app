@@ -1,23 +1,23 @@
 module.exports = function(state = null, action) {
 
-	switch (action.type) {
+  switch (action.type) {
 
-		case 'UPDATE_SITUATION':
+    case 'UPDATE_SITUATION':
       return action.situation
 
-    case 'GET_STICK' :
+    case 'GET_STICK':
       return action.situation
 
-    case 'SKIP_STICK' :
+    case 'SKIP_STICK':
       return action.situation
 
-		case 'RESET_SITUATION':
+    case 'RESET_SITUATION':
       return null
 
-		case 'RESET_ADVENTURE':
+    case 'RESET_ADVENTURE':
       return null
 
-		default:
-			return state
-	}
+    default:
+      return state
+  }
 }
