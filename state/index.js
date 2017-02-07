@@ -1,4 +1,3 @@
-import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { routerMiddleware, push } from 'react-router-redux'
 
 module.exports = {
