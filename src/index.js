@@ -6,13 +6,17 @@ const createHistory = require('history').createHashHistory
 const { Router, Route, IndexRoute, hashHistory } = require('react-router')
 const reducer = require('./reducers')
 const initialState = require('../state')
+import { routerMiddleware, push } from 'react-router-redux'
 
 //Top Level Components
 const App = require('./containers/app')
 const Home = require('./containers/home')
 const Adventure = require('./containers/adventure')
+const End = require('./containers/end')
 
-const store = createStore(reducer, initialState, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
+const middleware = routerMiddleware(hashHistory)
+
+const store = createStore(reducer, initialState, applyMiddleware(middleware))
 
 store.subscribe(()=> {
 	console.log('Index.js state log', store.getState());
@@ -25,6 +29,7 @@ const Root = ({store}) => {
 				<Route path = '/' component={App}>
 					<IndexRoute component={Home} />
 						<Route path = '/adventure' component={Adventure} />
+						<Route path = '/end' component={End} />
 				</Route>
 			</Router>
 		</Provider>

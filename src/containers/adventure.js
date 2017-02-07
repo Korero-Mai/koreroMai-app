@@ -16,5 +16,3 @@ function Adventure(props) {
 }
 
 module.exports = connect((state) => state)(Adventure)
-
-//
