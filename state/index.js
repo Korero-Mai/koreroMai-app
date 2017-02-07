@@ -3,6 +3,7 @@ import { routerMiddleware, push } from 'react-router-redux'
 module.exports = {
   situation: null,
   end: null,
+  score: 0,
   inventory: {
     gold: 0
   },

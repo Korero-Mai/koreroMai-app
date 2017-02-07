@@ -24,6 +24,12 @@ function Adventure(props) {
         <h1>Adventure</h1>
         <p>{endText}</p>
         <button onClick={() => props.dispatch(endButtonAction)}>{endButton}</button>
+        <br />
+        <br />
+        <div>
+          Inventory :
+          {inventoryBox}
+        </div>
       </div>
     )
   } else {
@@ -55,4 +61,3 @@ module.exports = connect((state) => state)(Adventure)
 //   }
 // })
 // }
-
