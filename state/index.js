@@ -1,8 +1,5 @@
 module.exports = {
-  situation: {
-    step: null, // vertical step
-    path: null //horizontal choices
-  },
+  situation: null,
   inventory: {
     gold: 0
   }
