@@ -3,6 +3,7 @@ const { connect } = require('react-redux')
 const Step1path1 = require('../components/step1path1')
 
 function Adventure(props) {
+  console.log(props.situation);
   return (
     <div>
       <h1>Adventure</h1>
@@ -13,16 +14,7 @@ function Adventure(props) {
 
 module.exports = connect((state) => state)(Adventure)
 
-//   const currentStep = switch ([event.step, event.path]) {
-//   case [1, 1] :
-//   return <step1path1 />
-//
-//
-//     break;
-//   default:
-//
-// }
-//
-// <step1path1 />
-// <step2path1 />
-// <step2path2 />
+
+// function getSituation(props)
+//if state.situation === 11
+//display state.steps.11.text + state.steps.11.button1 + state.steps.11.button2
