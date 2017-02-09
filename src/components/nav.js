@@ -1,9 +1,9 @@
 const React = require('react')
+const { connect } = require('react-redux')
 const {Link, IndexLink} = require('react-router')
-import Foundation from 'react-foundation'
 
 
-const Navigation = () => {
+function Nav(props) {
   return (
     <div className="top-bar">
       <div className="top-bar-left">
@@ -30,4 +30,4 @@ const Navigation = () => {
   )
 }
 
-module.exports = Navigation
+module.exports = connect((state) => state)(Nav)

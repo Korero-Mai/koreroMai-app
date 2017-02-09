@@ -10,9 +10,9 @@ import { routerMiddleware, push } from 'react-router-redux'
 require('./style/main.scss')
 
 //Top Level Components
-const App = require('./containers/app')
+const App = require('./app')
 const Home = require('./containers/home')
-const Activities = require('./containers/activities')
+const ActivityChoiceBox = require('./containers/activityChoiceBox')
 const middleware = routerMiddleware(hashHistory)
 
 const store = createStore(reducer, initialState, applyMiddleware(middleware))
@@ -28,7 +28,7 @@ const Root = ({store}) => {
 				<Route path = '/' component={App}>
 					<IndexRoute component={Home} />
 				 <Route path = '/home' component={Home} />
-         <Route path ='/activities' component={Activities} />
+         <Route path ='/activity' component={ActivityChoiceBox} />
 				</Route>
 			</Router>
 		</Provider>

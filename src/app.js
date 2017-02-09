@@ -1,18 +1,15 @@
 const React = require('react')
 const { connect } = require('react-redux')
 const { Link } = require('react-router')
+const Nav = require('./components/nav')
+const Footer = require('./components/footer')
 
 const App = (props) => {
   return (
     <div>
-      <div className="navBar">
-        <nav>
-          <Link to="/"><button onClick={() => props.dispatch({type: 'RESET_ADVENTURE'})}>Home</button></Link>
-        </nav>
-      </div>
-      <br />
-      <br />
+      <Nav />
       {props.children}
+     <Footer />
     </div>
   )
 }
