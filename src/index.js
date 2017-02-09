@@ -12,6 +12,7 @@ import { routerMiddleware, push } from 'react-router-redux'
 const App = require('./containers/app')
 const Home = require('./containers/home')
 
+
 const middleware = routerMiddleware(hashHistory)
 
 const store = createStore(reducer, initialState, applyMiddleware(middleware))
