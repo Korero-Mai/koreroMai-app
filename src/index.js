@@ -9,7 +9,7 @@ const initialState = require('../state')
 import { routerMiddleware, push } from 'react-router-redux'
 
 //Top Level Components
-const App = require('./containers/app')
+const App = require('./app')
 const Home = require('./containers/home')
 
 const middleware = routerMiddleware(hashHistory)
