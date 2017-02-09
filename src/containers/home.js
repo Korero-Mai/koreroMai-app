@@ -1,9 +1,10 @@
 const React = require('react')
 const { connect } = require('react-redux')
 const { Link } = require('react-router')
+
 function Home(props) {
   return (
-    <div>
+    <div className="homeDiv">
       <h1>Korero Mai!</h1>
       <h1>Home Page</h1>
       <p>Learn Te Reo!</p>
