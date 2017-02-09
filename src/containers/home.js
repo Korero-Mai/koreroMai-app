@@ -7,8 +7,9 @@ function Home(props) {
     <div>
       <Navbar />
       <h1>Korero Mai!</h1>
+      <h1>Home Page</h1>
       <p>Learn Te Reo!</p>
-      <Link to="adventure"><button onClick={() => props.dispatch({type: 'UPDATE_SITUATION', situation: 11})}>Start!</button></Link>
+      <Link to="activities"><button onClick={() => props.dispatch({type: 'UPDATE_SITUATION', situation: 11})}>Play</button></Link>
     </div>
   )
 }
