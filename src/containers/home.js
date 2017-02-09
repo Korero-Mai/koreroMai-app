@@ -9,7 +9,7 @@ function Home(props) {
       <h1>Korero Mai!</h1>
       <h1>Home Page</h1>
       <p>Learn Te Reo!</p>
-      <Link to="activities"><button onClick={() => props.dispatch({type: 'UPDATE_SITUATION', situation: 11})}>Play</button></Link>
+      <Link to="activities"><button className="button radius" onClick={() => props.dispatch({type: 'UPDATE_SITUATION', situation: 11})}>Play</button></Link>
     </div>
   )
 }

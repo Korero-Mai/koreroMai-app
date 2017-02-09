@@ -1,18 +1,21 @@
 const React = require('react')
 const {Link, IndexLink} = require('react-router')
-import Foundation from 'react-foundation'
+import {Button, Row, Column } from 'react-foundation'
 
 
 const Activities = () => {
   return (
-    <div>
+    <Row>
+      <Column>
       <h3>Learn</h3>
-      <Link to="activities"><button onClick={() => props.dispatch({type: 'UPDATE_SITUATION'})}>Sounds</button></Link><br />
-      <Link to="activities"><button onClick={() => props.dispatch({type: 'UPDATE_SITUATION'})}>Words</button></Link><br />
+      <Link to="activities"><button className="button radius" onClick={() => props.dispatch({type: 'UPDATE_SITUATION'})}>Sounds</button></Link><br />
+      <Link to="activities"><button className="button radius" onClick={() => props.dispatch({type: 'UPDATE_SITUATION'})}>Words</button></Link><br />
       <h3>Practice</h3>
-      <Link to="activities"><button onClick={() => props.dispatch({type: 'UPDATE_SITUATION'})}>Sounds</button></Link><br />
-      <Link to="activities"><button onClick={() => props.dispatch({type: 'UPDATE_SITUATION'})}>Words</button></Link><br />
-    </div>
+      <Link to="activities"><button className="button radius" onClick={() => props.dispatch({type: 'UPDATE_SITUATION'})}>Sounds</button></Link><br />
+      <Link to="activities"><button className="button radius" onClick={() => props.dispatch({type: 'UPDATE_SITUATION'})}>Words</button></Link><br />
+      </Column>
+    </Row>
+
   )
 }
 

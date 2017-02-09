@@ -7,7 +7,7 @@ const { Router, Route, IndexRoute, hashHistory } = require('react-router')
 const reducer = require('./reducers')
 const initialState = require('../state')
 import { routerMiddleware, push } from 'react-router-redux'
-
+require('./style/main.scss')
 
 //Top Level Components
 const App = require('./containers/app')
