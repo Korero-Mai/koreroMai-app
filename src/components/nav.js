@@ -15,7 +15,7 @@ function Nav(props) {
             <IndexLink to="/" activeClassName="active-link">Home</IndexLink>
           </li>
           <li>
-            <Link to="/users" activeClassName="active-link">Users</Link>
+            <Link to="/activity" activeClassName="active-link">Activities</Link>
           </li>
         </ul>
       </div>
