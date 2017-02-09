@@ -1,7 +1,7 @@
 {
-  "name": "Drink-Splitter",
+  "name": "KoreroMai",
   "version": "1.0.0",
-  "description": "Drink Splitter",
+  "description": "Learn Te Reo",
   "main": "index.js",
   "scripts": {
     "test": "tape test/**/*.tape.js | tap-diff --harmony",

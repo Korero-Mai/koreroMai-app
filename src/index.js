@@ -11,8 +11,6 @@ import { routerMiddleware, push } from 'react-router-redux'
 //Top Level Components
 const App = require('./containers/app')
 const Home = require('./containers/home')
-const Adventure = require('./containers/adventure')
-const End = require('./containers/end')
 
 const middleware = routerMiddleware(hashHistory)
 
@@ -28,8 +26,7 @@ const Root = ({store}) => {
 			<Router history = {hashHistory}>
 				<Route path = '/' component={App}>
 					<IndexRoute component={Home} />
-						<Route path = '/adventure' component={Adventure} />
-						<Route path = '/end' component={End} />
+						<Route path = '/home' component={Home} />
 				</Route>
 			</Router>
 		</Provider>
