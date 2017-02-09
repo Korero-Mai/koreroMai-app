@@ -8,6 +8,7 @@ const reducer = require('./reducers')
 const initialState = require('../state')
 import { routerMiddleware, push } from 'react-router-redux'
 
+
 //Top Level Components
 const App = require('./containers/app')
 const Home = require('./containers/home')
@@ -26,7 +27,7 @@ const Root = ({store}) => {
 			<Router history = {hashHistory}>
 				<Route path = '/' component={App}>
 					<IndexRoute component={Home} />
-						<Route path = '/home' component={Home} />
+				 <Route path = '/home' component={Home} />
 				</Route>
 			</Router>
 		</Provider>
