@@ -4,10 +4,11 @@ const { Link } = require('react-router')
 
 function Home(props) {
   return (
-    <div>
+    <div className="homeDiv">
       <h1>Korero Mai!</h1>
+      <h1>Home Page</h1>
       <p>Learn Te Reo!</p>
-      <Link to="adventure"><button onClick={() => props.dispatch({type: 'UPDATE_SITUATION', situation: 11})}>PLAY!</button></Link>
+      <Link to="activity"><button className="button radius" onClick={() => props.dispatch({type: 'UPDATE_SITUATION', situation: 11})}>PLAY!</button></Link>
     </div>
   )
 }

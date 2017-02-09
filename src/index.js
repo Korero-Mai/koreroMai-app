@@ -7,11 +7,12 @@ const { Router, Route, IndexRoute, hashHistory } = require('react-router')
 const reducer = require('./reducers')
 const initialState = require('../state')
 import { routerMiddleware, push } from 'react-router-redux'
+require('./style/main.scss')
 
 //Top Level Components
 const App = require('./app')
 const Home = require('./containers/home')
-
+const ActivityChoiceBox = require('./containers/activityChoiceBox')
 const middleware = routerMiddleware(hashHistory)
 
 const store = createStore(reducer, initialState, applyMiddleware(middleware))
@@ -26,7 +27,8 @@ const Root = ({store}) => {
 			<Router history = {hashHistory}>
 				<Route path = '/' component={App}>
 					<IndexRoute component={Home} />
-						<Route path = '/home' component={Home} />
+				 <Route path = '/home' component={Home} />
+         <Route path ='/activity' component={ActivityChoiceBox} />
 				</Route>
 			</Router>
 		</Provider>

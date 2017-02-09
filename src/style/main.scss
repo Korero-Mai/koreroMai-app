@@ -1,0 +1,19 @@
+@import "../../node_modules/foundation-sites/scss/foundation";
+
+//Foundations
+@include foundation-flex-grid;
+@include foundation-flex-classes;
+@include foundation-everything;
+
+//Variables
+@import './base/variables';
+
+//Components
+@import './components/home';
+@import './components/nav';
+
+body {
+  background: $light-grey;
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+}
