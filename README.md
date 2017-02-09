@@ -1,5 +1,4 @@
-#chooseReact
+#Korero Mai!
 
-A simple choose your own adventure game base on React and Redux.
+Teaching Te Reo to 5 and 6 year old.
 
-Built on top of this boilerplate : https://github.com/mathieu-anderson/bareboneReactReduxBoilerplate
