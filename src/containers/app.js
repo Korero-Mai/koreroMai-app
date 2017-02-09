@@ -7,7 +7,7 @@ const App = (props) => {
     <div>
       <div className="navBar">
         <nav>
-          <Link to="/"><button onClick={() => props.dispatch({type: 'RESET_ADVENTURE'})}>Home</button></Link>
+        <Link to="/"><button onClick={() => props.dispatch({type: 'RESET_ADVENTURE'})}>Home</button></Link>
         </nav>
       </div>
       <br />
