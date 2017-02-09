@@ -24,7 +24,6 @@ function disclaimer(){
   )
 }
 
-
 function contactInfo(){
   return (
     <p> For more information about this
