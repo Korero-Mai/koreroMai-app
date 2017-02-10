@@ -25,7 +25,7 @@ const Root = ({store}) => {
 	return (
 		<Provider store = {store}>
 			<Router history = {hashHistory}>
-				<Route path = '/' component={App}>
+				<Route path = '/' component={App} store={store}>
 					<IndexRoute component={Home} />
 				 <Route path = '/home' component={Home} />
          <Route path ='/activity' component={ActivityChoiceBox} />

@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 {"version":3,"file":"bundle.js","sources":["webpack:///bundle.js"],"mappings":"AAAA;;;;;AAySA;AA+3HA;;;;;;;;;;;;;;AAm1EA;AA4tIA;AAggHA;AAyiIA;AA6rHA;AAw2GA","sourceRoot":""}
+=======
+{"version":3,"file":"bundle.js","sources":["webpack:///bundle.js"],"mappings":"AAAA;;;;;AAySA;AA+3HA;;;;;;;;;;;;;;AAm1EA;AA4tIA;AA+/GA;AAqjIA;AA2qHA;AAknHA","sourceRoot":""}
+>>>>>>> 1826a40a3e65f2b5274172b0602ad8e9b1c2a39a

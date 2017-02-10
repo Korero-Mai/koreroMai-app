@@ -33,5 +33,7 @@ module.exports = {
      3:['ka','hi','te'],
      4:['ph','me','te'],
      5:['hi','me','ph']
-   }
+   },
+  activity : {
+  }
 }
