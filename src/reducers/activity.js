@@ -5,7 +5,10 @@ module.exports = function (state = {}, action) {
     case 'UPDATE_ACTIVITY':
       return {...state, [action.activity] : true}
 
+    case 'RESET_ACTIVITY':
+      return {}
+
     default:
-      return state 
+      return state
   }
 }
