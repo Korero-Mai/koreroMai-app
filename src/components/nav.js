@@ -4,6 +4,9 @@ const {Link, IndexLink} = require('react-router')
 
 
 function Nav(props) {
+  function handleClick (props) {
+
+  }
   return (
     <div className="top-bar">
       <div className="top-bar-left">
@@ -12,22 +15,23 @@ function Nav(props) {
             Korero Mai
           </li>
           <li>
-            <IndexLink to="/" activeClassName="active-link">Home</IndexLink>
+            <IndexLink to="/" activeClassName="active-link" onClick={() => {props.dispatch({type: 'RESET_ACTIVITY'})}}>Home</IndexLink>
           </li>
           <li>
-            <Link to="/activity" activeClassName="active-link">Activities</Link>
+            <Link to="/activity" activeClassName="active-link" onClick={() => {props.dispatch({type: 'RESET_ACTIVITY'})}}>Activities</Link>
           </li>
         </ul>
       </div>
       <div className="top-bar-right">
         <ul className="menu">
           <li className="menu-text">
-             <a href="#" target="_blank">Home</a>
+             <Link to="login-register"> Login / Register </Link>
           </li>
         </ul>
       </div>
     </div>
   )
 }
+
 
 module.exports = connect((state) => state)(Nav)
