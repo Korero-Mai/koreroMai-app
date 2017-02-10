@@ -30,6 +30,12 @@ module.exports = {
     ]
   },
 
+  sassLoader: {
+    includePaths: [
+      path.resolve(__dirname, './node_modules/foundation-sites/scss')
+    ]
+  },
+
   plugins: [
     new webpack.DefinePlugin({
       'process.env': {
