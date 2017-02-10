@@ -3,64 +3,64 @@ import { routerMiddleware, push } from 'react-router-redux'
 module.exports = {
  letters: {
    A:{
-     soundFile: '/sounds/A.mp3',
+     soundFile: '/sounds/a.mp3',
      imageFile: '/images/activity-images/aniwaniwa.png',
    },
    E:{
-     soundFile: 'hello',
-     imageFile: 'img',
+     soundFile: '/sounds/e.mp3',
+     imageFile: '/images/activity-images/ekara.png',
    },
    H:{
-     soundFile: 'mp3',
-     imageFile: 'img',
+     soundFile: '/sounds/h.mp3',
+     imageFile: '/images/activity-images/hoiho.png',
    },
    K:{
-     soundFile: 'mp3',
-     imageFile: 'img',
+     soundFile: '/sounds/k.mp3',
+     imageFile: '/images/activity-images/koura.png',
    },
    M:{
-     soundFile: 'mp3',
-     imageFile: 'img',
+     soundFile: '/sounds/m.mp3',
+     imageFile: '/images/activity-images/maunga.png',
    },
    N:{
-     soundFile: 'mp3',
-     imageFile: 'img',
+     soundFile: '/sounds/n.mp3',
+     imageFile: '/images/activity-images/nanikoti.png',
    },
    Ng:{
-     soundFile: 'mp3',
-     imageFile: 'img',
+     soundFile: '/sounds/e.mp3',
+     imageFile: '/images/activity-images/ngata.png',
    },
    O:{
-     soundFile: 'mp3',
-     imageFile: 'img',
+     soundFile: '/sounds/o.mp3',
+     imageFile: '/images/activity-images/oru.png',
    },
    P:{
-     soundFile: 'mp3',
-     imageFile: 'img',
+     soundFile: '/sounds/p.mp3',
+     imageFile: '/images/activity-images/purerehua.png',
    },
    R:{
-     soundFile: 'mp3',
-     imageFile: 'img',
+     soundFile: '/sounds/r.mp3',
+     imageFile: '/images/activity-images/ruru.png',
    },
    T:{
-     soundFile: 'mp3',
-     imageFile: 'img',
+     soundFile: '/sounds/t.mp3',
+     imageFile: '/images/activity-images/tamanuitera.png',
    },
    U:{
-     soundFile: 'mp3',
-     imageFile: 'img',
+     soundFile: '/sounds/u.mp3',
+     imageFile: '/images/activity-images/ua.png',
    },
    W:{
-     soundFile: 'mp3',
-     imageFile: 'img',
+     soundFile: '/sounds/w.mp3',
+     imageFile: '/images/activity-images/weta.png',
    },
    Wh:{
-     soundFile: 'mp3',
-     imageFile: 'img',
+     soundFile: '/sounds/wh.mp3',
+     imageFile: '/images/activity-images/whanau.png',
    },
    I:{
-     soundFile: 'mp3',
-     imageFile: 'img',
+     soundFile: '/sounds/i.mp3',
+     imageFile: '/images/activity-images/ika.png',
    },
  },
  learnSoundPage :{
