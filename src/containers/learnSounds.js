@@ -29,14 +29,14 @@ class LearnSounds extends React.Component {
     const lettersArr = this.props.learnSoundPage[this.props.params.id]
     const lettersObj = this.props.letters
 
-    console.log(this.props);
+    console.log('learnSounds this.props', this.props);
 
     return (
         <div className="playBox">
           {this.generateLetter(lettersArr, lettersObj, props)}
           <div>
             <button className="button radius">Back</button>
-            <button className="button radius">next</button>
+            <button className="button radius">Next</button>
           </div>
         </div>
     )
@@ -45,3 +45,5 @@ class LearnSounds extends React.Component {
 }
 
 module.exports = connect((state) => state)(LearnSounds)
+
+// `${lettersObj[letter].soundFile}`
