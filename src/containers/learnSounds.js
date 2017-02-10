@@ -14,8 +14,8 @@ class LearnSounds extends React.Component {
         return (
           <div>
             <audio ref="sound">
-              <source src={`${lettersObj[letter].soundFile}`} type="audio/mpeg" preload=''/>
             </audio>
+              <source src={} type="audio/mpeg" preload=''/>
             <img src={`${lettersObj[letter].imageFile}`}/>
             <button onClick={this.playSound.bind(this)} className='button radius'>
               {letter}
@@ -47,3 +47,5 @@ class LearnSounds extends React.Component {
 }
 
 module.exports = connect((state) => state)(LearnSounds)
+
+// `${lettersObj[letter].soundFile}`

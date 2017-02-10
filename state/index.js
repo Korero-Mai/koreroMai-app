@@ -2,37 +2,73 @@ import { routerMiddleware, push } from 'react-router-redux'
 
 module.exports = {
  letters: {
-   hi:{
-     soundFile: '/sounds/moana.mp3',
+   A:{
+     soundFile: '/sounds/A.mp3',
      imageFile: '/images/activity-images/aniwaniwa.png',
    },
-   te:{
+   E:{
      soundFile: 'hello',
      imageFile: 'img',
    },
-   ka:{
+   H:{
      soundFile: 'mp3',
      imageFile: 'img',
    },
-   me:{
+   K:{
      soundFile: 'mp3',
      imageFile: 'img',
    },
-   he:{
+   M:{
      soundFile: 'mp3',
      imageFile: 'img',
    },
-   ph:{
+   N:{
      soundFile: 'mp3',
      imageFile: 'img',
-   }
+   },
+   Ng:{
+     soundFile: 'mp3',
+     imageFile: 'img',
+   },
+   O:{
+     soundFile: 'mp3',
+     imageFile: 'img',
+   },
+   P:{
+     soundFile: 'mp3',
+     imageFile: 'img',
+   },
+   R:{
+     soundFile: 'mp3',
+     imageFile: 'img',
+   },
+   T:{
+     soundFile: 'mp3',
+     imageFile: 'img',
+   },
+   U:{
+     soundFile: 'mp3',
+     imageFile: 'img',
+   },
+   W:{
+     soundFile: 'mp3',
+     imageFile: 'img',
+   },
+   Wh:{
+     soundFile: 'mp3',
+     imageFile: 'img',
+   },
+   I:{
+     soundFile: 'mp3',
+     imageFile: 'img',
+   },
  },
  learnSoundPage :{
-     '1':['hi','te','ka'],
-     '2':['me','he','ph'],
-     '3':['ka','hi','te'],
-     '4':['ph','me','te'],
-     '5':['hi','me','ph']
+     '1':['A','E','H'],
+     '2':['K','M','N'],
+     '3':['Ng','O','P'],
+     '4':['R','T','U'],
+     '5':['W','Wh','I']
    },
   activity : {
   }
