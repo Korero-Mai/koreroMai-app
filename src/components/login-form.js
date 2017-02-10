@@ -1,4 +1,5 @@
 const React = require('react')
+const request = require('superagent')
 
 module.exports = class LoginForm extends React.Component {
   handleSubmit(e) {
@@ -7,7 +8,17 @@ module.exports = class LoginForm extends React.Component {
     const email = this.refs.email.value
     const password = this.refs.password.value
 
-    console.log("login info :", email, password);
+    request.post('/api/v1/login')
+      .send({email, password})
+      .end((err, res) => {
+        if(err) {
+          console.log(err);
+        } else {
+          // this.props.router.push(`/${res.body}/profile`)
+        }
+      })
+
+
   }
   render() {
     return (
@@ -17,7 +28,7 @@ module.exports = class LoginForm extends React.Component {
             <div className='row'>
               <div className='colums small-centered small-10 medium-6 large-4'>
                 <div>
-                  <form method='post' action='/'>
+                  <form method='post' action='/login'>
                     <input type='text' name='email' ref='email' placeholder='Email' />
                     <input type='password' name='password' ref='password' placeholder='Password' />
                     <button className='button expanded hollow' onClick={this.handleSubmit.bind(this)}>Login</button>
