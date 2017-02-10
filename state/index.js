@@ -7,11 +7,11 @@ module.exports = {
      imageFile: '/images/activity-images/aniwaniwa.png',
    },
    te:{
-     soundFile: 'hello',
-     imageFile: 'img',
+     soundFile: 'mp3',
+     imageFile: '/images/activity-images/taneMahuta.png',
    },
    ka:{
-     soundFile: 'mp3',
+     soundFile: 'mp3ka',
      imageFile: 'img',
    },
    me:{
