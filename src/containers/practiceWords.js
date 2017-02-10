@@ -4,7 +4,7 @@ const { connect } = require('react-redux')
 function PracticeWords(props) {
 
   return (
-
+    <p>component</p>
   )
 }
 

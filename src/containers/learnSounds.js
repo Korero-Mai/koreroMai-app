@@ -4,7 +4,7 @@ const { connect } = require('react-redux')
 function LearnSounds(props) {
 
   return (
-
+    <p>component</p>
   )
 }
 
