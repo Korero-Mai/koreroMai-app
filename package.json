@@ -74,6 +74,7 @@
     "eslint-plugin-react": "^6.9.0",
     "eslint-plugin-standard": "^2.0.1",
     "foundation-sites": "6.2.0",
+    "node-sass": "^4.5.0",
     "nodemon": "^1.11.0",
     "sass-loader": "^5.0.1",
     "style-loader": "^0.13.1",
