@@ -28,12 +28,13 @@ module.exports = {
    }
  },
  learnSoundPage :{
-     1:['hi','te','ka'],
-     2:['me','he','ph'],
-     3:['ka','hi','te'],
-     4:['ph','me','te'],
-     5:['hi','me','ph']
+     '1':['hi','te','ka'],
+     '2':['me','he','ph'],
+     '3':['ka','hi','te'],
+     '4':['ph','me','te'],
+     '5':['hi','me','ph']
    },
   activity : {
   }
+
 }
