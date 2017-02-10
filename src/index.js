@@ -13,6 +13,8 @@ require('./style/main.scss')
 const App = require('./app')
 const Home = require('./containers/home')
 const ActivityChoiceBox = require('./containers/activityChoiceBox')
+const AuthForm = require('./containers/auth-form')
+
 const middleware = routerMiddleware(hashHistory)
 
 const store = createStore(reducer, initialState, applyMiddleware(middleware))
@@ -29,6 +31,7 @@ const Root = ({store}) => {
 					<IndexRoute component={Home} />
 				 <Route path = '/home' component={Home} />
          <Route path ='/activity' component={ActivityChoiceBox} />
+         <Route path = '/login-register' component={AuthForm} />
 				</Route>
 			</Router>
 		</Provider>
