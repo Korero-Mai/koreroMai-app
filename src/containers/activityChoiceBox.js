@@ -1,6 +1,7 @@
 const React = require('react')
 const {Link, IndexLink} = require('react-router')
 const { connect } = require('react-redux')
+const LearnSounds = require('../components/learnSounds')
 
 function ActivityChoiceBox(props) {
   const activity = props.activity
@@ -32,7 +33,7 @@ function ActivityChoiceBox(props) {
     )
   } else if (activity.learnSounds){
     return (
-      <h1>learnSounds component</h1>
+      <LearnSounds/>
     )
   } else if (activity.learnWords){
     return (

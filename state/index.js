@@ -27,7 +27,7 @@ module.exports = {
      imageFile: 'img',
    }
  },
- soundPage :{
+ learnSoundPage :{
      1:['hi','te','ka'],
      2:['me','he','ph'],
      3:['ka','hi','te'],
