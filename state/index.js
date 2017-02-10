@@ -27,7 +27,7 @@ module.exports = {
      imageFile: '/images/activity-images/nanikoti.png',
    },
    Ng:{
-     soundFile: '/sounds/e.mp3',
+     soundFile: '/sounds/ng.mp3',
      imageFile: '/images/activity-images/ngata.png',
    },
    O:{
@@ -61,7 +61,7 @@ module.exports = {
    I:{
      soundFile: '/sounds/i.mp3',
      imageFile: '/images/activity-images/ika.png',
-   },
+   }
  },
  learnSoundPage :{
      '1':['A','E','H'],
