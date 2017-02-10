@@ -22,7 +22,7 @@ function Nav(props) {
       <div className="top-bar-right">
         <ul className="menu">
           <li className="menu-text">
-             <a href="#" target="_blank">Home</a>
+             <a href="/login-register"> Login / Register </a>
           </li>
         </ul>
       </div>
