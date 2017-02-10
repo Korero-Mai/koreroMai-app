@@ -4,20 +4,19 @@ const { connect } = require('react-redux')
 class LearnSounds extends React.Component {
 
   playSound() {
-    console.log(this.refs)
-    console.log(this.refs)
-    return this.refs.sound.play()
+    return this.refs[0].play()
   }
 
   generateLetter(lettersArr,lettersObj){
       return lettersArr.map((letter,index)=>{
         return (
           <div>
-            <audio ref="sound">
+            <p>{`${lettersObj[letter].soundFile}`}}</p>
+            <audio ref={`${index}`}>
+              <source src={`${lettersObj[letter].soundFile}`} preload=''/>
             </audio>
-              <source src={} type="audio/mpeg" preload=''/>
             <img src={`${lettersObj[letter].imageFile}`}/>
-            <button onClick={this.playSound.bind(this)} className='button radius'>
+            <button onClick={this.playSound.bind(this)} className={`button radius ${index}`}>
               {letter}
             </button>
           </div>
@@ -31,14 +30,14 @@ class LearnSounds extends React.Component {
     const lettersArr = this.props.learnSoundPage[this.props.params.id]
     const lettersObj = this.props.letters
 
-    console.log(this.props);
+    console.log('learnSounds this.props', this.props);
 
     return (
         <div className="playBox">
           {this.generateLetter(lettersArr, lettersObj, props)}
           <div>
             <button className="button radius">Back</button>
-            <button className="button radius">next</button>
+            <button className="button radius">Next</button>
           </div>
         </div>
     )
