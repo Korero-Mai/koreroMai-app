@@ -11,14 +11,13 @@ module.exports = class RegisterForm extends React.Component {
     const email = this.refs.email.value
     const password = this.refs.password.value
 
-    console.log("register info :", username, email, password);
-
     request.post('/api/v1/register')
       .send({email, password, username})
       .end((err, res) => {
         if(err){
           console.log(err)
         } else {
+          console.log('this is teh res:',res);
           return 0
         }
       })

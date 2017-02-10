@@ -30,12 +30,23 @@ module.exports = function(db) {
   }
 
   function loginUser(req, res, next) {
-    console.log('this is the req.body:',req.body.email);
     db.findUserByEmail('users', req.body.email)
     .then((dbData) => {
-      console.log('this is the dbData fucntion:', dbData);
-      if(!dbData) {
-        return ('This does not exist')
+      if(!dbData[0]) {
+        console.log('this is db[0]:', dbData[0]);
+        return res.json({login: false, error:'This does not exist'})
+      } else {
+          new Promise(function(resolve, reject){
+            bcrypt.compare(req.body.password, dbData[0].password, function(err, res) {
+              if (res) {
+                console.log('this is the res === true', res);
+                resolve ({login: true})
+              } else {
+                console.log('this is the res === false', res);
+                resolve ({login: false})
+              }
+            });
+          })
       }
     })
   }
