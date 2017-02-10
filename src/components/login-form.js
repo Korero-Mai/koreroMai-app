@@ -1,21 +1,13 @@
 const React = require('react')
-const {connect} = require('react-redux')
 
 module.exports = class LoginForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault()
 
-    const { dispatch } = this.props
+    const email = this.refs.email.value
+    const password = this.refs.password.value
 
-    const loginText = this.refs.loginText.value
-
-    if (todoText.length > 0) {
-      this.refs.loginText.value = ''
-      dispatch(actions.startAddTodo(todoText))
-
-    } else {
-      this.refs.todoText.focus()
-    }
+    console.log("login info :", email, password);
   }
   render() {
     return (
@@ -26,9 +18,9 @@ module.exports = class LoginForm extends React.Component {
               <div className='colums small-centered small-10 medium-6 large-4'>
                 <div>
                   <form method='post' action='/'>
-                    <input type='text' name='name' ref='nameLogin' placeholder='User Name' />
-                    <input type='password'name='password' ref='passwordLogin' placeholder='Password' />
-                    <button className='button expanded hollow'>Login</button>
+                    <input type='text' name='email' ref='email' placeholder='Email' />
+                    <input type='password' name='password' ref='password' placeholder='Password' />
+                    <button className='button expanded hollow' onClick={this.handleSubmit.bind(this)}>Login</button>
                   </form>
                 </div>
               </div>
@@ -38,3 +30,13 @@ module.exports = class LoginForm extends React.Component {
     )
   }
 }
+
+
+//
+// if (todoText.length > 0) {
+//   this.refs.loginText.value = ''
+//   dispatch( actions.startAddTodo(todoText))
+//
+// } else {
+//   this.refs.todoText.focus()
+// }

@@ -6,17 +6,11 @@ module.exports = class RegisterForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault()
 
-    const { dispatch } = this.props
+    const username = this.refs.username.value
+    const email = this.refs.email.value
+    const password = this.refs.password.value
 
-    const registerText = this.refs.registerText.value
-
-    if (todoText.length > 0) {
-      this.refs.loginText.value = ''
-      dispatch(actions.startAddTodo(todoText))
-
-    } else {
-      this.refs.registerText.focus()
-    }
+    console.log("register info :", username, email, password);
   }
   render() {
     return (
@@ -29,11 +23,11 @@ module.exports = class RegisterForm extends React.Component {
               <h3>Register</h3>
                 <div className="container__footer">
                  <form method='post' action='/'>
-                   <input type='text' ref='registerText' placeholder='User Name' />
-                   <input type='email' ref='email' placeholder='Email' />
-                   <input type='password' ref='password' placeholder='Password' />
-                   <input type='password' ref='confirmPassword' placeholder='Confirm password' />
-                   <button  className='button expanded hollow'>Create Account</button>
+                   <input type='text' name='username' ref='username' placeholder='User Name' />
+                   <input type='email' name='email' ref='email' placeholder='Email' />
+                   <input type='password' name='password' ref='password' placeholder='Password' />
+                   <input type='password' name='confirmPassword' ref='confirmPassword' placeholder='Confirm password' />
+                   <button  className='button expanded hollow' onClick={this.handleSubmit.bind(this)}>Create Account</button>
                 </form>
               </div>
             </div>
@@ -43,3 +37,11 @@ module.exports = class RegisterForm extends React.Component {
     )
   }
 }
+
+// if (todoText.length > 0) {
+//   this.refs.loginText.value = ''
+//   dispatch(actions.startAddTodo(todoText))
+//
+// } else {
+//   this.refs.registerText.focus()
+// }
