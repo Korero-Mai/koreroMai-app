@@ -1,5 +1,6 @@
 const React = require('react')
 const { connect } = require('react-redux')
+const RegisterForm = require('../components/register-form')
 
 function AuthForm(props) {
 
@@ -21,6 +22,7 @@ function AuthForm(props) {
           </div>
         </div>
       </div>
+      <RegisterForm />
     </div>
   )
 }
