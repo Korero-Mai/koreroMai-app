@@ -4,12 +4,15 @@ const { Link } = require('react-router')
 const Nav = require('./components/nav')
 const Footer = require('./components/footer')
 
+
 const App = (props) => {
+  console.log('app.js', props)
   return (
     <div>
       <Nav />
       {props.children}
      <Footer />
+
     </div>
   )
 }

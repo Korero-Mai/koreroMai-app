@@ -31,14 +31,14 @@ const Root = ({store}) => {
 	return (
 		<Provider store = {store}>
 			<Router history = {hashHistory}>
-				<Route path = '/' component={App}>
+				<Route path = '/' component={App} store={store}>
 					<IndexRoute component={Home} />
 				 <Route path = '/home' component={Home} />
          <Route path ='/activity' component={ActivityChoiceBox} />
-         <Route path ='/activity/learn/sounds' component={LearnSounds} />
-         <Route path ='/activity/learn/words' component={LearnWords} />
-         <Route path ='/activity/practice/sounds' component={PracticeSounds} />
-         <Route path ='/activity/practice/words' component={PracticeWords} />
+         <Route path ='/activity/learn/sounds/:id' component={LearnSounds} />
+         <Route path ='/activity/learn/words/:id' component={LearnWords} />
+         <Route path ='/activity/practice/sounds/:id' component={PracticeSounds} />
+         <Route path ='/activity/practice/words/:id' component={PracticeWords} />
          <Route path = '/login-register' component={AuthForm} />
 				</Route>
 			</Router>
