@@ -3,20 +3,19 @@ const { connect } = require('react-redux')
 
 class LearnSounds extends React.Component {
 
-  playSound() {
-    return this.refs[0].play()
+  playSound(index) {
+    return this.refs[index].play()
   }
 
   generateLetter(lettersArr,lettersObj){
       return lettersArr.map((letter,index)=>{
         return (
           <div>
-            <p>{`${lettersObj[letter].soundFile}`}}</p>
-            <audio ref={`${index}`}>
+            <audio ref={`${index}`} >
               <source src={`${lettersObj[letter].soundFile}`} preload=''/>
             </audio>
             <img src={`${lettersObj[letter].imageFile}`}/>
-            <button onClick={this.playSound.bind(this)} className={`button radius ${index}`}>
+            <button onClick={() => this.playSound(index)} className={`button radius`}>
               {letter}
             </button>
           </div>
