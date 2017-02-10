@@ -14,8 +14,7 @@ module.exports = class LoginForm extends React.Component {
         if(err) {
           console.log(err);
         } else {
-          return 0
-          //this is where we recive data back
+          // this.props.router.push(`/${res.body}/profile`)
         }
       })
 

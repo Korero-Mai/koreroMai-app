@@ -23,11 +23,13 @@ module.exports = function(db) {
         req.body.password = hash
         db.addUser('users', req.body)
         .then((user) => {
+          console.log('this are the users:', user[0]);
           res.json(user)
         })
       })
     })
   }
+
 
   function loginUser(req, res, next) {
     db.findUserByEmail('users', req.body.email)
@@ -40,14 +42,19 @@ module.exports = function(db) {
             bcrypt.compare(req.body.password, dbData[0].password, function(err, res) {
               if (res) {
                 console.log('this is the res === true', res);
-                resolve ({login: true})
+                resolve ({valid: true, user: dbData[0]})
               } else {
                 console.log('this is the res === false', res);
-                resolve ({login: false})
+                resolve ({valid: false})
               }
             });
           })
-      }
+          .then(function(match) {
+            if (match.valid) {
+              res.json(match.user.id)
+            }
+          })
+        }
     })
   }
 
