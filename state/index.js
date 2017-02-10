@@ -3,11 +3,11 @@ import { routerMiddleware, push } from 'react-router-redux'
 module.exports = {
  letters: {
    hi:{
-     soundFile: '/sounds/gong.mp3',
+     soundFile: '/sounds/moana.mp3',
      imageFile: '/images/activity-images/aniwaniwa.png',
    },
    te:{
-     soundFile: 'mp3',
+     soundFile: 'hello',
      imageFile: 'img',
    },
    ka:{
