@@ -13,6 +13,10 @@ require('./style/main.scss')
 const App = require('./app')
 const Home = require('./containers/home')
 const ActivityChoiceBox = require('./containers/activityChoiceBox')
+const LearnSounds = require('./containers/learnSounds')
+const LearnWords = require('./containers/learnWords')
+const PracticeSounds = require('./containers/practiceSounds')
+const PracticeWords = require('./containers/practiceWords')
 const AuthForm = require('./containers/auth-form')
 
 const middleware = routerMiddleware(hashHistory)
@@ -31,6 +35,10 @@ const Root = ({store}) => {
 					<IndexRoute component={Home} />
 				 <Route path = '/home' component={Home} />
          <Route path ='/activity' component={ActivityChoiceBox} />
+         <Route path ='/activity/learn/sounds' component={LearnSounds} />
+         <Route path ='/activity/learn/words' component={LearnWords} />
+         <Route path ='/activity/practice/sounds' component={PracticeSounds} />
+         <Route path ='/activity/practice/words' component={PracticeWords} />
          <Route path = '/login-register' component={AuthForm} />
 				</Route>
 			</Router>

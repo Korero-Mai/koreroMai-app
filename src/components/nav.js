@@ -15,10 +15,10 @@ function Nav(props) {
             Korero Mai
           </li>
           <li>
-            <IndexLink to="/" activeClassName="active-link" onClick={() => {props.dispatch({type: 'RESET_ACTIVITY'})}}>Home</IndexLink>
+            <Link to="/" activeClassName="active-link">Home</Link>
           </li>
           <li>
-            <Link to="/activity" activeClassName="active-link" onClick={() => {props.dispatch({type: 'RESET_ACTIVITY'})}}>Activities</Link>
+            <Link to="/activity" activeClassName="active-link">Activities</Link>
           </li>
         </ul>
       </div>
