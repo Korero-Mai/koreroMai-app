@@ -11,10 +11,18 @@ class LearnSounds extends React.Component {
     const lettersArr = props.learnSoundPage[props.params.id]
     const lettersObj = props.letters
 
-    function playSound() {
-      const sound = this.refs.gong.value
-      console.log('sound', sound);
-    }
+  render() {
+    const { dispatch } = this.props
+
+    return (
+        <div className="playBox">
+          {generateLetter(lettersArr, lettersObj, props)}
+          <div>
+            <button className="button radius">Back</button>
+            <button className="button radius">next</button>
+          </div>
+        </div>
+    )
 
     function generateLetter(lettersArr,lettersObj, props){
       console.log('learnSounds props',props)
@@ -35,20 +43,6 @@ class LearnSounds extends React.Component {
       })
     }
   }
-
-  render() {
-    const { dispatch } = this.props
-
-    return (
-        <div className="playBox">
-          {generateLetter(lettersArr, lettersObj, props)}
-          <div>
-            <button className="button radius">Back</button>
-            <button className="button radius">next</button>
-          </div>
-        </div>
-    )
-
-  }
+}
 
 module.exports = connect((state) => state)(LearnSounds)
