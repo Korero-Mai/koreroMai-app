@@ -4,7 +4,7 @@ module.exports = {
  letters: {
    hi:{
      soundFile: 'mp3',
-     imageFile: 'img',
+     imageFile: '/images/activity-images/aniwaniwa.png',
    },
    te:{
      soundFile: 'mp3',
