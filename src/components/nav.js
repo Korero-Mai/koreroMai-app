@@ -15,7 +15,7 @@ function Nav(props) {
             Korero Mai
           </li>
           <li>
-            <Link to="/" activeClassName="active-link">Home</Link>
+            <IndexLink to="/" activeClassName="active-link">Home</IndexLink>
           </li>
           <li>
             <Link to="/activity" activeClassName="active-link">Activities</Link>
