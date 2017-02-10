@@ -1,28 +1,16 @@
 const React = require('react')
 const { connect } = require('react-redux')
 const RegisterForm = require('../components/register-form')
+const LoginForm = require('../components/login-form')
 
 function AuthForm(props) {
+  const {dispatch, router} = props
 
   return (
     <div>
-      <h1 className='page-title'>Login Page</h1>
-
-      <div className='row'>
-        <div className='colums small-centered small-10 medium-6 large-4'>
-          <div>
-            <h3>Login</h3>
-              <div className="container__footer">
-               <form method='post' action='/'>
-                <input type='text' name='name' ref='nameLogin' placeholder='User Name' />
-                <input type='password'name='password' ref='passwordLogin' placeholder='Password' />
-                <button className='button expanded hollow'>Login</button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-      <RegisterForm />
+      <h2>Login / Register</h2>
+      <LoginForm  dispatch={dispatch} router={router}/>
+      <RegisterForm  dispatch={dispatch}/>
     </div>
   )
 }
