@@ -1,4 +1,5 @@
 @import "../../node_modules/foundation-sites/scss/foundation";
+@import url('https://fonts.googleapis.com/css?family=Itim|Life+Savers|Open+Sans');
 
 //Foundations
 @include foundation-flex-grid;
@@ -11,9 +12,24 @@
 //Components
 @import './components/home';
 @import './components/nav';
+@import './components/playBox';
+@import './components/footer';
+
 
 body {
   background: $light-grey;
   text-align: center;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Open Sans', sans-serif;
+  padding: 0;
+}
+
+h1 {
+  font-family: 'Life Savers', cursive;
+  font-size: 3em;
+  font-weight: bold;
+}
+
+h3 {
+  font-family: 'Itim', cursive;
+  font-size: 1.8em;
 }
