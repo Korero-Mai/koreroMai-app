@@ -33,7 +33,7 @@ function ActivityChoiceBox(props) {
     )
   } else if (activity.learnSounds){
     return (
-      <LearnSounds/>
+      <LearnSounds props={props}/>
     )
   } else if (activity.learnWords){
     return (
