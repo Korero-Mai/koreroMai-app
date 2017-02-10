@@ -1,6 +1,6 @@
 const { combineReducers } = require('redux')
-const situation = require('./situation')
+const activity = require('./activity')
 
 module.exports = combineReducers({
-  situation
+  activity
 })

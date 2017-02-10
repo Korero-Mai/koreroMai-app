@@ -3,15 +3,16 @@ const {Link, IndexLink} = require('react-router')
 const { connect } = require('react-redux')
 
 function ActivityChoiceBox(props) {
+
   return (
     <div className='row'>
       <div className='columns small-centered small-10 medium-6 large-4'>
         <h3>Learn</h3>
-        <button className="button radius" onClick={() => props.dispatch({type: 'UPDATE_ACTIVITY', })}>Sounds</button><br />
-        <button className="button radius" onClick={() => props.dispatch({type: 'UPDATE_ACTIVITY'})}>Words</button><br />
+        <button className="button radius" onClick={() => props.dispatch({type: 'UPDATE_ACTIVITY', activity: "learnSounds"})}>Sounds</button><br />
+        <button className="button radius" onClick={() => props.dispatch({type: 'UPDATE_ACTIVITY', activity: "learnWords"})}>Words</button><br />
         <h3>Practice</h3>
-        <button className="button radius" onClick={() => props.dispatch({type: 'UPDATE_ACTIVITY'})}>Sounds</button><br />
-        <button className="button radius" onClick={() => props.dispatch({type: 'UPDATE_ACTIVITY'})}>Words</button><br />
+        <button className="button radius" onClick={() => props.dispatch({type: 'UPDATE_ACTIVITY', activity: "practiceSounds"})}>Sounds</button><br />
+        <button className="button radius" onClick={() => props.dispatch({type: 'UPDATE_ACTIVITY', activity: "practiceWords"})}>Words</button><br />
       </div>
     </div>
   )
