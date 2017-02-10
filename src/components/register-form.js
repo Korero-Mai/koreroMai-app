@@ -1,5 +1,6 @@
 const React = require('react')
 const { connect } = require('react-redux')
+const request = require('superagent')
 
 
 module.exports = class RegisterForm extends React.Component {
@@ -11,6 +12,17 @@ module.exports = class RegisterForm extends React.Component {
     const password = this.refs.password.value
 
     console.log("register info :", username, email, password);
+
+    request.post('/api/v1/register')
+      .send({email, password, username})
+      .end((err, res) => {
+        if(err){
+          console.log(err)
+        } else {
+          return 0
+        }
+      })
+
   }
   render() {
     return (
@@ -22,7 +34,7 @@ module.exports = class RegisterForm extends React.Component {
             <div>
               <h3>Register</h3>
                 <div className="container__footer">
-                 <form method='post' action='/'>
+                 <form method='post' action='/register'>
                    <input type='text' name='username' ref='username' placeholder='User Name' />
                    <input type='email' name='email' ref='email' placeholder='Email' />
                    <input type='password' name='password' ref='password' placeholder='Password' />
