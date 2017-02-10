@@ -14,11 +14,12 @@ module.exports = function (knex) {
       })
     },
     findUserByEmail: function (table, email) {
+      console.log('here is the email fromk db',email);
       return knex(table)
       .select('*')
-      .where('email', email.email)
+      .where('email', email)
       .then((selectedUser) => {
-        return selectedUser[0]
+        return selectedUser
       })
     }
 	}

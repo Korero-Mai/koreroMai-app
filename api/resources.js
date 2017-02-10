@@ -8,6 +8,7 @@ module.exports = function(db) {
 
   // route.get('/users', users); //gets all the users
   route.post('/register', postNewUser)
+  route.post('/login', loginUser)
 
   function users(req, res, next) {
     db.findAll('users')
@@ -17,17 +18,26 @@ module.exports = function(db) {
   }
 
   function postNewUser(req, res, next) {
-    console.log(req.body);
     bcrypt.genSalt(10, function(err, salt) {
       bcrypt.hash(req.body.password, salt, function(err, hash) {
         req.body.password = hash
         db.addUser('users', req.body)
         .then((user) => {
-          console.log('this is the console', users);
           res.json(user)
         })
-      });
-    });
+      })
+    })
+  }
+
+  function loginUser(req, res, next) {
+    console.log('this is the req.body:',req.body.email);
+    db.findUserByEmail('users', req.body.email)
+    .then((dbData) => {
+      console.log('this is the dbData fucntion:', dbData);
+      if(!dbData) {
+        return ('This does not exist')
+      }
+    })
   }
 
   return route;

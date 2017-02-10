@@ -38,17 +38,37 @@ test('Select user by email | it should select an user by the email', (t) => {
    t.plan(4)
  // arrange
 const tableName = 'users'
-const email = {email:'matt@.com'}
-const expected = {id: 1, username: 'Mathieu', email: 'matt@.com', password: '1234'}
+const email = 'anna@anna.com'
+const expected = [{id: 1, username: 'anna', email: 'anna@anna.com', password: '$2a$10$st5Yp1EDwl/2R0TqRjrqmuP8AE32qX/beKY2y6eQwgcHsFGZRSk1O'}]
  //act
 return db.findUserByEmail('users', email)
-  .then(function(data){
 
+  .then(function(data){
+    console.log(data);
 //Assert
-    t.is(data.id, expected.id ,'find an user by email')
-    t.is(data.username, expected.username ,'find an user by email')
-    t.is(data.email, expected.email ,'find an user by email')
-    t.is(data.password, expected.password ,'find an user by email')
+    t.is(data[0].id, expected[0].id ,'find an user by email')
+    t.is(data[0].username, expected[0].username ,'find an user by email')
+    t.is(data[0].email, expected[0].email ,'find an user by email')
+    t.is(data[0].password, expected[0].password ,'find an user by email')
+
+   })
+})
+
+
+test('wrong email | it should return an empty array', (t) => {
+   t.plan(1)
+ // arrange
+const tableName = 'users'
+const email = 'meghana@anna.com'
+const expected = []
+ //act
+return db.findUserByEmail('users', email)
+
+  .then(function(data){
+    console.log(data);
+//Assert
+    t.is(data.length, 0 ,'find an user by email')
+
 
    })
 })
