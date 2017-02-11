@@ -1,11 +1,15 @@
 .top-bar, .top-bar ul {
   background-color: $nav-background;
+  text-transform: uppercase;
+   margin: 0;
+   font-weight: 900;
+   padding: 5px 0;
 }
 
 .top-bar {
   .menu-text {
     color: $nav-text-color;
-    font-size: 1.5em;
+    font-size: 2.2em;
     font-family: 'Itim', cursive;
   }
   .menu > .menu-text > a {
@@ -15,5 +19,9 @@
   .active-link {
     font-weight: bold;
     color: $dark-blue;
+
+  }
+  .nav-text {
+    font-size: 2.2em;
   }
 }
