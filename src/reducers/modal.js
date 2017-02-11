@@ -8,6 +8,9 @@ module.exports = function (state = false, action) {
     case 'CLOSE_MODAL':
       return false
 
+    case 'CLOSE_MODAL_RESET_SCORE':
+      return false
+
     default:
       return state
   }
