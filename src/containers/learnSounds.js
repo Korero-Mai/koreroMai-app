@@ -23,7 +23,7 @@ class LearnSounds extends React.Component {
               <source src={`${letters[letter].soundFile}`} preload=''/>
             </audio>
             <img src={`${letters[letter].imageFile}`}/>
-            <button onClick={() => this.playSound(index)} className={`button radius`}>
+            <button onClick={() => this.playSound(index)} className={`button-radius`}>
               {letter}
             </button>
           </div>
@@ -53,8 +53,8 @@ class LearnSounds extends React.Component {
           <div className="playBox">
             {this.generateLetter(lettersArr, letters)}
             <div>
-              <Link to='activity'><button className="button radius">Back</button></Link>
-              <Link to={activityRoute+(level+1)}><button className="button radius">Next</button></Link>
+              <Link to='activity'><button className="first-back">Back</button></Link>
+              <Link to={activityRoute+(level+1)}><button className="first-next">Next</button></Link>
             </div>
           </div>
       )
@@ -63,12 +63,12 @@ class LearnSounds extends React.Component {
           <div className="playBox">
             {this.generateLetter(lettersArr, letters)}
             <div>
-              <Link to={activityRoute+(level-1)}><button className="button radius">Back</button></Link>
-              <button className="button radius" onClick={() => dispatch({type: 'OPEN_MODAL'})}>Finish!</button>
+              <Link to={activityRoute+(level-1)}><button className="last-back">Back</button></Link>
+              <button className="finish" onClick={() => dispatch({type: 'OPEN_MODAL'})}>Finish!</button>
               <Modal isOpen={modal} contentLabel='Modal' style={modalStyle}>
                 <h1>Well done!</h1>
-                <Link to={activityRoute+1}><button className="button radius" onClick={() => dispatch({type: 'CLOSE_MODAL'})}>Go again?</button></Link>
-                <Link to='activity'><button className="button radius" onClick={() => dispatch({type: 'CLOSE_MODAL'})}>Choose another activity?</button></Link>
+                <Link to={activityRoute+1}><button className="button-radius" onClick={() => dispatch({type: 'CLOSE_MODAL'})}>Go again?</button></Link>
+                <Link to='activity'><button className="button-radius" onClick={() => dispatch({type: 'CLOSE_MODAL'})}>Choose another activity?</button></Link>
               </Modal>
             </div>
           </div>
@@ -77,8 +77,8 @@ class LearnSounds extends React.Component {
       <div className="playBox">
         {this.generateLetter(lettersArr, letters)}
         <div>
-          <Link to={activityRoute+(level-1)}><button className="button radius">Back</button></Link>
-          <Link to={activityRoute+(level+1)}><button className="button radius">Next</button></Link>
+          <Link to={activityRoute+(level-1)}><button className="button-radius">Back</button></Link>
+          <Link to={activityRoute+(level+1)}><button className="button-radius">Next</button></Link>
         </div>
       </div>
     )
