@@ -11,7 +11,7 @@ function Nav(props) {
       <div className="top-bar-left">
         <ul className="menu">
           <li className="menu-text">
-            kia ora!
+            Kia ora!
           </li>
           <li onClick={() => dispatch({type: 'CLOSE_MODAL_RESET_SCORE'})}>
             <IndexLink to="/" activeClassName="active-link" className='nav-text'>Home</IndexLink>
