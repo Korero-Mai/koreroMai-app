@@ -67,19 +67,19 @@ class LearnSounds extends React.Component {
               <button className="finish" onClick={() => dispatch({type: 'OPEN_MODAL'})}>Finish!</button>
               <Modal isOpen={modal} contentLabel='Modal' style={modalStyle}>
                 <h1>Well done!</h1>
-                <Link to={activityRoute+1}><button className="button-radius" onClick={() => dispatch({type: 'CLOSE_MODAL'})}>Go again?</button></Link>
-                <Link to='activity'><button className="button-radius" onClick={() => dispatch({type: 'CLOSE_MODAL'})}>Choose another activity?</button></Link>
+                <Link to={activityRoute+1}><button className="button-radius repeat" onClick={() => dispatch({type: 'CLOSE_MODAL'})}>Repeat</button></Link><br />
+                <Link to='activity'><button className="button-radius new-activity" onClick={() => dispatch({type: 'CLOSE_MODAL'})}>Choose another activity</button></Link>
               </Modal>
             </div>
           </div>
       )
     } else return (
-      <div className="playBox">
-        {this.generateLetter(lettersArr, letters)}
-        <div>
+      <div>
+        <div className="playBox">
+          {this.generateLetter(lettersArr, letters)}
+        </div>
           <Link to={activityRoute+(level-1)}><button className="nav-back">Back</button></Link>
           <Link to={activityRoute+(level+1)}><button className="nav-next">Next</button></Link>
-        </div>
       </div>
     )
   }
