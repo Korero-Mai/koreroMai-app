@@ -7,12 +7,12 @@ function ActivityChoiceBox(props) {
       <div className='row'>
         <div className='columns small-centered small-10 medium-6 large-4'>
           <h3>Learn</h3>
-          <Link to="/activity/learn/sounds/1"><button className="button-radius choose">Letters</button><br /></Link>
-          <Link to="/activity/learn/words/1"><button className="button-radius choose">Words</button><br /></Link>
+          <Link to="/activity/learn/sounds/1"><button className="button-radius choose">Letters</button></Link>
+          <Link to="/activity/learn/words/1"><button className="button-radius choose">Words</button></Link>
 
           <h3>Practice</h3>
-          <Link to="/activity/practice/sounds/1"><button className="button-radius choose">Letters</button><br /></Link>
-          <Link to="/activity/practice/words/1"><button className="button-radius choose">Words</button><br /></Link>
+          <Link to="/activity/practice/sounds/1"><button className="button-radius choose">Letters</button></Link>
+          <Link to="/activity/practice/words/1"><button className="button-radius choose">Words</button></Link>
         </div>
       </div>
     )
