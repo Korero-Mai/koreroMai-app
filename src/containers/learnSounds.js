@@ -32,22 +32,36 @@ class LearnSounds extends React.Component {
     const lettersArr = this.props.learnSoundPage[level]
     const lettersObj = this.props.letters
 
-
-    console.log('learnSounds this.props', this.props);
-
-    return (
-        <div className="playBox">
-          {this.generateLetter(lettersArr, lettersObj, props)}
-          <div>
-            <Link to={activityRoute+(level-1)}><button className="button radius">Back</button></Link>
-            <Link to={activityRoute+(level+1)}><button className="button radius">Next</button></Link>
+    if (level === 1) {
+      return (
+          <div className="playBox">
+            {this.generateLetter(lettersArr, lettersObj, props)}
+            <div>
+              <Link to='activity'><button className="button radius">Back</button></Link>
+              <Link to={activityRoute+(level+1)}><button className="button radius">Next</button></Link>
+            </div>
           </div>
+      )
+    } else if (level === 5){
+      return (
+          <div className="playBox">
+            {this.generateLetter(lettersArr, lettersObj, props)}
+            <div>
+              <Link to={activityRoute+(level-1)}><button className="button radius">Back</button></Link>
+              <Link to='activity'><button className="button radius">Next</button></Link>
+            </div>
+          </div>
+      )
+    } else return (
+      <div className="playBox">
+        {this.generateLetter(lettersArr, lettersObj, props)}
+        <div>
+          <Link to={activityRoute+(level-1)}><button className="button radius">Back</button></Link>
+          <Link to={activityRoute+(level+1)}><button className="button radius">Next</button></Link>
         </div>
+      </div>
     )
-
   }
 }
 
 module.exports = connect((state) => state)(LearnSounds)
-
-// `${lettersObj[letter].soundFile}`
