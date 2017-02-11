@@ -8,7 +8,7 @@ module.exports = class LoginForm extends React.Component {
     const email = this.refs.email.value
     const password = this.refs.password.value
 
-    request.post('/api/v1/login')
+    request.post('/api/v1/auth/login')
       .send({email, password})
       .end((err, res) => {
         if(err) {

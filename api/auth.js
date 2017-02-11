@@ -6,17 +6,9 @@ const session = require('express-session')
 
 module.exports = function(db) {
 
-  // route.get('/users', users); //gets all the users
+
   route.post('/register', confirmUniqueEmail, postNewUser)
   route.post('/login', loginUser)
-
-
-  function users(req, res, next) {
-    db.findAll('users')
-      .then((users) => {
-        res.json(users)
-      })
-  }
 
 
   function postNewUser(req, res, next) {

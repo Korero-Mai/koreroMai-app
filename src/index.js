@@ -2,10 +2,10 @@ const React = require('react')
 const ReactDOM = require('react-dom')
 const { Provider } = require('react-redux')
 const { createStore, applyMiddleware, compose } = require('redux')
-const createHistory = require('history').createHashHistory
 const { Router, Route, IndexRoute, hashHistory } = require('react-router')
 const reducer = require('./reducers')
 const initialState = require('../state')
+const URL = require('url-parse')
 import { routerMiddleware, push } from 'react-router-redux'
 require('./style/main.scss')
 
@@ -19,13 +19,22 @@ const PracticeSounds = require('./containers/practiceSounds')
 const PracticeWords = require('./containers/practiceWords')
 const AuthForm = require('./containers/auth-form')
 const UserProfile = require('./containers/userProfile')
-
 const middleware = routerMiddleware(hashHistory)
 
 const store = createStore(reducer, initialState, applyMiddleware(middleware))
 
 store.subscribe(()=> {
 	console.log('Index.js state log', store.getState());
+})
+
+hashHistory.listen((ev) => {
+  //listen to window.location directly?
+  console.log('listen', ev)
+  const paths = ev.pathname.split('/')
+  if (paths[1] === 'users'){
+    
+  }
+  console.log("paths", paths);
 })
 
 const Root = ({store}) => {
@@ -41,7 +50,7 @@ const Root = ({store}) => {
          <Route path ='/activity/practice/sounds/:id' component={PracticeSounds} />
          <Route path ='/activity/practice/words/:id' component={PracticeWords} />
          <Route path = '/login-register' component={AuthForm} />
-         <Route path = '/:id/profile' component={UserProfile} />
+         <Route path = 'users/:id/profile' component={UserProfile} />
 				</Route>
 			</Router>
 		</Provider>
