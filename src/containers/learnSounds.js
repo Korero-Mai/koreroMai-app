@@ -78,10 +78,8 @@ class LearnSounds extends React.Component {
         <div className="playBox">
           {this.generateLetter(lettersArr, letters)}
         </div>
-        <div>
           <Link to={activityRoute+(level-1)}><button className="nav-back">Back</button></Link>
           <Link to={activityRoute+(level+1)}><button className="nav-next">Next</button></Link>
-        </div>
       </div>
     )
   }
