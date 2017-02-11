@@ -1,5 +1,6 @@
 const React = require('react')
 const { connect } = require('react-redux')
+const { Link } = require('react-router')
 
 class LearnSounds extends React.Component {
 
@@ -26,8 +27,11 @@ class LearnSounds extends React.Component {
   render() {
     const props = this.props
     const { dispatch } = this.props
-    const lettersArr = this.props.learnSoundPage[this.props.params.id]
+    const level = Number(this.props.params.id)
+    const activityRoute = 'activity/learn/sounds/'
+    const lettersArr = this.props.learnSoundPage[level]
     const lettersObj = this.props.letters
+
 
     console.log('learnSounds this.props', this.props);
 
@@ -35,8 +39,8 @@ class LearnSounds extends React.Component {
         <div className="playBox">
           {this.generateLetter(lettersArr, lettersObj, props)}
           <div>
-            <button className="button radius">Back</button>
-            <button className="button radius">Next</button>
+            <Link to={activityRoute+(level-1)}><button className="button radius">Back</button></Link>
+            <Link to={activityRoute+(level+1)}><button className="button radius">Next</button></Link>
           </div>
         </div>
     )
