@@ -4,6 +4,9 @@ const modal = require('./modal')
 const letters = require('./letters')
 const learnSoundPage = require('./learnSoundPage')
 const practiceSoundPage = require('./practiceSoundPage')
+const learnWordPage = require('./learnWordPage')
+const practiceWordPage = require('./practiceWordPage')
+const words = require('./words')
 
 module.exports = combineReducers({
   // currentUser
@@ -11,5 +14,8 @@ module.exports = combineReducers({
   modal,
   letters,
   learnSoundPage,
-  practiceSoundPage
+  practiceSoundPage,
+  learnWordPage,
+  practiceWordPage,
+  words
 })
