@@ -94,5 +94,6 @@ practiceSoundPage:{
 },
   activity : {
   },
-  modal: false
+  modal: false,
+  wrongSounds : 0
 }

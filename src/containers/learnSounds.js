@@ -38,7 +38,7 @@ class LearnSounds extends React.Component {
     const level = Number(this.props.params.id)
     const activityRoute = 'activity/learn/sounds/'
     const lettersArr = this.props.learnSoundPage[level]
-      const modalStyle = {
+    const modalStyle = {
       content:{
         top:'20%',
         left:'50%',
