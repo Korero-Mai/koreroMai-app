@@ -1,5 +1,1 @@
-<<<<<<< HEAD
-{"version":3,"file":"bundle.js","sources":["webpack:///bundle.js"],"mappings":"AAAA;;;;;AA6TA;AAu3HA;;;;;;;;;;;;;;AAk1EA;AA2uIA;AAwwGA;AAy6BA;AA4mIA;AA6hIA;AAq9GA;AAitHA","sourceRoot":""}
-=======
-{"version":3,"file":"bundle.js","sources":["webpack:///bundle.js"],"mappings":"AAAA;;;;;AA6TA;AAu3HA;;;;;;;;;;;;;;AAk1EA;AA2uIA;AAwwGA;AAy6BA;AA4mIA;AA6hIA;AAu9GA;AA8rHA","sourceRoot":""}
->>>>>>> 84a72bc8ead86f49d01429f1ad6749b5cba3a3b6
+{"version":3,"file":"bundle.js","sources":["webpack:///bundle.js"],"mappings":"AAAA;;;;;AA6TA;AAu3HA;;;;;;;;;;;;;;AA21EA;;;;;;;;;;;AAquJA;AA+pGA;AA83CA;;;;;AAiIA;AA6mIA;AAkiIA;AAmsGA;AAmmHA","sourceRoot":""}

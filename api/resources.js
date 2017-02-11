@@ -41,12 +41,10 @@ module.exports = function(db) {
         return res.json({login: false, error:'This does not exist'})
       } else {
           bcrypt.compare(req.body.password, dbData.password, function(error, match) {
-            if (error) {
-              console.log('error logged');
-            } else if (match) {
-                console.log('this is the res === true', match);
-                req.session.userId = id
-              res.json({id:id, login: true})
+           if (match) {
+            req.session.userId = match.id
+            console.log('this is the res === true', match);
+            res.json({id:match.id, login: true})
               }  else {
                 console.log('this is the res === false', match);
                 res.json({login: false, error: 'Invalid email or password'})
