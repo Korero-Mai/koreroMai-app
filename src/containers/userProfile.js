@@ -1,6 +1,7 @@
 const React = require('react')
 const { connect } = require('react-redux')
 const Groups = require('../components/groups')
+const GroupInfo = require('../components/selectedGroupInfo')
 
 function UserProfile(props) {
 
@@ -8,6 +9,7 @@ function UserProfile(props) {
     <div>
       {UserName(props)}
       <Groups/>
+      <GroupInfo/>
     </div>
   )
 }
