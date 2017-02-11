@@ -200,6 +200,7 @@ module.exports = {
     weta:{
       soundFile: '/sounds/weta.mp3',
       imageFile: '/images/activity-images/weta.png'
+
     },
     wai:{
       soundFile: '/sounds/wai.mp3',
