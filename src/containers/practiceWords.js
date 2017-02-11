@@ -31,7 +31,7 @@ class PracticeWords extends React.Component {
     })
   }
 
-  generateWord(wordsArr,words, answer){
+  generateWord(wordsArr, words, answer){
     const dispatch = this.props.dispatch
     const modal = this.props.modal
     const modalStyle = {
@@ -55,6 +55,7 @@ class PracticeWords extends React.Component {
           <div>
             <div className="row">
               <div className="columns">
+                <img src={`${words[word].imageFile}`} />
                 <audio ref={`${word}`} >
                   <source src={`${words[word].soundFile}`} preload=''/>
                 </audio>

@@ -2,7 +2,13 @@ import { routerMiddleware, push } from 'react-router-redux'
 
 module.exports = {
 
- letters: {
+  activity : {},
+
+  modal: false,
+
+  wrongSounds : 0,
+
+  letters: {
    A:{
      soundFile: '/sounds/a.mp3',
      imageFile: '/images/activity-images/aniwaniwa.png',
@@ -95,10 +101,6 @@ module.exports = {
       answer: 'Wh'
     }
   },
-
-  activity : {},
-
-  modal: false,
 
   words: {
     anuhe:{
@@ -216,7 +218,7 @@ module.exports = {
     }
   },
 
-  learnWordPage :{
+  learnWordPage:{
        '1':['aniwaniwa','ekara','hoiho'],
        '2':['koura','maunga','noke'],
        '3':['ngata','oru','purerehua'],
@@ -224,11 +226,29 @@ module.exports = {
        '5':['weta','whanau','ika']
   },
 
-  activity : {
+  practiceWordPage:{
+    '1':{
+      words: ['aniwaniwa','ekara','hoiho'],
+      answer: 'aniwaniwa'
+    },
+    '2':{
+      words: ['koura','maunga','noke'],
+      answer: 'koura'
+    },
+    '3':{
+      words: ['ngata','oru','purerehua'],
+      answer: 'ngata'
+    },
+    '4':{
+      words: ['ruru','tamanuitera','ua'],
+      answer: 'ua'
+    },
+    '5':{
+      words: ['weta','whanau','ika'],
+      answer: 'whanau'
+    }
   },
 
-  modal: false,
 
-  wrongSounds : 0
 
 }
