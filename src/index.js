@@ -18,6 +18,7 @@ const LearnWords = require('./containers/learnWords')
 const PracticeSounds = require('./containers/practiceSounds')
 const PracticeWords = require('./containers/practiceWords')
 const AuthForm = require('./containers/auth-form')
+const UserProfile = require('./containers/userProfile')
 
 const middleware = routerMiddleware(hashHistory)
 
@@ -40,6 +41,7 @@ const Root = ({store}) => {
          <Route path ='/activity/practice/sounds/:id' component={PracticeSounds} />
          <Route path ='/activity/practice/words/:id' component={PracticeWords} />
          <Route path = '/login-register' component={AuthForm} />
+         <Route path = '/:id/profile' component={UserProfile} />
 				</Route>
 			</Router>
 		</Provider>
