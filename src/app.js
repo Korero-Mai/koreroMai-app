@@ -6,7 +6,7 @@ const Footer = require('./components/footer')
 
 
 const App = (props) => {
-  console.log('app.js', props)
+  console.log('app.js props', props)
   return (
     <div>
       <Nav />
