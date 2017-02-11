@@ -222,12 +222,13 @@ module.exports = {
        '3':['ngata','oru','purerehua'],
        '4':['ruru','tamanuitera','ua'],
        '5':['weta','whanau','ika']
-  }
+  },
 
-},
   activity : {
   },
+
   modal: false,
+
   wrongSounds : 0
 
 }
