@@ -31,6 +31,9 @@
   margin: 4px 2px;
   text-decoration: none;
   color: black;
+  position:absolute;
+    top: 35%;
+    left: 10%;
 }
 
 .first-back:active {
@@ -52,6 +55,9 @@
   margin: 4px 2px;
   text-decoration: none;
   color: black;
+  position:absolute;
+    top: 35%;
+    left: 70%;
 }
 
 .first-next:active {
@@ -64,6 +70,53 @@
   background-color: #6FC6FF;
 }
 
+.nav-next {
+  border-radius: 5px;
+  background-color: #55acee;
+  box-shadow: 0px 5px 0px 0px #3C93D5;
+  padding: 20px 35px;
+  font-size: 16px;
+  margin: 4px 2px;
+  text-decoration: none;
+  color: black;
+  position:absolute;
+    top: 35%;
+    left: 70%;
+}
+.nav-next:active {
+  transform: translate(0px, 5px);
+  -webkit-transform: translate(0px, 5px);
+  box-shadow: 0px 1px 0px 0px;
+}
+
+.nav-next:hover {
+  background-color: #6FC6FF;
+}
+
+.nav-back {
+  border-radius: 5px;
+  background-color: #55acee;
+  box-shadow: 0px 5px 0px 0px #3C93D5;
+  padding: 20px 35px;
+  font-size: 16px;
+  margin: 4px 2px;
+  text-decoration: none;
+  color: black;
+  position:absolute;
+    top: 35%;
+    left: 10%;
+}
+
+.nav-back:active {
+  transform: translate(0px, 5px);
+  -webkit-transform: translate(0px, 5px);
+  box-shadow: 0px 1px 0px 0px;
+}
+
+.nav-next:hover {
+  background-color: #6FC6FF;
+}
+
 .last-back {
   border-radius: 5px;
   background-color: #55acee;
@@ -73,6 +126,9 @@
   margin: 4px 2px;
   text-decoration: none;
   color: black;
+  position:absolute;
+    top: 35%;
+    left: 10%;
 }
 
 .last-back:active {
@@ -94,6 +150,9 @@
   margin: 4px 2px;
   text-decoration: none;
   color: black;
+  position:absolute;
+    top: 35%;
+    left: 70%;
 }
 
 .finish:active {
