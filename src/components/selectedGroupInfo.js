@@ -4,15 +4,15 @@ const { connect } = require('react-redux')
 function groupInfo(props) {
 
   return (
-    <div>
+    <div className="row">
       <h2>Group A Information:</h2>
-      <table>
+      <table className="hover">
           <thead>
             <tr>
               <th>Student</th>
               <th>token</th>
               <th>Practice Sounds Total Score</th>
-              <th>Practice Workds Total Score</th>
+              <th>Practice Words Total Score</th>
               <th>trends</th>
               <th>Edit</th>
               <th>Delete</th>
@@ -36,7 +36,7 @@ function mapStudents(props){
          <td>4</td>
          <td>6</td>
          <td>
-           <button className='button expanded'>Trend</button>
+           <button className="button expanded">Trend</button>
          </td>
          <td>
            <button className='button expanded'>Edit</button>
