@@ -17,7 +17,7 @@ module.exports = class RegisterForm extends React.Component {
         if(err){
           console.log(err)
         } else {
-          const id = res.body[0].id
+          const id = res.body[0].id // { error: null, user: { id: 1 }}
           // this.props.router.push(`/${id}/profile`)
         }
       })

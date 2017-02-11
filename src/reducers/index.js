@@ -3,4 +3,5 @@ const activity = require('./activity')
 
 module.exports = combineReducers({
   activity
+  // currentUser
 })

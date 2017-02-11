@@ -1,13 +1,1 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-{"version":3,"file":"bundle.js","sources":["webpack:///bundle.js"],"mappings":"AAAA;;;;;AAySA;AA+3HA;;;;;;;;;;;;;;AAm1EA;AA4tIA;AAggHA;AAyiIA;AA6rHA;AAw2GA","sourceRoot":""}
-=======
-{"version":3,"file":"bundle.js","sources":["webpack:///bundle.js"],"mappings":"AAAA;;;;;AAySA;AA+3HA;;;;;;;;;;;;;;AAm1EA;AA4tIA;AA+/GA;AAqjIA;AA2qHA;AAknHA","sourceRoot":""}
->>>>>>> 1826a40a3e65f2b5274172b0602ad8e9b1c2a39a
-=======
-{"version":3,"file":"bundle.js","sources":["webpack:///bundle.js"],"mappings":"AAAA;;;;;AAqTA;AAq4HA;;;;;;;;;;;;;;AAo0EA;AA4tIA;AAgxFA;AA4mIA;AA6hIA;AAq9GA;AAitHA","sourceRoot":""}
->>>>>>> 4561469a05486bcbf89e8fda3e3f46323d0dc255
-=======
-{"version":3,"file":"bundle.js","sources":["webpack:///bundle.js"],"mappings":"AAAA;;;;;AA6TA;AAu3HA;;;;;;;;;;;;;;AAk1EA;AA4tIA;AAq7FA;AA4mIA;AA6hIA;AAq9GA;AAitHA","sourceRoot":""}
->>>>>>> f60983203dad0fdb609e245d9f28a09cd0bfbf66
+{"version":3,"file":"bundle.js","sources":["webpack:///bundle.js"],"mappings":"AAAA;;;;;AA6TA;AAu3HA;;;;;;;;;;;;;;AAk1EA;AA2uIA;AAwwGA;AAy6BA;AA4mIA;AA6hIA;AAq9GA;AAitHA","sourceRoot":""}
