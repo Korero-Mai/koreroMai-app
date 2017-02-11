@@ -1,6 +1,7 @@
 const express = require("express");
 const route = express.Router();
 const bcrypt = require('bcryptjs')
+const session = require('express-session')
 
 
 module.exports = function(db) {
@@ -8,6 +9,7 @@ module.exports = function(db) {
   // route.get('/users', users); //gets all the users
   route.post('/register', confirmUniqueEmail, postNewUser)
   route.post('/login', loginUser)
+
 
   function users(req, res, next) {
     db.findAll('users')
@@ -34,24 +36,31 @@ module.exports = function(db) {
   function loginUser(req, res, next) {
     db.findUserByEmail('users', req.body.email)
     .then((dbData) => {
-      console.log('dbData', dbData);
-      // const { name, id, password } = dbData
-      if(!dbData) {
-        console.log('this is falsy dbData:', dbData);
-        return res.json({login: false, error:'This does not exist'})
-      } else {
-          bcrypt.compare(req.body.password, dbData.password, function(error, match) {
-           if (match) {
-            req.session.userId = match.id
-            console.log('this is the res === true', match);
-            res.json({id:match.id, login: true})
+        if(!dbData) {
+          return res.json({isUser: false, error:'This does not exist'})
+        } else {
+            bcrypt.compare(req.body.password, dbData.password, function(error, match) {
+              if (match) {
+                console.log('this is the match', match);
+                req.session.isAuthenticated = true
+                res.json({isUser: true})
               }  else {
-                console.log('this is the res === false', match);
-                res.json({login: false, error: 'Invalid email or password'})
-              }
-          })
-        }
+                  console.log('this is the res === false', match);
+                  res.json({isUser: false, error: 'Invalid email or password'})
+                }
+            })
+          }
     })
+  }
+
+  function isAuthenticated(req, res, next){
+    console.log('req.session', req.session);
+    if(req.session.isAuthenticated === true){
+      alert('You are logged in')
+    } else {
+        res.redirect('/login-register')
+        alert('Please register to use this site')
+      }
   }
 
   function confirmUniqueEmail(req, res, next) {
