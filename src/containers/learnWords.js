@@ -22,6 +22,7 @@ class LearnWords extends React.Component {
               <audio ref={`${index}`} >
                 <source src={`${words[word].soundFile}`} preload=''/>
               </audio>
+              <img src={`${words[word].imageFile}`} />
               <button onClick={() => this.playSound(index)} className={`button-radius`}>
                 {word}
               </button>
