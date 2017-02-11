@@ -7,9 +7,13 @@ function UserProfile(props) {
 
   return (
     <div>
-      {UserName(props)}
-      <Groups/>
-      <GroupInfo/>
+      <div className="row">
+        {UserName(props)}
+        <Groups/>
+      </div>
+      <div className="row">
+      </div>
+        <GroupInfo/>
     </div>
   )
 }
@@ -18,7 +22,7 @@ module.exports = connect((state) => state)(UserProfile)
 
 function UserName (props) {
   return (
-    <div>
+    <div className="large-4 columns">
       <h2>UserName</h2>
       <button className='button expanded'>Edit Profile</button>
     </div>
