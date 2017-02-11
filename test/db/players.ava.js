@@ -45,7 +45,7 @@ return db.addPlayer(table, newPlayer)
 })
 
 test('checks for existing player | checks for an existing player by token and returns an empty array if another player is found', (t) => {
-   t.plan(3)
+   t.plan(1)
  // arrange
 const table = 'players'
 const newPlayer = {
@@ -59,6 +59,7 @@ const expected = []
 
 return db.addPlayer(table, newPlayer)
   .then(function(data){
+    console.log('test', data);
 //Assert
     t.falsy(data[0],'adds player to db')
 

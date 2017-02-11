@@ -24,20 +24,32 @@ module.exports = function (knex) {
 
 //players table methods
 		addPlayer: function(table, newPlayer){
+			return this.checkIfPlayerExists(table, newPlayer)
+				.then((bool)=>{
+					if(bool){
+						return []
+					} else{
+						return this.insertData(table, newPlayer)
+					}
+				})
+		},
+
+		insertData: function(table,newData){
 			return knex(table)
-			.insert(newPlayer)
+			.insert(newData)
 			.then((ids)=>{
 				return knex(table)
-        .select('id_player','player_name','group_name')
+				.select('*')
 				.where({id_player: ids[0]})
 			})
-		}
+		},
 
 		checkIfPlayerExists:function(table, newPlayer){
 			return knex(table)
-			.select('player_token',newPlayer.player_token)
+			.select('*')
+			.where('player_token',newPlayer.player_token)
 			.then((data)=>{
-				console.log('data checkIfPlayerExists',);
+				return data.length ? true : false
 			})
 		}
 	}
