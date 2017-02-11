@@ -1,5 +1,7 @@
-const resources = require('./resources')
+const auth = require('./auth')
+const users = require('./users')
 
 module.exports = {
-    resources
+    auth,
+    users
 }
