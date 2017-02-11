@@ -15,8 +15,7 @@ module.exports = connect((state) => state)(Footer)
 
 function contactInfo(){
   return (
-    <p> For more information about this
-      product or suggestions contact koreromaiapp@gmail.com
+    <p> &copy; 2017 Contact us - koreromaiapp@gmail.com
     </p>
   )
 }
