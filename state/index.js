@@ -63,13 +63,35 @@ module.exports = {
      imageFile: '/images/activity-images/ika.png',
    }
  },
- learnSoundPage :{
+learnSoundPage :{
      '1':['A','E','H'],
      '2':['K','M','N'],
      '3':['Ng','O','P'],
      '4':['R','T','U'],
      '5':['W','Wh','I']
    },
+practiceSoundPage:{
+  '1':{
+    letters: ['A','E','H'],
+    answer: 'A'
+  },
+  '2':{
+    letters: ['K','M','N'],
+    answer: 'K'
+  },
+  '3':{
+    letters: ['Ng','O','P'],
+    answer: 'Ng'
+  },
+  '4':{
+    letters: ['R','T','U'],
+    answer: 'U'
+  },
+  '5':{
+    letters: ['W','Wh','I'],
+    answer: 'Wh'
+  }
+},
   activity : {
   },
   modal: false
