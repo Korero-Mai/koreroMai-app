@@ -9,6 +9,9 @@
 //Variables
 @import './base/variables';
 
+//Media Query
+
+@import './base/media-query';
 
 //Components
 @import './components/home';
@@ -17,6 +20,9 @@
 @import './components/footer';
 @import './components/learn-sounds';
 @import './components/activity';
+
+
+
 
 body {
   background: $light-grey;
