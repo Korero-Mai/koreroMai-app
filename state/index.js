@@ -71,6 +71,6 @@ module.exports = {
      '5':['W','Wh','I']
    },
   activity : {
-  }
-
+  },
+  modal: false
 }
