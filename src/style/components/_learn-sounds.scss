@@ -1,0 +1,107 @@
+
+
+// --------------------------------BUTTONS HERE --------------------------------
+
+.button-radius {
+    border-radius: 5px;
+    background-color: #55acee;
+    box-shadow: 0px 5px 0px 0px #3C93D5;
+    padding: 20px 35px;
+    font-size: 16px;
+    margin: 4px 2px;
+    text-decoration: none;
+    color: black;
+}
+
+.button-radius:active {
+  transform: translate(0px, 5px);
+  -webkit-transform: translate(0px, 5px);
+  box-shadow: 0px 1px 0px 0px;
+}
+.button-radius:hover{
+   background-color: #6FC6FF;
+}
+
+.first-back {
+  border-radius: 5px;
+  background-color: #55acee;
+  box-shadow: 0px 5px 0px 0px #3C93D5;
+  padding: 20px 35px;
+  font-size: 16px;
+  margin: 4px 2px;
+  text-decoration: none;
+  color: black;
+}
+
+.first-back:active {
+  transform: translate(0px, 5px);
+  -webkit-transform: translate(0px, 5px);
+  box-shadow: 0px 1px 0px 0px;
+}
+
+.first-back:hover {
+  background-color: #6FC6FF;
+}
+
+.first-next {
+  border-radius: 5px;
+  background-color: #55acee;
+  box-shadow: 0px 5px 0px 0px #3C93D5;
+  padding: 20px 35px;
+  font-size: 16px;
+  margin: 4px 2px;
+  text-decoration: none;
+  color: black;
+}
+
+.first-next:active {
+  transform: translate(0px, 5px);
+  -webkit-transform: translate(0px, 5px);
+  box-shadow: 0px 1px 0px 0px;
+}
+
+.first-next:hover {
+  background-color: #6FC6FF;
+}
+
+.last-back {
+  border-radius: 5px;
+  background-color: #55acee;
+  box-shadow: 0px 5px 0px 0px #3C93D5;
+  padding: 20px 35px;
+  font-size: 16px;
+  margin: 4px 2px;
+  text-decoration: none;
+  color: black;
+}
+
+.last-back:active {
+  transform: translate(0px, 5px);
+  -webkit-transform: translate(0px, 5px);
+  box-shadow: 0px 1px 0px 0px;
+}
+
+.last-back:hover {
+  background-color: #6FC6FF;
+}
+
+.finish {
+  border-radius: 5px;
+  background-color: #55acee;
+  box-shadow: 0px 5px 0px 0px #3C93D5;
+  padding: 20px 35px;
+  font-size: 16px;
+  margin: 4px 2px;
+  text-decoration: none;
+  color: black;
+}
+
+.finish:active {
+  transform: translate(0px, 5px);
+  -webkit-transform: translate(0px, 5px);
+  box-shadow: 0px 1px 0px 0px;
+}
+
+.finish {
+  background-color: #6FC6FF;
+}

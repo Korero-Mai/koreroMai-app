@@ -9,12 +9,13 @@
 //Variables
 @import './base/variables';
 
+
 //Components
 @import './components/home';
 @import './components/nav';
 @import './components/playBox';
 @import './components/footer';
-
+@import './components/learn-sounds';
 
 body {
   background: $light-grey;
