@@ -11,7 +11,7 @@ module.exports = function (knex) {
         return knex('users')
         .select('username', 'id')
         .where({id: id[0]})
-				.then(users => users[0])
+				.then(users => users)
       })
     },
 
@@ -21,7 +21,7 @@ module.exports = function (knex) {
       .select('*')
       .where('email', email)
       .then((selectedUser) => {
-        return selectedUser[0]
+        return selectedUser
       })
     }
 	}

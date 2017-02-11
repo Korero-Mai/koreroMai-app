@@ -26,7 +26,7 @@ module.exports = function(db) {
         db.addUser('users', req.body)
         .then((user) => {
           console.log('this is the new user:', user);
-          res.json({error: null, user: user})
+          res.json({isUser:true, error: null, user: user[0]})
         })
       })
     })
@@ -36,10 +36,10 @@ module.exports = function(db) {
   function loginUser(req, res, next) {
     db.findUserByEmail('users', req.body.email)
     .then((dbData) => {
-        if(!dbData) {
+        if(!dbData[0]) {
           return res.json({isUser: false, error:'This does not exist'})
         } else {
-            bcrypt.compare(req.body.password, dbData.password, function(error, match) {
+            bcrypt.compare(req.body.password, dbData[0].password, function(error, match) {
               if (match) {
                 console.log('this is the match', match);
                 req.session.isAuthenticated = true
@@ -65,11 +65,12 @@ module.exports = function(db) {
 
   function confirmUniqueEmail(req, res, next) {
     db.findUserByEmail('users',req.body.email)
-    .then((users) => {
-      if(users.length === 0) {
+    .then((user) => {
+        console.log('user:', user);
+      if(!user[0]) {
         next()
       } else {
-        res.json({error: 'Existing email'})
+        res.json({isUser: false, error: 'Email already exists'})
       }
     })
   }
