@@ -21,7 +21,7 @@ module.exports = class RegisterForm extends React.Component {
               alert('User email already exists')
             } else {
                 alert('You are now registered!')
-                this.props.router.push(`/`)
+                this.props.router.push('/')
               }
           }
       })

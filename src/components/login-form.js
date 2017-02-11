@@ -20,7 +20,7 @@ module.exports = class LoginForm extends React.Component {
           } else {
               console.log('loginform res', res);
               alert('You are now logged in!')
-              this.props.router.push(`/`)
+              this.props.router.push('/')
             }
           }
       })
