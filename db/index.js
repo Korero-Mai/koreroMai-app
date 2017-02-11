@@ -31,13 +31,13 @@ module.exports = function (knex) {
         .select('id_player','player_name','group_name')
 				.where({id_player: ids[0]})
 			})
-		}
+		},
 
 		checkIfPlayerExists:function(table, newPlayer){
 			return knex(table)
 			.select('player_token',newPlayer.player_token)
 			.then((data)=>{
-				console.log('data checkIfPlayerExists',);
+				console.log('data checkIfPlayerExists');
 			})
 		}
 	}

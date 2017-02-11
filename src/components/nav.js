@@ -10,8 +10,8 @@ function Nav(props) {
     <div className="top-bar">
       <div className="top-bar-left">
         <ul className="menu">
-          <li className="menu-text">
-            Korero Mai
+          <li className="menu-text" onClick={() => dispatch({type: 'CLOSE_MODAL_RESET_SCORE'})}>
+            <IndexLink to="/">Korero Mai</IndexLink>
           </li>
           <li onClick={() => dispatch({type: 'CLOSE_MODAL_RESET_SCORE'})}>
             <IndexLink to="/" activeClassName="active-link">Home</IndexLink>
