@@ -46,7 +46,7 @@ class PracticeSounds extends React.Component {
         <div>
           <div className="row">
             <div className="columns">
-              <audio ref={`${index}`} >
+              <audio ref={`${letter}`} >
                 <source src={`${letters[letter].soundFile}`} preload=''/>
               </audio>
               <img src={`${letters[letter].imageFile}`}/>
@@ -54,7 +54,7 @@ class PracticeSounds extends React.Component {
           </div>
           <div className="row">
             <div className="columns">
-              <button onClick={() => this.playSound(index)} className={`button radius`}>
+              <button onClick={() => this.playSound(letter)} className={`button radius`}>
                 {letter}
               </button>
             </div>
