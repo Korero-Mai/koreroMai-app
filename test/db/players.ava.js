@@ -35,8 +35,31 @@ const expected = [{id:6,player_name:"Joyce",group_name:"group2"}]
 return db.addPlayer(table, newPlayer)
   .then(function(data){
 //Assert
-console.log('addPlayer', data);
+    t.is(data[0].id_player, expected[0].id ,
+      'adds player to db')
+    t.is(data[0].player_name, expected[0].player_name ,
+      'adds player to db')
+    t.is(data[0].group_name, expected[0].group_name ,
+      'adds player to db')
+   })
+})
 
+test('checks for existing player | checks for an existing player by token and returns an empty array if another player is found', (t) => {
+   t.plan(3)
+ // arrange
+const table = 'players'
+const newScore = {
+  player_name: 'Bobb',
+  player_token:'bobbie123',
+  group_name:'group2'
+}
+
+const expected = []
+ //act
+
+return db.addPlayer(table, newPlayer)
+  .then(function(data){
+//Assert
     t.is(data[0].id_player, expected[0].id ,
       'adds player to db')
     t.is(data[0].player_name, expected[0].player_name ,
