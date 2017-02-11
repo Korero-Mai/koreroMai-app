@@ -59,9 +59,41 @@ const expected = []
 
 return db.addPlayer(table, newPlayer)
   .then(function(data){
-    console.log('test', data);
 //Assert
     t.falsy(data[0],'adds player to db')
+   })
+})
 
+test.only('adds a new player score | adds a new score to the scoresTable', (t) => {
+   t.plan(4)
+ // arrange
+const table = 'players_gameScores'
+const player= {
+  player_token:'bobbie123',
+  prac_sounds_wrong: 4,
+  prac_words_wrong: 5,
+}
+
+const expected = [{
+  id_game: 8,
+  player_id: 2,
+  prac_sounds_wrong: 4,
+  prac_sounds_timestamp:'',
+  prac_words_wrong: 5,
+  prac_words_timestamp: ''
+}]
+ //act
+
+return db.addScore(table, player)
+  .then(function(data){
+//Assert
+    t.is(data[0].id_game,expected[0].id_game,
+      'adds score to table')
+    t.is(data[0].player_id,expected[0].player_id,
+      'adds score to table')
+    t.is(data[0].prac_sounds_wrong,expected[0].prac_sounds_wrong,
+      'adds score to table')
+    t.is(data[0].prac_words_wrong,expected[0].prac_words_wrong,
+      'adds score to table')
    })
 })

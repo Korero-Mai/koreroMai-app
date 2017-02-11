@@ -29,12 +29,12 @@ module.exports = function (knex) {
 					if(bool){
 						return []
 					} else{
-						return this.insertData(table, newPlayer)
+						return this.insertplayerData(table, newPlayer)
 					}
 				})
 		},
 
-		insertData: function(table,newData){
+		insertplayerData: function(table,newData){
 			return knex(table)
 			.insert(newData)
 			.then((ids)=>{
@@ -51,6 +51,40 @@ module.exports = function (knex) {
 			.then((data)=>{
 				return data.length ? true : false
 			})
-		}
+		},
+
+		addScore: function(table, scoreData){
+			return this.checkIfPlayerExists('players', scoreData)
+				.then((bool)=>{
+					if(!bool){
+						return []
+					} else{
+						return this.getPlayerId(scoreData.player_token)
+					}
+				})
+				.then(id=>{
+					delete scoreData.player_token
+					scoreData.player_id = id[0].id_player
+					console.log('scoreData', scoreData);
+					return this.insertScoreData(table,scoreData)
+				})
+		 },
+
+		 getPlayerId: function(token){
+			 return knex('players')
+			 .select('id_player')
+			 .where('player_token', token)
+		 },
+
+
+		 insertScoreData: function(table,newData){
+			 return knex(table)
+			 .insert(newData)
+			 .then((ids)=>{
+				 return knex(table)
+				 .select('*')
+				 .where({player_id: ids[0]})
+			 })
+		 }
 	}
 }
