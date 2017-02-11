@@ -6,6 +6,7 @@ const learnSoundPage = require('./learnSoundPage')
 const practiceSoundPage = require('./practiceSoundPage')
 
 module.exports = combineReducers({
+  // currentUser
   activity,
   modal,
   letters,

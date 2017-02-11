@@ -14,8 +14,15 @@ module.exports = class LoginForm extends React.Component {
         if(err) {
           console.log(err);
         } else {
-          // this.props.router.push(`/${res.body}/profile`)
-        }
+          if(!res.body.isUser){
+            alert('Please login')
+            this.props.router.push('/login-register')
+          } else {
+              console.log('loginform res', res);
+              alert('You are now logged in!')
+              this.props.router.push('/')
+            }
+          }
       })
 
 

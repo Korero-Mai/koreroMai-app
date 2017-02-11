@@ -11,10 +11,12 @@ module.exports = function (knex) {
         return knex('users')
         .select('username', 'id')
         .where({id: id[0]})
+				.then(users => users)
       })
     },
+
     findUserByEmail: function (table, email) {
-      console.log('here is the email fromk db',email);
+      console.log('here is the email from db',email);
       return knex(table)
       .select('*')
       .where('email', email)

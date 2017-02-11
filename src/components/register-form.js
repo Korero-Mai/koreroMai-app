@@ -1,6 +1,6 @@
 const React = require('react')
-const { connect } = require('react-redux')
 const request = require('superagent')
+const { connect } = require('react-redux')
 
 
 module.exports = class RegisterForm extends React.Component {
@@ -17,9 +17,13 @@ module.exports = class RegisterForm extends React.Component {
         if(err){
           console.log(err)
         } else {
-          const id = res.body[0].id
-          // this.props.router.push(`/${id}/profile`)
-        }
+            if(!res.body.isUser){
+              alert('User email already exists')
+            } else {
+                alert('You are now registered!')
+                this.props.router.push('/')
+              }
+          }
       })
 
   }

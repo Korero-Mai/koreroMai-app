@@ -10,7 +10,7 @@ function AuthForm(props) {
     <div>
       <h2>Login / Register</h2>
       <LoginForm  dispatch={dispatch} router={router}/>
-      <RegisterForm  dispatch={dispatch}/>
+      <RegisterForm  dispatch={dispatch} router={router}/>
     </div>
   )
 }
