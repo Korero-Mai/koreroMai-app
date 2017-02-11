@@ -1,21 +1,10 @@
 .playBox {
-  background-color: red;
-  width: 90%;
+  background-color: $yellow;
+  width: 95%;
   border: solid 5px;
+  border-radius: 4%;
+  margin:2% auto;
   display: flex;
   align-items: center;
-
-}
-
-.playBox{
-  .letter1Position{
-
-  }
-
-  .letter2Position{
-
-  }
-  .letter3Position{
-
-  }
+  height: 30em;
 }
