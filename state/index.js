@@ -72,6 +72,5 @@ module.exports = {
    },
   activity : {
   },
-  modal: false,
-  userData:{}
+  modal: false
 }
