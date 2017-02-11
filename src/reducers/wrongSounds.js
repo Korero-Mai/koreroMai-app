@@ -2,14 +2,14 @@ module.exports = function (state = false, action) {
 
   switch (action.type) {
 
-    case 'OPEN_MODAL':
-      return true
-
-    case 'CLOSE_MODAL':
-      return false
+    case 'INCREMENT_WRONGSOUNDS':
+      return state +1
 
     case 'CLOSE_MODAL_RESET_SCORE':
-      return false
+      return 0
+
+    case 'RESET_WRONGSOUNDS':
+      return 0
 
     default:
       return state

@@ -4,9 +4,8 @@ const {Link, IndexLink} = require('react-router')
 
 
 function Nav(props) {
-  function handleClick (props) {
+  const dispatch = props.dispatch
 
-  }
   return (
     <div className="top-bar">
       <div className="top-bar-left">
@@ -14,10 +13,10 @@ function Nav(props) {
           <li className="menu-text">
             Korero Mai
           </li>
-          <li>
+          <li onClick={() => dispatch({type: 'CLOSE_MODAL_RESET_SCORE'})}>
             <IndexLink to="/" activeClassName="active-link">Home</IndexLink>
           </li>
-          <li>
+          <li onClick={() => dispatch({type: 'CLOSE_MODAL_RESET_SCORE'})}>
             <Link to="/activity" activeClassName="active-link">Activities</Link>
           </li>
         </ul>

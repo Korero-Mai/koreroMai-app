@@ -223,4 +223,11 @@ module.exports = {
        '4':['ruru','tamanuitera','ua'],
        '5':['weta','whanau','ika']
   }
+
+},
+  activity : {
+  },
+  modal: false,
+  wrongSounds : 0
+
 }

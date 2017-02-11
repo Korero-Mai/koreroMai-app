@@ -18,14 +18,16 @@ class LearnSounds extends React.Component {
   generateLetter(lettersArr,letters){
       return lettersArr.map((letter,index)=>{
         return (
-          <div>
-            <audio ref={`${index}`} >
-              <source src={`${letters[letter].soundFile}`} preload=''/>
-            </audio>
-            <button onClick={() => this.playSound(index)} className={`button-radius`}>
-              {letter}
-            </button>
+          <div className='row'>
+            <div className='colums small-centered small-12 medium-6 large-4'>
+              <audio ref={`${index}`} >
+                <source src={`${letters[letter].soundFile}`} preload=''/>
+              </audio>
+              <button onClick={() => this.playSound(index)} className={`button-radius`}>
+                {letter}
+              </button>
           </div>
+        </div>
         )
       })
     }
@@ -36,7 +38,7 @@ class LearnSounds extends React.Component {
     const level = Number(this.props.params.id)
     const activityRoute = 'activity/learn/sounds/'
     const lettersArr = this.props.learnSoundPage[level]
-      const modalStyle = {
+    const modalStyle = {
       content:{
         top:'20%',
         left:'50%',
@@ -49,16 +51,20 @@ class LearnSounds extends React.Component {
 
     if (level === 1) {
       return (
+
         <div>
           <h1>Learn how to pronounce Te Reo !</h1>
           <div className="playBox">
             {this.generateLetter(lettersArr, letters)}
-            <div>
+            <div className='row'>
+              <div className='colums small-centered small-10 medium-6 large-4'>
               <Link to='activity'><button className="first-back">Back</button></Link>
               <Link to={activityRoute+(level+1)}><button className="first-next">Next</button></Link>
+              </div>
             </div>
           </div>
         </div>
+
       )
     } else if (level === 5){
       return (
@@ -85,8 +91,12 @@ class LearnSounds extends React.Component {
           <div className="playBox">
             {this.generateLetter(lettersArr, letters)}
           </div>
-            <Link to={activityRoute+(level-1)}><button className="nav-back">Back</button></Link>
-            <Link to={activityRoute+(level+1)}><button className="nav-next">Next</button></Link>
+          <div className='row'>
+            <div className='colums small-centered small-10 medium-6 large-4'>
+              <Link to={activityRoute+(level-1)}><button className="nav-back">Back</button></Link>
+              <Link to={activityRoute+(level+1)}><button className="nav-next">Next</button></Link>
+            </div>
+          </div>
         </div>
       </div>
     )
