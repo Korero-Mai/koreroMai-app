@@ -40,8 +40,24 @@ class PracticeSounds extends React.Component {
     })
   }
 
-  generateLetter(lettersArr,letters){
-      return lettersArr.map((letter,index)=>{
+  generateLetter(lettersArr,letters, answer){
+    const dispatch = this.props.dispatch
+    const modal = this.props.modal
+    const modalStyle = {
+      content:{
+        top:'50%',
+        left:'50%',
+        right:'auto',
+        bottom:'auto',
+        marginRight:'-50%',
+        transform:'translate(-50%, -50%)'
+      }
+    }
+    const level = Number(this.props.params.id)
+    const activityRoute = 'activity/practice/sounds/'
+
+    return lettersArr.map((letter,index)=>{
+      if (letter === answer) {
         return (
         <div>
           <div className="row">
@@ -49,20 +65,43 @@ class PracticeSounds extends React.Component {
               <audio ref={`${letter}`} >
                 <source src={`${letters[letter].soundFile}`} preload=''/>
               </audio>
-              <img src={`${letters[letter].imageFile}`}/>
             </div>
           </div>
           <div className="row">
-            <div className="columns">
+            <div className="columns" onClick={() => dispatch({type: 'OPEN_MODAL'})}>
               <button onClick={() => this.playSound(letter)} className={`button radius`}>
                 {letter}
               </button>
+              <Modal isOpen={modal} contentLabel='Modal' style={modalStyle}>
+                <h1>Well done!</h1>
+                <Link to={activityRoute+(level+1)}><button className="button-radius repeat" onClick={() => dispatch({type: 'CLOSE_MODAL'})}>Next one!</button></Link><br />
+              </Modal>
             </div>
           </div>
         </div>
         )
-      })
-    }
+      } else {
+        return (
+          <div>
+            <div className="row">
+              <div className="columns">
+                <audio ref={`${letter}`} >
+                  <source src={`${letters[letter].soundFile}`} preload=''/>
+                </audio>
+              </div>
+            </div>
+            <div className="row">
+              <div className="columns" onClick={() => dispatch({type: 'INCREMENT_WRONGSOUNDS'})}>
+                <button onClick={() => this.playSound(letter)} className={`button radius`}>
+                  {letter}
+                </button>
+              </div>
+            </div>
+          </div>
+        )
+      }
+    })
+  }
 
   render() {
     const props = this.props
@@ -70,7 +109,6 @@ class PracticeSounds extends React.Component {
     const level = Number(this.props.params.id)
     const activityRoute = 'activity/practice/sounds/'
     const lettersArr = this.props.practiceSoundPage[level].letters
-    console.log(lettersArr)
     const answer = this.props.practiceSoundPage[level].answer
     const modalStyle = {
       content:{
@@ -95,7 +133,7 @@ class PracticeSounds extends React.Component {
                 <h1>{this.generateAnswer(lettersArr, answer, letters)}</h1>
               </div>
             </div>
-            {this.generateLetter(lettersArr, letters)}
+            {this.generateLetter(lettersArr, letters, answer)}
           </div>
           <div className="row">
             <div className="large-4 columns">
@@ -119,7 +157,7 @@ class PracticeSounds extends React.Component {
                 <h1>{this.generateAnswer(lettersArr, answer, letters)}</h1>
               </div>
             </div>
-            {this.generateLetter(lettersArr, letters)}
+            {this.generateLetter(lettersArr, letters, answer)}
           </div>
           <div className="row">
             <div className="large-4 columns">
@@ -148,7 +186,7 @@ class PracticeSounds extends React.Component {
               <h1>{this.generateAnswer(lettersArr, answer, letters)}</h1>
             </div>
           </div>
-          {this.generateLetter(lettersArr, letters)}
+          {this.generateLetter(lettersArr, letters, answer)}
         </div>
         <div className="row">
           <div className="large-4 columns">
