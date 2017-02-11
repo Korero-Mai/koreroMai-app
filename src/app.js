@@ -11,8 +11,7 @@ const App = (props) => {
     <div>
       <Nav />
       {props.children}
-     <Footer />
-
+      <Footer />
     </div>
   )
 }

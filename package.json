@@ -42,7 +42,7 @@
     "express": "^4.14.0",
     "express-session": "^1.15.1",
     "foundation-sites": "^6.3.0",
-    "history": "^4.5.1",
+    "history": "3.0.0",
     "inject-lr-script": "^2.1.0",
     "knex": "^0.12.6",
     "livereload": "^0.6.0",
@@ -64,6 +64,7 @@
     "sqlite3": "^3.1.8",
     "style-loader": "^0.13.1",
     "superagent": "^3.4.1",
+    "url-parse": "^1.1.7",
     "webpack": "^1.14.0",
     "webpack-dev-middleware": "^1.9.0"
   },

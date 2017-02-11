@@ -52,7 +52,9 @@ module.exports = function (db) {
   app.use('/', express.static(path.join(__dirname, 'public')))
 
   // routes
-  app.use('/api/v1/', api.resources(db))
+  app.use('/api/v1/auth', api.auth(db))
+  app.use('/api/v1/users', api.users(db))
+  app.use('/api/v1/players', api.players(db))
 
   // catch 404 and forward to error handler
   app.use(function(req, res, next) {
