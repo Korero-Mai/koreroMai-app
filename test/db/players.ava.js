@@ -48,7 +48,7 @@ test('checks for existing player | checks for an existing player by token and re
    t.plan(3)
  // arrange
 const table = 'players'
-const newScore = {
+const newPlayer = {
   player_name: 'Bobb',
   player_token:'bobbie123',
   group_name:'group2'
@@ -60,11 +60,7 @@ const expected = []
 return db.addPlayer(table, newPlayer)
   .then(function(data){
 //Assert
-    t.is(data[0].id_player, expected[0].id ,
-      'adds player to db')
-    t.is(data[0].player_name, expected[0].player_name ,
-      'adds player to db')
-    t.is(data[0].group_name, expected[0].group_name ,
-      'adds player to db')
+    t.falsy(data[0],'adds player to db')
+
    })
 })
