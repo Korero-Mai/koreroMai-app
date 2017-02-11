@@ -4,10 +4,11 @@
 
 .button-radius {
     border-radius: 5px;
-    background-color: #55acee;
-    box-shadow: 0px 5px 0px 0px #3C93D5;
+    background-color: $red;
+    box-shadow: 2px 5px 2px 0px  #fd9bb8;
     padding: 20px 35px;
-    font-size: 16px;
+    font-size: 2.5em;
+    font-family: 'Muli', sans-serif;
     margin: 4px 2px;
     text-decoration: none;
     color: black;
@@ -19,15 +20,28 @@
   box-shadow: 0px 1px 0px 0px;
 }
 .button-radius:hover{
-   background-color: #6FC6FF;
+   background-color: #cc9bfd;
+}
+
+.repeat {
+  background-color: $light-blue;
+  font-size: 2em;
+  padding: .4em;
+}
+
+.new-activity {
+  background-color: $light-blue;
+  font-size: 2em;
+  padding: .4em;
+  margin: .3em 0 0;
 }
 
 .first-back {
   border-radius: 5px;
-  background-color: #55acee;
-  box-shadow: 0px 5px 0px 0px #3C93D5;
+  background-color: $light-blue;
+  box-shadow: 0px 5px 0px 0px $dark-blue;
   padding: 20px 35px;
-  font-size: 16px;
+  font-size: 1.2em;
   margin: 4px 2px;
   text-decoration: none;
   color: black;
@@ -48,10 +62,10 @@
 
 .first-next {
   border-radius: 5px;
-  background-color: #55acee;
-  box-shadow: 0px 5px 0px 0px #3C93D5;
+  background-color: $light-blue;
+  box-shadow: 0px 5px 0px 0px $dark-blue;
   padding: 20px 35px;
-  font-size: 16px;
+  font-size: 1.2em;
   margin: 4px 2px;
   text-decoration: none;
   color: black;
@@ -72,10 +86,10 @@
 
 .nav-next {
   border-radius: 5px;
-  background-color: #55acee;
-  box-shadow: 0px 5px 0px 0px #3C93D5;
+  background-color: $light-blue;
+  box-shadow: 0px 5px 0px 0px $dark-blue;
   padding: 20px 35px;
-  font-size: 16px;
+  font-size: 1.2em;
   margin: 4px 2px;
   text-decoration: none;
   color: black;
@@ -95,10 +109,10 @@
 
 .nav-back {
   border-radius: 5px;
-  background-color: #55acee;
-  box-shadow: 0px 5px 0px 0px #3C93D5;
+  background-color: $light-blue;
+  box-shadow: 0px 5px 0px 0px $dark-blue;
   padding: 20px 35px;
-  font-size: 16px;
+  font-size: 1.2em;
   margin: 4px 2px;
   text-decoration: none;
   color: black;
@@ -119,10 +133,10 @@
 
 .last-back {
   border-radius: 5px;
-  background-color: #55acee;
-  box-shadow: 0px 5px 0px 0px #3C93D5;
+  background-color: $light-blue;
+  box-shadow: 0px 5px 0px 0px $dark-blue;
   padding: 20px 35px;
-  font-size: 16px;
+  font-size: 1.2em;
   margin: 4px 2px;
   text-decoration: none;
   color: black;
@@ -143,10 +157,10 @@
 
 .finish {
   border-radius: 5px;
-  background-color: #55acee;
-  box-shadow: 0px 5px 0px 0px #3C93D5;
+  background-color: $light-blue;
+  box-shadow: 0px 5px 0px 0px $dark-blue;
   padding: 20px 35px;
-  font-size: 16px;
+  font-size: 1.2em;
   margin: 4px 2px;
   text-decoration: none;
   color: black;
@@ -159,8 +173,4 @@
   transform: translate(0px, 5px);
   -webkit-transform: translate(0px, 5px);
   box-shadow: 0px 1px 0px 0px;
-}
-
-.finish {
-  background-color: #6FC6FF;
 }
