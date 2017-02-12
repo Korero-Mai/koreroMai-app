@@ -35,7 +35,9 @@ module.exports = function(db) {
               if (match) {
                 console.log('this is the match', match);
                 req.session.isAuthenticated = true
-                res.json({isUser: true})
+                delete dbData[0].password
+                delete dbData[0].email
+                res.json({isUser: true, userData: dbData[0]})
               }  else {
                   console.log('this is the res === false', match);
                   res.json({isUser: false, error: 'Invalid email or password'})
