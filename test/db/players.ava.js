@@ -98,7 +98,7 @@ return db.addScore(table, player)
    })
 })
 
-test.only('post players by roup| retrieves players by group', (t) => {
+test('post players by roup| retrieves players by group', (t) => {
    t.plan(3)
  // arrange
 const table = 'players'
@@ -118,5 +118,23 @@ return db.findPlayersByGroup(table, group)
     t.is(data.length, expected.l,'findsPlayersByGroup')
     t.is(data[0].player_name, expected.player1,'findsPlayersByGroup')
     t.is(data[1].player_name, expected.player2,'findsPlayersByGroup')
+   })
+})
+
+test.only('post player data by player_token| retrieves player data by player_token', (t) => {
+   t.plan(3)
+ // arrange
+const table = 'players_gameScores'
+const player_token= 'annie123'
+
+const expected = 1
+
+ //act
+
+return db.findSelectedPlayerData(table, player_token)
+  .then(function(data){
+    console.log('data test', data);
+//Assert
+    t.is(data.length, expected.l,'finds all the players gameScores')
    })
 })
