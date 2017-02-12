@@ -23,30 +23,18 @@
    background-color: #cc9bfd;
 }
 
-.repeat {
-  background-color: $light-blue;
-  font-size: 2em;
-  padding: .4em;
-}
-
-.new-activity {
-  background-color: $light-blue;
-  font-size: 2em;
-  padding: .4em;
-  margin: .3em 0 0;
-}
 
 .first-back {
   border-radius: 5px;
   background-color: $light-blue;
   box-shadow: 0px 5px 0px 0px $dark-blue;
   padding: 20px 35px;
-  font-size: 2.2em;
+  font-size: 4.2em;
   margin: 4px 2px;
   text-decoration: none;
   color: black;
   position:absolute;
-    top: 80%;
+    top: 70%;
     left: 20%;
 }
 
@@ -65,13 +53,13 @@
   background-color: $light-blue;
   box-shadow: 0px 5px 0px 0px $dark-blue;
   padding: 20px 35px;
-  font-size: 2.2em;
+  font-size: 4.2em;
   margin: 4px 2px;
   text-decoration: none;
   color: black;
   position:absolute;
-    top: 80%;
-    left: 65%;
+    top: 70%;
+    left: 60%;
 }
 
 .first-next:active {
@@ -89,13 +77,13 @@
   background-color: $light-blue;
   box-shadow: 0px 5px 0px 0px $dark-blue;
   padding: 20px 35px;
-  font-size: 2.2em;
+  font-size: 4.2em;
   margin: 4px 2px;
   text-decoration: none;
   color: black;
   position:absolute;
-    top: 80%;
-    left: 65%;
+    top: 70%;
+    left: 60%;
 }
 .nav-next:active {
   transform: translate(0px, 5px);
@@ -112,12 +100,12 @@
   background-color: $light-blue;
   box-shadow: 0px 5px 0px 0px $dark-blue;
   padding: 20px 35px;
-  font-size: 2.2em;
+  font-size: 4.2em;
   margin: 4px 2px;
   text-decoration: none;
   color: black;
   position:absolute;
-    top: 80%;
+    top: 70%;
     left: 20%;
 }
 
@@ -136,12 +124,12 @@
   background-color: $light-blue;
   box-shadow: 0px 5px 0px 0px $dark-blue;
   padding: 20px 35px;
-  font-size: 2.2em;
+  font-size: 4.2em;
   margin: 4px 2px;
   text-decoration: none;
   color: black;
   position:absolute;
-    top: 80%;
+    top: 70%;
     left: 20%;
 }
 
@@ -160,17 +148,30 @@
   background-color: $light-blue;
   box-shadow: 0px 5px 0px 0px $dark-blue;
   padding: 20px 35px;
-  font-size: 2.2em;
+  font-size: 4.2em;
   margin: 4px 2px;
   text-decoration: none;
   color: black;
   position:absolute;
-    top: 80%;
-    left: 65%;
+    top: 70%;
+    left: 60%;
 }
 
 .finish:active {
   transform: translate(0px, 5px);
   -webkit-transform: translate(0px, 5px);
   box-shadow: 0px 1px 0px 0px;
+}
+
+.repeat {
+  background-color: $light-blue;
+  font-size: 4em;
+  padding: .4em;
+}
+
+.new-activity {
+  background-color: $light-blue;
+  font-size: 4em;
+  padding: .4em;
+  margin: .3em 0 0;
 }
