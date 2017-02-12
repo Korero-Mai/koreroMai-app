@@ -92,6 +92,38 @@ module.exports = function (knex) {
 			 .where({group_name: input.group_name})
 		 },
 
+		 findPlayersByUser: function(table,input){
+			 return knex('users_players')
+			 .join('users','users.id','=','user_id')
+			 .join('players','players.id_player','=','player_id')
+			 .select('*')
+			 .where('users.id',input)
+			 .then((all)=>{
+				 return this.filterUsersPlayersData(all)
+			 })
+		 },
+
+		 filterUsersPlayersData: function(input){
+			 const filteredData ={user:{},players:[]}
+			 input.map((student,i)=>{
+				 filteredData.user.id = student.id
+				 filteredData.user.username = student.username
+				 filteredData.user.email = student.email
+				 filteredData.user.password = student.password
+
+				 const player = {}
+				 player.id_player = student.id_player
+				 player.player_name = student.player_name
+				 player.player_token = student.player_token
+				 player.prac_sounds_total_wrong = student.prac_sounds_total_wrong
+				 player.prac_words_total_wrong = student.prac_words_total_wrong
+				 player.group_name = student.group_name
+
+				filteredData.players.push(player)
+			 })
+			 return filteredData
+		 },
+
 		 findSelectedPlayerData: function(table,token){
 			 const formattedToken = {player_token:token}
 			 return this.checkIfPlayerExists('players', formattedToken)
