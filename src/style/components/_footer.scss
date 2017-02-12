@@ -13,6 +13,14 @@
   justify-content: center;
 }
 
+@include smallwindow {
+  .footer {
+    font-size: 1.2em;
+    height: 2em;
+    padding-top: 8px;
+  }
+}
+
 @include tablet {
   .footer {
     font-size: 1.5em;
