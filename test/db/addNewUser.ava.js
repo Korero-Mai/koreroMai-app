@@ -44,7 +44,6 @@ const expected = [{id: 1, username: 'anna', email: 'anna@anna.com', password: '$
 return db.findUserByEmail('users', email)
 
   .then(function(data){
-    console.log(data);
 //Assert
     t.is(data[0].id, expected[0].id ,'find an user by email')
     t.is(data[0].username, expected[0].username ,'find an user by email')
@@ -65,10 +64,7 @@ const expected = []
 return db.findUserByEmail('users', email)
 
   .then(function(data){
-    console.log(data);
 //Assert
     t.is(data.length, 0 ,'find an user by email')
-
-
    })
 })

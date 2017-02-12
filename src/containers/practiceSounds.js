@@ -44,7 +44,7 @@ class PracticeSounds extends React.Component {
 
     const timeoutModal = function(){
       setTimeout(() => {
-        dispatch({type: 'OPEN_MODAL'})}, 1000)
+        dispatch({type: 'OPEN_MODAL'})}, 550)
     }
 
     const dispatch = this.props.dispatch
