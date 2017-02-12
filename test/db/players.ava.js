@@ -98,22 +98,25 @@ return db.addScore(table, player)
    })
 })
 
-test('post players by roup| retrieves players by group', (t) => {
-   t.plan(1)
+test.only('post players by roup| retrieves players by group', (t) => {
+   t.plan(3)
  // arrange
 const table = 'players'
-const group= {
-  group_name:'group2'
+const group= 'group2'
+
+const expected = {
+  l: 2,
+  player1: 'Jimmie',
+  player2: 'Phil'
 }
 
-const expected = 2
  //act
 
 return db.findPlayersByGroup(table, group)
   .then(function(data){
-    console.log('datain test ', data);
 //Assert
-    t.is(data[0].length, expected,
-      'findsPlayersByGroup')
+    t.is(data.length, expected.l,'findsPlayersByGroup')
+    t.is(data[0].player_name, expected.player1,'findsPlayersByGroup')
+    t.is(data[1].player_name, expected.player2,'findsPlayersByGroup')
    })
 })

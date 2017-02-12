@@ -86,6 +86,10 @@ module.exports = function (knex) {
 			 })
 		 },
 
-
+		 findPlayersByGroup: function(table,groupName){
+			 return knex(table)
+			 .select('*')
+			 .where({group_name: groupName})
+		 }
 	}
 }
