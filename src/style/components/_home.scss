@@ -1,23 +1,27 @@
+.homepage-div {
+  margin-top: 10%;
+}
+.main-heading {
+  width: 100%;
+}
 
 .play-button {
   border-radius: 5px;
   background-color: $yellow;
   box-shadow: 2px 5px 2px 0px  #fd9b9b;
   padding: 30px 35px;
-  font-size: 7.5em;
+  font-size: 7em;
   font-family: 'Muli', sans-serif;
-  margin-left: 60%;
-  margin-top: 24%;
   text-decoration: none;
   color: black;
+  margin: 100px 0 0;
 }
 
 .h1-home {
   font-family: 'Life Savers', cursive;
-  font-size: 3em;
+  font-size: 7em;
   font-weight: bold;
-  margin-left: 60%;
-  margin-top: 50%;
+  text-align: center;
 }
 @include tablet {
   .h1-home {
@@ -26,9 +30,7 @@
 }
 
 .h3-home {
-  margin-left: 60%;
-  margin-top: 50px;
   font-family: 'Itim', cursive;
-  font-size: 2.3em;
-  text-align: inherit;
+  font-size: 5em;
+  text-align: center;
 }
