@@ -76,7 +76,7 @@ class LearnWords extends React.Component {
                 {this.generateWord(wordsArr, words)}
                 <div>
                   <Link to={activityRoute+(level-1)}><button className="last-back">Back</button></Link>
-                  <button className="finish" onClick={() => dispatch({type: 'OPEN_MODAL'})}>Finish!</button>
+                  <button className="finish" onClick={() => dispatch({type: 'TOGGLE_MODAL'})}>Finish!</button>
                   <Modal isOpen={modal} contentLabel='Modal' style={modalStyle}>
                     <h1>Well done!</h1>
                     <Link to={activityRoute+1}><button className="button-radius repeat" onClick={() => dispatch({type: 'CLOSE_MODAL'})}>Repeat</button></Link><br />
