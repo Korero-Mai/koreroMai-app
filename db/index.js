@@ -51,6 +51,10 @@ module.exports = function (knex) {
 			.then((ids)=>{
 				return this.findUserByJoinTableID(ids[0])
 			})
+			.then(joinTableRow=>{
+				return this.findPlayerByID(joinTableRow[0].player_id)
+			})
+			
 		},
 
 		linkPlayerToJoinTable:function(playerID,userID){
@@ -156,10 +160,14 @@ module.exports = function (knex) {
 			 		}
 			 	})
 				.then((ids)=>{
-					return knex(table)
-					.select('*')
-					.where({player_id: ids[0].id_player})
+					return this.findPlayerByID(ids[0])
 				})
+		 },
+
+		 findPlayerByID: function(id){
+			 return knex('players')
+			 .select('*')
+			 .where({id_player: id})
 		 }
 	}
 }

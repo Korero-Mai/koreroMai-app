@@ -30,7 +30,12 @@ const input = {
   group_name:'group2'
 }
 
-const expected = [{id:6,player_name:"Joyce",group_name:"group2"}]
+const expected = [{
+  id:3,
+  player_id:6,
+  player_name:"Joyce",
+  group_name:"group2"
+}]
  //act
 
 return db.addPlayer(table, input)
@@ -42,6 +47,8 @@ return db.addPlayer(table, input)
     t.is(data[0].player_name, expected[0].player_name ,
       'adds player to db')
     t.is(data[0].group_name, expected[0].group_name ,
+      'adds player to db')
+    t.is(data[0].id, expected[0].id,
       'adds player to db')
    })
 })
