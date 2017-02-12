@@ -1,15 +1,15 @@
 .top-bar, .top-bar ul {
   background-color: $nav-background;
   text-transform: uppercase;
-   margin: 0;
-   font-weight: 900;
-   padding: 5px 0;
+  margin: 0 0 4em 0;
+  font-weight: 900;
+  padding: 5px 0;
 }
 
 .top-bar {
   .menu-text {
     color: $nav-text-color;
-    font-size: 2.2em;
+    font-size: 3em;
     font-family: 'Itim', cursive;
   }
   .menu > .menu-text > a {
@@ -22,50 +22,52 @@
 
   }
   .nav-text {
-    font-size: 2.2em;
+    font-size: 2em;
   }
 }
-
-@include smallwindow {
-  .top-bar {
-    .menu-text {
-      font-size: 1.3em;
-    }
-    .nav-text {
-      font-size: 1.2em;
-    }
-  }
-}
-
-@include tablet {
-  .top-bar {
-    .menu-text {
-      font-size: 1.7em;
-    }
-    .nav-text {
-      font-size: 1.3em;
-    }
-  }
-}
-
-@include smalldesk {
-  .top-bar {
-    .menu-text {
-      font-size: 1.4em;
-    }
-    .nav-text {
-      font-size: 1.2em;
-    }
-  }
-}
-
-@include largedesk {
-  .top-bar {
-    .menu-text {
-      font-size: 1.3em;
-    }
-    .nav-text {
-      font-size: 1.2em;
-    }
-  }
-}
+//
+// @include smallwindow {
+//   .top-bar {
+//     .menu-text {
+//       font-size: 1.3em;
+//     }
+//     .nav-text {
+//       font-size: 1.2em;
+//     }
+//   }
+// }
+//
+// @include tablet {
+//   .top-bar {
+//     .menu-text {
+//       font-size: 1.7em;
+//     }
+//     .nav-text {// .row-learn {
+// //   margin-top: 7em;
+// // }
+//       font-size: 1.3em;
+//     }
+//   }
+// }
+//
+// @include smalldesk {
+//   .top-bar {
+//     .menu-text {
+//       font-size: 1.4em;
+//     }
+//     .nav-text {
+//       font-size: 1.2em;
+//     }
+//   }
+// }
+//
+// @include largedesk {
+//   .top-bar {
+//     .menu-text {
+//       font-size: 1.3em;
+//     }
+//     .nav-text {
+//       font-size: 1.2em;
+//     }
+//   }
+// }
