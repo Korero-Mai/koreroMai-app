@@ -38,16 +38,7 @@ class LearnSounds extends React.Component {
     const level = Number(this.props.params.id)
     const activityRoute = 'activity/learn/sounds/'
     const lettersArr = this.props.learnSoundPage[level]
-    const modalStyle = {
-      content:{
-        top:'20%',
-        left:'50%',
-        right:'auto',
-        bottom:'auto',
-        marginRight:'-50%',
-        transform:'translate(-50%, -50%)'
-      }
-    }
+
 
     if (level === 1) {
       return (
@@ -69,13 +60,13 @@ class LearnSounds extends React.Component {
     } else if (level === 5){
       return (
         <div>
-          <h1>Learn how to pronounce Te Reo !</h1>
+        <div className='welcome'>Learn how to pronounce Te Reo!</div>
             <div className="play-box">
               {this.generateLetter(lettersArr, letters)}
               <div>
                 <Link to={activityRoute+(level-1)}><button className="last-back">Back</button></Link>
                 <button className="finish" onClick={() => dispatch({type: 'OPEN_MODAL'})}>Finish!</button>
-                <Modal isOpen={modal} contentLabel='Modal' style={modalStyle}>
+                <Modal isOpen={modal} contentLabel='Modal' >
                   <h1>Well done!</h1>
                   <Link to={activityRoute+1}><button className="button-radius repeat" onClick={() => dispatch({type: 'CLOSE_MODAL'})}>Repeat</button></Link><br />
                   <Link to='activity'><button className="button-radius new-activity" onClick={() => dispatch({type: 'CLOSE_MODAL'})}>Choose another activity</button></Link>
@@ -86,7 +77,7 @@ class LearnSounds extends React.Component {
       )
     } else return (
       <div>
-        <h1>Learn how to pronounce Te Reo !</h1>
+      <div className='welcome'>Learn how to pronounce Te Reo!</div>
         <div>
           <div className="play-box">
             {this.generateLetter(lettersArr, letters)}

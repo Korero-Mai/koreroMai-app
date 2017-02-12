@@ -3,15 +3,26 @@
   width: 95%;
   border: solid 5px;
   border-radius: 4%;
-  margin:2% auto;
+  margin: 2% auto;
   display: flex;
   align-items: center;
   height: 46em;
 }
+
 .welcome {
   font-size: 3em;
   font-family: 'Itim', sans-serif;
 }
+
+.modal {
+    top: 20%;
+    left: 50%;
+    right: auto;
+    bottom: auto;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+
 
 .button-radius {
   border-radius: 5px;
@@ -194,6 +205,15 @@
       font-size: 5.5em;
       margin: 4px 2px;
   }
+
+  .repeat {
+    font-size: 3em;
+  }
+
+  .new-activity {
+    font-size: 3em;
+  }
+
   .play-box {
     margin:0;
     height: 20em;
@@ -204,6 +224,22 @@
     font-size: 3em;
   }
   .first-next {
+    padding: .3em;
+    font-size: 3em;
+  }
+  .nav-next {
+    padding: .3em;
+    font-size: 3em;
+  }
+  .nav-back {
+    padding: .3em;
+    font-size: 3em;
+  }
+  .last-back {
+    padding: .3em;
+    font-size: 3em;
+  }
+  .finish {
     padding: .3em;
     font-size: 3em;
   }
