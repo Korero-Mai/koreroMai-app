@@ -53,7 +53,7 @@ class LearnSounds extends React.Component {
       return (
 
         <div>
-          <h1>Learn how to pronounce Te Reo !</h1>
+          <div className='welcome'>Learn how to pronounce Te Reo!</div>
           <div className="play-box">
             {this.generateLetter(lettersArr, letters)}
             <div className='row'>
