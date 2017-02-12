@@ -2,15 +2,13 @@
   border-radius: 5px;
   background-color: $red;
   box-shadow: 2px 5px 2px 0px #9bfde4;
-   border: 3px solid transparent;
-  padding: 70px 35px;
+  border: 3px solid transparent;
   font-size: 5em;
-  font-family: 'Itim', sans-serif;
-  margin: 54px 20px;
+  font-family: 'Open sans', sans-serif;
+  margin: .5em;
   text-decoration: none;
   color: black;
-  width: 4em;
-
+  text-align: center;
   -webkit-transition: all 0.3s ease 0s;
   -moz-transition: all 0.3s ease 0s;
   -ms-transition: all 0.3s ease 0s;
@@ -21,4 +19,49 @@
 .h3-choose {
   font-family: 'Itim', cursive;
   font-size: 4.8em;
+}
+
+@include largedesk {
+  .h3-choose {
+    font-size: 4em;
+  }
+  .choose {
+    font-size: 2.5em;
+  }
+}
+
+@include smalldesk {
+  .h3-choose {
+    font-size: 3em;
+  }
+  .choose {
+    font-size: 2em;
+  }
+}
+
+@include tablet {
+  .h3-choose {
+    font-size: 2.5em;
+  }
+  .choose {
+    font-size: 2em;
+  }
+}
+
+@include ipad {
+  .h3-choose {
+    font-size: 3.5em;
+  }
+  .choose {
+    font-size: 3em;
+  }
+}
+
+@include smallwindow {
+  .h3-choose {
+    font-size: 2.5em;
+  }
+  .choose {
+    font-size: 2em;
+  }
 }
