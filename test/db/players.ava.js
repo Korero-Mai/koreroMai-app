@@ -20,7 +20,7 @@ test.beforeEach(() => {
 // })
 
 test.only('Add new player and link to user| it should add a new player to the players table', (t) => {
-   t.plan(3)
+   t.plan(4)
  // arrange
 const table = 'players'
 const input = {

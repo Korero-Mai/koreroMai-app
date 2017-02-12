@@ -38,6 +38,7 @@ module.exports = function (knex) {
 			const newData = input
 			const userID = input.id
 			delete newData.id
+
 			return knex(table)
 			.insert(newData)
 			.then((ids)=>{
@@ -54,7 +55,24 @@ module.exports = function (knex) {
 			.then(joinTableRow=>{
 				return this.findPlayerByID(joinTableRow[0].player_id)
 			})
-			
+			.then(playerData=>{
+				return this.findUserById(userID)
+				.then((user)=>{
+					return this.addUserToPlayerData(user[0],playerData[0])
+				})
+			})
+		},
+
+		addUserToPlayerData: function(teacher,student){
+			const filteredData = {
+				user: {
+					id:teacher.id,
+					username:teacher.username,
+					email:teacher.email
+				},
+				player:student
+			}
+			return filteredData
 		},
 
 		linkPlayerToJoinTable:function(playerID,userID){
@@ -168,6 +186,12 @@ module.exports = function (knex) {
 			 return knex('players')
 			 .select('*')
 			 .where({id_player: id})
+		 },
+
+		 findUserById: function(id){
+			 return knex('users')
+			 .select('*')
+			 .where({id: id})
 		 }
 	}
 }
