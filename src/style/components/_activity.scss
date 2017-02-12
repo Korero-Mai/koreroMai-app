@@ -3,9 +3,10 @@
   background-color: $red;
   box-shadow: 2px 5px 2px 0px #9bfde4;
   border: 3px solid transparent;
+  padding: 10px;
   font-size: 5em;
-  font-family: 'Open sans', sans-serif;
-  margin: .5em;
+  font-family: 'Muli', sans-serif;
+  margin: 20px;
   text-decoration: none;
   color: black;
   text-align: center;
@@ -16,52 +17,36 @@
   transition: all 0.3s ease 0s;
 }
 
+.choose:active {
+  transform: translate(0px, 5px);
+  -webkit-transform: translate(0px, 5px);
+  box-shadow: 0px 1px 0px 0px;
+}
+.choose:hover {
+   background-color: #cc9bfd;
+}
+
+
 .h3-choose {
   font-family: 'Itim', cursive;
-  font-size: 4.8em;
+  font-size:4.8em;
 }
 
-@include largedesk {
-  .h3-choose {
-    font-size: 4em;
-  }
-  .choose {
-    font-size: 2.5em;
-  }
-}
 
-@include smalldesk {
-  .h3-choose {
-    font-size: 3em;
-  }
-  .choose {
-    font-size: 2em;
-  }
-}
-
-@include tablet {
-  .h3-choose {
-    font-size: 2.5em;
-  }
-  .choose {
-    font-size: 2em;
-  }
-}
-
-@include ipad {
-  .h3-choose {
-    font-size: 3.5em;
-  }
-  .choose {
-    font-size: 3em;
-  }
-}
-
-@include smallwindow {
-  .h3-choose {
-    font-size: 2.5em;
-  }
-  .choose {
-    font-size: 2em;
-  }
-}
+// @include smalldesk {
+//   .h3-choose {
+//     font-size: 3em;
+//   }
+//   .choose {
+//     font-size: 2em;
+//   }
+// }
+//
+// @include tablet {
+//   .h3-choose {
+//     font-size: 2.5em;
+//   }
+//   .choose {
+//     font-size: 2em;
+//   }
+// }
