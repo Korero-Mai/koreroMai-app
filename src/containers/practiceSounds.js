@@ -41,6 +41,12 @@ class PracticeSounds extends React.Component {
   }
 
   generateLetter(lettersArr,letters, answer){
+
+    const timeoutModal = function(){
+      setTimeout(() => {
+        dispatch({type: 'OPEN_MODAL'})}, 1000)
+    }
+
     const dispatch = this.props.dispatch
     const modal = this.props.modal
     const modalStyle = {
@@ -70,7 +76,7 @@ class PracticeSounds extends React.Component {
               </div>
             </div>
             <div className="row">
-              <div className="columns" onClick={() => dispatch({type: 'OPEN_MODAL'})}>
+              <div className="columns" onClick={timeoutModal}>
                 <button onClick={() => this.playSound(letter)} className={`button radius`}>
                   {letter}
                 </button>
@@ -117,7 +123,7 @@ class PracticeSounds extends React.Component {
             </div>
           </div>
           <div className="row">
-            <div className="columns" onClick={() => dispatch({type: 'OPEN_MODAL'})}>
+            <div className="columns" onClick={timeoutModal}>
               <button onClick={() => this.playSound(letter)} className={`button radius`}>
                 {letter}
               </button>
