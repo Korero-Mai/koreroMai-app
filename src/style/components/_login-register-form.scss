@@ -1,0 +1,21 @@
+.container {
+  background-color: $light-grey;
+  border-radius: 5px;
+  padding: 0;
+  margin-bottom: 10em;
+  margin-top: 5em;
+
+  h3 {
+    color: $dark-blue;
+    font-size: 5rem;
+    margin-bottom: 1em;
+  }
+  input {
+    height:2em;
+    font-size:2rem;
+  }
+  button {
+    height:3em;
+    font-size:2rem;
+  }
+}
