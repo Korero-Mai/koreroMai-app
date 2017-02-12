@@ -23,18 +23,21 @@ module.exports = function (knex) {
     },
 
 //players table methods
-		addPlayer: function(table, newPlayer){
-			return this.checkIfPlayerExists(table, newPlayer)
+		addPlayer: function(table, input){
+			return this.checkIfPlayerExists(table, input)
 				.then((bool)=>{
 					if(bool){
 						return []
 					} else{
-						return this.insertplayerData(table, newPlayer)
+						return this.insertplayerData(table, input)
 					}
 				})
 		},
 
-		insertplayerData: function(table,newData){
+		insertplayerData: function(table,input){
+			const newData = input
+			const userID = input.id
+			delete newData.id
 			return knex(table)
 			.insert(newData)
 			.then((ids)=>{
@@ -42,6 +45,24 @@ module.exports = function (knex) {
 				.select('*')
 				.where({id_player: ids[0]})
 			})
+			.then((player)=>{
+				return this.linkPlayerToJoinTable(player[0].id_player, userID)
+			})
+			.then((ids)=>{
+				return this.findUserByJoinTableID(ids[0])
+			})
+		},
+
+		linkPlayerToJoinTable:function(playerID,userID){
+			return knex('users_players')
+			.insert({user_id:userID , player_id:playerID})
+			.select('*')
+		},
+
+		findUserByJoinTableID: function(id){
+			return knex('users_players')
+			.select('*')
+			.where({users_players_id: id})
 		},
 
 		checkIfPlayerExists:function(table, newPlayer){

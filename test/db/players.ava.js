@@ -19,11 +19,12 @@ test.beforeEach(() => {
 //   return testKnex.migrate.rollback()
 // })
 
-test('Add new player | it should add a new player to the players table', (t) => {
+test.only('Add new player and link to user| it should add a new player to the players table', (t) => {
    t.plan(3)
  // arrange
 const table = 'players'
 const input = {
+  id: 3,
   player_name: 'Joyce',
   player_token:'joyce123',
   group_name:'group2'
@@ -34,6 +35,7 @@ const expected = [{id:6,player_name:"Joyce",group_name:"group2"}]
 
 return db.addPlayer(table, input)
   .then(function(data){
+    console.log('data', data);
 //Assert
     t.is(data[0].id_player, expected[0].id ,
       'adds player to db')
@@ -113,7 +115,6 @@ const expected = {
  //act
 return db.findPlayersByUser(table, input)
   .then(function(data){
-    console.log('data', data);
 //Assert
     t.is(data.user.id, expected.id,'findsPlayersByGroup')
     t.is(data.players[0].player_name, expected.player1,'findsPlayersByGroup')
