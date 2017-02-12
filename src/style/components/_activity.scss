@@ -2,6 +2,7 @@
   border-radius: 5px;
   background-color: $red;
   box-shadow: 2px 5px 2px 0px #9bfde4;
+   border: 3px solid transparent;
   padding: 70px 35px;
   font-size: 5em;
   font-family: 'Itim', sans-serif;
@@ -9,6 +10,12 @@
   text-decoration: none;
   color: black;
   width: 4em;
+
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -ms-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
 }
 
 .h3-choose {
