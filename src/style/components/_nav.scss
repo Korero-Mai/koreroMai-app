@@ -36,3 +36,25 @@
     }
   }
 }
+
+@include smalldesk {
+  .top-bar {
+    .menu-text {
+      font-size: 1.4em;
+    }
+    .nav-text {
+      font-size: 1.2em;
+    }
+  }
+}
+
+@include largedesk {
+  .top-bar {
+    .menu-text {
+      font-size: 1.3em;
+    }
+    .nav-text {
+      font-size: 1.2em;
+    }
+  }
+}

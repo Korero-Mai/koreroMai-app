@@ -41,3 +41,27 @@
     font-size: 5em;
   }
 }
+
+@include smalldesk {
+  .h1-home {
+    font-size: 4.5em;
+  }
+  .h3-home {
+    font-size: 3.5em;
+  }
+  .play-button {
+    font-size: 4em;
+  }
+}
+
+@include largedesk {
+  .h1-home {
+    font-size: 4.7em;
+  }
+  .h3-home {
+    font-size: 4em;
+  }
+  .play-button {
+    font-size: 4em;
+  }
+}
