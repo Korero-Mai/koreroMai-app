@@ -1,7 +1,5 @@
-// --------------------------------BUTTONS HERE --------------------------------
-//
 .learn-words {
-  button {
+  .button {
     border-radius: 5px;
     background-color: $red;
     box-shadow: 2px 5px 2px 0px  #fd9bb8;
@@ -11,7 +9,6 @@
     margin: 4px 2px;
     text-decoration: none;
     color: black;
-
   }
   .button:active {
     transform: translate(0px, 5px);
@@ -20,5 +17,20 @@
   }
   .button:hover{
      background-color: #cc9bfd;
+  }
+}
+
+
+@include ipad {
+  .learn-words {
+    .button {
+      background-color: $red;
+      font-size: 3em;
+      padding: 10px 15px;
+      margin: 0;
+    }
+  }
+  .playbox {
+
   }
 }
