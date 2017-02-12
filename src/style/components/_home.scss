@@ -1,30 +1,91 @@
-
+.homepage-div {
+  margin-top: 10%;
+}
+.main-heading {
+  width: 100%;
+}
 
 .play-button {
   border-radius: 5px;
   background-color: $yellow;
   box-shadow: 2px 5px 2px 0px  #fd9b9b;
   padding: 30px 35px;
-  font-size: 7.5em;
+  font-size: 7em;
   font-family: 'Muli', sans-serif;
-  margin-left: 60%;
-  margin-top: 24%;
   text-decoration: none;
   color: black;
+  margin: 100px 0 0;
 }
 
 .h1-home {
   font-family: 'Life Savers', cursive;
-  font-size: 9em;
+  font-size: 7em;
   font-weight: bold;
-  margin-left: 60%;
-  margin-top: 50%;
+  text-align: center;
 }
 
 .h3-home {
-  margin-left: 60%;
-  margin-top: 50px;
   font-family: 'Itim', cursive;
-  font-size: 2.3em;
-  text-align: inherit;
+  font-size: 5em;
+  text-align: center;
+}
+
+@include tablet {
+  .h1-home {
+    font-size: 5em;
+  }
+  .h3-home {
+    font-size: 4em;
+  }
+  .play-button {
+    font-size: 5em;
+  }
+}
+
+@include smalldesk {
+  .h1-home {
+    font-size: 4.5em;
+  }
+  .h3-home {
+    font-size: 3.5em;
+  }
+  .play-button {
+    font-size: 4em;
+  }
+}
+
+@include largedesk {
+  .h1-home {
+    font-size: 4.7em;
+  }
+  .h3-home {
+    font-size: 4em;
+  }
+  .play-button {
+    font-size: 4em;
+  }
+}
+
+@include ipad {
+  .h1-home {
+    font-size: 3.5em;
+  }
+  .h3-home {
+    font-size: 3.4em;
+  }
+  .play-button {
+    font-size: 3em;
+  }
+}
+
+@include smallwindow {
+  .h1-home {
+    font-size: 3em;
+  }
+  .h3-home {
+    font-size: 2.9em;
+  }
+  .play-button {
+    font-size: 3em;
+  }
 }
