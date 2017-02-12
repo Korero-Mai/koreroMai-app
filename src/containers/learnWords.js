@@ -17,17 +17,19 @@ class LearnWords extends React.Component {
   generateWord(wordsArr,words){
       return wordsArr.map((word,index)=>{
         return (
-          <div className='row'>
-            <div className='colums small-centered small-12 medium-6 large-4'>
-              <audio ref={`${index}`} >
-                <source src={`${words[word].soundFile}`} preload=''/>
-              </audio>
-              <img src={`${words[word].imageFile}`} />
-              <button onClick={() => this.playSound(index)} className={`button-radius`}>
-                {word}
-              </button>
+          <div className='learn-words'>
+            <div className='row'>
+              <div className='colums small-centered small-12 medium-6 large-4'>
+                <audio ref={`${index}`} >
+                  <source src={`${words[word].soundFile}`} preload=''/>
+                </audio>
+                <img src={`${words[word].imageFile}`} />
+                  <button onClick={() => this.playSound(index)} className={`button`}>
+                  {word}
+                </button>
+              </div>
+            </div>
           </div>
-        </div>
         )
       })
     }
