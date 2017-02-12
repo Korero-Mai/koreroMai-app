@@ -18,6 +18,7 @@ module.exports = function (knex) {
       .select('*')
       .where('email', email)
       .then((selectedUser) => {
+        console.log(selectedUser)
         return selectedUser
       })
     },
