@@ -31,6 +31,9 @@ hashHistory.listen((ev) => {
   //listen to window.location directly?
   const paths = ev.pathname.split('/')
   if (paths[1] === 'users'){
+    request.get('/api/v1/users/1/profile', (err, res, next) =>{
+
+    })
   }
 })
 
