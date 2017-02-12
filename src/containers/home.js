@@ -21,8 +21,23 @@ function Home(props) {
           <Link to="activity"><button className="play-button" onClick={() => props.dispatch({type: 'UPDATE_SITUATION', situation: 11})}>PLAY!</button></Link>
         </div>
       </div>
-
+      <div className='spider'>
+        <img src='../images/activity-images/pungawerewere.png'/>
+      </div>
+      <div className='kiwi'>
+        <img src='../images/activity-images/kiwi.png'/>
+      </div>
+      <div className='grass'>
+        <img src='../images/activity-images/grass.png'/>
+      </div>
+      <div className='butterfly'>
+        <img src='../images/activity-images/butterfly.png'/>
+      </div>
+      <div className='bee'>
+        <img src='../images/activity-images/bee.png'/>
+      </div>
     </div>
+
   )
 }
 

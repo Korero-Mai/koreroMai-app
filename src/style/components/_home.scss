@@ -30,6 +30,35 @@
   text-align: center;
 }
 
+.grass {
+  width: 100%;
+  position:absolute;
+    top: 77%;
+}
+
+.kiwi {
+  width: 30%;
+  position:absolute;
+    top: 75%;
+    right: 70%;
+}
+
+.butterfly {
+  position:absolute;
+    top: 15%;
+    right: 70%;
+  -ms-transform: rotate(40deg); /* IE 9 */
+  -webkit-transform: rotate(40deg); /* Chrome, Safari, Opera */
+     transform: rotate(5deg);
+}
+
+.bee {
+  width: 20%;
+  position:absolute;
+    top: 55%;
+    right: 5%;
+}
+
 @include ipad {
   .h1-home {
     font-size: 3em;
