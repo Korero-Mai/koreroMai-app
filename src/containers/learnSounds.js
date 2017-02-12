@@ -17,7 +17,9 @@ class LearnSounds extends React.Component {
     if (level === 1) {
       return (
         <div>
-          <div className='welcome'>Learn how to pronounce Te Reo!</div>
+          <div className='welcome'>
+            Learn how to pronounce Te Reo!
+          </div>
           <div className="play-box">
             {this.generateLetter(lettersArr, letters)}
             <div className='row'>
@@ -35,7 +37,7 @@ class LearnSounds extends React.Component {
           <div className='welcome'>
             Learn how to pronounce Te Reo!
           </div>
-          <div className="play-box">
+          <div className='play-box'>
             {this.generateLetter(lettersArr, letters)}
             <div>
               <Link to={activityRoute+(level-1)}><button className="last-back">Back</button></Link>
@@ -84,7 +86,7 @@ class LearnSounds extends React.Component {
               <audio ref={`${index}`} >
                 <source src={`${letters[letter].soundFile}`} preload=''/>
               </audio>
-              <button onClick={() => this.playSound(index)} className={`button-radius`}>
+              <button onClick={() => this.playSound(index)} className='button-radius'>
                 {letter}
               </button>
           </div>
