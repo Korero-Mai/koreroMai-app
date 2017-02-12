@@ -1,5 +1,4 @@
 
-
 .play-button {
   border-radius: 5px;
   background-color: $yellow;
@@ -15,10 +14,15 @@
 
 .h1-home {
   font-family: 'Life Savers', cursive;
-  font-size: 9em;
+  font-size: 3em;
   font-weight: bold;
   margin-left: 60%;
   margin-top: 50%;
+}
+@include tablet {
+  .h1-home {
+    font-size: 2em;
+  }
 }
 
 .h3-home {
