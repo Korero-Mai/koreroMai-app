@@ -5,7 +5,7 @@
   border-radius: 4%;
   margin: 2% auto;
   height: 46em;
-text-align: center;
+  text-align: center;
 }
 
 .welcome {
@@ -23,24 +23,24 @@ text-align: center;
 }
 
 
-.button-radius {
+.lwordbutton {
   border-radius: 5px;
   background-color: $red;
   box-shadow: 2px 5px 2px 0px  #fd9bb8;
   padding: 20px 25px;
-  font-size: 8.5em;
+  font-size: 3em;
   font-family: 'Muli', sans-serif;
   margin: 4px 2px;
   text-decoration: none;
   color: black;
 }
 
-.button-radius:active {
+.lwordbutton:active {
   transform: translate(0px, 5px);
   -webkit-transform: translate(0px, 5px);
   box-shadow: 0px 1px 0px 0px;
 }
-.button-radius:hover{
+.lwordbutton:hover{
    background-color: #cc9bfd;
 }
 
@@ -49,7 +49,7 @@ text-align: center;
   background-color: $light-blue;
   box-shadow: 0px 5px 0px 0px $dark-blue;
   padding: 20px 35px;
-  font-size: 4.2em;
+  font-size: 3.5em;
   margin: 4px 2px;
   text-decoration: none;
   color: black;
@@ -73,7 +73,7 @@ text-align: center;
   background-color: $light-blue;
   box-shadow: 0px 5px 0px 0px $dark-blue;
   padding: 20px 35px;
-  font-size: 4.2em;
+  font-size: 3.5em;
   margin: 4px 2px;
   text-decoration: none;
   color: black;
@@ -97,7 +97,7 @@ text-align: center;
   background-color: $light-blue;
   box-shadow: 0px 5px 0px 0px $dark-blue;
   padding: 20px 35px;
-  font-size: 4.2em;
+  font-size: 3.5em;
   margin: 4px 2px;
   text-decoration: none;
   color: black;
@@ -121,7 +121,7 @@ text-align: center;
   background-color: $light-blue;
   box-shadow: 0px 5px 0px 0px $dark-blue;
   padding: 20px 35px;
-  font-size: 4.2em;
+  font-size: 3.5em;
   margin: 4px 2px;
   text-decoration: none;
   color: black;
@@ -145,7 +145,7 @@ text-align: center;
   background-color: $light-blue;
   box-shadow: 0px 5px 0px 0px $dark-blue;
   padding: 20px 35px;
-  font-size: 4.2em;
+  font-size: 3.5em;
   margin: 4px 2px;
   text-decoration: none;
   color: black;
@@ -169,7 +169,7 @@ text-align: center;
   background-color: $light-blue;
   box-shadow: 0px 5px 0px 0px $dark-blue;
   padding: 20px 35px;
-  font-size: 4.2em;
+  font-size: 3.5em;
   margin: 4px 2px;
   text-decoration: none;
   color: black;
@@ -199,7 +199,7 @@ text-align: center;
 
 
 @include ipad {
-  .button-radius {
+  .lwordbutton {
     padding: .3em;
     font-size: 2.5em;
     margin-top: .5em;

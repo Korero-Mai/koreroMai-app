@@ -23,7 +23,7 @@ class LearnWords extends React.Component {
                 <source src={`${words[word].soundFile}`} preload=''/>
               </audio>
               <img src={`${words[word].imageFile}`} />
-              <button onClick={() => this.playSound(index)} className='button-radius'>
+              <button onClick={() => this.playSound(index)} className='lwordbutton'>
                 {word}
               </button>
             </div>
@@ -72,8 +72,8 @@ class LearnWords extends React.Component {
                 <button className="finish" onClick={() => dispatch({type: 'OPEN_MODAL'})}>Finish!</button>
                 <Modal isOpen={modal} contentLabel='Modal'>
                   <h1>Well done!</h1>
-                  <Link to={activityRoute+1}><button className="button-radius repeat" onClick={() => dispatch({type: 'CLOSE_MODAL'})}>Repeat</button></Link><br />
-                  <Link to='activity'><button className="button-radius new-activity" onClick={() => dispatch({type: 'CLOSE_MODAL'})}>Choose another activity</button></Link>
+                  <Link to={activityRoute+1}><button className="lwordbutton repeat" onClick={() => dispatch({type: 'CLOSE_MODAL'})}>Repeat</button></Link><br />
+                  <Link to='activity'><button className="lwordbutton new-activity" onClick={() => dispatch({type: 'CLOSE_MODAL'})}>Choose another activity</button></Link>
                 </Modal>
               </div>
             </div>
