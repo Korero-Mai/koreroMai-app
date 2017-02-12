@@ -14,7 +14,7 @@ function UserProfile(props) {
       </div>
       <div className="row">
       </div>
-        <GroupInfo/>
+        <GroupInfo id={props.params.id}/>
     </div>
   )
 }

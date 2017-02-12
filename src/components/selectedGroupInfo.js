@@ -6,36 +6,35 @@ class groupInfo extends React.Component {
 
   componentDidMount() {
     const { dispatch } = this.props
-    request.get('/api/v1/users/1/profile', function(err, res, next) {
-      console.log(res.body);
+    const id = Number(this.props.id)
+    request.get(`/api/v1/users/${id}/profile`, function(err, res, next) {
       dispatch({type: 'UPDATE_PLAYERS', payload: res.body.players})
     })
   }
 
-  mapPlayers() {
-
+  mapPlayers(players) {
+    return players.map((player) => {
+      return (
+        <tr>
+          <td>{player.player_name}</td>
+          <td>{player.player_token}</td>
+          <td>{player.group_name}</td>
+          <td>{player.prac_sounds_total_wrong}</td>
+          <td>{player.prac_words_total_wrong}</td>
+          <td>
+            <button className="button expanded">Trend</button>
+          </td>
+          <td>
+            <button className='button expanded'>Edit</button>
+          </td>
+          <td>
+            <button className='button expanded'>Delete</button>
+          </td>
+        </tr>
+      )
+    })
   }
-  // res.body.players.map((player) => {
-  //   console.log(player.player_name)
-  //   return (
-  //     <tr>
-  //       <td>{player.player_name}</td>
-  //       <td>{player.player_token}</td>
-  //       <td>{player.group_name}</td>
-  //       <td>{player.prac_sounds_total_wrong}</td>
-  //       <td>{player.prac_words_total_wrong}</td>
-  //       <td>
-  //         <button className="button expanded">Trend</button>
-  //       </td>
-  //       <td>
-  //         <button className='button expanded'>Edit</button>
-  //       </td>
-  //       <td>
-  //         <button className='button expanded'>Delete</button>
-  //       </td>
-  //     </tr>
-  //   )
-  // })
+
   render() {
     return (
       <div className="row">
@@ -54,7 +53,7 @@ class groupInfo extends React.Component {
               </tr>
             </thead>
             <tbody>
-
+              {this.mapPlayers(this.props.players)}
             </tbody>
           </table>
       </div>

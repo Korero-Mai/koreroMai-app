@@ -12,6 +12,7 @@ require('./style/main.scss')
 //Top Level Components
 const App = require('./app')
 const Home = require('./containers/home')
+const PlayersHome = require('./containers/playersHome')
 const ActivityChoiceBox = require('./containers/activityChoiceBox')
 const LearnSounds = require('./containers/learnSounds')
 const LearnWords = require('./containers/learnWords')
@@ -30,11 +31,6 @@ store.subscribe(()=> {
 hashHistory.listen((ev) => {
   //listen to window.location directly?
   const paths = ev.pathname.split('/')
-  if (paths[1] === 'users'){
-    request.get('/api/v1/users/1/profile', (err, res, next) =>{
-
-    })
-  }
 })
 
 const Root = ({store}) => {
@@ -44,6 +40,7 @@ const Root = ({store}) => {
 				<Route path = '/' component={App} store={store}>
 					<IndexRoute component={Home} />
 				 <Route path = '/home' component={Home} />
+				 <Route path = '/players' component={PlayersHome} />
          <Route path ='/activity' component={ActivityChoiceBox} />
          <Route path ='/activity/learn/sounds/:id' component={LearnSounds} />
          <Route path ='/activity/learn/words/:id' component={LearnWords} />
