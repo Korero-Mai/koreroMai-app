@@ -163,22 +163,14 @@ class PracticeSounds extends React.Component {
     const activityRoute = 'activity/practice/sounds/'
     const lettersArr = this.props.practiceSoundPage[level].letters
     const answer = this.props.practiceSoundPage[level].answer
-    const modalStyle = {
-      content:{
-        top:'20%',
-        left:'50%',
-        right:'auto',
-        bottom:'auto',
-        marginRight:'-50%',
-        transform:'translate(-50%, -50%)'
-      }
-    }
 
     if (level === 1) {
       return (
-        <div className='header'>
-            <h1>Listen ♫ Choose the right one!</h1>
-          <div className="playBox row align-spaced">
+        <div>
+          <div className='welcome-prac'>
+            Click ♫ Listen then choose the right letter!
+          </div>
+          <div className="play-box row align-spaced">
             <div className="row">
               <h1>{this.generateAnswer(lettersArr, answer, letters)}</h1>
             </div>
@@ -188,20 +180,24 @@ class PracticeSounds extends React.Component {
       )
     } else if (level === 5){
       return (
-        <div className='header'>
-          <h1>Listen ♫ Choose the right one!</h1>
-            <div className="playBox row align-spaced">
-              <div className="row">
-                <h1>{this.generateAnswer(lettersArr, answer, letters)}</h1>
-              </div>
-              {this.generateLetter(lettersArr, letters, answer)}
-            </div>
+        <div>
+          <div className='welcome-prac'>
+            Click ♫ Listen then choose the right letter!
           </div>
+          <div className="play-box row align-spaced">
+            <div className="row">
+              <h1>{this.generateAnswer(lettersArr, answer, letters)}</h1>
+            </div>
+            {this.generateLetter(lettersArr, letters, answer)}
+          </div>
+        </div>
       )
     } else return (
-      <div className='header'>
-        <h1>Listen ♫ Choose the right one!</h1>
-          <div className="playBox row align-spaced">
+        <div>
+          <div className='welcome-prac'>
+            Click ♫ Listen then choose the right letter!
+          </div>
+          <div className="play-box row align-spaced">
             <div className="row">
             <h1>{this.generateAnswer(lettersArr, answer, letters)}</h1>
             </div>

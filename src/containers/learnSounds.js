@@ -82,7 +82,7 @@ class LearnSounds extends React.Component {
       return lettersArr.map((letter,index)=>{
         return (
           <div className='row'>
-            <div className='colums small-centered small-12 medium-6 large-4'>
+            <div className='columns small-centered small-12 medium-6 large-4'>
               <audio ref={`${index}`} >
                 <source src={`${letters[letter].soundFile}`} preload=''/>
               </audio>
