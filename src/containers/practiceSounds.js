@@ -27,8 +27,8 @@ class PracticeSounds extends React.Component {
     return lettersArr.map((item) => {
       if (item === answer) {
         return (
-          <div className="row">
-            <div className="columns">
+          <div className='row big-music-sound'>
+            <div className='colums small-10 medium-6 large-4'>
               <audio ref={`${answer}`} >
                 <source src={`${letters[item].soundFile}`} preload=''/>
               </audio>
@@ -178,7 +178,7 @@ class PracticeSounds extends React.Component {
 
     if (level === 1) {
       return (
-        <div>
+        <div className='listen-sound'>
           <div className="row">
             <h1>Listen ♫ Choose the right one!</h1>
           </div>
