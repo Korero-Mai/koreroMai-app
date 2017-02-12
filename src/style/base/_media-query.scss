@@ -16,15 +16,6 @@
   }
 };
 
-
-@mixin ipad {
-  @media only screen
-  and (min-device-width : 768px)
-  and (max-device-width : 1024px) {
-    @content;
-  }
-};
-
 @mixin smallwindow {
   @media (min-width: 500px) and (max-width: 767px) {
     @content;

@@ -9,17 +9,21 @@
   text-decoration: none;
   color: black;
   text-align: center;
-  -webkit-transition: all 0.3s ease 0s;
-  -moz-transition: all 0.3s ease 0s;
-  -ms-transition: all 0.3s ease 0s;
-  -o-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
+  // -webkit-transition: all 0.3s ease 0s;
+  // -moz-transition: all 0.3s ease 0s;
+  // -ms-transition: all 0.3s ease 0s;
+  // -o-transition: all 0.3s ease 0s;
+  // transition: all 0.3s ease 0s;
 }
 
 .h3-choose {
   font-family: 'Itim', cursive;
   font-size: 4.8em;
 }
+
+// .row-learn {
+//   margin-top: 7em;
+// }
 
 @include largedesk {
   .h3-choose {
@@ -45,15 +49,6 @@
   }
   .choose {
     font-size: 2em;
-  }
-}
-
-@include ipad {
-  .h3-choose {
-    font-size: 3.5em;
-  }
-  .choose {
-    font-size: 3em;
   }
 }
 
