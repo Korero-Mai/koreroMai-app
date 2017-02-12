@@ -41,7 +41,7 @@ class LearnSounds extends React.Component {
             {this.generateLetter(lettersArr, letters)}
             <div>
               <Link to={activityRoute+(level-1)}><button className="last-back">Back</button></Link>
-              <button className="finish" onClick={() => dispatch({type: 'OPEN_MODAL'})}>Finish!</button>
+              <button className="finish" onClick={() => dispatch({type: 'TOGGLE_MODAL'})}>Finish!</button>
               <Modal isOpen={modal} contentLabel='Modal' >
               <h1>Well done!</h1>
               <Link to={activityRoute+1}><button className="button-radius repeat" onClick={() => dispatch({type: 'CLOSE_MODAL'})}>Repeat</button></Link><br />
