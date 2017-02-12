@@ -200,13 +200,11 @@ class PracticeSounds extends React.Component {
       )
     } else return (
       <div className='header'>
-        <div className="row">
-          <h1>Listen ♫ Choose the right one!</h1>
-        </div>
-        <div className="playBox row align-spaced">
-          <div className="row">
+        <h1>Listen ♫ Choose the right one!</h1>
+          <div className="playBox row align-spaced">
+            <div className="row">
             <h1>{this.generateAnswer(lettersArr, answer, letters)}</h1>
-          </div>
+            </div>
           {this.generateLetter(lettersArr, letters, answer)}
         </div>
       </div>

@@ -14,14 +14,14 @@
 @import './base/media-query';
 
 //Components
+@import './components/activity';
+@import './components/footer';
 @import './components/home';
+@import './components/learn-sounds';
+@import './components/learn-words';
+@import './components/login-register-form';
 @import './components/nav';
 @import './components/playBox';
-@import './components/footer';
-@import './components/learn-sounds';
-@import './components/activity';
-@import './components/login-register-form';
-@import './components/learn-words';
 @import './components/practice-sounds';
 @import './components/practice-words';
 
@@ -33,15 +33,3 @@ body {
   font-family: 'Open Sans', sans-serif;
   padding: 0;
 }
-
-// h1 {
-//   font-family: 'Life Savers', cursive;
-//   font-size: 3em;
-//   font-weight: bold;
-// }
-
-
-// h3 {
-//   font-family: 'Itim', cursive;
-//   font-size: 1.8em;
-// }

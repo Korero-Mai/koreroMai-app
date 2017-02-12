@@ -19,14 +19,14 @@
 
 .h1-home {
   font-family: 'Life Savers', cursive;
-  font-size: 7em;
+  font-size: 9em;
   font-weight: bold;
   text-align: center;
 }
 
 .h3-home {
   font-family: 'Itim', cursive;
-  font-size: 5em;
+  font-size: 6em;
   text-align: center;
 }
 
@@ -63,29 +63,5 @@
   }
   .play-button {
     font-size: 4em;
-  }
-}
-
-@include ipad {
-  .h1-home {
-    font-size: 3.5em;
-  }
-  .h3-home {
-    font-size: 3.4em;
-  }
-  .play-button {
-    font-size: 3em;
-  }
-}
-
-@include smallwindow {
-  .h1-home {
-    font-size: 3em;
-  }
-  .h3-home {
-    font-size: 2.9em;
-  }
-  .play-button {
-    font-size: 3em;
   }
 }
