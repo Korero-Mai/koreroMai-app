@@ -27,12 +27,14 @@ class PracticeSounds extends React.Component {
     return lettersArr.map((item) => {
       if (item === answer) {
         return (
-          <div className='row big-music-sound'>
-            <div className='colums small-10 medium-6 large-4'>
-              <audio ref={`${answer}`} >
-                <source src={`${letters[item].soundFile}`} preload=''/>
-              </audio>
-              <h1 onClick={() => this.playSound(item)}>♫</h1>
+          <div className='big-music-sound'>
+            <div className='row'>
+              <div className='colums small-10 medium-6 large-4'>
+                <audio ref={`${answer}`} >
+                  <source src={`${letters[item].soundFile}`} preload=''/>
+                </audio>
+                <h1 onClick={() => this.playSound(item)}>♫</h1>
+              </div>
             </div>
           </div>
         )
@@ -77,7 +79,7 @@ class PracticeSounds extends React.Component {
             </div>
             <div className="row">
               <div className="columns" onClick={timeoutModal}>
-                <button onClick={() => this.playSound(letter)} className={`button radius`}>
+                <button onClick={() => this.playSound(letter)} className={`listen-sound-buttons`}>
                   {letter}
                 </button>
                 <Modal isOpen={modal} contentLabel='Modal' style={modalStyle}>
@@ -104,7 +106,7 @@ class PracticeSounds extends React.Component {
               </div>
               <div className="row">
                 <div className="columns" onClick={() => dispatch({type: 'INCREMENT_WRONGSOUNDS'})}>
-                  <button onClick={() => this.playSound(letter)} className={`button radius`}>
+                  <button onClick={() => this.playSound(letter)} className={`listen-sound-buttons`}>
                     {letter}
                   </button>
                 </div>
@@ -116,20 +118,18 @@ class PracticeSounds extends React.Component {
         return (
         <div>
           <div className="row">
-            <div className="columns">
-              <audio ref={`${letter}`} >
-                <source src={`${letters[letter].soundFile}`} preload=''/>
-              </audio>
-            </div>
+            <audio ref={`${letter}`} >
+              <source src={`${letters[letter].soundFile}`} preload=''/>
+            </audio>
           </div>
           <div className="row">
             <div className="columns" onClick={timeoutModal}>
-              <button onClick={() => this.playSound(letter)} className={`button radius`}>
+              <button onClick={() => this.playSound(letter)} className={`listen-sound-buttons`}>
                 {letter}
               </button>
               <Modal isOpen={modal} contentLabel='Modal' style={modalStyle}>
                 <h1>Right on!</h1>
-                <Link to={activityRoute+(level+1)}><button className="button-radius repeat" onClick={() => dispatch({type: 'CLOSE_MODAL'})}>Next one!</button></Link><br />
+                <Link to={activityRoute+(level+1)}><button className="listen-sound-buttons" onClick={() => dispatch({type: 'CLOSE_MODAL'})}>Next one!</button></Link><br />
               </Modal>
             </div>
           </div>
@@ -139,15 +139,13 @@ class PracticeSounds extends React.Component {
         return (
           <div>
             <div className="row">
-              <div className="columns">
-                <audio ref={`${letter}`} >
-                  <source src={`${letters[letter].soundFile}`} preload=''/>
-                </audio>
-              </div>
+              <audio ref={`${letter}`} >
+                <source src={`${letters[letter].soundFile}`} preload=''/>
+              </audio>
             </div>
             <div className="row">
               <div className="columns" onClick={() => dispatch({type: 'INCREMENT_WRONGSOUNDS'})}>
-                <button onClick={() => this.playSound(letter)} className={`button radius`}>
+                <button onClick={() => this.playSound(letter)} className={`listen-sound-buttons`}>
                   {letter}
                 </button>
               </div>
@@ -178,15 +176,11 @@ class PracticeSounds extends React.Component {
 
     if (level === 1) {
       return (
-        <div className='listen-sound'>
-          <div className="row">
+        <div className='header'>
             <h1>Listen ♫ Choose the right one!</h1>
-          </div>
           <div className="playBox row align-spaced">
             <div className="row">
-              <div className="columns">
-                <h1>{this.generateAnswer(lettersArr, answer, letters)}</h1>
-              </div>
+              <h1>{this.generateAnswer(lettersArr, answer, letters)}</h1>
             </div>
             {this.generateLetter(lettersArr, letters, answer)}
           </div>
@@ -194,31 +188,24 @@ class PracticeSounds extends React.Component {
       )
     } else if (level === 5){
       return (
-        <div>
-          <div className="row">
-            <h1>Listen ♫ Choose the right one!</h1>
-          </div>
-          <div className="playBox row align-spaced">
-            <div className="row">
-              <div className="columns">
+        <div className='header'>
+          <h1>Listen ♫ Choose the right one!</h1>
+            <div className="playBox row align-spaced">
+              <div className="row">
                 <h1>{this.generateAnswer(lettersArr, answer, letters)}</h1>
               </div>
+              {this.generateLetter(lettersArr, letters, answer)}
             </div>
-            {this.generateLetter(lettersArr, letters, answer)}
           </div>
-        </div>
       )
     } else return (
-      <div>
+      <div className='header'>
         <div className="row">
           <h1>Listen ♫ Choose the right one!</h1>
         </div>
-
         <div className="playBox row align-spaced">
           <div className="row">
-            <div className="columns">
-              <h1>{this.generateAnswer(lettersArr, answer, letters)}</h1>
-            </div>
+            <h1>{this.generateAnswer(lettersArr, answer, letters)}</h1>
           </div>
           {this.generateLetter(lettersArr, letters, answer)}
         </div>
