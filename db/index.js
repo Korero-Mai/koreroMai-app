@@ -93,7 +93,7 @@ module.exports = function (knex) {
 			 .where({group_name: input.group_name})
 		 },
 
-		 findPlayersByUser: function(table,input){
+		 findPlayersByUser: function(table, input){
 			 return knex('users_players')
 			 .join('users','users.id','=','user_id')
 			 .join('players','players.id_player','=','player_id')

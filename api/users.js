@@ -4,10 +4,11 @@ const route = express.Router();
 
 module.exports = function(db) {
 
-  route.get('/', get)
+  route.get('/:id/profile', getProfileData)
 
-  function get(req, res, next) {
-    res.json({users: []})
+  function getProfileData(req, res, next) {
+    db.findPlayersByUser('users', req.params.id)
+    .then((data) => res.json(data))
   }
 
   return route;
