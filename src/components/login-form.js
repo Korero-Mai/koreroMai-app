@@ -18,6 +18,7 @@ module.exports = class LoginForm extends React.Component {
             alert('Please login')
             this.props.router.push('/login-register')
           } else {
+            console.log(user);
               const user = res.body.userData
               const userID = res.body.userData.id
               const userName = res.body.userData.username

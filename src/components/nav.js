@@ -13,10 +13,10 @@ function Nav(props) {
           <li className="menu-text">
             Kia ora!
           </li>
-          <li onClick={() => dispatch({type: 'CLOSE_MODAL_RESET_SCORE'})}>
+          <li onClick={() => dispatch({type: 'END_ROUND'})}>
             <IndexLink to="/" activeClassName="active-link" className='nav-text'>Home</IndexLink>
           </li>
-          <li onClick={() => dispatch({type: 'CLOSE_MODAL_RESET_SCORE'})}>
+          <li onClick={() => dispatch({type: 'END_ROUND'})}>
             <Link to="/activity" activeClassName="active-link" className='nav-text'>Activities</Link>
           </li>
         </ul>

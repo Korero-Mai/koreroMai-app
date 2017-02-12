@@ -60,6 +60,7 @@ class LearnWords extends React.Component {
       } else if (level === 5){
         return (
           <div>
+<<<<<<< HEAD
 
             <div className='welcome'>
               Learn how to pronounce Te Reo!
@@ -75,6 +76,20 @@ class LearnWords extends React.Component {
                   <Link to={activityRoute+1}><button className="lwordbutton repeat" onClick={() => dispatch({type: 'CLOSE_MODAL'})}>Repeat</button></Link><br />
                   <Link to='activity'><button className="lwordbutton new-activity" onClick={() => dispatch({type: 'CLOSE_MODAL'})}>Choose another activity</button></Link>
                 </Modal>
+=======
+            <h1>Learn how to pronounce Te Reo !</h1>
+              <div className="playBox">
+                {this.generateWord(wordsArr, words)}
+                <div>
+                  <Link to={activityRoute+(level-1)}><button className="last-back">Back</button></Link>
+                  <button className="finish" onClick={() => dispatch({type: 'TOGGLE_MODAL'})}>Finish!</button>
+                  <Modal isOpen={modal} contentLabel='Modal' style={modalStyle}>
+                    <h1>Well done!</h1>
+                    <Link to={activityRoute+1}><button className="button-radius repeat" onClick={() => dispatch({type: 'CLOSE_MODAL'})}>Repeat</button></Link><br />
+                    <Link to='activity'><button className="button-radius new-activity" onClick={() => dispatch({type: 'CLOSE_MODAL'})}>Choose another activity</button></Link>
+                  </Modal>
+                </div>
+>>>>>>> 5adf67fb43a792388b01289f336248dfb78c2bc6
               </div>
             </div>
           </div>

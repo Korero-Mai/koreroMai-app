@@ -5,7 +5,7 @@ module.exports = function (state = false, action) {
     case 'INCREMENT_WRONGWORDS':
       return state +1
 
-    case 'CLOSE_MODAL_RESET_SCORE':
+    case 'END_ROUND':
       return 0
 
     case 'RESET_WRONGWORDS':
