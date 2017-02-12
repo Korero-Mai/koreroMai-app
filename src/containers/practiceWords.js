@@ -18,14 +18,12 @@ class PracticeWords extends React.Component {
     return wordsArr.map((word) => {
       if (word === answer) {
         return (
-          <div className="row">
-            <div className="columns">
+            <div className='big-music-sound-words'>
               <audio ref={`${answer}`} >
                 <source src={`${words[word].soundFile}`} preload=''/>
               </audio>
               <h1 onClick={() => this.playSound(word)}>♫</h1>
             </div>
-          </div>
         )
       }
     })
@@ -70,7 +68,7 @@ class PracticeWords extends React.Component {
             </div>
             <div className="row">
               <div className="columns" onClick={timeoutModal}>
-                <button onClick={() => this.playSound(word)} className={`button radius`}>
+                <button onClick={() => this.playSound(word)} className={`listen-sound-words`}>
                   {word}
                 </button>
                 <Modal isOpen={modal} contentLabel='Modal' style={modalStyle}>
@@ -98,7 +96,7 @@ class PracticeWords extends React.Component {
               </div>
               <div className="row">
                 <div className="columns" onClick={() => dispatch({type: 'INCREMENT_WRONGWORDS'})}>
-                  <button onClick={() => this.playSound(word)} className={`button radius`}>
+                  <button onClick={() => this.playSound(word)} className={`listen-sound-words`}>
                     {word}
                   </button>
                 </div>
@@ -119,7 +117,7 @@ class PracticeWords extends React.Component {
           </div>
           <div className="row">
             <div className="columns" onClick={timeoutModal}>
-              <button onClick={() => this.playSound(word)} className={`button radius`}>
+              <button onClick={() => this.playSound(word)} className={`listen-sound-words`}>
                 {word}
               </button>
               <Modal isOpen={modal} contentLabel='Modal' style={modalStyle}>
@@ -143,7 +141,7 @@ class PracticeWords extends React.Component {
             </div>
             <div className="row">
               <div className="columns" onClick={() => dispatch({type: 'INCREMENT_WRONGWORDS'})}>
-                <button onClick={() => this.playSound(word)} className={`button radius`}>
+                <button onClick={() => this.playSound(word)} className={`listen-sound-words`}>
                   {word}
                 </button>
               </div>
@@ -174,7 +172,7 @@ class PracticeWords extends React.Component {
 
     if (level === 1) {
       return (
-        <div>
+        <div className='header-words'>
           <div className="row">
             <h1>Click ♫ then listen and choose the right one!</h1>
           </div>
@@ -190,7 +188,7 @@ class PracticeWords extends React.Component {
       )
     } else if (level === 5){
       return (
-        <div>
+        <div className='header-words'>
           <div className="row">
             <h1>Click ♫ then listen and choose the right one!</h1>
           </div>
@@ -205,7 +203,7 @@ class PracticeWords extends React.Component {
         </div>
       )
     } else return (
-      <div>
+      <div className='header-words'>
         <div className="row">
           <h1>Click ♫ then listen and choose the right one!</h1>
         </div>
