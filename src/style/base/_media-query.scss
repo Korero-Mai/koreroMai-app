@@ -1,45 +1,55 @@
-// /*============================================================
-// 	Responsive Styles
-//  ============================================================*/
-//
-// /*============================================================
-// 	For Small Desktop
-// ==============================================================*/
-//
-// @media (min-width: 980px) and (max-width: 1150px) {
-//
-// /*about*/
-//
-//
-//
-// /*============================================================
-// 	Tablet (Portrait) Design for a width of 768px
-// ==============================================================*/
-//
-// @media (min-width: 768px) and (max-width: 979px) {
-//
-//
-//
-// }
-// /*============================================================
-// 	Mobile (Portrait) Design for a width of 320px
-// ==============================================================*/
-//
-// @media only screen and (max-width: 767px) {
-//
-//     .button-radius {
-//       padding: 5px 5px;;
-//     }
-//
-//
-// }
-//
-// /*============================================================
-// 	Mobile (Landscape) Design for a width of 480px
-// ==============================================================*/
-//
-// @media only screen and (min-width: 480px) and (max-width: 767px) {
-//
-//
-//
-// }
+@mixin smallwindow {
+  @media (min-width: 500px) and (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: 768px) and (max-width: 979px) {
+    @content;
+  }
+};
+
+@mixin smalldesk {
+  @media (min-width: 980px) and (max-width: 1150px) {
+    @content;
+  }
+};
+
+@mixin largedesk {
+  @media (min-width: 1151px) {
+    @content;
+  }
+};
+
+@mixin ipad {
+  @media only screen
+  and (min-device-width : 768px)
+  and (max-device-width : 1024px) {
+    @content;
+  }
+};
+
+
+/*============================================================
+	Mobile (Portrait) Design for a width of 320px
+==============================================================*/
+
+@media only screen and (max-width: 767px) {
+
+    .button-radius {
+      padding: 5px 5px;;
+    }
+
+
+}
+
+/*============================================================
+	Mobile (Landscape) Design for a width of 480px
+==============================================================*/
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+
+
+
+}
