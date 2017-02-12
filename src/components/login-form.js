@@ -29,7 +29,7 @@ module.exports = class LoginForm extends React.Component {
   }
   render() {
     return (
-      <div className="container__footer">
+      <div className="container">
         <h3>Login</h3>
           <div className="container__footer">
             <div className='row'>

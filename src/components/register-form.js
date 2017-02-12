@@ -29,7 +29,7 @@ module.exports = class RegisterForm extends React.Component {
   }
   render() {
     return (
-      <div>
+      <div className='container'>
         <h1 className='page-title'></h1>
 
         <div className='row'>
