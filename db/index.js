@@ -86,10 +86,10 @@ module.exports = function (knex) {
 			 })
 		 },
 
-		 findPlayersByGroup: function(table,groupName){
+		 findPlayersByGroup: function(table,input){
 			 return knex(table)
 			 .select('*')
-			 .where({group_name: groupName})
+			 .where({group_name: input.group_name})
 		 },
 
 		 findSelectedPlayerData: function(table,token){

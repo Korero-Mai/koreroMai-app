@@ -23,7 +23,7 @@ test('Add new player | it should add a new player to the players table', (t) => 
    t.plan(3)
  // arrange
 const table = 'players'
-const newPlayer = {
+const input = {
   player_name: 'Joyce',
   player_token:'joyce123',
   group_name:'group2'
@@ -32,7 +32,7 @@ const newPlayer = {
 const expected = [{id:6,player_name:"Joyce",group_name:"group2"}]
  //act
 
-return db.addPlayer(table, newPlayer)
+return db.addPlayer(table, input)
   .then(function(data){
 //Assert
     t.is(data[0].id_player, expected[0].id ,
@@ -48,7 +48,7 @@ test('checks for existing player | checks for an existing player by token and re
    t.plan(1)
  // arrange
 const table = 'players'
-const newPlayer = {
+const input = {
   player_name: 'Bobb',
   player_token:'bobbie123',
   group_name:'group2'
@@ -57,7 +57,7 @@ const newPlayer = {
 const expected = []
  //act
 
-return db.addPlayer(table, newPlayer)
+return db.addPlayer(table, input)
   .then(function(data){
 //Assert
     t.falsy(data[0],'adds player to db')
@@ -68,7 +68,7 @@ test('adds a new player score | adds a new score to the scoresTable', (t) => {
    t.plan(4)
  // arrange
 const table = 'players_gameScores'
-const player= {
+const input= {
   player_token:'bobbie123',
   prac_sounds_wrong: 4,
   prac_words_wrong: 5,
@@ -84,7 +84,7 @@ const expected = [{
 }]
  //act
 
-return db.addScore(table, player)
+return db.addScore(table, input)
   .then(function(data){
 //Assert
     t.is(data[0].id_game,expected[0].id_game,
@@ -98,11 +98,14 @@ return db.addScore(table, player)
    })
 })
 
-test('post players by roup| retrieves players by group', (t) => {
+test.only('find players by group & user_id| retrieves players by group', (t) => {
    t.plan(3)
  // arrange
 const table = 'players'
-const group= 'group2'
+const input= {
+  id: 2,
+  group_name: 'group2'
+}
 
 const expected = {
   l: 2,
@@ -112,8 +115,9 @@ const expected = {
 
  //act
 
-return db.findPlayersByGroup(table, group)
+return db.findPlayersByGroup(table, input)
   .then(function(data){
+    console.log('test 'data);
 //Assert
     t.is(data.length, expected.l,'findsPlayersByGroup')
     t.is(data[0].player_name, expected.player1,'findsPlayersByGroup')
@@ -125,13 +129,13 @@ test('post player data by player_token| retrieves player data by player_token', 
    t.plan(1)
  // arrange
 const table = 'players_gameScores'
-const player_token= 'annie123'
+const input= 'annie123'
 
 const expected = 2
 
  //act
 
-return db.findSelectedPlayerData(table, player_token)
+return db.findSelectedPlayerData(table, input)
   .then(function(data){
 //Assert
     t.is(data.length, expected,'finds all the players gameScores')
