@@ -29,12 +29,9 @@ store.subscribe(()=> {
 
 hashHistory.listen((ev) => {
   //listen to window.location directly?
-  console.log('listen', ev)
   const paths = ev.pathname.split('/')
   if (paths[1] === 'users'){
-    
   }
-  console.log("paths", paths);
 })
 
 const Root = ({store}) => {
