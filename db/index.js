@@ -5,11 +5,8 @@ module.exports = function (knex) {
     addUser: function (table='users', newUserData) {
       return knex(table)
       .insert(newUserData)
-      .then(function (id) {
-        return knex('users')
-        .select('username', 'id')
-        .where({id: id[0]})
-				.then(users => users)
+      .then((ids)=>{
+				return this.findUserById(ids[0])
       })
     },
 
@@ -18,7 +15,6 @@ module.exports = function (knex) {
       .select('*')
       .where('email', email)
       .then((selectedUser) => {
-        console.log(selectedUser)
         return selectedUser
       })
     },
@@ -172,14 +168,11 @@ module.exports = function (knex) {
 			 const formattedToken = {player_token:token}
 			 return this.checkIfPlayerExists('players', formattedToken)
 			 	.then((bool)=>{
-			 		if(!bool){
-			 			return []
-			 		} else{
-			 			return this.getPlayerId(token)
-			 		}
+			 		if(!bool){ return [] }
+			 		return this.getPlayerId(token)
 			 	})
 				.then((ids)=>{
-					return this.findPlayerByID(ids[0])
+					return this.findPlayerByID(ids[0].id_player)
 				})
 		 },
 

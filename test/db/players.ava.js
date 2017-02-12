@@ -19,7 +19,7 @@ test.beforeEach(() => {
 //   return testKnex.migrate.rollback()
 // })
 
-test.only('Add new player and link to user| it should add a new player to the players table', (t) => {
+test('Add new player and link to user| it should add a new player to the players table', (t) => {
    t.plan(4)
  // arrange
 const table = 'players'
@@ -40,15 +40,15 @@ const expected = [{
 
 return db.addPlayer(table, input)
   .then(function(data){
-    console.log('data', data);
+      // console.log('db.addPlayer ', data);
 //Assert
-    t.is(data[0].id_player, expected[0].id ,
+    t.is(data.player.id_player, expected[0].player_id ,
       'adds player to db')
-    t.is(data[0].player_name, expected[0].player_name ,
+    t.is(data.player.player_name, expected[0].player_name ,
       'adds player to db')
-    t.is(data[0].group_name, expected[0].group_name ,
+    t.is(data.player.group_name, expected[0].group_name ,
       'adds player to db')
-    t.is(data[0].id, expected[0].id,
+    t.is(data.user.id, expected[0].id,
       'adds player to db')
    })
 })
@@ -68,6 +68,7 @@ const expected = []
 
 return db.addPlayer(table, input)
   .then(function(data){
+      // console.log('db.addPlayer ', data);
 //Assert
     t.falsy(data[0],'adds player to db')
    })
@@ -95,6 +96,7 @@ const expected = [{
 
 return db.addScore(table, input)
   .then(function(data){
+      // console.log('db.addScore ', data);
 //Assert
     t.is(data[0].id_game,expected[0].id_game,
       'adds score to table')
@@ -122,6 +124,7 @@ const expected = {
  //act
 return db.findPlayersByUser(table, input)
   .then(function(data){
+    // console.log('db.findPlayersByUser ', data);
 //Assert
     t.is(data.user.id, expected.id,'findsPlayersByGroup')
     t.is(data.players[0].player_name, expected.player1,'findsPlayersByGroup')
@@ -135,12 +138,30 @@ test('post player data by player_token| retrieves player data by player_token', 
 const table = 'players_gameScores'
 const input= 'annie123'
 
-const expected = 2
+const expected = 1
 
  //act
 
 return db.findSelectedPlayerData(table, input)
   .then(function(data){
+//Assert
+    t.is(data.length, expected,'finds all the players gameScores')
+   })
+})
+
+test('updates player data| retrieves player data by player_token', (t) => {
+   t.plan(1)
+ // arrange
+const table = 'players_gameScores'
+const input= 'annie123'
+
+const expected = 1
+
+ //act
+
+return db.findSelectedPlayerData(table, input)
+  .then(function(data){
+    // console.log('db.findSelectedPlayerData ', data);
 //Assert
     t.is(data.length, expected,'finds all the players gameScores')
    })
