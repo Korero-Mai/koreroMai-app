@@ -69,7 +69,7 @@ class PracticeWords extends React.Component {
               </div>
             </div>
             <div className="row">
-              <div className="columns" onClick={() => dispatch({type: 'OPEN_MODAL'})}>
+              <div className="columns" onClick={timeoutModal}>
                 <button onClick={() => this.playSound(word)} className={`button radius`}>
                   {word}
                 </button>
