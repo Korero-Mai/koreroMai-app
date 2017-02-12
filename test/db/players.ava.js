@@ -64,7 +64,7 @@ return db.addPlayer(table, newPlayer)
    })
 })
 
-test.only('adds a new player score | adds a new score to the scoresTable', (t) => {
+test('adds a new player score | adds a new score to the scoresTable', (t) => {
    t.plan(4)
  // arrange
 const table = 'players_gameScores'
@@ -86,7 +86,6 @@ const expected = [{
 
 return db.addScore(table, player)
   .then(function(data){
-    console.log('data in test', data);
 //Assert
     t.is(data[0].id_game,expected[0].id_game,
       'adds score to table')
@@ -96,5 +95,25 @@ return db.addScore(table, player)
       'adds score to table')
     t.is(data[0].prac_words_wrong,expected[0].prac_words_wrong,
       'adds score to table')
+   })
+})
+
+test('post players by roup| retrieves players by group', (t) => {
+   t.plan(1)
+ // arrange
+const table = 'players'
+const group= {
+  group_name:'group2'
+}
+
+const expected = 2
+ //act
+
+return db.findPlayersByGroup(table, group)
+  .then(function(data){
+    console.log('datain test ', data);
+//Assert
+    t.is(data[0].length, expected,
+      'findsPlayersByGroup')
    })
 })

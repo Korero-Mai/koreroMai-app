@@ -63,9 +63,8 @@ module.exports = function (knex) {
 					}
 				})
 				.then((id)=>{
-					delete scoreData.player_token
-					scoreData.player_id = id[0].id_player
-					console.log('scoreData', scoreData);
+						delete scoreData.player_token
+						scoreData.player_id = id[0].id_player
 					return this.insertScoreData(table,scoreData)
 				})
 		 },
@@ -85,6 +84,8 @@ module.exports = function (knex) {
 				 .select('*')
 				 .where({id_game: ids[0]})
 			 })
-		 }
+		 },
+
+
 	}
 }
