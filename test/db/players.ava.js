@@ -121,20 +121,19 @@ return db.findPlayersByGroup(table, group)
    })
 })
 
-test.only('post player data by player_token| retrieves player data by player_token', (t) => {
-   t.plan(3)
+test('post player data by player_token| retrieves player data by player_token', (t) => {
+   t.plan(1)
  // arrange
 const table = 'players_gameScores'
 const player_token= 'annie123'
 
-const expected = 1
+const expected = 2
 
  //act
 
 return db.findSelectedPlayerData(table, player_token)
   .then(function(data){
-    console.log('data test', data);
 //Assert
-    t.is(data.length, expected.l,'finds all the players gameScores')
+    t.is(data.length, expected,'finds all the players gameScores')
    })
 })

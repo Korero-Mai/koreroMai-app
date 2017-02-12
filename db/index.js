@@ -62,9 +62,9 @@ module.exports = function (knex) {
 						return this.getPlayerId(scoreData.player_token)
 					}
 				})
-				.then((id)=>{
+				.then((ids)=>{
 						delete scoreData.player_token
-						scoreData.player_id = id[0].id_player
+						scoreData.player_id = ids[0].id_player
 					return this.insertScoreData(table,scoreData)
 				})
 		 },
@@ -90,6 +90,23 @@ module.exports = function (knex) {
 			 return knex(table)
 			 .select('*')
 			 .where({group_name: groupName})
+		 },
+
+		 findSelectedPlayerData: function(table,token){
+			 const formattedToken = {player_token:token}
+			 return this.checkIfPlayerExists('players', formattedToken)
+			 	.then((bool)=>{
+			 		if(!bool){
+			 			return []
+			 		} else{
+			 			return this.getPlayerId(token)
+			 		}
+			 	})
+				.then((ids)=>{
+					return knex(table)
+					.select('*')
+					.where({player_id: ids[0].id_player})
+				})
 		 }
 	}
 }
