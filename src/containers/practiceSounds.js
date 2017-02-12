@@ -53,6 +53,7 @@ class PracticeSounds extends React.Component {
         transform:'translate(-50%, -50%)'
       }
     }
+
     const level = Number(this.props.params.id)
     const activityRoute = 'activity/practice/sounds/'
 
