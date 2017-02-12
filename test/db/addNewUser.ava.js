@@ -28,6 +28,7 @@ const expected = []
  //act
 return db.addUser('users', name)
   .then(function(data){
+    // console.log('db.addUser ', data);
 //Assert
     t.is(data[0].id, 4 ,'add user to db')
     t.is(data[0].username, 'Anna' ,'add user to db')
@@ -42,8 +43,8 @@ const email = 'anna@anna.com'
 const expected = [{id: 1, username: 'anna', email: 'anna@anna.com', password: '$2a$10$st5Yp1EDwl/2R0TqRjrqmuP8AE32qX/beKY2y6eQwgcHsFGZRSk1O'}]
  //act
 return db.findUserByEmail('users', email)
-
   .then(function(data){
+        // console.log('db.findUserByEmail ', data);
 //Assert
     t.is(data[0].id, expected[0].id ,'find an user by email')
     t.is(data[0].username, expected[0].username ,'find an user by email')
@@ -62,8 +63,8 @@ const email = 'meghana@anna.com'
 const expected = []
  //act
 return db.findUserByEmail('users', email)
-
   .then(function(data){
+      // console.log('db.findUserByEmail ', data);
 //Assert
     t.is(data.length, 0 ,'find an user by email')
    })
