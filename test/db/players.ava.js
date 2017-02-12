@@ -113,6 +113,7 @@ const expected = {
  //act
 return db.findPlayersByUser(table, input)
   .then(function(data){
+    console.log('data', data);
 //Assert
     t.is(data.user.id, expected.id,'findsPlayersByGroup')
     t.is(data.players[0].player_name, expected.player1,'findsPlayersByGroup')
