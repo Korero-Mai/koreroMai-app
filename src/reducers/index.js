@@ -8,6 +8,7 @@ const practiceSoundPage = require('./practiceSoundPage')
 const learnWordPage = require('./learnWordPage')
 const practiceWordPage = require('./practiceWordPage')
 const wrongSounds = require('./wrongSounds')
+const wrongWords = require('./wrongWords')
 
 
 module.exports = combineReducers({
@@ -20,6 +21,7 @@ module.exports = combineReducers({
   learnWordPage,
   practiceWordPage,
   words,
-  wrongSounds
+  wrongSounds,
+  wrongWords
 
 })

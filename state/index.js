@@ -8,6 +8,8 @@ module.exports = {
 
   wrongSounds : 0,
 
+  wrongWords: 0,
+
   letters: {
    A:{
      soundFile: '/sounds/a.mp3',

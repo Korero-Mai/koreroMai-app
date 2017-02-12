@@ -31,7 +31,14 @@ class PracticeWords extends React.Component {
     })
   }
 
+
   generateWord(wordsArr, words, answer){
+
+    const timeoutModal = function(){
+      setTimeout(() => {
+        dispatch({type: 'OPEN_MODAL'})}, 2000)
+    }
+
     const dispatch = this.props.dispatch
     const modal = this.props.modal
     const modalStyle = {
@@ -111,7 +118,7 @@ class PracticeWords extends React.Component {
             </div>
           </div>
           <div className="row">
-            <div className="columns" onClick={() => dispatch({type: 'OPEN_MODAL'})}>
+            <div className="columns" onClick={timeoutModal}>
               <button onClick={() => this.playSound(word)} className={`button radius`}>
                 {word}
               </button>
@@ -123,7 +130,7 @@ class PracticeWords extends React.Component {
           </div>
         </div>
         )
-      } else {
+      } else {modal
         return (
           <div>
             <div className="row">
@@ -202,7 +209,6 @@ class PracticeWords extends React.Component {
         <div className="row">
           <h1>Click ♫ then listen and choose the right one!</h1>
         </div>
-
         <div className="playBox row align-spaced">
           <div className="row">
             <div className="columns">
