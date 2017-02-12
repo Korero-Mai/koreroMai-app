@@ -32,13 +32,13 @@ exports.seed = function(knex, Promise) {
         }),
         knex('users_players').insert({
           users_players_id: 6,
-          user_id: 3,
-          player_id: 1
+          user_id: 1,
+          player_id: 4
         }),
         knex('users_players').insert({
           users_players_id: 7,
-          user_id: 3,
-          player_id: 2
+          user_id: 1,
+          player_id: 5
         }),
         knex('users_players').insert({
           users_players_id: 8,
