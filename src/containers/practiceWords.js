@@ -15,15 +15,15 @@ class PracticeWords extends React.Component {
   }
 
   generateAnswer(wordsArr, answer, words) {
-    return wordsArr.map((item) => {
-      if (item === answer) {
+    return wordsArr.map((word) => {
+      if (word === answer) {
         return (
           <div className="row">
             <div className="columns">
               <audio ref={`${answer}`} >
-                <source src={`${words[item].soundFile}`} preload=''/>
+                <source src={`${words[word].soundFile}`} preload=''/>
               </audio>
-              <h1 onClick={() => this.playSound(item)}>♫</h1>
+              <h1 onClick={() => this.playSound(word)}>♫</h1>
             </div>
           </div>
         )
@@ -83,6 +83,7 @@ class PracticeWords extends React.Component {
             <div>
               <div className="row">
                 <div className="columns">
+                  <img src={`${words[word].imageFile}`} />
                   <audio ref={`${word}`} >
                     <source src={`${words[word].soundFile}`} preload=''/>
                   </audio>
@@ -103,6 +104,7 @@ class PracticeWords extends React.Component {
         <div>
           <div className="row">
             <div className="columns">
+              <img src={`${words[word].imageFile}`} />
               <audio ref={`${word}`} >
                 <source src={`${words[word].soundFile}`} preload=''/>
               </audio>
@@ -126,6 +128,7 @@ class PracticeWords extends React.Component {
           <div>
             <div className="row">
               <div className="columns">
+                <img src={`${words[word].imageFile}`} />
                 <audio ref={`${word}`} >
                   <source src={`${words[word].soundFile}`} preload=''/>
                 </audio>
