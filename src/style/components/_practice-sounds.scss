@@ -7,6 +7,17 @@
   transform: translate(-50%, -50%);
 }
 
+.correct {
+  font-size: 6em;
+  margin: .5em;
+}
+
+.next-letter {
+  background-color: $light-blue;
+  font-size: 6em;
+  padding: .4em;
+}
+
 .welcome-prac {
   font-size: 4em;
   font-family: 'Itim', sans-serif;

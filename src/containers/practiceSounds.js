@@ -119,8 +119,8 @@ class PracticeSounds extends React.Component {
                 {letter}
               </button>
               <Modal isOpen={modal} contentLabel='Modal' >
-                <h1>Right on!</h1>
-                <Link to={activityRoute+(level+1)}><button className="listen-sound-buttons" onClick={() => dispatch({type: 'CLOSE_MODAL'})}>Next one!</button></Link><br />
+                <div className='correct'>Right on!</div>
+                <Link to={activityRoute+(level+1)}><button className="next-letter" onClick={() => dispatch({type: 'CLOSE_MODAL'})}>Next one!</button></Link><br />
               </Modal>
             </div>
           </div>
