@@ -4,8 +4,8 @@ exports.up = function(knex, Promise) {
     t.increments('id_player');
     t.string('player_name');
     t.string('player_token');
-    t.string('prac_sounds_total_wrong');
-    t.string('prac_words_total_wrong');
+    t.integer('prac_sounds_total_wrong');
+    t.integer('prac_words_total_wrong');
     t.string('group_name');
   })
 };

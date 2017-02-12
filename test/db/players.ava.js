@@ -75,7 +75,7 @@ const player= {
 }
 
 const expected = [{
-  id_game: 8,
+  id_game: 9,
   player_id: 2,
   prac_sounds_wrong: 4,
   prac_sounds_timestamp:'',
@@ -86,6 +86,7 @@ const expected = [{
 
 return db.addScore(table, player)
   .then(function(data){
+    console.log('data in test', data);
 //Assert
     t.is(data[0].id_game,expected[0].id_game,
       'adds score to table')

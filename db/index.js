@@ -62,7 +62,7 @@ module.exports = function (knex) {
 						return this.getPlayerId(scoreData.player_token)
 					}
 				})
-				.then(id=>{
+				.then((id)=>{
 					delete scoreData.player_token
 					scoreData.player_id = id[0].id_player
 					console.log('scoreData', scoreData);
@@ -81,9 +81,9 @@ module.exports = function (knex) {
 			 return knex(table)
 			 .insert(newData)
 			 .then((ids)=>{
-				 return knex(table)
+				 return knex('players_gameScores')
 				 .select('*')
-				 .where({player_id: ids[0]})
+				 .where({id_game: ids[0]})
 			 })
 		 }
 	}
