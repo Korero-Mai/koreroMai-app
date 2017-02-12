@@ -1,16 +1,19 @@
 .modal {
-
+  top: 20%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
 }
 
 .welcome-prac {
   font-size: 4em;
   font-family: 'Itim', sans-serif;
-padding: .3em;
-
+  padding: .3em;
 }
 
 .big-music-sound {
-
   position:absolute;
     top: 63%;
     left: 35%;
@@ -24,10 +27,10 @@ padding: .3em;
   border-radius: 5px;
   background-color: $red;
   box-shadow: 2px 5px 2px 0px  #fd9bb8;
-  padding: 20px 25px;
-  font-size: 4.5em;
+  padding: .3em;
+  font-size: 9em;
   font-family: 'Muli', sans-serif;
-  margin: 4px 2px;
+  margin: .4em;
   text-decoration: none;
   color: black;
 }

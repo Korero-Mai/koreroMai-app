@@ -51,16 +51,7 @@ class PracticeSounds extends React.Component {
 
     const dispatch = this.props.dispatch
     const modal = this.props.modal
-    const modalStyle = {
-      content:{
-        top:'50%',
-        left:'50%',
-        right:'auto',
-        bottom:'auto',
-        marginRight:'-50%',
-        transform:'translate(-50%, -50%)'
-      }
-    }
+
 
     const level = Number(this.props.params.id)
     const activityRoute = 'activity/practice/sounds/'
@@ -82,9 +73,9 @@ class PracticeSounds extends React.Component {
                 <button onClick={() => this.playSound(letter)} className={`listen-sound-buttons`}>
                   {letter}
                 </button>
-                <Modal isOpen={modal} contentLabel='Modal' style={modalStyle}>
+                <Modal isOpen={modal} contentLabel='Modal' >
                   <h1>Well done!</h1>
-                    <Modal isOpen={modal} contentLabel='Modal' style={modalStyle}>
+                    <Modal isOpen={modal} contentLabel='Modal' >
                       <h1>Well done!</h1>
                       <Link to={activityRoute+1}><button className="button-radius repeat" onClick={() => dispatch({type: 'CLOSE_MODAL_RESET_SCORE'})}>Repeat</button></Link><br />
                       <Link to='activity'><button className="button-radius new-activity" onClick={() => dispatch({type: 'CLOSE_MODAL_RESET_SCORE'})}>Choose another activity</button></Link>
@@ -127,7 +118,7 @@ class PracticeSounds extends React.Component {
               <button onClick={() => this.playSound(letter)} className={`listen-sound-buttons`}>
                 {letter}
               </button>
-              <Modal isOpen={modal} contentLabel='Modal' style={modalStyle}>
+              <Modal isOpen={modal} contentLabel='Modal' >
                 <h1>Right on!</h1>
                 <Link to={activityRoute+(level+1)}><button className="listen-sound-buttons" onClick={() => dispatch({type: 'CLOSE_MODAL'})}>Next one!</button></Link><br />
               </Modal>
