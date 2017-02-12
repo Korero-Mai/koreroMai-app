@@ -1,6 +1,13 @@
-
-
-// --------------------------------BUTTONS HERE --------------------------------
+.play-box {
+  background-color: $yellow;
+  width: 95%;
+  border: solid 5px;
+  border-radius: 4%;
+  margin:2% auto;
+  display: flex;
+  align-items: center;
+  height: 46em;
+}
 
 .button-radius {
     border-radius: 5px;
@@ -22,7 +29,6 @@
 .button-radius:hover{
    background-color: #cc9bfd;
 }
-
 
 .first-back {
   border-radius: 5px;
@@ -174,4 +180,18 @@
   font-size: 4em;
   padding: .4em;
   margin: .3em 0 0;
+}
+
+
+@include ipad {
+  .button-radius {
+      padding: 10px;
+      font-size: 6em;
+      margin: 4px 2px;
+  }
+  .play-box {
+    margin:0;
+    height: 25em;
+    padding: 3em;
+  }
 }
