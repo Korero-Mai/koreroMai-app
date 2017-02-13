@@ -37,7 +37,7 @@ class PracticeWords extends React.Component {
 
     const timeoutModal = function(){
       setTimeout(() => {
-        dispatch({type: 'TOGGLE_MODAL'})}, 1800)
+        dispatch({type: 'TOGGLE_MODAL'})}, 400)
     }
 
     const dispatch = this.props.dispatch
@@ -63,7 +63,7 @@ class PracticeWords extends React.Component {
                      if (err) return console.log('error!')
                      this.playSound(word)
                    })
-                    setTimeout(() => {dispatch({type: 'HIDE_TRY_AGAIN'})}, 1600)
+                    setTimeout(() => {dispatch({type: 'HIDE_TRY_AGAIN'})}, 150)
                   }}/>
                 <audio ref={`${word}`} >
                   <source src={`${words[word].soundFile}`} preload='auto'/>
@@ -84,7 +84,7 @@ class PracticeWords extends React.Component {
                    if (err) return console.log('error!')
                    this.playSound(word)
                  })
-                  setTimeout(() => {dispatch({type: 'HIDE_TRY_AGAIN'})}, 450)
+                  setTimeout(() => {dispatch({type: 'HIDE_TRY_AGAIN'})}, 150)
                 }}>
                 {word}
               </button>
@@ -104,7 +104,7 @@ class PracticeWords extends React.Component {
                 <div className="columns" onClick={() => dispatch({type: 'INCREMENT_WRONGWORDS'})}>
                   <img src={`${words[word].imageFile}`} onClick={() => {
                       this.playSound(word)
-                      setTimeout(() => {dispatch({type: 'SHOW_TRY_AGAIN'})}, 1500)
+                      setTimeout(() => {dispatch({type: 'SHOW_TRY_AGAIN'})}, 400)
                     }}/>
                   <audio ref={`${word}`} >
                     <source src={`${words[word].soundFile}`} preload='auto'/>
@@ -115,7 +115,7 @@ class PracticeWords extends React.Component {
                 <div className='columns' onClick={() => dispatch({type: 'INCREMENT_WRONGWORDS'})}>
                   <button className='listen-sound-words' onClick={() => {
                       this.playSound(word)
-                      setTimeout(() => {dispatch({type: 'SHOW_TRY_AGAIN'})}, 1500)
+                      setTimeout(() => {dispatch({type: 'SHOW_TRY_AGAIN'})}, 400)
                     }}>
                     {word}
                   </button>
@@ -131,7 +131,7 @@ class PracticeWords extends React.Component {
             <div className="columns" onClick={timeoutModal}>
               <img src={`${words[word].imageFile}`}  onClick={() => {
                   this.playSound(word)
-                  setTimeout(() => {dispatch({type: 'HIDE_TRY_AGAIN'})}, 1600)
+                  setTimeout(() => {dispatch({type: 'HIDE_TRY_AGAIN'})}, 150)
                 }}/>
               <audio ref={`${word}`} >
                 <source src={`${words[word].soundFile}`} preload='auto'/>
@@ -142,7 +142,7 @@ class PracticeWords extends React.Component {
             <div className='columns' onClick={timeoutModal}>
               <button className='listen-sound-words' onClick={() => {
                   this.playSound(word)
-                  setTimeout(() => {dispatch({type: 'HIDE_TRY_AGAIN'})}, 1600)
+                  setTimeout(() => {dispatch({type: 'HIDE_TRY_AGAIN'})}, 150)
                 }}>
                 {word}
               </button>
@@ -161,7 +161,7 @@ class PracticeWords extends React.Component {
               <div className="columns" onClick={() => dispatch({type: 'INCREMENT_WRONGWORDS'})}>
                 <img src={`${words[word].imageFile}`} onClick={() => {
                     this.playSound(word)
-                    setTimeout(() => {dispatch({type: 'SHOW_TRY_AGAIN'})}, 1500)
+                    setTimeout(() => {dispatch({type: 'SHOW_TRY_AGAIN'})}, 400)
                   }}/>
                 <audio ref={`${word}`} >
                   <source src={`${words[word].soundFile}`} preload='auto'/>
@@ -173,7 +173,7 @@ class PracticeWords extends React.Component {
                 <button className='listen-sound-words'
                   onClick={() => {
                     this.playSound(word)
-                    setTimeout(() => {dispatch({type: 'SHOW_TRY_AGAIN'})}, 1500)
+                    setTimeout(() => {dispatch({type: 'SHOW_TRY_AGAIN'})}, 400)
                   }}>
                   {word}
                 </button>
