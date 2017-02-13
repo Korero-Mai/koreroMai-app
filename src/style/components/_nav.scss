@@ -26,6 +26,18 @@
   }
 }
 
+@include phoneLand {
+  .top-bar {
+    height: 4em;
+    .menu-text {
+      font-size: 1.5em;
+    }
+    .nav-text {
+      font-size: 1.3em;
+    }
+  }
+}
+
 @include ipadLandscape {
   .top-bar {
     height: 4em;
