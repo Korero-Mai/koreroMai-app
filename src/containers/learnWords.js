@@ -17,7 +17,7 @@ class LearnWords extends React.Component {
   generateWord(wordsArr,words){
       return wordsArr.map((word,index)=>{
         return (
-          <div className='row'>
+          <div>
             <audio ref={`${index}`} >
               <source src={`${words[word].soundFile}`} preload=''/>
             </audio>
@@ -45,11 +45,11 @@ class LearnWords extends React.Component {
             </div>
             <div className="play-box">
               {this.generateWord(wordsArr, words)}
-              <div className='row'>
-                <div className='columns small-centered small-10 medium-6 large-4'>
+              <div>
+
                 <Link to='activity'><button className="first-back">Back</button></Link>
                 <Link to={activityRoute+(level+1)}><button className="first-next">Next</button></Link>
-                </div>
+
               </div>
             </div>
           </div>
@@ -85,8 +85,8 @@ class LearnWords extends React.Component {
             <div className="play-box">
               {this.generateWord(wordsArr, words)}
             </div>
-            <div className='row'>
-              <div className='colums small-centered small-10 medium-6 large-4'>
+            <div>
+              <div>
                 <Link to={activityRoute+(level-1)}><button className="nav-back">Back</button></Link>
                 <Link to={activityRoute+(level+1)}><button className="nav-next">Next</button></Link>
               </div>
