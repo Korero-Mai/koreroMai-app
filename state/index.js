@@ -2,6 +2,8 @@ import { routerMiddleware, push } from 'react-router-redux'
 
 module.exports = {
 
+  playerToken: '',
+
   players: {
     players:[],
     group_name:""

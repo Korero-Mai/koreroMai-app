@@ -62,14 +62,11 @@ class PracticeSounds extends React.Component {
                 <button onClick={() => this.playSound(letter)} className='listen-sound-buttons'>
                   {letter}
                 </button>
-                <Modal isOpen={modal} contentLabel='Modal' >
-                  <div className='correct'>Tika tau - correct!</div>
-                    <Modal isOpen={modal} contentLabel='Modal' >
-                      <div className='correct'>Tika tau - correct!</div>
-                      <Link to={activityRoute+1}><button className='button-radius repeat' onClick={() => dispatch({type: 'END_ROUND'})}>Repeat</button></Link><br />
-                      <Link to='activity'><button className='button-radius new-activity' onClick={() => dispatch({type: 'END_ROUND'})}>Choose another activity</button></Link>
-                    </Modal>
-                </Modal>
+                  <Modal isOpen={modal} contentLabel='Modal' >
+                    <div className='correct'>Tika tau - correct!</div>
+                    <Link to={activityRoute+1}><button className='button-radius repeat' onClick={() => dispatch({type: 'END_ROUND'})}>Repeat</button></Link><br />
+                    <Link to='activity'><button className='button-radius new-activity' onClick={() => dispatch({type: 'END_ROUND'})}>Choose another activity</button></Link>
+                  </Modal>
               </div>
             </div>
           </div>
