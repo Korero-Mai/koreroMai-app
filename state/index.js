@@ -2,11 +2,11 @@ import { routerMiddleware, push } from 'react-router-redux'
 
 module.exports = {
 
-<<<<<<< HEAD
+
   addPlayer: false,
-=======
+
   showWrong: false,
->>>>>>> f298e90205a71dc940b938063fcbd7e9e1d14cdf
+
 
   editUser: false,
 
