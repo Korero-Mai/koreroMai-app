@@ -22,19 +22,19 @@ function Home(props) {
         </div>
       </div>
       <div className='spider'>
-        <img src='../images/activity-images/pungawerewere.png'/>
+        <img src='../images/decoration-images/home/pungawerewere.png'/>
       </div>
       <div className='kiwi'>
-        <img src='../images/activity-images/kiwi.png'/>
+        <img src='../images/decoration-images/home/kiwi.png'/>
       </div>
       <div className='grass'>
-        <img src='../images/activity-images/grass.png'/>
+        <img src='../images/decoration-images/home/grass.png'/>
       </div>
       <div className='butterfly'>
-        <img src='../images/activity-images/butterfly.png'/>
+        <img src='../images/decoration-images/home/butterfly.png'/>
       </div>
       <div className='bee'>
-        <img src='../images/activity-images/bee.png'/>
+        <img src='../images/decoration-images/home/bee.png'/>
       </div>
     </div>
 
