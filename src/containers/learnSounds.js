@@ -82,7 +82,7 @@ class LearnSounds extends React.Component {
           <div className='row'>
             <div className='columns small-centered small-12 medium-6 large-4'>
               <audio ref={`${index}`} >
-                <source src={`${letters[letter].soundFile}`} preload=''/>
+                <source src={`${letters[letter].soundFile}`} preload='auto'/>
               </audio>
               <button onClick={() => this.playSound(index)} className='button-radius'>
                 {letter}

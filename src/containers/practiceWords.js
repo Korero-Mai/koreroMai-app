@@ -20,7 +20,7 @@ class PracticeWords extends React.Component {
         return (
             <div>
               <audio ref={`${answer}`} >
-                <source src={`${words[word].soundFile}`} preload=''/>
+                <source src={`${words[word].soundFile}`} preload='auto'/>
               </audio>
               <div className='note-word' onClick={() => this.playSound(word)}>♫</div>
             </div>
@@ -29,25 +29,31 @@ class PracticeWords extends React.Component {
     })
   }
 
-  // <button  className='listen-sound-buttons' onClick={() => {
-  //   request.post('api/v1/players/scores')
-  //   .send({
-  //     player_token: this.props.playerToken,
-  //     wrongSounds: this.props.wrongSounds,
-//       wrongWords: this.props.wrongWords
-//      })
-  //   this.playSound(letter)}
-  // }>
+
+    // <button  className='listen-sound-buttons' onClick={() => {
+    //   request.post('api/v1/players/scores')
+    //   .send({
+    //     player_token: this.props.playerToken,
+    //     wrongSounds: this.props.wrongSounds,
+  //       wrongWords: this.props.wrongWords
+  //      })
+  //      .end(err, data){
+          // if (err) return console.log('error!')
+          // this.playSound(letter)}
+          //}
+    // }>
+
+
   generateWord(wordsArr, words, answer){
 
     const timeoutModal = function(){
       setTimeout(() => {
-        dispatch({type: 'TOGGLE_MODAL'})}, 2000)
+        dispatch({type: 'TOGGLE_MODAL'})}, 1800)
     }
 
     const dispatch = this.props.dispatch
     const modal = this.props.modal
-        const level = Number(this.props.params.id)
+    const level = Number(this.props.params.id)
     const activityRoute = 'activity/practice/words/'
 
     return wordsArr.map((word,index)=>{
@@ -57,15 +63,21 @@ class PracticeWords extends React.Component {
           <div>
             <div className='row'>
               <div className="columns"  onClick={timeoutModal}>
-                <img src={`${words[word].imageFile}`} onClick={() => this.playSound(word)}/>
+                <img src={`${words[word].imageFile}`}  onClick={() => {
+                    this.playSound(word)
+                    setTimeout(() => {dispatch({type: 'HIDE_TRY_AGAIN'})}, 1600)
+                  }}/>
                 <audio ref={`${word}`} >
-                  <source src={`${words[word].soundFile}`} preload=''/>
+                  <source src={`${words[word].soundFile}`} preload='auto'/>
                 </audio>
               </div>
             </div>
             <div className='row'>
               <div className='columns' onClick={timeoutModal}>
-                <button className='listen-sound-words' onClick={() => {this.playSound(word)}}>
+                <button className='listen-sound-words'  onClick={() => {
+                    this.playSound(word)
+                    setTimeout(() => {dispatch({type: 'HIDE_TRY_AGAIN'})}, 1600)
+                  }}>
                   {word}
                 </button>
                   <Modal isOpen={modal} contentLabel='Modal' className='prac-words-modal' >
@@ -81,16 +93,22 @@ class PracticeWords extends React.Component {
           return (
             <div>
               <div className="row">
-                <div className="columns">
-                  <img src={`${words[word].imageFile}`} onClick={() => this.playSound(word)}/>
+                <div className="columns" onClick={() => dispatch({type: 'INCREMENT_WRONGWORDS'})}>
+                  <img src={`${words[word].imageFile}`} onClick={() => {
+                      this.playSound(word)
+                      setTimeout(() => {dispatch({type: 'SHOW_TRY_AGAIN'})}, 1500)
+                    }}/>
                   <audio ref={`${word}`} >
-                    <source src={`${words[word].soundFile}`} preload=''/>
+                    <source src={`${words[word].soundFile}`} preload='auto'/>
                   </audio>
                 </div>
               </div>
               <div className='row'>
                 <div className='columns' onClick={() => dispatch({type: 'INCREMENT_WRONGWORDS'})}>
-                  <button onClick={() => this.playSound(word)} className='listen-sound-words'>
+                  <button className='listen-sound-words' onClick={() => {
+                      this.playSound(word)
+                      setTimeout(() => {dispatch({type: 'SHOW_TRY_AGAIN'})}, 1500)
+                    }}>
                     {word}
                   </button>
                 </div>
@@ -103,15 +121,21 @@ class PracticeWords extends React.Component {
         <div>
           <div className="row">
             <div className="columns" onClick={timeoutModal}>
-              <img src={`${words[word].imageFile}`} onClick={() => this.playSound(word)}/>
+              <img src={`${words[word].imageFile}`}  onClick={() => {
+                  this.playSound(word)
+                  setTimeout(() => {dispatch({type: 'HIDE_TRY_AGAIN'})}, 1600)
+                }}/>
               <audio ref={`${word}`} >
-                <source src={`${words[word].soundFile}`} preload=''/>
+                <source src={`${words[word].soundFile}`} preload='auto'/>
               </audio>
             </div>
           </div>
           <div className='row'>
             <div className='columns' onClick={timeoutModal}>
-              <button onClick={() => this.playSound(word)} className='listen-sound-words'>
+              <button className='listen-sound-words' onClick={() => {
+                  this.playSound(word)
+                  setTimeout(() => {dispatch({type: 'HIDE_TRY_AGAIN'})}, 1600)
+                }}>
                 {word}
               </button>
               <Modal isOpen={modal} contentLabel='Modal' className='prac-words-modal' >
@@ -126,16 +150,23 @@ class PracticeWords extends React.Component {
         return (
           <div>
             <div className="row">
-              <div className="columns">
-                <img src={`${words[word].imageFile}`} onClick={() => this.playSound(word)}/>
+              <div className="columns" onClick={() => dispatch({type: 'INCREMENT_WRONGWORDS'})}>
+                <img src={`${words[word].imageFile}`} onClick={() => {
+                    this.playSound(word)
+                    setTimeout(() => {dispatch({type: 'SHOW_TRY_AGAIN'})}, 1500)
+                  }}/>
                 <audio ref={`${word}`} >
-                  <source src={`${words[word].soundFile}`} preload=''/>
+                  <source src={`${words[word].soundFile}`} preload='auto'/>
                 </audio>
               </div>
             </div>
             <div className='row'>
               <div className='columns' onClick={() => dispatch({type: 'INCREMENT_WRONGWORDS'})}>
-                <button onClick={() => this.playSound(word)} className='listen-sound-words'>
+                <button className='listen-sound-words'
+                  onClick={() => {
+                    this.playSound(word)
+                    setTimeout(() => {dispatch({type: 'SHOW_TRY_AGAIN'})}, 1500)
+                  }}>
                   {word}
                 </button>
               </div>
@@ -147,12 +178,15 @@ class PracticeWords extends React.Component {
   }
 
   render() {
-    const props = this.props
     const { dispatch, modal, words } = this.props
     const level = Number(this.props.params.id)
     const activityRoute = 'activity/practice/words/'
     const wordsArr = this.props.practiceWordPage[level].words
     const answer = this.props.practiceWordPage[level].answer
+
+    function WrongAnswerCue(props){
+      return props.showWrong ? <h1>Try again!</h1> :  <div></div>
+    }
 
     if (level === 1) {
       return (
@@ -166,6 +200,7 @@ class PracticeWords extends React.Component {
             </div>
             {this.generateWord(wordsArr, words, answer)}
           </div>
+          <WrongAnswerCue showWrong={this.props.showWrong}/>
         </div>
       )
     } else if (level === 5){
@@ -180,6 +215,7 @@ class PracticeWords extends React.Component {
             </div>
             {this.generateWord(wordsArr, words, answer)}
           </div>
+          <WrongAnswerCue showWrong={this.props.showWrong}/>
         </div>
       )
     } else return (
@@ -193,6 +229,7 @@ class PracticeWords extends React.Component {
           </div>
           {this.generateWord(wordsArr, words, answer)}
         </div>
+        <WrongAnswerCue showWrong={this.props.showWrong}/>
       </div>
     )
   }
