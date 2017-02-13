@@ -11,6 +11,7 @@ const wrongWords = require('./wrongWords')
 const users = require('./users')
 const players = require('./players')
 const groups = require('./groups')
+const editUser = require('./editUser')
 const playerToken = require('./playerToken')
 
 module.exports = combineReducers({
@@ -26,6 +27,6 @@ module.exports = combineReducers({
   users,
   players,
   groups,
+  editUser,
   playerToken
-
 })

@@ -1,18 +1,18 @@
 .top-bar, .top-bar ul {
   background-color: $nav-background;
   text-transform: uppercase;
-  margin: 0 0 4em 0;
-  font-weight: 900;
+  margin-bottom:1em;
+  font-weight: 700;
   padding: 5px 0;
 }
 
 .top-bar {
   .menu-text {
-    color: $nav-text-color;
-    font-size: 3em;
+    font-size: 2.5em;
     font-family: 'Itim', cursive;
   }
   .menu > .menu-text > a {
+        color: $nav-text-color;
     display: inline;
     padding: 0;
   }
@@ -22,11 +22,11 @@
 
   }
   .nav-text {
-    font-size: 2em;
+    font-size: 2.5em;
   }
 }
 
-@include ipad {
+@include ipadLandscape {
   .top-bar {
     height: 4em;
     .menu-text {

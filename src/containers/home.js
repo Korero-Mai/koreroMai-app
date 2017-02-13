@@ -21,26 +21,24 @@ function Home(props) {
           <Link to="activity"><button className="play-button">PLAY!</button></Link>
         </div>
       </div>
-      <div className='spider'>
-        <img src='../images/decoration-images/home/pungawerewere.png'/>
-      </div>
-      <div className='kiwi'>
-        <img src='../images/decoration-images/home/kiwi.png'/>
-      </div>
-      <div className='grass'>
-        <img src='../images/decoration-images/home/grass.png'/>
-      </div>
-      <div className='butterfly'>
-        <img src='../images/decoration-images/home/butterfly.png'/>
-      </div>
-      <div className='bee'>
-        <img src='../images/decoration-images/home/bee.png'/>
-      </div>
     </div>
 
   )
 }
 
 module.exports = connect((state) => state)(Home)
-
-        // </div>
+      // <div className='spider'>
+      //   <img src='../images/decoration-images/home/pungawerewere.png'/>
+      // </div>
+      // <div className='kiwi'>
+      //   <img src='../images/decoration-images/home/kiwi.png'/>
+      // </div>
+      // <div className='grass'>
+      //   <img src='../images/decoration-images/home/grass.png'/>
+      // </div>
+      // <div className='butterfly'>
+      //   <img src='../images/decoration-images/home/butterfly.png'/>
+      // </div>
+      // <div className='bee'>
+      //   <img src='../images/decoration-images/home/bee.png'/>
+      // </div>

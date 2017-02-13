@@ -10,7 +10,7 @@
   background-color: $yellow;
   box-shadow: 2px 5px 2px 0px  #fd9b9b;
   padding: 30px 35px;
-  font-size: 7em;
+  font-size: 5em;
   font-family: 'Muli', sans-serif;
   text-decoration: none;
   color: black;
@@ -18,15 +18,15 @@
 }
 
 .h1-home {
-  font-family: 'Life Savers', cursive;
-  font-size: 9em;
+  font-family: 'Berkshire Swash', cursive;
+  font-size: 5em;
   font-weight: bold;
   text-align: center;
 }
 
 .h3-home {
   font-family: 'Itim', cursive;
-  font-size: 6em;
+  font-size: 4em;
   text-align: center;
 }
 
@@ -59,9 +59,9 @@
     right: 5%;
 }
 
-@include ipad {
+@include ipadLandscape {
   .h1-home {
-    font-size: 3em;
+    font-size: 4em;
   }
   .h3-home {
     font-size: 3em;

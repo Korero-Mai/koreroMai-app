@@ -1,37 +1,29 @@
-.play-box {
+.play-box-ll {
   background-color: $yellow;
-  width: 95%;
+  width: 80%;
   border: solid 5px;
   border-radius: 4%;
-  margin: 2% auto;
+  margin-left: 5em;
+  margin-top: 5em;
   display: flex;
   align-items: center;
-  height: 46em;
+  height: 30em;
 }
 
 .welcome {
   font-size: 3em;
   font-family: 'Itim', sans-serif;
+  margin-top: 2em;
 }
-
-.modal {
-    top: 20%;
-    left: 50%;
-    right: auto;
-    bottom: auto;
-    margin-right: -50%;
-    transform: translate(-50%, -50%);
-}
-
 
 .button-radius {
   border-radius: 5px;
   background-color: $red;
   box-shadow: 2px 5px 2px 0px  #fd9bb8;
   padding: 20px 25px;
-  font-size: 10em;
+  font-size: 5em;
   font-family: 'Muli', sans-serif;
-  margin: 4px 2px;
+  margin: 0;
   text-decoration: none;
   color: black;
 }
@@ -45,7 +37,7 @@
    background-color: #cc9bfd;
 }
 
-.first-back {
+.first-back-ll {
   border-radius: 5px;
   background-color: $light-blue;
   box-shadow: 0px 5px 0px 0px $dark-blue;
@@ -59,17 +51,17 @@
     left: 20%;
 }
 
-.first-back:active {
+.first-back-ll:active {
   transform: translate(0px, 5px);
   -webkit-transform: translate(0px, 5px);
   box-shadow: 0px 1px 0px 0px;
 }
 
-.first-back:hover {
+.first-back-ll:hover {
   background-color: #6FC6FF;
 }
 
-.first-next {
+.first-next-ll {
   border-radius: 5px;
   background-color: $light-blue;
   box-shadow: 0px 5px 0px 0px $dark-blue;
@@ -83,17 +75,17 @@
     left: 60%;
 }
 
-.first-next:active {
+.first-next-ll:active {
   transform: translate(0px, 5px);
   -webkit-transform: translate(0px, 5px);
   box-shadow: 0px 1px 0px 0px;
 }
 
-.first-next:hover {
+.first-next-ll:hover {
   background-color: #6FC6FF;
 }
 
-.nav-next {
+.nav-next-ll {
   border-radius: 5px;
   background-color: $light-blue;
   box-shadow: 0px 5px 0px 0px $dark-blue;
@@ -107,17 +99,17 @@
     left: 60%;
 }
 
-.nav-next:active {
+.nav-next-ll:active {
   transform: translate(0px, 5px);
   -webkit-transform: translate(0px, 5px);
   box-shadow: 0px 1px 0px 0px;
 }
 
-.nav-next:hover {
+.nav-next-ll:hover {
   background-color: #6FC6FF;
 }
 
-.nav-back {
+.nav-back-ll {
   border-radius: 5px;
   background-color: $light-blue;
   box-shadow: 0px 5px 0px 0px $dark-blue;
@@ -131,17 +123,17 @@
     left: 20%;
 }
 
-.nav-back:active {
+.nav-back-ll:active {
   transform: translate(0px, 5px);
   -webkit-transform: translate(0px, 5px);
   box-shadow: 0px 1px 0px 0px;
 }
 
-.nav-back:hover {
+.nav-back-ll:hover {
   background-color: #6FC6FF;
 }
 
-.last-back {
+.last-back-ll {
   border-radius: 5px;
   background-color: $light-blue;
   box-shadow: 0px 5px 0px 0px $dark-blue;
@@ -155,17 +147,17 @@
     left: 20%;
 }
 
-.last-back:active {
+.last-back-ll:active {
   transform: translate(0px, 5px);
   -webkit-transform: translate(0px, 5px);
   box-shadow: 0px 1px 0px 0px;
 }
 
-.last-back:hover {
+.last-back-ll:hover {
   background-color: #6FC6FF;
 }
 
-.finish {
+.finish-ll {
   border-radius: 5px;
   background-color: $light-blue;
   box-shadow: 0px 5px 0px 0px $dark-blue;
@@ -185,62 +177,159 @@
   box-shadow: 0px 1px 0px 0px;
 }
 
-.repeat {
-  background-color: $light-blue;
-  font-size: 4em;
-  padding: .4em;
-}
-
-.new-activity {
-  background-color: $light-blue;
-  font-size: 4em;
-  padding: .4em;
-  margin: .3em 0 0;
-}
-
-
-@include ipad {
-  .button-radius {
-      padding: .3em;
-      font-size: 5.5em;
-      margin: 4px 2px;
-  }
-
+.learn-sounds-modal {
+  padding-top: 3em;
+  margin-left: 15%;
+  margin-top: 5%;
+  min-height: 30%;
+  min-width: 70%;
+  position: fixed;
+  top: 10%;
+  background-color: $light-grey;
   .repeat {
+    background-color: $light-blue;
     font-size: 3em;
+    padding: .4em;
+    margin: 1em 0 0;
   }
-
   .new-activity {
+    background-color: $light-blue;
     font-size: 3em;
+    padding: .4em;
+    margin: 1em 0 0;
+  }
+}
+
+
+
+@include ipadPortrait {
+  .welcome {
+    font-size: 2.5em;
+    margin-bottom: 1em;
+  }
+  .play-box-ll {
+    height: 20em;
+  }
+  .learn-sounds-modal {
+    padding-top: 2em;
+    margin-left: 15%;
+    margin-top: 5%;
+    min-height: 30%;
+    min-width: 70%;
+    position: fixed;
+    top: 10%;
+    background-color: $light-grey;
+    .repeat {
+      background-color: $light-blue;
+      font-size: 2em;
+      padding: .4em;
+      margin: 1em 0 0;
+    }
+    .new-activity {
+      background-color: $light-blue;
+      font-size: 2em;
+      padding: .4em;
+      margin: 1em 0 0;
+    }
+  }
+}
+
+@include ipadLandscape {
+  .play-box-ll {
+    margin-left: 5em;
+    margin-top: 2em;
+    height: 15em;
   }
 
-  .play-box {
-    margin:0;
-    height: 20em;
-    padding: 3em;
+  .welcome {
+    font-size: 1em;
+    font-family: 'Itim', sans-serif;
+    margin-top: .5em;
   }
-  .first-back {
-    padding: .3em;
-    font-size: 3em;
+
+  .button-radius {
+    font-size: 3.5em;
+    font-family: 'Muli', sans-serif;
+    margin: 0;
+    text-decoration: none;
+    color: black;
   }
-  .first-next {
-    padding: .3em;
-    font-size: 3em;
+
+  .learn-sounds-modal {
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin-left: 15%;
+    margin-top: 0;
+    min-height: 40%;
+    min-width: 70%;
+    position: fixed;
+    top: 10%;
+    background-color: $light-grey;
+    .repeat {
+      background-color: $light-blue;
+      font-size: 2em;
+      padding: .4em;
+      margin: 0;
+    }
+    .new-activity {
+      background-color: $light-blue;
+      font-size: 2em;
+      padding: .4em;
+      margin: 1em 0 0;
+    }
   }
-  .nav-next {
-    padding: .3em;
-    font-size: 3em;
+  .first-back-ll {
+    font-size: 1.5em;
+    margin: 4px 2px;
+    text-decoration: none;
+    color: black;
+    position:absolute;
+    top: 75%;
+    left: 20%;
   }
-  .nav-back {
-    padding: .3em;
-    font-size: 3em;
+  .last-back-ll {
+    font-size: 1.5em;
+    margin: 4px 2px;
+    text-decoration: none;
+    color: black;
+    position:absolute;
+    top: 75%;
+    left: 20%;
   }
-  .last-back {
-    padding: .3em;
-    font-size: 3em;
+  .nav-back-ll {
+    font-size: 1.5em;
+    margin: 4px 2px;
+    text-decoration: none;
+    color: black;
+    position:absolute;
+    top: 75%;
+    left: 20%;
   }
-  .finish {
-    padding: .3em;
-    font-size: 3em;
+  .first-next-ll {
+    font-size: 1.5em;
+    margin: 4px 2px;
+    text-decoration: none;
+    color: black;
+    position:absolute;
+    top: 75%;
+    left: 60%;
+  }
+  .nav-next-ll {
+    font-size: 1.5em;
+    margin: 4px 2px;
+    text-decoration: none;
+    color: black;
+    position:absolute;
+    top: 75%;
+    left: 60%;
+  }
+  .finish-ll {
+    font-size: 1.5em;
+    margin: 4px 2px;
+    text-decoration: none;
+    color: black;
+    position:absolute;
+    top: 75%;
+    left: 60%;
   }
 }
