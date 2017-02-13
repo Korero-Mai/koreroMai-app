@@ -28,3 +28,29 @@ test('RESET_WRONGSOUNDS | set the wrongSounds value to 0', t => {
   t.is(newState.wrongSounds, expectedState, "should set the wrongSounds value to 0")
 
 })
+
+test('END_ROUND | set the wrongSounds value to 0', t => {
+
+  t.plan(1)
+
+  const input  = {type: 'END_ROUND'}
+
+  const newState = reducer(initialState.wrongSounds, input)
+  const expectedState = 0
+
+  t.is(newState.wrongSounds, expectedState, "should set the wrongSounds value to 0")
+
+})
+
+test('LOGOUT_USER | set the wrongSounds value to 0', t => {
+
+  t.plan(1)
+
+  const input  = {type: 'LOGOUT_USER'}
+
+  const newState = reducer(initialState.wrongSounds, input)
+  const expectedState = 0
+
+  t.is(newState.wrongSounds, expectedState, "should set the wrongSounds value to 0")
+
+})
