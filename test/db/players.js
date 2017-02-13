@@ -80,8 +80,8 @@ test('adds a new player score | adds a new score to the scoresTable', (t) => {
 const table = 'players_gameScores'
 const input= {
   player_token:'bobbie123',
-  prac_sounds_wrong: 4,
-  prac_words_wrong: 5,
+  wrongSounds: 4,
+  wrongWords: 5,
 }
 
 const expected = [{
@@ -94,7 +94,7 @@ const expected = [{
 }]
  //act
 
-return db.addScore(table, input)
+return db.addScore(input)
   .then(function(data){
       // console.log('db.addScore ', data);
 //Assert
