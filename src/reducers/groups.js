@@ -2,7 +2,7 @@ module.exports = function (state = {}, action) {
 
   switch (action.type) {
 
-    case 'UPDATE_PLAYERS':
+    case 'UPDATE_GROUPS':
       state = action.payload
       return state
 

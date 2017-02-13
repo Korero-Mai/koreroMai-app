@@ -3,7 +3,9 @@ const test = require('ava')
 const initialState = require('../../state')
 const reducer = require('../../src/reducers')
 const request = require('superagent')
+const freeze = require('deep-freeze')
 
+freeze(initialState.users)
 
 test('UPDATE_USER | inject fetched user in the state', t => {
 
@@ -29,7 +31,7 @@ test('UPDATE_USER | inject fetched user in the state', t => {
 test('LOGOUT_USER | remove user from the state', t => {
 
     t.plan(1)
-    
+
     const input = {type: 'LOGOUT_USER'}
 
     const expectedState = {}

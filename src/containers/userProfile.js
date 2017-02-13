@@ -9,12 +9,14 @@ function UserProfile(props) {
   return (
     <div>
       <div className="row">
-        <UserInfo />
-        <Groups />
+        <UserInfo id={props.params.id}/>
+        <Groups id={props.params.id}/>
       </div>
       <div className="row">
       </div>
-        <GroupInfo id={props.params.id}/>
+        {props.players.players.length > 0
+          ? <GroupInfo id={props.params.id}/>
+          : null}
     </div>
   )
 }

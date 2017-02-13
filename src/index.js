@@ -6,6 +6,7 @@ const { Router, Route, IndexRoute, hashHistory } = require('react-router')
 const reducer = require('./reducers')
 const initialState = require('../state')
 const URL = require('url-parse')
+const request = require('superagent')
 import { routerMiddleware, push } from 'react-router-redux'
 require('./style/main.scss')
 
@@ -25,7 +26,7 @@ const middleware = routerMiddleware(hashHistory)
 const store = createStore(reducer, initialState, applyMiddleware(middleware))
 
 store.subscribe(()=> {
-	console.log('Index.js state log', store.getState());
+  console.log('Index.js state log', store.getState());
 })
 
 hashHistory.listen((ev) => {
@@ -34,32 +35,37 @@ hashHistory.listen((ev) => {
 })
 
 const Root = ({store}) => {
-	return (
-		<Provider store = {store}>
-			<Router history = {hashHistory}>
-				<Route path = '/' component={App} store={store}>
-					<IndexRoute component={Home} />
-				 <Route path = '/home' component={Home} />
-				 <Route path = '/players' component={PlayersHome} />
-         <Route path ='/activity' component={ActivityChoiceBox} />
-         <Route path ='/activity/learn/sounds/:id' component={LearnSounds} />
-         <Route path ='/activity/learn/words/:id' component={LearnWords} />
-         <Route path ='/activity/practice/sounds/:id' component={PracticeSounds} />
-         <Route path ='/activity/practice/words/:id' component={PracticeWords} />
-         <Route path = '/login-register' component={AuthForm} />
-         <Route path = 'users/:id/profile' component={UserProfile} />
-				</Route>
-			</Router>
-		</Provider>
-	)
+  return (
+    <Provider store = {store}>
+      <Router history = {hashHistory}>
+        <Route path = '/' component={App} store={store}>
+        <IndexRoute component={Home} />
+        <Route path = '/home' component={Home} />
+        <Route path = '/players' component={PlayersHome} />
+        <Route path ='/activity' component={ActivityChoiceBox} />
+        <Route path ='/activity/learn/sounds/:id' component={LearnSounds} />
+        <Route path ='/activity/learn/words/:id' component={LearnWords} />
+        <Route path ='/activity/practice/sounds/:id' component={PracticeSounds} />
+        <Route path ='/activity/practice/words/:id' component={PracticeWords} />
+        <Route path = '/login-register' component={AuthForm} />
+        <Route path = 'users/:id/profile' component={UserProfile} />
+        </Route>
+      </Router>
+    </Provider>
+  )
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-	console.log('DOMContentLoaded');
-	const root = document.querySelector('#app')
+  console.log('DOMContentLoaded');
+  const root = document.querySelector('#app')
+  request.get('api/v1/auth/logged-in', (err, res) => {
+    if (res.body.authenticated){
+      store.dispatch({type: 'UPDATE_USER', payload: res.body.user})
+    }
+  })
 
-	ReactDOM.render(
-		<Root store={store}/>,
-		root
-	)
+  ReactDOM.render(
+    <Root store={store}/>,
+    root
+  )
 })
