@@ -2,9 +2,10 @@ import { routerMiddleware, push } from 'react-router-redux'
 
 module.exports = {
 
+  showWrong: false,
 
   editUser: false,
-  
+
   playerToken: '',
 
   players: {

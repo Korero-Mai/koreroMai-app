@@ -11,7 +11,7 @@ function GenerateLetter(props) {
             <div className="row">
               <div className="columns">
                 <audio ref={`${letter}`} >
-                  <source src={`${letters[letter].soundFile}`} preload=''/>
+                  <source src={`${letters[letter].soundFile}`} preload='auto'/>
                 </audio>
               </div>
             </div>
@@ -30,7 +30,7 @@ function GenerateLetter(props) {
               <div className="row">
                 <div className="columns">
                   <audio ref={`${letter}`} >
-                    <source src={`${letters[letter].soundFile}`} preload=''/>
+                    <source src={`${letters[letter].soundFile}`} preload='auto'/>
                   </audio>
                 </div>
               </div>

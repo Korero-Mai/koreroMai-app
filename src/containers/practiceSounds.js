@@ -1,7 +1,8 @@
 const React = require('react')
 const { connect } = require('react-redux')
 const { Link } = require('react-router')
-const Modal = require('react-modal');
+const Modal = require('react-modal')
+const request = require('superagent')
 
 class PracticeSounds extends React.Component {
 
@@ -20,7 +21,7 @@ class PracticeSounds extends React.Component {
         return (
           <div>
             <audio ref={`${answer}`} >
-                  <source src={`${letters[item].soundFile}`} preload=''/>
+                  <source src={`${letters[item].soundFile}`} preload='auto'/>
             </audio>
             <div className='note' onClick={() => this.playSound(item)}>♫</div>
           </div>
@@ -28,6 +29,19 @@ class PracticeSounds extends React.Component {
       }
     })
   }
+
+  // <button  className='listen-sound-buttons' onClick={() => {
+  //   request.post('api/v1/players/scores')
+  //   .send({
+  //     player_token: this.props.playerToken,
+  //     wrongSounds: this.props.wrongSounds,
+//       wrongWords: this.props.wrongWords
+//      })
+//      .end(err, data){
+        // if (err) return console.log('error!')
+        // this.playSound(letter)}
+        //}
+  // }>
 
   generateLetter(lettersArr,letters, answer){
 
@@ -47,10 +61,10 @@ class PracticeSounds extends React.Component {
           return (
           <div>
             <audio ref={`${letter}`} >
-                  <source src={`${letters[letter].soundFile}`} preload=''/>
+                  <source src={`${letters[letter].soundFile}`} preload='auto'/>
             </audio>
             <div onClick={timeoutModal}>
-              <button onClick={() => this.playSound(letter)} className='listen-sound-buttons'>
+              <button onClick={() => this.playSound(letter) setTimeout(() => {dispatch({type: 'HIDE_TRY_AGAIN'})}, 450)} className='listen-sound-buttons'>
                 {letter}
               </button>
                 <Modal isOpen={modal} contentLabel='Modal' className='prac-sounds-modal' >
@@ -65,11 +79,13 @@ class PracticeSounds extends React.Component {
           return (
             <div>
               <audio ref={`${letter}`} >
-                <source src={`${letters[letter].soundFile}`} preload=''/>
+                <source src={`${letters[letter].soundFile}`} preload='auto'/>
               </audio>
               <div onClick={() => dispatch({type: 'INCREMENT_WRONGSOUNDS'})}>
-                <button onClick={() => this.playSound(letter)} className='listen-sound-buttons'>
-                  {letter}
+                <button className='listen-sound-buttons' onClick={() => {
+                    this.playSound(letter)
+                    setTimeout(() => {dispatch({type: 'SHOW_TRY_AGAIN'})}, 450)
+                  }}>
                 </button>
               </div>
             </div>
@@ -78,13 +94,12 @@ class PracticeSounds extends React.Component {
       } else if (letter === answer) {
         return (
         <div>
-
           <audio ref={`${letter}`} >
-              <source src={`${letters[letter].soundFile}`} preload=''/>
+              <source src={`${letters[letter].soundFile}`} preload='auto'/>
           </audio>
 
           <div onClick={timeoutModal}>
-            <button onClick={() => this.playSound(letter)} className='listen-sound-buttons'>
+            <button onClick={() => this.playSound(letter) setTimeout(() => {dispatch({type: 'HIDE_TRY_AGAIN'})}, 450)} className='listen-sound-buttons'>
               {letter}
             </button>
             <Modal isOpen={modal} contentLabel='Modal' className='prac-sounds-modal' >
@@ -92,17 +107,16 @@ class PracticeSounds extends React.Component {
               <Link to={activityRoute+(level+1)}><button className='next-letter' onClick={() => dispatch({type: 'TOGGLE_MODAL'})}>Next one!</button></Link><br />
             </Modal>
           </div>
-
         </div>
         )
       } else {
         return (
           <div>
             <audio ref={`${letter}`} >
-              <source src={`${letters[letter].soundFile}`} preload=''/>
+              <source src={`${letters[letter].soundFile}`} preload='auto'/>
             </audio>
             <div onClick={() => dispatch({type: 'INCREMENT_WRONGSOUNDS'})}>
-              <button onClick={() => this.playSound(letter)} className='listen-sound-buttons'>
+              <button onClick={() => this.playSound(letter) setTimeout(() => {dispatch({type: 'SHOW_TRY_AGAIN'})}, 450)} className='listen-sound-buttons'>
                 {letter}
               </button>
             </div>
@@ -120,6 +134,10 @@ class PracticeSounds extends React.Component {
     const lettersArr = this.props.practiceSoundPage[level].letters
     const answer = this.props.practiceSoundPage[level].answer
 
+    function WrongAnswerCue(props){
+      return props.showWrong ? <h1>Try again!</h1> :  <div></div>
+    }
+
     if (level === 1) {
       return (
         <div>
@@ -130,6 +148,7 @@ class PracticeSounds extends React.Component {
             {this.generateAnswer(lettersArr, answer, letters)}
             {this.generateLetter(lettersArr, letters, answer)}
           </div>
+          <WrongAnswerCue showWrong={this.props.showWrong}/>
         </div>
       )
     } else if (level === 5){
@@ -142,6 +161,7 @@ class PracticeSounds extends React.Component {
             {this.generateAnswer(lettersArr, answer, letters)}
             {this.generateLetter(lettersArr, letters, answer)}
           </div>
+          <WrongAnswerCue showWrong={this.props.showWrong}/>
         </div>
       )
     } else return (
@@ -154,7 +174,9 @@ class PracticeSounds extends React.Component {
             {this.generateLetter(lettersArr, letters, answer)}
           </div>
         </div>
-      )
+        <WrongAnswerCue showWrong={this.props.showWrong}/>
+      </div>
+    )
   }
 }
 
