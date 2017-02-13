@@ -4,18 +4,34 @@
   padding: 0;
   margin-bottom: 10em;
   margin-top: 5em;
+}
 
+h3 {
+  color: $dark-blue;
+  font-size: 5rem;
+  margin-bottom: 1em;
+}
+
+.email {
+  font-size: 2em;
+  height: 2.5em;
+}
+
+.password {
+  font-size: 2em;
+  height: 2.5em;
+}
+
+@include ipadPortrait {
   h3 {
-    color: $dark-blue;
-    font-size: 5rem;
-    margin-bottom: 1em;
+    font-size: 4rem;
   }
-  input {
-    height:2em;
-    font-size:2rem;
+  .container {
+    margin-bottom: 6em;
+    margin-top: 5em;
   }
-  button {
-    height:3em;
-    font-size:2rem;
+  .input-box {
+    height:rem;
+    font-size: 1.5rem;
   }
 }
