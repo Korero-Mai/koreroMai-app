@@ -1,17 +1,21 @@
 .play-box {
   background-color: $yellow;
-  width: 95%;
+  width: 90%;
   border: solid 5px;
   border-radius: 4%;
-  margin: 2% auto;
-  height: 46em;
-  text-align: center;
-  padding: 3em;
+  margin-top: 3em;
+  margin-left: 3em;
+  height: 40em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2em;
 }
 
 .welcome {
   font-size: 3em;
   font-family: 'Itim', sans-serif;
+  margin-top: 2em;
 }
 
 .learn-words-modal {
@@ -44,7 +48,7 @@
   padding: 20px 25px;
   font-size: 3em;
   font-family: 'Muli', sans-serif;
-  margin: 4px 2px;
+  margin: .5em;
   text-decoration: none;
   color: black;
 }
@@ -68,7 +72,7 @@
   text-decoration: none;
   color: black;
   position:absolute;
-    top: 70%;
+    top: 65%;
     left: 20%;
 }
 
@@ -92,7 +96,7 @@
   text-decoration: none;
   color: black;
   position:absolute;
-    top: 70%;
+    top: 65%;
     left: 60%;
 }
 
@@ -116,7 +120,7 @@
   text-decoration: none;
   color: black;
   position:absolute;
-    top: 70%;
+    top: 65%;
     left: 60%;
 }
 
@@ -140,7 +144,7 @@
   text-decoration: none;
   color: black;
   position:absolute;
-    top: 70%;
+    top: 65%;
     left: 20%;
 }
 
@@ -164,7 +168,7 @@
   text-decoration: none;
   color: black;
   position:absolute;
-    top: 70%;
+    top: 65%;
     left: 20%;
 }
 
@@ -188,7 +192,7 @@
   text-decoration: none;
   color: black;
   position:absolute;
-    top: 70%;
+    top: 65%;
     left: 60%;
 }
 
@@ -241,5 +245,83 @@
   .finish {
     padding: .3em;
     font-size: 3em;
+  }
+}
+
+@include desklap {
+  .play-box {
+    margin-left: 6.5em;
+    margin-top: 1.5em;
+    height: 28em;
+    width: 85%;
+  }
+
+  .welcome {
+    font-size: 2.5em;
+    margin-top: .5em;
+    margin-bottom: 1em;
+  }
+
+  .lwordbutton {
+    font-size: 2em;
+    margin: 1em;
+    min-width: 2em;
+    align-content: center;
+  }
+
+  .learn-words-modal {
+    padding-top: 2em;
+    padding-bottom: 1em;
+    margin-left: 20%;
+    margin-top: 0;
+    min-height: 40%;
+    min-width: 60%;
+    top: 10%;
+    .repeat {
+    font-size: 2em;
+    padding: .4em;
+    margin-top: 1em;
+    }
+    .new-activity {
+      font-size: 2em;
+      padding: .4em;
+      margin: 1em 0 0;
+    }
+  }
+  .first-back {
+    font-size: 1.5em;
+    margin: 4px 2px;
+    top: 75%;
+    left: 35%;
+  }
+  .last-back {
+    font-size: 1.5em;
+    margin: 4px 2px;
+    top: 75%;
+    left: 35%;
+  }
+  .nav-back {
+    font-size: 1.5em;
+    margin: 4px 2px;
+    top: 75%;
+    left: 35%;
+  }
+  .first-next {
+    font-size: 1.5em;
+    margin: 4px 2px;
+    top: 75%;
+    left: 55%;
+  }
+  .nav-next {
+    font-size: 1.5em;
+    margin: 4px 2px;
+    top: 75%;
+    left: 55%;
+  }
+  .finish {
+    font-size: 1.5em;
+    margin: 4px 2px;
+    top: 75%;
+    left: 55%;
   }
 }
