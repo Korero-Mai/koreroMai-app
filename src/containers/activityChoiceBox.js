@@ -5,11 +5,8 @@ const { connect } = require('react-redux')
 function ActivityChoiceBox(props) {
     return (
     <div>
-
-      <div className='row'>
-
+      <div className='row activity-box'>
         <div className='columns small-centered small-10 medium-6 large-4'>
-
           <h3 className='h3-choose'>Learn</h3>
           <Link to="/activity/learn/sounds/1"><button className="choose">Letters</button></Link>
           <Link to="/activity/learn/words/1"><button className="choose">Words</button></Link>
@@ -17,10 +14,18 @@ function ActivityChoiceBox(props) {
           <h3 className='h3-choose'>Practice</h3>
           <Link to="/activity/practice/sounds/1"><button className="choose">Letters</button></Link>
           <Link to="/activity/practice/words/1"><button className="choose">Words</button></Link>
-
         </div>
 
       </div>
+        <div className='sea'>
+          <img src='../images/activity-images/sea2.png' />
+        </div>
+        <div className='starfish'>
+          <img src='../images/activity-images/starfish.png' />
+        </div>
+        <div className='jelly-fish'>
+          <img src='../images/activity-images/jelly-fish.png' />
+        </div>
 
     </div>
     )
