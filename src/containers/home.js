@@ -21,6 +21,12 @@ function Home(props) {
           <Link to="activity"><button className="play-button">PLAY!</button></Link>
         </div>
       </div>
+    </div>
+
+  )
+}
+
+module.exports = connect((state) => state)(Home)
       // <div className='spider'>
       //   <img src='../images/decoration-images/home/pungawerewere.png'/>
       // </div>
@@ -36,11 +42,3 @@ function Home(props) {
       // <div className='bee'>
       //   <img src='../images/decoration-images/home/bee.png'/>
       // </div>
-    </div>
-
-  )
-}
-
-module.exports = connect((state) => state)(Home)
-
-        // </div>
