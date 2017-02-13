@@ -3,13 +3,13 @@ module.exports = function (state = {}, action) {
   switch (action.type) {
 
     case 'UPDATE_USER':
-      state.id = action.payload.id
-      state.username = action.payload.username
-      return state
+      return Object.assign({}, state, {
+        id: action.payload.id,
+        username: action.payload.username
+      })
 
     case 'LOGOUT_USER':
-      state = {}
-      return state
+      return {}
 
     default:
       return state

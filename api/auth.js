@@ -9,6 +9,7 @@ module.exports = function(db) {
 
   route.post('/register', confirmUniqueEmail, postNewUser)
   route.post('/login', loginUser)
+  route.get('/logout', logoutUser)
   route.get('/logged-in', serializeUser, getAuthenticatedUser)
 
 
@@ -69,6 +70,11 @@ module.exports = function(db) {
             })
           }
     })
+  }
+
+  function logoutUser(req, res, next) {
+    req.session.destroy()
+    res.json({session: 'destroyed'})
   }
 
   function isAuthenticated(req, res, next){
