@@ -13,6 +13,14 @@
   justify-content: center;
 }
 
+@include phoneLand {
+  .footer {
+    font-size: 1em;
+    height: 1.6em;
+    padding-top: 15px;
+  }
+}
+
 @include ipadBoth {
   .footer {
     font-size: 1.4em;
