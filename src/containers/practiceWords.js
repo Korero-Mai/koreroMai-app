@@ -47,7 +47,7 @@ class PracticeWords extends React.Component {
         if (word === answer) {
           return (
           <div>
-            <div className="row">
+            <div className='row'>
               <div className="columns">
                 <img src={`${words[word].imageFile}`} />
                 <audio ref={`${word}`} >

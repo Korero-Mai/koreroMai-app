@@ -5,7 +5,7 @@ const { connect } = require('react-redux')
 function ActivityChoiceBox(props) {
     return (
     <div>
-      <div className='row activity-box'>
+      <div className='row'>
         <div className='columns small-centered small-10 medium-6 large-4'>
           <h3 className='h3-choose'>Learn</h3>
           <Link to="/activity/learn/sounds/1"><button className="choose">Letters</button></Link>
