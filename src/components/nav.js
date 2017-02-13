@@ -5,8 +5,6 @@ const request = require('superagent')
 
 function Nav(props) {
   const dispatch = props.dispatch
-
-
   return (
     <div className="top-bar">
       <div className="top-bar-left">
