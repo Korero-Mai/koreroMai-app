@@ -124,7 +124,7 @@ const expected = {
  //act
 return db.findPlayersByUser(table, input)
   .then(function(data){
-    // console.log('db.findPlayersByUser ', data);
+    // console.log('db.findPlayersByUser ', data.groups);
 //Assert
     t.is(data.user.id, expected.id,'findsPlayersByGroup')
     t.is(data.players[0].player_name, expected.player1,'findsPlayersByGroup')
@@ -144,24 +144,6 @@ const expected = 1
 
 return db.findSelectedPlayerData(table, input)
   .then(function(data){
-//Assert
-    t.is(data.length, expected,'finds all the players gameScores')
-   })
-})
-
-test('updates player data| retrieves player data by player_token', (t) => {
-   t.plan(1)
- // arrange
-const table = 'players_gameScores'
-const input= 'annie123'
-
-const expected = 1
-
- //act
-
-return db.findSelectedPlayerData(table, input)
-  .then(function(data){
-    // console.log('db.findSelectedPlayerData ', data);
 //Assert
     t.is(data.length, expected,'finds all the players gameScores')
    })
