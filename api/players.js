@@ -12,11 +12,10 @@ module.exports = function(db) {
   }
 
   function postLoginToken(req, res, next) {
-    console.log('req', req.body);
     db.checkIfPlayerExists('players', req.body )
     .then((data) => {
-      console.log('data',data);
-      res.json(data)})
+      res.json({'login':data})
+    })
   }
 
   return route;

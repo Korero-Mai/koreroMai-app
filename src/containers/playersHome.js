@@ -5,6 +5,7 @@ const request = require('superagent')
 
 class PlayersHome extends React.Component {
   render() {
+    const {router,dispatch} = this.props
     return (
         <div className='homepage-div'>
           <div className='row main-heading'>
@@ -24,13 +25,13 @@ class PlayersHome extends React.Component {
                 onClick={() => {
                   request.post('api/v1/players/login')
                     .send({'player_token':this.refs.token.value})
-                    .end((err, data) => {
+                    .end((err, res) => {
                       if (err) return console.log('error!')
-                      if (data.login){
-                        props.dispatch({type:'UPDATE_PLAYERTOKEN', payload: this.refs.token.value})
-                        this.props.router.push('/activity')
+                      if (res.body.login){
+                        dispatch({type:'UPDATE_PLAYERTOKEN', payload: this.refs.token.value})
+                        router.push('/activity')
                       } else {
-                        this.props.router.push('/')
+                        router.push('/')
                       }
                     })
                   }
