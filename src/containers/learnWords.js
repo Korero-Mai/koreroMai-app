@@ -18,15 +18,13 @@ class LearnWords extends React.Component {
       return wordsArr.map((word,index)=>{
         return (
           <div className='row'>
-            <div className='columns small-centered small-12 medium-6 large-4'>
-              <audio ref={`${index}`} >
-                <source src={`${words[word].soundFile}`} preload=''/>
-              </audio>
-              <img src={`${words[word].imageFile}`} />
-              <button onClick={() => this.playSound(index)} className='lwordbutton'>
-                {word}
-              </button>
-            </div>
+            <audio ref={`${index}`} >
+              <source src={`${words[word].soundFile}`} preload=''/>
+            </audio>
+            <img src={`${words[word].imageFile}`} />
+            <button onClick={() => this.playSound(index)} className='lwordbutton'>
+              {word}
+            </button>
           </div>
         )
       })
