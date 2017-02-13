@@ -64,7 +64,10 @@ class PracticeSounds extends React.Component {
                   <source src={`${letters[letter].soundFile}`} preload='auto'/>
             </audio>
             <div onClick={timeoutModal}>
-              <button onClick={() => this.playSound(letter) setTimeout(() => {dispatch({type: 'HIDE_TRY_AGAIN'})}, 450)} className='listen-sound-buttons'>
+              <button  className='listen-sound-buttons' onClick={() => {
+                  this.playSound(letter)
+                  setTimeout(() => {dispatch({type: 'HIDE_TRY_AGAIN'})}, 450)
+                }}>
                 {letter}
               </button>
                 <Modal isOpen={modal} contentLabel='Modal' className='prac-sounds-modal' >
@@ -99,8 +102,11 @@ class PracticeSounds extends React.Component {
           </audio>
 
           <div onClick={timeoutModal}>
-            <button onClick={() => this.playSound(letter) setTimeout(() => {dispatch({type: 'HIDE_TRY_AGAIN'})}, 450)} className='listen-sound-buttons'>
-              {letter}
+            <button className='listen-sound-buttons' onClick={() => {
+              this.playSound(letter)
+              setTimeout(() => {dispatch({type: 'SHOW_TRY_AGAIN'})}, 450)
+              }}>
+                {letter}
             </button>
             <Modal isOpen={modal} contentLabel='Modal' className='prac-sounds-modal' >
               <div className='correct'>Tika tau - correct!</div>
@@ -116,9 +122,12 @@ class PracticeSounds extends React.Component {
               <source src={`${letters[letter].soundFile}`} preload='auto'/>
             </audio>
             <div onClick={() => dispatch({type: 'INCREMENT_WRONGSOUNDS'})}>
-              <button onClick={() => this.playSound(letter) setTimeout(() => {dispatch({type: 'SHOW_TRY_AGAIN'})}, 450)} className='listen-sound-buttons'>
-                {letter}
-              </button>
+            <button className='listen-sound-buttons' onClick={() => {
+                this.playSound(letter)
+                setTimeout(() => {dispatch({type: 'HIDE_TRY_AGAIN'})}, 450)
+              }}>
+              {letter}
+            </button>
             </div>
           </div>
         )
@@ -173,7 +182,6 @@ class PracticeSounds extends React.Component {
             {this.generateAnswer(lettersArr, answer, letters)}
             {this.generateLetter(lettersArr, letters, answer)}
           </div>
-        </div>
         <WrongAnswerCue showWrong={this.props.showWrong}/>
       </div>
     )
