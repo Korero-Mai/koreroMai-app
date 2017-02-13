@@ -179,19 +179,19 @@ module.exports = function (knex) {
 			 const keys = arr.map((item)=>{
 				 return item.group_name
 			 })
-			 var n = [];
+			 var groupNames = [];
 			 for(var i = 0; i < keys.length; i++){
-				 if (n.indexOf(keys[i]) == -1) n.push(keys[i]);
+				 if (groupNames.indexOf(keys[i]) == -1) groupNames.push(keys[i]);
 			 }
 			 const groups={}
-			 for(var x =0; x<n.length;x++){
-				 groups[n[x]]=[]
+			 for(var x =0; x<groupNames.length;x++){
+				 groups[groupNames[x]]=[]
 			 }
 
-			 for(var j=0;j<n.length;j++){
+			 for(var j=0;j<groupNames.length;j++){
 				 for(var k=0;k<arr.length;k++){
-					 if(n[j]===arr[k].group_name){
-						 groups[n[j]].push(arr[k])
+					 if(groupNames[j]===arr[k].group_name){
+						 groups[groupNames[j]].push(arr[k])
 					 }
 				 }
 			 }
