@@ -131,11 +131,12 @@ module.exports = function (knex) {
 
 		 updatesTotalScores: function(id){
 			 return knex('players_gameScores')
-			 .where('players_gameScores.player_id','=', id)
+			 .where('player_id',id)
 			 .select('*')
 			 .then((scores)=>{
 				 const wrongSounds = this.calcTotalScore(scores,'prac_sounds_wrong')
 				 const wrongWords = this.calcTotalScore(scores,'prac_words_wrong')
+
 				 const newScores = {
 					 prac_sounds_total_wrong: wrongSounds,
 					 prac_words_total_wrong: wrongWords
@@ -146,11 +147,10 @@ module.exports = function (knex) {
 				 }
 			 })
 			 .then((playerScore)=>{
-				 console.log('playerdata',playerScore);
 				 return this.changePlayerInfo(playerScore.id,playerScore.newScores)
 			 })
-			 .then(info=>{
-				 console.log('info', info);
+			 .then(()=>{
+				 return this.findPlayerByID(id)
 			 })
 		 },
 
@@ -165,13 +165,8 @@ module.exports = function (knex) {
 		 changePlayerInfo: function(id,newScore){
 			 console.log('updatedPlayer',id,newScore);
 			 return knex('players')
-			 .where('players.id_player','=', id)
-			 .update({})
-			 .then(data=>{
-				 console.log('changePlayerInfo ', data);
-				 return data
-			 })
-
+			 .where('id_player','=', id)
+			 .update(newScore)
 		 },
 
 		 findPlayersGroupsByUser: function(userId){
@@ -180,7 +175,6 @@ module.exports = function (knex) {
 				 return this.findPlayersByUser('users_players',userId)
 			 })
 			 .then((data)=>{
-				 console.log('data',data);
 				 const groups={}
 				 data.players.map((player,i)=>{
 					 groups[player]

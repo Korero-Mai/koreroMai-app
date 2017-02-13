@@ -53,6 +53,8 @@ return db.addPlayer(table, input)
    })
 })
 
+
+
 test('checks for existing player | checks for an existing player by token and returns an empty array if another player is found', (t) => {
    t.plan(1)
  // arrange
@@ -74,8 +76,8 @@ return db.addPlayer(table, input)
    })
 })
 
-test.only('adds a new player score | adds a new score to the scoresTable', (t) => {
-   t.plan(4)
+test('adds a new player score | adds a new score to the scoresTable', (t) => {
+   t.plan(3)
  // arrange
 
 const input= {
@@ -100,8 +102,6 @@ return db.addScore(input)
 //Assert
     t.is(data[0].id_game,expected[0].id_game,
       'adds score to table')
-    t.is(data[0].player_id,expected[0].player_id,
-      'adds score to table')
     t.is(data[0].prac_sounds_wrong,expected[0].prac_sounds_wrong,
       'adds score to table')
     t.is(data[0].prac_words_wrong,expected[0].prac_words_wrong,
@@ -109,7 +109,7 @@ return db.addScore(input)
    })
 })
 
-test.only('updates the total score of a player | updates the total score of a player', (t) => {
+test('updates the total score of a player | updates the total score of a player', (t) => {
    t.plan(1)
  // arrange
 
@@ -124,12 +124,45 @@ const expected = [{
 
 return db.updatesTotalScores(player_id)
   .then(function(data){
-      console.log('db.updatesTotalScores ', data);
+      // console.log('db.updatesTotalScores ', data);
 //Assert
     t.is(data[0].id_game,expected[0].id_game,
       'adds score to table')
 
    })
+})
+
+test('change player info | updates the total score of a player', (t) => {
+   t.plan(3)
+ // arrange
+
+const player_id = 5
+const newData = {prac_sounds_total_wrong: 12,
+prac_words_total_wrong: 6}
+
+const expected = [{
+  id_player: 2,
+  player_name: 'Bobbie'
+
+}]
+ //act
+
+return db.changePlayerInfo(player_id, newData)
+  .then(function(data){
+    return testKnex('players')
+    .where('id_player',player_id)
+    .first()
+  })
+  .then((data)=>{
+    // console.log('db.changePlayerInfo ', data);
+
+    t.is(data.id_player,5,'adds score to table')
+    t.is(data.prac_sounds_total_wrong,12,'adds score to table')
+    t.is(data.prac_words_total_wrong,6,'adds score to table')
+  })
+//Assert
+
+
 })
 
 
