@@ -169,19 +169,6 @@ module.exports = function (knex) {
 			 .update(newScore)
 		 },
 
-		 findPlayersGroupsByUser: function(userId){
-			 return knex('players')
-			 .then(()=>{
-				 return this.findPlayersByUser('users_players',userId)
-			 })
-			 .then((data)=>{
-				 const groups={}
-				 data.players.map((player,i)=>{
-					 groups[player]
-				 })
-			 })
-		 },
-
 		 findPlayersByUser: function(table, input){
 			 return knex('users_players')
 			 .join('users','users.id','=','user_id')
