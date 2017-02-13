@@ -18,13 +18,6 @@ function ActivityChoiceBox(props) {
             <Link to="/activity/practice/words/1"><button className="choose">Words</button></Link>
           </div>
 
-        <div className='sea'>
-          <img src='../images/decoration-images/activity/sea2.png' />
-        </div>
-
-        <div className='dolphin'>
-          <img src='../images/decoration-images/activity/dolphin.png' />
-        </div>
 
       </div>
     </div>
@@ -33,3 +26,11 @@ function ActivityChoiceBox(props) {
 }
 
 module.exports = connect((state) => state)(ActivityChoiceBox)
+
+        // <div className='sea'>
+        //   <img src='../images/decoration-images/activity/sea2.png' />
+        // </div>
+        //
+        // <div className='dolphin'>
+        //   <img src='../images/decoration-images/activity/dolphin.png' />
+        // </div>

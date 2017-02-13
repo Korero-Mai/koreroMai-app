@@ -61,12 +61,21 @@
 }
 
 
-@include ipad {
+@include ipadBoth {
   .h3-choose {
-    font-size: 2.5em;
+    font-size: 5em;
   }
   .choose {
-    font-size: 1.7em;
+    font-size: 4em;
+  }
+}
+
+@include ipadLandscape {
+  .h3-choose {
+    font-size: 3em;
+  }
+  .choose {
+    font-size: 2em;
   }
 }
 

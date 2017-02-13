@@ -56,3 +56,20 @@
 .listen-sound-buttons:hover{
    background-color: #cc9bfd;
 }
+
+
+@include ipadBoth {
+  .listen-sound-buttons {
+    padding: .3em;
+    font-size: 6em;
+    margin: .4em;
+  }
+}
+
+@include ipadLandscape {
+  .welcome-prac {
+    font-size: 4em;
+    font-family: 'Itim', sans-serif;
+    padding: .3em;
+  }
+}

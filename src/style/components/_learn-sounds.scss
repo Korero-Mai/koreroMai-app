@@ -199,7 +199,7 @@
 }
 
 
-@include ipad {
+@include ipadBoth {
   .button-radius {
       padding: .3em;
       font-size: 5.5em;
