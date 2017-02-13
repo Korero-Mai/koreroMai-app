@@ -23,7 +23,6 @@ class UserGroups extends React.Component {
         </div>
       )
     })
-
   }
 
   render() {
