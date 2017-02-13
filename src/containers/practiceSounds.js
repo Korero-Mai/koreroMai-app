@@ -3,15 +3,6 @@ const { connect } = require('react-redux')
 const { Link } = require('react-router')
 const Modal = require('react-modal');
 
-//loop through level
-//play one SOUND
-//give same SOUND to ♫
-//give their respective sound to each letter
-//on click of ♫ : play sound
-// on click of letter : play sound and check if SOUND === sound
-// if true, play a RIGHT sound, increment score, go to next
-//if false, play a WRONG sound, until true
-
 class PracticeSounds extends React.Component {
 
   componentWillMount() {
@@ -46,7 +37,7 @@ class PracticeSounds extends React.Component {
 
     const timeoutModal = function(){
       setTimeout(() => {
-        dispatch({type: 'OPEN_MODAL'})}, 550)
+        dispatch({type: 'TOGGLE_MODAL'})}, 550)
     }
 
     const dispatch = this.props.dispatch
@@ -86,8 +77,8 @@ class PracticeSounds extends React.Component {
                   <h1>Well done!</h1>
                     <Modal isOpen={modal} contentLabel='Modal' style={modalStyle}>
                       <h1>Well done!</h1>
-                      <Link to={activityRoute+1}><button className="button-radius repeat" onClick={() => dispatch({type: 'CLOSE_MODAL_RESET_SCORE'})}>Repeat</button></Link><br />
-                      <Link to='activity'><button className="button-radius new-activity" onClick={() => dispatch({type: 'CLOSE_MODAL_RESET_SCORE'})}>Choose another activity</button></Link>
+                      <Link to={activityRoute+1}><button className="button-radius repeat" onClick={() => dispatch({type: 'END_ROUND'})}>Repeat</button></Link><br />
+                      <Link to='activity'><button className="button-radius new-activity" onClick={() => dispatch({type: 'END_ROUND'})}>Choose another activity</button></Link>
                     </Modal>
                 </Modal>
               </div>

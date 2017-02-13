@@ -23,7 +23,7 @@ class LearnWords extends React.Component {
                 <audio ref={`${index}`} >
                   <source src={`${words[word].soundFile}`} preload=''/>
                 </audio>
-                <img src={`${words[word].imageFile}`} />
+                <img src={`${words[word].imageFile}`} onClick={() => this.playSound(index)}/>
                   <button onClick={() => this.playSound(index)} className={`button`}>
                   {word}
                 </button>
@@ -42,7 +42,7 @@ class LearnWords extends React.Component {
       const wordsArr = this.props.learnWordPage[level]
       const modalStyle = {
         content:{
-          top:'20%',
+          top:'50%',
           left:'50%',
           right:'auto',
           bottom:'auto',
@@ -76,11 +76,11 @@ class LearnWords extends React.Component {
                 {this.generateWord(wordsArr, words)}
                 <div>
                   <Link to={activityRoute+(level-1)}><button className="last-back">Back</button></Link>
-                  <button className="finish" onClick={() => dispatch({type: 'OPEN_MODAL'})}>Finish!</button>
+                  <button className="finish" onClick={() => dispatch({type: 'TOGGLE_MODAL'})}>Finish!</button>
                   <Modal isOpen={modal} contentLabel='Modal' style={modalStyle}>
                     <h1>Well done!</h1>
-                    <Link to={activityRoute+1}><button className="button-radius repeat" onClick={() => dispatch({type: 'CLOSE_MODAL'})}>Repeat</button></Link><br />
-                    <Link to='activity'><button className="button-radius new-activity" onClick={() => dispatch({type: 'CLOSE_MODAL'})}>Choose another activity</button></Link>
+                    <Link to={activityRoute+1}><button className="button-radius repeat" onClick={() => dispatch({type: 'END_ROUND'})}>Repeat</button></Link><br />
+                    <Link to='activity'><button className="button-radius new-activity" onClick={() => dispatch({type: 'END_ROUND'})}>Choose another activity</button></Link>
                   </Modal>
                 </div>
               </div>

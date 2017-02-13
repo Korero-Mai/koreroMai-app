@@ -4,8 +4,8 @@
   "description": "Learn Te Reo",
   "main": "index.js",
   "scripts": {
-    "test": "tape test/**/*.tape.js | tap-diff --harmony",
-    "test-ava": "ava test/**/*.ava.js --serial --verbose",
+    "test": "ava test/**/*.js --serial --verbose",
+    "test-reducers": "ava test/reducer/*.js --verbose",
     "knex": "knex",
     "postinstall": "webpack --config webpack.production.config.js --progress -p",
     "start": "node ./bin/www",
@@ -79,8 +79,6 @@
     "node-sass": "^4.5.0",
     "nodemon": "^1.11.0",
     "sass-loader": "^5.0.1",
-    "style-loader": "^0.13.1",
-    "tap-diff": "^0.1.1",
-    "tape": "^4.6.3"
+    "style-loader": "^0.13.1"
   }
 }
