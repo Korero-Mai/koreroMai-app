@@ -1,6 +1,7 @@
 const React = require('react')
 const { connect } = require('react-redux')
 const request = require('superagent')
+const AddPlayer = require('./addplayer')
 
 class groupInfo extends React.Component {
 
@@ -54,6 +55,7 @@ class groupInfo extends React.Component {
             </thead>
             <tbody>
               {this.mapPlayers(this.props.players.players)}
+              <AddPlayer />
             </tbody>
           </table>
       </div>
