@@ -109,7 +109,7 @@ return db.addScore(table, input)
    })
 })
 
-test.only('find players by user_id| retrieves players by group', (t) => {
+test('find players by user_id| retrieves players by group', (t) => {
    t.plan(3)
  // arrange
 const table = 'players'
@@ -124,7 +124,7 @@ const expected = {
  //act
 return db.findPlayersByUser(table, input)
   .then(function(data){
-    console.log('db.findPlayersByUser ', data.groups);
+    // console.log('db.findPlayersByUser ', data.groups);
 //Assert
     t.is(data.user.id, expected.id,'findsPlayersByGroup')
     t.is(data.groups['group1'][0].player_name, expected.player1,'findsPlayersByGroup')
