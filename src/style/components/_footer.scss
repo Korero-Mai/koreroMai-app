@@ -29,25 +29,9 @@
   }
 }
 
-// @include desklap {
-//   .footer {
-//     font-size: 1.4em;
-//     height: 2em;
-//   }
-// }
-//
-// @include smalldesk {
-//   .footer {
-//     font-size: 1.3em;
-//     height: 1.7em;
-//     padding-top: 9px;
-//   }
-// }
-//
-// @include largedesk {
-//   .footer {
-//     font-size: 1.3em;
-//     height: 1.7em;
-//     padding-top: 9px;
-//   }
-// }
+@include desklap {
+  .footer {
+    font-size: 1.2em;
+    height: 2.5em;
+  }
+}

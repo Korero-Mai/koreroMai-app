@@ -83,11 +83,13 @@
   }
 }
 
-// @include desklap {
-//   .h3-choose {
-//     font-size: 2.5em;
-//   }
-//   .choose {
-//     font-size: 2em;
-//   }
-// }
+@include desklap {
+  .h3-choose {
+    font-size: 3em;
+  }
+  .choose {
+    font-size: 2em;
+    margin-bottom: 1em;
+
+  }
+}
