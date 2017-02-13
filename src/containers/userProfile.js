@@ -10,7 +10,7 @@ function UserProfile(props) {
     <div>
       <div className="row">
         <UserInfo />
-        <Groups/>
+        <Groups />
       </div>
       <div className="row">
       </div>
