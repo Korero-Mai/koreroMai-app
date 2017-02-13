@@ -1,27 +1,22 @@
 const React = require('react')
 const { connect } = require('react-redux')
+const request = require('superagent')
 
- class AddPlayer extends React.Component {
-  // handleSubmit(e) {
-  //   e.preventDefault()
-  //
-  //   const userName = this.refs.userName.value
-  //   const email = this.refs.email.value
-  //
-  // }
+
+class AddPlayer extends React.Component {
   render() {
-    const {dispatch} = this.props
-    return (
-        <div className='row add-player'>
-          <h1>Add Player</h1>
-          <div className='columns small-centered '>
-            <input type='text' name='name' ref='name' placeholder='Player Name' />
-            <input type='text' name='token' ref='token' placeholder='Token' />
-            <button className='button expanded'
-              onClick={()=>dispatch({type:"ADD_PLAYER"})}>Submit</button>
-            </div>
-          </div>
-    )
+      return (
+        <tr>
+          <td><input type='text' name='name' ref='name' placeholder='Player Name' /></td>
+          <td><input type='text' name='token' ref='token' placeholder='Token' /></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><button className="button expanded">Add</button></td>
+          <td><button className="button expanded">Edit</button></td>
+        </tr>
+      )
   }
 }
 
