@@ -19,7 +19,7 @@ Get it now</a> if it's not already installed on your machine.
 **Verify that you are running at least node `v4.x.x` and npm `3.x.x`**
 by running `node -v` and `npm -v` in a terminal/console window.
 
-### Install
+## Install
 
 Clone this repo into new project folder (e.g., `my-proj`).
 ```shell
@@ -28,14 +28,14 @@ cd my-proj
 npm install
 ```
 
-### development
+## Development
 
 ```
 npm start
 ```
 live reloading app at `http://localhost:3000/`
 
-### deploy
+## Deploy
 
 ```
 npm run deploy
