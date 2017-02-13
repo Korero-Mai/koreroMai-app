@@ -19,8 +19,8 @@
 
 .note {
   position:absolute;
-  top: 63%;
-  left: 35%;
+  top: 53%;
+  left: 20%;
   font-size:6em;
   color: $dark-blue;
 }
@@ -81,6 +81,33 @@
 }
 
 
+@include phoneLand {
+  .welcome-letters {
+    font-size: 2em;
+    padding: .2em;
+  }
+
+  .listen-sound-buttons {
+    font-size: 4em;
+    font-family: 'Muli', sans-serif;
+    margin: .4em;
+    text-decoration: none;
+    color: black;
+  }
+  .note {
+    position:absolute;
+    top: 60%;
+    left: 30%;
+    font-size: 3em;
+    color: $dark-blue;
+  }
+  .play-box {
+    margin-left: 6.5em;
+    margin-top: 1.5em;
+    height: 13em;
+  }
+}
+
 @include ipadBoth {
   .listen-sound-buttons {
     padding: .3em;
@@ -89,17 +116,32 @@
   }
 }
 
-@include ipadLandscape {
+@include ipadPortrait {
+  .listen-sound-buttons {
+    padding: .3em;
+    font-size: 6em;
+    margin: .4em;
+  }
   .welcome-letters {
     font-size: 3em;
     padding: .3em;
   }
+  .note {
+    position:absolute;
+    top: 60%;
+    left: 25%;
+    font-size: 5em;
+    color: $dark-blue;
+  }
+}
+
+@include ipadLandscape {
+  .welcome-letters {
+    font-size: 2.5em;
+    padding: .3em;
+  }
 
   .listen-sound-buttons {
-    border-radius: 5px;
-    background-color: $red;
-    box-shadow: 2px 5px 2px 0px  #fd9bb8;
-    padding: .3em;
     font-size: 5em;
     font-family: 'Muli', sans-serif;
     margin: .4em;
@@ -108,10 +150,15 @@
   }
   .note {
     position:absolute;
-    top: 65%;
-    left: 40%;
+    top: 55%;
+    left: 30%;
     font-size: 4em;
     color: $dark-blue;
+  }
+  .play-box {
+    margin-left: 6.5em;
+    margin-top: 1.5em;
+    height: 18em;
   }
 }
 
