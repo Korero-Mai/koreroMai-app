@@ -1,17 +1,19 @@
-.play-box {
+.play-box-ll {
   background-color: $yellow;
-  width: 95%;
+  width: 80%;
   border: solid 5px;
   border-radius: 4%;
-  margin: 2% auto;
+  margin-left: 5em;
+  margin-top: 5em;
   display: flex;
   align-items: center;
-  height: 46em;
+  height: 30em;
 }
 
 .welcome {
   font-size: 3em;
   font-family: 'Itim', sans-serif;
+  margin-top: 2em;
 }
 
 .button-radius {
@@ -200,48 +202,34 @@
 
 
 
-@include ipadBoth {
-  .button-radius {
-      padding: .3em;
-      font-size: 5.5em;
-      margin: 4px 2px;
+@include ipadPortrait {
+  .welcome {
+    font-size: 2.5em;
+    margin-bottom: 1em;
   }
-
-  .repeat {
-    font-size: 3em;
-  }
-
-  .new-activity {
-    font-size: 3em;
-  }
-
-  .play-box {
-    margin:0;
+  .play-box-ll {
     height: 20em;
-    padding: 3em;
   }
-  .first-back {
-    padding: .3em;
-    font-size: 3em;
-  }
-  .first-next {
-    padding: .3em;
-    font-size: 3em;
-  }
-  .nav-next {
-    padding: .3em;
-    font-size: 3em;
-  }
-  .nav-back {
-    padding: .3em;
-    font-size: 3em;
-  }
-  .last-back {
-    padding: .3em;
-    font-size: 3em;
-  }
-  .finish {
-    padding: .3em;
-    font-size: 3em;
+  .learn-sounds-modal {
+    padding-top: 2em;
+    margin-left: 15%;
+    margin-top: 5%;
+    min-height: 30%;
+    min-width: 70%;
+    position: fixed;
+    top: 10%;
+    background-color: $light-grey;
+    .repeat {
+      background-color: $light-blue;
+      font-size: 2em;
+      padding: .4em;
+      margin: 1em 0 0;
+    }
+    .new-activity {
+      background-color: $light-blue;
+      font-size: 2em;
+      padding: .4em;
+      margin: 1em 0 0;
+    }
   }
 }

@@ -18,7 +18,7 @@ class LearnSounds extends React.Component {
           <div className='welcome'>
             Learn how to pronounce Te Reo!
           </div>
-          <div className="play-box">
+          <div className='play-box-ll'>
             {this.generateLetter(lettersArr, letters)}
             <div className='row'>
               <div className='columns small-centered small-10 medium-6 large-4'>
@@ -35,7 +35,7 @@ class LearnSounds extends React.Component {
           <div className='welcome'>
             Learn how to pronounce Te Reo!
           </div>
-          <div className='play-box'>
+          <div className='play-box-ll'>
             {this.generateLetter(lettersArr, letters)}
             <div>
               <Link to={activityRoute+(level-1)}><button className="last-back">Back</button></Link>
@@ -54,7 +54,7 @@ class LearnSounds extends React.Component {
         <div className='welcome'>
           Learn how to pronounce Te Reo!
         </div>
-        <div className="play-box">
+        <div className='play-box-ll'>
           {this.generateLetter(lettersArr, letters)}
         </div>
         <div className='row'>
