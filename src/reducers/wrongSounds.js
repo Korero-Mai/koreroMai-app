@@ -1,14 +1,17 @@
-module.exports = function (state = false, action) {
+module.exports = function (state = 0, action) {
 
   switch (action.type) {
 
     case 'INCREMENT_WRONGSOUNDS':
-      return state +1
+      return state + 1
 
-    case 'CLOSE_MODAL_RESET_SCORE':
+    case 'END_ROUND':
       return 0
 
     case 'RESET_WRONGSOUNDS':
+      return 0
+
+    case 'LOGOUT_USER':
       return 0
 
     default:

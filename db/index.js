@@ -5,16 +5,13 @@ module.exports = function (knex) {
     addUser: function (table='users', newUserData) {
       return knex(table)
       .insert(newUserData)
-      .then(function (id) {
-        return knex('users')
-        .select('username', 'id')
-        .where({id: id[0]})
-				.then(users => users)
+      .then((ids)=>{
+				return this.findUserById(ids[0])
       })
     },
 
-    findUserByEmail: function (table, email) {
-      return knex(table)
+    findUserByEmail: function (email) {
+      return knex('users')
       .select('*')
       .where('email', email)
       .then((selectedUser) => {
@@ -23,18 +20,22 @@ module.exports = function (knex) {
     },
 
 //players table methods
-		addPlayer: function(table, newPlayer){
-			return this.checkIfPlayerExists(table, newPlayer)
+		addPlayer: function(table, input){
+			return this.checkIfPlayerExists(table, input)
 				.then((bool)=>{
 					if(bool){
 						return []
 					} else{
-						return this.insertplayerData(table, newPlayer)
+						return this.insertplayerData(table, input)
 					}
 				})
 		},
 
-		insertplayerData: function(table,newData){
+		insertplayerData: function(table,input){
+			const newData = input
+			const userID = input.id
+			delete newData.id
+
 			return knex(table)
 			.insert(newData)
 			.then((ids)=>{
@@ -42,6 +43,45 @@ module.exports = function (knex) {
 				.select('*')
 				.where({id_player: ids[0]})
 			})
+			.then((player)=>{
+				return this.linkPlayerToJoinTable(player[0].id_player, userID)
+			})
+			.then((ids)=>{
+				return this.findUserByJoinTableID(ids[0])
+			})
+			.then(joinTableRow=>{
+				return this.findPlayerByID(joinTableRow[0].player_id)
+			})
+			.then(playerData=>{
+				return this.findUserById(userID)
+				.then((user)=>{
+					return this.addUserToPlayerData(user[0],playerData[0])
+				})
+			})
+		},
+
+		addUserToPlayerData: function(teacher,student){
+			const filteredData = {
+				user: {
+					id:teacher.id,
+					username:teacher.username,
+					email:teacher.email
+				},
+				player:student
+			}
+			return filteredData
+		},
+
+		linkPlayerToJoinTable:function(playerID,userID){
+			return knex('users_players')
+			.insert({user_id:userID , player_id:playerID})
+			.select('*')
+		},
+
+		findUserByJoinTableID: function(id){
+			return knex('users_players')
+			.select('*')
+			.where({users_players_id: id})
 		},
 
 		checkIfPlayerExists:function(table, newPlayer){
@@ -86,13 +126,21 @@ module.exports = function (knex) {
 			 })
 		 },
 
-		 findPlayersByGroup: function(table,input){
-			 return knex(table)
-			 .select('*')
-			 .where({group_name: input.group_name})
+		 findPlayersGroupsByUser: function(userId){
+			 return knex('players')
+			 .then(()=>{
+				 return this.findPlayersByUser('users_players',userId)
+			 })
+			 .then((data)=>{
+				 console.log('data',data);
+				 const groups={}
+				 data.players.map((player,i)=>{
+					 groups[player]
+				 })
+			 })
 		 },
 
-		 findPlayersByUser: function(table,input){
+		 findPlayersByUser: function(table, input){
 			 return knex('users_players')
 			 .join('users','users.id','=','user_id')
 			 .join('players','players.id_player','=','player_id')
@@ -104,7 +152,7 @@ module.exports = function (knex) {
 		 },
 
 		 filterUsersPlayersData: function(input){
-			 const filteredData ={user:{},players:[]}
+			 const filteredData ={user:{},players:[],groups:{}}
 			 input.map((student,i)=>{
 				 filteredData.user.id = student.id
 				 filteredData.user.username = student.username
@@ -121,24 +169,58 @@ module.exports = function (knex) {
 
 				filteredData.players.push(player)
 			 })
+
+			 filteredData.groups = this.filterGroups(filteredData.players)
+			 delete filteredData.players
+
 			 return filteredData
 		 },
+
+		 filterGroups: function(arr){
+			 const keys = arr.map((item)=>{
+				 return item.group_name
+			 })
+			 var groupNames = [];
+			 for(var i = 0; i < keys.length; i++){
+				 if (groupNames.indexOf(keys[i]) == -1) groupNames.push(keys[i]);
+			 }
+			 const groups={}
+			 for(var x =0; x<groupNames.length;x++){
+				 groups[groupNames[x]]=[]
+			 }
+
+			 for(var j=0;j<groupNames.length;j++){
+				 for(var k=0;k<arr.length;k++){
+					 if(groupNames[j]===arr[k].group_name){
+						 groups[groupNames[j]].push(arr[k])
+					 }
+				 }
+			 }
+			 return groups
+		},
 
 		 findSelectedPlayerData: function(table,token){
 			 const formattedToken = {player_token:token}
 			 return this.checkIfPlayerExists('players', formattedToken)
 			 	.then((bool)=>{
-			 		if(!bool){
-			 			return []
-			 		} else{
-			 			return this.getPlayerId(token)
-			 		}
+			 		if(!bool){ return [] }
+			 		return this.getPlayerId(token)
 			 	})
 				.then((ids)=>{
-					return knex(table)
-					.select('*')
-					.where({player_id: ids[0].id_player})
+					return this.findPlayerByID(ids[0].id_player)
 				})
+		 },
+
+		 findPlayerByID: function(id){
+			 return knex('players')
+			 .select('*')
+			 .where({id_player: id})
+		 },
+
+		 findUserById: function(id){
+			 return knex('users')
+			 .select('*')
+			 .where({id: id})
 		 }
 	}
 }

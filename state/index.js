@@ -2,7 +2,17 @@ import { routerMiddleware, push } from 'react-router-redux'
 
 module.exports = {
 
-  activity : {},
+
+  editUser: false,
+  
+  playerToken: '',
+
+  players: {
+    players:[],
+    group_name:""
+  },
+
+  users: {},
 
   modal: false,
 

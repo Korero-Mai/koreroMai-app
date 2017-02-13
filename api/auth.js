@@ -9,7 +9,30 @@ module.exports = function(db) {
 
   route.post('/register', confirmUniqueEmail, postNewUser)
   route.post('/login', loginUser)
+  route.get('/logout', logoutUser)
+  route.get('/logged-in', serializeUser, getAuthenticatedUser)
 
+
+  function getAuthenticatedUser(req, res, next) {
+    if (req.session.isAuthenticated) {
+      return res.json({authenticated: true, user: req.session.user})
+    }
+    res.json({authenticated: false, user: null})
+  }
+
+  function serializeUser(req,res, next){
+    if (req.session.isAuthenticated){
+      db.findUserByEmail(req.session.userEmail)
+        .then(users => {
+          delete users[0].password
+          req.session.user = users[0]
+          next()
+        })
+    } else {
+      req.session.user = null
+      next()
+    }
+  }
 
   function postNewUser(req, res, next) {
     bcrypt.genSalt(10, function(err, salt) {
@@ -26,7 +49,7 @@ module.exports = function(db) {
 
 
   function loginUser(req, res, next) {
-    db.findUserByEmail('users', req.body.email)
+    db.findUserByEmail(req.body.email)
     .then((dbData) => {
         if(!dbData[0]) {
           return res.json({isUser: false, error:'This does not exist'})
@@ -35,7 +58,11 @@ module.exports = function(db) {
               if (match) {
                 console.log('this is the match', match);
                 req.session.isAuthenticated = true
-                res.json({isUser: true})
+                req.session.userId = dbData[0].id
+                req.session.userEmail = dbData[0].email
+                delete dbData[0].password
+                delete dbData[0].email
+                res.json({isUser: true, userData: dbData[0]})
               }  else {
                   console.log('this is the res === false', match);
                   res.json({isUser: false, error: 'Invalid email or password'})
@@ -43,6 +70,11 @@ module.exports = function(db) {
             })
           }
     })
+  }
+
+  function logoutUser(req, res, next) {
+    req.session.destroy()
+    res.json({session: 'destroyed'})
   }
 
   function isAuthenticated(req, res, next){

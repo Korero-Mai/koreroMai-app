@@ -1,24 +1,245 @@
-// --------------------------------BUTTONS HERE --------------------------------
-//
-.learn-words {
-  button {
-    border-radius: 5px;
-    background-color: $red;
-    box-shadow: 2px 5px 2px 0px  #fd9bb8;
-    padding: 20px 25px;
-    font-size: 2.5em;
-    font-family: 'Muli', sans-serif;
-    margin: 4px 2px;
-    text-decoration: none;
-    color: black;
+.play-box {
+  background-color: $yellow;
+  width: 95%;
+  border: solid 5px;
+  border-radius: 4%;
+  margin: 2% auto;
+  height: 46em;
+  text-align: center;
+  padding: 3em;
+}
 
+.welcome {
+  font-size: 3em;
+  font-family: 'Itim', sans-serif;
+}
+
+.learn-words-modal {
+  padding-top: 3em;
+  margin-left: 15%;
+  margin-top: 5%;
+  min-height: 30%;
+  min-width: 70%;
+  position: fixed;
+  top: 10%;
+  background-color: $light-grey;
+  .repeat {
+    background-color: $light-blue;
+    font-size: 3em;
+    padding: .4em;
+    margin: 1em 0 0;
   }
-  .button:active {
-    transform: translate(0px, 5px);
-    -webkit-transform: translate(0px, 5px);
-    box-shadow: 0px 1px 0px 0px;
+  .new-activity {
+    background-color: $light-blue;
+    font-size: 3em;
+    padding: .4em;
+    margin: 1em 0 0;
   }
-  .button:hover{
-     background-color: #cc9bfd;
+}
+
+.lwordbutton {
+  border-radius: 5px;
+  background-color: $red;
+  box-shadow: 2px 5px 2px 0px  #fd9bb8;
+  padding: 20px 25px;
+  font-size: 3em;
+  font-family: 'Muli', sans-serif;
+  margin: 4px 2px;
+  text-decoration: none;
+  color: black;
+}
+
+.lwordbutton:active {
+  transform: translate(0px, 5px);
+  -webkit-transform: translate(0px, 5px);
+  box-shadow: 0px 1px 0px 0px;
+}
+.lwordbutton:hover{
+   background-color: #cc9bfd;
+}
+
+.first-back {
+  border-radius: 5px;
+  background-color: $light-blue;
+  box-shadow: 0px 5px 0px 0px $dark-blue;
+  padding: 20px 35px;
+  font-size: 3.5em;
+  margin: 4px 2px;
+  text-decoration: none;
+  color: black;
+  position:absolute;
+    top: 70%;
+    left: 20%;
+}
+
+.first-back:active {
+  transform: translate(0px, 5px);
+  -webkit-transform: translate(0px, 5px);
+  box-shadow: 0px 1px 0px 0px;
+}
+
+.first-back:hover {
+  background-color: #6FC6FF;
+}
+
+.first-next {
+  border-radius: 5px;
+  background-color: $light-blue;
+  box-shadow: 0px 5px 0px 0px $dark-blue;
+  padding: 20px 35px;
+  font-size: 3.5em;
+  margin: 4px 2px;
+  text-decoration: none;
+  color: black;
+  position:absolute;
+    top: 70%;
+    left: 60%;
+}
+
+.first-next:active {
+  transform: translate(0px, 5px);
+  -webkit-transform: translate(0px, 5px);
+  box-shadow: 0px 1px 0px 0px;
+}
+
+.first-next:hover {
+  background-color: #6FC6FF;
+}
+
+.nav-next {
+  border-radius: 5px;
+  background-color: $light-blue;
+  box-shadow: 0px 5px 0px 0px $dark-blue;
+  padding: 20px 35px;
+  font-size: 3.5em;
+  margin: 4px 2px;
+  text-decoration: none;
+  color: black;
+  position:absolute;
+    top: 70%;
+    left: 60%;
+}
+
+.nav-next:active {
+  transform: translate(0px, 5px);
+  -webkit-transform: translate(0px, 5px);
+  box-shadow: 0px 1px 0px 0px;
+}
+
+.nav-next:hover {
+  background-color: #6FC6FF;
+}
+
+.nav-back {
+  border-radius: 5px;
+  background-color: $light-blue;
+  box-shadow: 0px 5px 0px 0px $dark-blue;
+  padding: 20px 35px;
+  font-size: 3.5em;
+  margin: 4px 2px;
+  text-decoration: none;
+  color: black;
+  position:absolute;
+    top: 70%;
+    left: 20%;
+}
+
+.nav-back:active {
+  transform: translate(0px, 5px);
+  -webkit-transform: translate(0px, 5px);
+  box-shadow: 0px 1px 0px 0px;
+}
+
+.nav-back:hover {
+  background-color: #6FC6FF;
+}
+
+.last-back {
+  border-radius: 5px;
+  background-color: $light-blue;
+  box-shadow: 0px 5px 0px 0px $dark-blue;
+  padding: 20px 35px;
+  font-size: 3.5em;
+  margin: 4px 2px;
+  text-decoration: none;
+  color: black;
+  position:absolute;
+    top: 70%;
+    left: 20%;
+}
+
+.last-back:active {
+  transform: translate(0px, 5px);
+  -webkit-transform: translate(0px, 5px);
+  box-shadow: 0px 1px 0px 0px;
+}
+
+.last-back:hover {
+  background-color: #6FC6FF;
+}
+
+.finish {
+  border-radius: 5px;
+  background-color: $light-blue;
+  box-shadow: 0px 5px 0px 0px $dark-blue;
+  padding: 20px 35px;
+  font-size: 3.5em;
+  margin: 4px 2px;
+  text-decoration: none;
+  color: black;
+  position:absolute;
+    top: 70%;
+    left: 60%;
+}
+
+.finish:active {
+  transform: translate(0px, 5px);
+  -webkit-transform: translate(0px, 5px);
+  box-shadow: 0px 1px 0px 0px;
+}
+
+@include ipadBoth {
+  .lwordbutton {
+    padding: .3em;
+    font-size: 2.5em;
+    margin-top: .5em;
+  }
+
+  .repeat {
+    font-size: 3em;
+  }
+
+  .new-activity {
+    font-size: 3em;
+  }
+
+  .play-box {
+    margin:0;
+    height: 20em;
+    padding: 3em;
+  }
+  .first-back {
+    padding: .3em;
+    font-size: 3em;
+  }
+  .first-next {
+    padding: .3em;
+    font-size: 3em;
+  }
+  .nav-next {
+    padding: .3em;
+    font-size: 3em;
+  }
+  .nav-back {
+    padding: .3em;
+    font-size: 3em;
+  }
+  .last-back {
+    padding: .3em;
+    font-size: 3em;
+  }
+  .finish {
+    padding: .3em;
+    font-size: 3em;
   }
 }

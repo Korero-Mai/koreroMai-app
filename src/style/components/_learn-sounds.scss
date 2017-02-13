@@ -1,17 +1,29 @@
+.play-box {
+  background-color: $yellow;
+  width: 95%;
+  border: solid 5px;
+  border-radius: 4%;
+  margin: 2% auto;
+  display: flex;
+  align-items: center;
+  height: 46em;
+}
 
-
-// --------------------------------BUTTONS HERE --------------------------------
+.welcome {
+  font-size: 3em;
+  font-family: 'Itim', sans-serif;
+}
 
 .button-radius {
-    border-radius: 5px;
-    background-color: $red;
-    box-shadow: 2px 5px 2px 0px  #fd9bb8;
-    padding: 20px 25px;
-    font-size: 8.5em;
-    font-family: 'Muli', sans-serif;
-    margin: 4px 2px;
-    text-decoration: none;
-    color: black;
+  border-radius: 5px;
+  background-color: $red;
+  box-shadow: 2px 5px 2px 0px  #fd9bb8;
+  padding: 20px 25px;
+  font-size: 5em;
+  font-family: 'Muli', sans-serif;
+  margin: 0;
+  text-decoration: none;
+  color: black;
 }
 
 .button-radius:active {
@@ -22,7 +34,6 @@
 .button-radius:hover{
    background-color: #cc9bfd;
 }
-
 
 .first-back {
   border-radius: 5px;
@@ -85,6 +96,7 @@
     top: 70%;
     left: 60%;
 }
+
 .nav-next:active {
   transform: translate(0px, 5px);
   -webkit-transform: translate(0px, 5px);
@@ -163,15 +175,73 @@
   box-shadow: 0px 1px 0px 0px;
 }
 
-.repeat {
-  background-color: $light-blue;
-  font-size: 4em;
-  padding: .4em;
+.learn-sounds-modal {
+  padding-top: 3em;
+  margin-left: 15%;
+  margin-top: 5%;
+  min-height: 30%;
+  min-width: 70%;
+  position: fixed;
+  top: 10%;
+  background-color: $light-grey;
+  .repeat {
+    background-color: $light-blue;
+    font-size: 3em;
+    padding: .4em;
+    margin: 1em 0 0;
+  }
+  .new-activity {
+    background-color: $light-blue;
+    font-size: 3em;
+    padding: .4em;
+    margin: 1em 0 0;
+  }
 }
 
-.new-activity {
-  background-color: $light-blue;
-  font-size: 4em;
-  padding: .4em;
-  margin: .3em 0 0;
+
+
+@include ipadBoth {
+  .button-radius {
+      padding: .3em;
+      font-size: 5.5em;
+      margin: 4px 2px;
+  }
+
+  .repeat {
+    font-size: 3em;
+  }
+
+  .new-activity {
+    font-size: 3em;
+  }
+
+  .play-box {
+    margin:0;
+    height: 20em;
+    padding: 3em;
+  }
+  .first-back {
+    padding: .3em;
+    font-size: 3em;
+  }
+  .first-next {
+    padding: .3em;
+    font-size: 3em;
+  }
+  .nav-next {
+    padding: .3em;
+    font-size: 3em;
+  }
+  .nav-back {
+    padding: .3em;
+    font-size: 3em;
+  }
+  .last-back {
+    padding: .3em;
+    font-size: 3em;
+  }
+  .finish {
+    padding: .3em;
+    font-size: 3em;
+  }
 }

@@ -1,5 +1,4 @@
 const { combineReducers } = require('redux')
-const activity = require('./activity')
 const modal = require('./modal')
 const letters = require('./letters')
 const words = require('./words')
@@ -9,11 +8,13 @@ const learnWordPage = require('./learnWordPage')
 const practiceWordPage = require('./practiceWordPage')
 const wrongSounds = require('./wrongSounds')
 const wrongWords = require('./wrongWords')
-
+const users = require('./users')
+const players = require('./players')
+const groups = require('./groups')
+const editUser = require('./editUser')
+const playerToken = require('./playerToken')
 
 module.exports = combineReducers({
-  // currentUser
-  activity,
   modal,
   letters,
   learnSoundPage,
@@ -22,6 +23,10 @@ module.exports = combineReducers({
   practiceWordPage,
   words,
   wrongSounds,
-  wrongWords
-
+  wrongWords,
+  users,
+  players,
+  groups,
+  editUser,
+  playerToken
 })

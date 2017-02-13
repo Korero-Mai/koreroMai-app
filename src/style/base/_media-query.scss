@@ -1,32 +1,43 @@
-@mixin largedesk {
-  @media (min-width: 1151px) {
-    @content;
-  }
-};
-
-@mixin smalldesk {
-  @media (min-width: 980px) and (max-width: 1150px) {
-    @content;
-  }
-};
-
-@mixin tablet {
-  @media (min-width: 768px) and (max-width: 979px) {
+@mixin desklap {
+  @media only screen  and (min-width : 1224px) {
     @content;
   }
 };
 
 
-@mixin ipad {
+//https://css-tricks.com/snippets/css/media-queries-for-standard-devices/
+/* ----------- iPad 3 and 4 ----------- */
+/* Portrait and Landscape */
+
+@mixin ipadBoth {
   @media only screen
-  and (min-device-width : 768px)
-  and (max-device-width : 1024px) {
-    @content;
+    and (min-device-width: 768px)
+    and (max-device-width: 1024px)
+    and (-webkit-min-device-pixel-ratio: 2) {
+      @content
+    }
+};
+
+/* Portrait */
+
+@mixin ipadPortrait {
+  @media only screen
+    and (min-device-width: 768px)
+    and (max-device-width: 1024px)
+    and (orientation: portrait)
+    and (-webkit-min-device-pixel-ratio: 2) {
+      @content
   }
 };
 
-@mixin smallwindow {
-  @media (min-width: 500px) and (max-width: 767px) {
-    @content;
+/* Landscape */
+
+@mixin ipadLandscape {
+  @media only screen
+    and (min-device-width: 768px)
+    and (max-device-width: 1024px)
+    and (orientation: landscape)
+    and (-webkit-min-device-pixel-ratio: 2) {
+      @content
   }
 };

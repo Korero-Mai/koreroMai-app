@@ -18,9 +18,12 @@ module.exports = class LoginForm extends React.Component {
             alert('Please login')
             this.props.router.push('/login-register')
           } else {
-              console.log('loginform res', res);
-              alert('You are now logged in!')
-              this.props.router.push('/')
+            console.log(user);
+              const user = res.body.userData
+              const userID = res.body.userData.id
+              const userName = res.body.userData.username
+              this.props.dispatch({type:'UPDATE_USER', payload: user})
+              this.props.router.push(`/users/${userID}/profile`)
             }
           }
       })
@@ -29,16 +32,18 @@ module.exports = class LoginForm extends React.Component {
   }
   render() {
     return (
-      <div className="container">
+      <div className='container'>
         <h3>Login</h3>
-          <div className="container__footer">
+          <div className='container__footer'>
             <div className='row'>
-              <div className='colums small-centered small-10 medium-6 large-4'>
+              <div className='columns small-centered small-10 medium-6 large-4'>
                 <div>
                   <form method='post' action='/login'>
-                    <input type='text' name='email' ref='email' placeholder='Email' />
-                    <input type='password' name='password' ref='password' placeholder='Password' />
-                    <button className='button expanded hollow' onClick={this.handleSubmit.bind(this)}>Login</button>
+                    <input type='text' className='email' ref='email' placeholder='Email' />
+                    <input type='password' className='password' ref='password' placeholder='Password' />
+                    <button className='button expanded hollow' onClick={this.handleSubmit.bind(this)}>
+                      Login
+                    </button>
                   </form>
                 </div>
               </div>

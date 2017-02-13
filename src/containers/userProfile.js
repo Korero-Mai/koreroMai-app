@@ -2,29 +2,30 @@ const React = require('react')
 const { connect } = require('react-redux')
 const Groups = require('../components/groups')
 const GroupInfo = require('../components/selectedGroupInfo')
+const UserInfo = require('../components/userInfo')
+const EditUserInfo = require('../components/editUserInfo')
 
 function UserProfile(props) {
 
   return (
     <div>
       <div className="row">
-        {UserName(props)}
-        <Groups/>
+        <Groups id={props.params.id}/>
+        <div className='columns '>
+          {props.editUser
+            ? <EditUserInfo />
+            : <UserInfo id={props.params.id}/>
+          }
+
+        </div>
       </div>
       <div className="row">
       </div>
-        <GroupInfo/>
+        {props.players.players.length > 0
+          ? <GroupInfo id={props.params.id}/>
+          : null}
     </div>
   )
 }
 
 module.exports = connect((state) => state)(UserProfile)
-
-function UserName (props) {
-  return (
-    <div className="large-4 columns">
-      <h2>UserName</h2>
-      <button className='button expanded'>Edit Profile</button>
-    </div>
-  )
-}
