@@ -26,7 +26,7 @@
   }
 }
 
-@include ipad {
+@include ipadBoth {
   .top-bar {
     height: 4em;
     .menu-text {

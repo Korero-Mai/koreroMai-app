@@ -21,7 +21,7 @@ class LearnSounds extends React.Component {
           <div className="play-box">
             {this.generateLetter(lettersArr, letters)}
             <div className='row'>
-              <div className='colums small-centered small-10 medium-6 large-4'>
+              <div className='columns small-centered small-10 medium-6 large-4'>
                 <Link to='activity'><button className="first-back">Back</button></Link>
                 <Link to={activityRoute+(level+1)}><button className="first-next">Next</button></Link>
               </div>
@@ -39,9 +39,9 @@ class LearnSounds extends React.Component {
             {this.generateLetter(lettersArr, letters)}
             <div>
               <Link to={activityRoute+(level-1)}><button className="last-back">Back</button></Link>
-              <button className="finish" onClick={() => dispatch({type: 'TOGGLE_MODAL'})}>Finish!</button>
-              <Modal isOpen={modal} contentLabel='Modal' >
-              <h1>Well done!</h1>
+              <button className='finish' onClick={() => dispatch({type: 'TOGGLE_MODAL'})}>Finish!</button>
+              <Modal isOpen={modal} contentLabel='Modal' className='learn-sounds-modal'>
+              <h1>Tumeke! Awesome!</h1>
               <Link to={activityRoute+1}><button className="button-radius repeat" onClick={() => dispatch({type: 'END_ROUND'})}>Repeat</button></Link><br />
               <Link to='activity'><button className="button-radius new-activity" onClick={() => dispatch({type: 'END_ROUND'})}>Choose another activity</button></Link>
               </Modal>

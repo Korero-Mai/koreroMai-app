@@ -18,13 +18,13 @@ class PracticeSounds extends React.Component {
     return lettersArr.map((item) => {
       if (item === answer) {
         return (
-          <div className='note'>
+          <div>
             <div className='row'>
               <div className='colums small-10 medium-6 large-4'>
                 <audio ref={`${answer}`} >
                   <source src={`${letters[item].soundFile}`} preload=''/>
                 </audio>
-                <h1 onClick={() => this.playSound(item)}>♫</h1>
+                <div className='note' onClick={() => this.playSound(item)}>♫</div>
               </div>
             </div>
           </div>
@@ -62,7 +62,7 @@ class PracticeSounds extends React.Component {
                 <button onClick={() => this.playSound(letter)} className='listen-sound-buttons'>
                   {letter}
                 </button>
-                  <Modal isOpen={modal} contentLabel='Modal' >
+                  <Modal isOpen={modal} contentLabel='Modal' className='prac-sounds-modal' >
                     <div className='correct'>Tika tau - correct!</div>
                     <Link to={activityRoute+1}><button className='button-radius repeat' onClick={() => dispatch({type: 'END_ROUND'})}>Repeat</button></Link><br />
                     <Link to='activity'><button className='button-radius new-activity' onClick={() => dispatch({type: 'END_ROUND'})}>Choose another activity</button></Link>
@@ -104,7 +104,7 @@ class PracticeSounds extends React.Component {
               <button onClick={() => this.playSound(letter)} className='listen-sound-buttons'>
                 {letter}
               </button>
-              <Modal isOpen={modal} contentLabel='Modal' >
+              <Modal isOpen={modal} contentLabel='Modal' className='prac-sounds-modal' >
                 <div className='correct'>Tika tau - correct!</div>
                 <Link to={activityRoute+(level+1)}><button className='next-letter' onClick={() => dispatch({type: 'TOGGLE_MODAL'})}>Next one!</button></Link><br />
               </Modal>
@@ -144,7 +144,7 @@ class PracticeSounds extends React.Component {
     if (level === 1) {
       return (
         <div>
-          <div className='welcome-prac'>
+          <div className='welcome-letters'>
             Click ♫ Listen then choose the right letter!
           </div>
           <div className='play-box row align-spaced'>
@@ -158,7 +158,7 @@ class PracticeSounds extends React.Component {
     } else if (level === 5){
       return (
         <div>
-          <div className='welcome-prac'>
+          <div className='welcome-letters'>
             Click ♫ Listen then choose the right letter!
           </div>
           <div className='play-box row align-spaced'>
@@ -171,7 +171,7 @@ class PracticeSounds extends React.Component {
       )
     } else return (
         <div>
-          <div className='welcome-prac'>
+          <div className='welcome-letters'>
             Click ♫ Listen then choose the right letter!
           </div>
           <div className='play-box row align-spaced'>

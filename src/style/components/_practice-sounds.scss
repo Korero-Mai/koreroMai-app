@@ -1,25 +1,9 @@
-.modal {
-  top: 20%;
-  left: 50%;
-  right: auto;
-  bottom: auto;
-  margin-right: -50%;
-  transform: translate(-50%, -50%);
-}
 
-.correct {
-  font-size: 6em;
-  margin: .5em;
-  font-family: 'Itim', cursive;
-}
 
-.next-letter {
-  background-color: $light-blue;
-  font-size: 6em;
-  padding: .4em;
-}
 
-.welcome-prac {
+
+
+.welcome-letters {
   font-size: 4em;
   font-family: 'Itim', sans-serif;
   padding: .3em;
@@ -27,12 +11,10 @@
 
 .note {
   position:absolute;
-    top: 63%;
-    left: 35%;
-    h1 {
-      font-size: 7em;
-      color: $dark-blue;
-    }
+  top: 63%;
+  left: 35%;
+  font-size:6em;
+  color: $dark-blue;
 }
 
 .listen-sound-buttons {
@@ -55,4 +37,72 @@
 
 .listen-sound-buttons:hover{
    background-color: #cc9bfd;
+}
+
+.prac-sounds-modal {
+  padding-top: 3em;
+  margin-left: 14%;
+  margin-top: 5%;
+  min-height: 30%;
+  min-width: 70%;
+  position: fixed;
+  top: 10%;
+  background-color: $light-grey;
+  .repeat {
+    background-color: $light-blue;
+    font-size: 3.5em;
+    padding: .4em;
+    margin: 1em 0 0;
+  }
+  .new-activity {
+    background-color: $light-blue;
+    font-size: 3.5em;
+    padding: .4em;
+    margin: 1em;
+  }
+  .correct {
+    font-size: 4em;
+    margin: .5em;
+    font-family: 'Itim', cursive;
+  }
+  .next-letter {
+    background-color: $light-blue;
+    font-size: 5em;
+    padding: .4em;
+  }
+}
+
+
+@include ipadBoth {
+  .listen-sound-buttons {
+    padding: .3em;
+    font-size: 6em;
+    margin: .4em;
+  }
+}
+
+@include ipadLandscape {
+  .welcome-letters {
+    font-size: 3em;
+    padding: .3em;
+  }
+
+  .listen-sound-buttons {
+    border-radius: 5px;
+    background-color: $red;
+    box-shadow: 2px 5px 2px 0px  #fd9bb8;
+    padding: .3em;
+    font-size: 5em;
+    font-family: 'Muli', sans-serif;
+    margin: .4em;
+    text-decoration: none;
+    color: black;
+  }
+  .note {
+    position:absolute;
+    top: 65%;
+    left: 40%;
+    font-size: 4em;
+    color: $dark-blue;
+  }
 }
