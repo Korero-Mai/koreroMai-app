@@ -5,7 +5,7 @@ const reducer = require('../../src/reducers')
 const request = require('superagent')
 
 
-test.only('ADD_PLAYER | it should add a player ', t => {
+test('ADD_PLAYER | it should add a player ', t => {
     t.plan(2)
 
     const input = {type: 'ADD_PLAYER', payload: true}
