@@ -1,4 +1,4 @@
-.play-box-letters {
+.play-box {
   background-color: $yellow;
   width: 80%;
   border: solid 5px;
@@ -30,7 +30,7 @@
   background-color: $red;
   box-shadow: 2px 5px 2px 0px  #fd9bb8;
   padding: .3em;
-  font-size: 8em;
+  font-size: 7em;
   font-family: 'Muli', sans-serif;
   margin: .4em;
   text-decoration: none;
@@ -117,7 +117,7 @@
 
 @include desklap {
 
-  .play-box-letters {
+  .play-box {
     margin-left: 8em;
     margin-top: 1.5em;
     height: 20em;
@@ -135,10 +135,11 @@
     min-width: 2em;
     align-content: center;
   }
+
   .note {
     position:absolute;
     top: 60%;
-    left: 50%;
+    left: 30%;
     font-size: 4em;
     color: $dark-blue;
   }
