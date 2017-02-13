@@ -2,14 +2,14 @@
   background-color: $light-grey;
   border-radius: 5px;
   padding: 0;
-  margin-bottom: 10em;
-  margin-top: 5em;
+  margin-bottom: 8em;
+  margin-top: 2em;
 }
 
 h3 {
   color: $dark-blue;
   font-size: 5rem;
-  margin-bottom: 1em;
+  margin-bottom: 0;
 }
 
 .email {
@@ -22,16 +22,71 @@ h3 {
   height: 2.5em;
 }
 
+.username {
+  font-size: 2em;
+  height: 2.5em;
+}
+
+.confirmPassword {
+  font-size: 2em;
+  height: 2.5em;
+}
+
 @include ipadPortrait {
   h3 {
-    font-size: 4rem;
+    font-size: 3em;
   }
   .container {
     margin-bottom: 6em;
     margin-top: 5em;
   }
-  .input-box {
-    height:rem;
-    font-size: 1.5rem;
+
+  .email {
+    font-size: 1.5em;
+    height: 2em;
+  }
+
+  .password {
+    font-size: 1.5em;
+    height: 2em;
+  }
+
+  .username {
+    font-size: 1.5em;
+    height: 2em;
+  }
+
+  .confirmPassword {
+    font-size: 1.5em;
+    height: 2em;
+  }
+}
+
+@include ipadLandscape {
+  h3 {
+    font-size:1.5em;
+    margin-bottom: 1em;
+  }
+  form {
+  margin: -25px;
+  }
+  .email {
+    font-size: 1em;
+    height: 1.7em;
+  }
+
+  .password {
+    font-size: 1em;
+    height: 1.7em;
+  }
+
+  .username {
+    font-size: 1em;
+    height: 1.7em;
+  }
+
+  .confirmPassword {
+    font-size: 1em;
+    height: 1.7em;
   }
 }
