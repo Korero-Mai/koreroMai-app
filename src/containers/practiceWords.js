@@ -60,7 +60,7 @@ class PracticeWords extends React.Component {
           <div>
             <div className="row">
               <div className="columns">
-                <img src={`${words[word].imageFile}`} />
+                <img src={`${words[word].imageFile}`} onClick={() => this.playSound(word)}/>
                 <audio ref={`${word}`} >
                   <source src={`${words[word].soundFile}`} preload=''/>
                 </audio>
@@ -88,7 +88,7 @@ class PracticeWords extends React.Component {
             <div>
               <div className="row">
                 <div className="columns">
-                  <img src={`${words[word].imageFile}`} />
+                  <img src={`${words[word].imageFile}`} onClick={() => this.playSound(word)}/>
                   <audio ref={`${word}`} >
                     <source src={`${words[word].soundFile}`} preload=''/>
                   </audio>
@@ -109,7 +109,7 @@ class PracticeWords extends React.Component {
         <div>
           <div className="row">
             <div className="columns">
-              <img src={`${words[word].imageFile}`} />
+              <img src={`${words[word].imageFile}`} onClick={() => this.playSound(word)}/>
               <audio ref={`${word}`} >
                 <source src={`${words[word].soundFile}`} preload=''/>
               </audio>
@@ -133,7 +133,7 @@ class PracticeWords extends React.Component {
           <div>
             <div className="row">
               <div className="columns">
-                <img src={`${words[word].imageFile}`} />
+                <img src={`${words[word].imageFile}`} onClick={() => this.playSound(word)}/>
                 <audio ref={`${word}`} >
                   <source src={`${words[word].soundFile}`} preload=''/>
                 </audio>
@@ -161,7 +161,7 @@ class PracticeWords extends React.Component {
     const answer = this.props.practiceWordPage[level].answer
     const modalStyle = {
       content:{
-        top:'20%',
+        top:'50%',
         left:'50%',
         right:'auto',
         bottom:'auto',

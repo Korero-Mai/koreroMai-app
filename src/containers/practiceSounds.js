@@ -3,15 +3,6 @@ const { connect } = require('react-redux')
 const { Link } = require('react-router')
 const Modal = require('react-modal');
 
-//loop through level
-//play one SOUND
-//give same SOUND to ♫
-//give their respective sound to each letter
-//on click of ♫ : play sound
-// on click of letter : play sound and check if SOUND === sound
-// if true, play a RIGHT sound, increment score, go to next
-//if false, play a WRONG sound, until true
-
 class PracticeSounds extends React.Component {
 
   componentWillMount() {
