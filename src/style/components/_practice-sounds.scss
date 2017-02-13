@@ -1,11 +1,4 @@
-.modal {
-  top: 20%;
-  left: 50%;
-  right: auto;
-  bottom: auto;
-  margin-right: -50%;
-  transform: translate(-50%, -50%);
-}
+
 
 .correct {
   font-size: 6em;
@@ -53,6 +46,15 @@
 
 .listen-sound-buttons:hover{
    background-color: #cc9bfd;
+}
+
+.modal {
+  top: 20%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
 }
 
 

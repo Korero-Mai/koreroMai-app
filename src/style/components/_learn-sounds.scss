@@ -14,24 +14,14 @@
   font-family: 'Itim', sans-serif;
 }
 
-.modal {
-    top: 20%;
-    left: 50%;
-    right: auto;
-    bottom: auto;
-    margin-right: -50%;
-    transform: translate(-50%, -50%);
-}
-
-
 .button-radius {
   border-radius: 5px;
   background-color: $red;
   box-shadow: 2px 5px 2px 0px  #fd9bb8;
   padding: 20px 25px;
-  font-size: 10em;
+  font-size: 5em;
   font-family: 'Muli', sans-serif;
-  margin: 4px 2px;
+  margin: 0;
   text-decoration: none;
   color: black;
 }
@@ -185,18 +175,29 @@
   box-shadow: 0px 1px 0px 0px;
 }
 
-.repeat {
-  background-color: $light-blue;
-  font-size: 4em;
-  padding: .4em;
+.learn-sounds-modal {
+  padding-top: 3em;
+  margin-left: 15%;
+  margin-top: 5%;
+  min-height: 30%;
+  min-width: 70%;
+  position: fixed;
+  top: 10%;
+  background-color: $light-grey;
+  .repeat {
+    background-color: $light-blue;
+    font-size: 3em;
+    padding: .4em;
+    margin: 1em 0 0;
+  }
+  .new-activity {
+    background-color: $light-blue;
+    font-size: 3em;
+    padding: .4em;
+    margin: 1em 0 0;
+  }
 }
 
-.new-activity {
-  background-color: $light-blue;
-  font-size: 4em;
-  padding: .4em;
-  margin: .3em 0 0;
-}
 
 
 @include ipadBoth {
