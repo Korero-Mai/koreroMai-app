@@ -93,7 +93,11 @@ module.exports = function (knex) {
 			})
 		},
 
-		addScore: function(table, scoreData){
+		addScore: function(scoreData){
+			const scores = {
+				prac_sounds_wrong: scoreData.wrongSounds,
+				prac_words_wrong: scoreData.wrongWords
+			}
 			return this.checkIfPlayerExists('players', scoreData)
 				.then((bool)=>{
 					if(!bool){
@@ -103,9 +107,8 @@ module.exports = function (knex) {
 					}
 				})
 				.then((ids)=>{
-						delete scoreData.player_token
-						scoreData.player_id = ids[0].id_player
-					return this.insertScoreData(table,scoreData)
+						scores.player_id = ids[0].id_player
+					return this.insertScoreData(scores)
 				})
 		 },
 
@@ -116,28 +119,54 @@ module.exports = function (knex) {
 		 },
 
 
-		 insertScoreData: function(table,newData){
-			 return knex(table)
+		 insertScoreData: function(newData){
+			 return knex('players_gameScores')
 			 .insert(newData)
 			 .then((ids)=>{
 				 return knex('players_gameScores')
 				 .select('*')
-				 .where({id_game: ids[0]})
+				 .where('players_gameScores.id_game','=', ids[0])
 			 })
 		 },
 
-		 findPlayersGroupsByUser: function(userId){
-			 return knex('players')
+		 updatesTotalScores: function(id){
+			 return knex('players_gameScores')
+			 .where('player_id',id)
+			 .select('*')
+			 .then((scores)=>{
+				 const wrongSounds = this.calcTotalScore(scores,'prac_sounds_wrong')
+				 const wrongWords = this.calcTotalScore(scores,'prac_words_wrong')
+
+				 const newScores = {
+					 prac_sounds_total_wrong: wrongSounds,
+					 prac_words_total_wrong: wrongWords
+				 }
+				 return {
+					 id: scores[0].player_id,
+					 newScores
+				 }
+			 })
+			 .then((playerScore)=>{
+				 return this.changePlayerInfo(playerScore.id,playerScore.newScores)
+			 })
 			 .then(()=>{
-				 return this.findPlayersByUser('users_players',userId)
+				 return this.findPlayerByID(id)
 			 })
-			 .then((data)=>{
-				 console.log('data',data);
-				 const groups={}
-				 data.players.map((player,i)=>{
-					 groups[player]
-				 })
-			 })
+		 },
+
+		 calcTotalScore: function(scores,colName){
+			 return scores.map((score)=>{
+				 return score[colName]
+			 }).reduce((total,num)=>{
+				 return total+num
+			 },0)
+		 },
+
+		 changePlayerInfo: function(id,newScore){
+			 console.log('updatedPlayer',id,newScore);
+			 return knex('players')
+			 .where('id_player','=', id)
+			 .update(newScore)
 		 },
 
 		 findPlayersByUser: function(table, input){
@@ -172,7 +201,6 @@ module.exports = function (knex) {
 
 			 filteredData.groups = this.filterGroups(filteredData.players)
 			 delete filteredData.players
-
 			 return filteredData
 		 },
 

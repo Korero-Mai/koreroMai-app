@@ -88,7 +88,7 @@ module.exports = function(db) {
   }
 
   function confirmUniqueEmail(req, res, next) {
-    db.findUserByEmail('users',req.body.email)
+    db.findUserByEmail(req.body.email)
     .then((user) => {
         console.log('user:', user);
       if(!user[0]) {

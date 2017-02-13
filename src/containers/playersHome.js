@@ -19,14 +19,11 @@ class PlayersHome extends React.Component {
           <div className='row main-button'>
             <div className='columns small-centered small-12 medium-6 large-4'>
               <input type="text" placeholder="Enter token" ref="token"/>
-              <Link to="activity">
                 <button className="play-button" onClick={() => {
-                    console.log(this.refs.token.value);
                       this.props.dispatch({type:'UPDATE_PLAYERTOKEN', payload: this.refs.token.value})
                   }}>
                     PLAY!
                   </button>
-                </Link>
             </div>
           </div>
         </div>
@@ -39,7 +36,12 @@ class PlayersHome extends React.Component {
 //     .send(this.refs.token.value)
 //     .end((err, data) => {
 //       if (err) return console.log('error!')
-//       props.dispatch({type:'UPDATE_PLAYERTOKEN', payload: this.refs.token.value})
+        // if (data.login){
+  //         props.dispatch({type:'UPDATE_PLAYERTOKEN', payload: this.refs.token.value})
+            // this.props.router.push('/activity')
+        // } else {
+          // this.props.router.push('/')
+      // }
 //     })
 //   }}>
 

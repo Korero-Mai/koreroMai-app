@@ -14,6 +14,8 @@ const groups = require('./groups')
 const editUser = require('./editUser')
 const playerToken = require('./playerToken')
 const addPlayer = require('./addPlayer')
+const showWrong = require('./showWrong')
+
 
 module.exports = combineReducers({
   modal,
@@ -30,5 +32,7 @@ module.exports = combineReducers({
   groups,
   editUser,
   playerToken,
-  addPlayer
+  addPlayer,
+  showWrong
+
 })

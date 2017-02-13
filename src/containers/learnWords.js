@@ -19,7 +19,7 @@ class LearnWords extends React.Component {
         return (
           <div className='row'>
             <audio ref={`${index}`} >
-              <source src={`${words[word].soundFile}`} preload=''/>
+              <source src={`${words[word].soundFile}`} preload='auto'/>
             </audio>
             <img src={`${words[word].imageFile}`} />
             <button onClick={() => this.playSound(index)} className='lwordbutton'>

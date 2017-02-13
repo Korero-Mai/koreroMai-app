@@ -15,11 +15,14 @@ function Nav(props) {
           <li onClick={() => dispatch({type: 'END_ROUND'})}>
             <Link to="/activity" activeClassName="active-link" className='nav-text'>Activities</Link>
           </li>
+          <li onClick={() => dispatch({type: 'END_ROUND'})}>
+            <Link to="/players" activeClassName="active-link" className='nav-text'>Login as a player</Link>
+          </li>
         </ul>
       </div>
       <div className="top-bar-right">
         <ul className="menu">
-          <EnterOrExit users={props.users} dispatch={dispatch}/>
+          <EnterOrExit users={props.users} playerToken={props.playerToken} dispatch={dispatch}/>
         </ul>
       </div>
     </div>
@@ -47,12 +50,27 @@ function EnterOrExit(props){
         </Link>
       </li>
     )
+  } else if (props.playerToken){
+    return (
+      <li className="menu-text" onClick={endRound}>
+        {props.playerToken}'s session
+        <br />
+        <Link to='/players'>
+          <button onClick={() => {
+              props.dispatch({type: 'LOGOUT_PLAYER'})
+          }}>
+            Logout
+          </button>
+        </Link>
+      </li>
+    )
+  } else {
+    return (
+      <li className="menu-text" onClick={endRound}>
+         <Link to="login-register"> Login / Register </Link>
+      </li>
+    )
   }
-  return (
-    <li className="menu-text" onClick={endRound}>
-       <Link to="login-register"> Login / Register </Link>
-    </li>
-  )
 
   function endRound(){
     props.dispatch({type: 'END_ROUND'})
