@@ -3,8 +3,7 @@ module.exports = function (state = {}, action) {
   switch (action.type) {
 
     case 'UPDATE_PLAYERS':
-      state = action.payload
-      return state
+      return Object.assign({}, state, action.payload)
 
     default:
       return state
