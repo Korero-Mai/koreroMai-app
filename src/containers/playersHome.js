@@ -21,7 +21,6 @@ class PlayersHome extends React.Component {
               <input type="text" placeholder="Enter token" ref="token"/>
               <Link to="activity">
                 <button className="play-button" onClick={() => {
-                    console.log(this.refs.token.value);
                       this.props.dispatch({type:'UPDATE_PLAYERTOKEN', payload: this.refs.token.value})
                   }}>
                     PLAY!

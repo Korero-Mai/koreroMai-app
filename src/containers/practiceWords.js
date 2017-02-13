@@ -29,7 +29,15 @@ class PracticeWords extends React.Component {
     })
   }
 
-
+  // <button  className='listen-sound-buttons' onClick={() => {
+  //   request.post('api/v1/players/scores')
+  //   .send({
+  //     player_token: this.props.playerToken,
+  //     wrongSounds: this.props.wrongSounds,
+//       wrongWords: this.props.wrongWords
+//      })
+  //   this.playSound(letter)}
+  // }>
   generateWord(wordsArr, words, answer){
 
     const timeoutModal = function(){
@@ -57,7 +65,7 @@ class PracticeWords extends React.Component {
             </div>
             <div className='row'>
               <div className='columns' onClick={timeoutModal}>
-                <button onClick={() => this.playSound(word)} className='listen-sound-words'>
+                <button className='listen-sound-words' onClick={() => {this.playSound(word)}}>
                   {word}
                 </button>
                   <Modal isOpen={modal} contentLabel='Modal' >

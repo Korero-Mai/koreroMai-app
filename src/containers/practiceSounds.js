@@ -1,7 +1,8 @@
 const React = require('react')
 const { connect } = require('react-redux')
 const { Link } = require('react-router')
-const Modal = require('react-modal');
+const Modal = require('react-modal')
+const request = require('superagent')
 
 class PracticeSounds extends React.Component {
 
@@ -33,6 +34,16 @@ class PracticeSounds extends React.Component {
     })
   }
 
+  // <button  className='listen-sound-buttons' onClick={() => {
+  //   request.post('api/v1/players/scores')
+  //   .send({
+  //     player_token: this.props.playerToken,
+  //     wrongSounds: this.props.wrongSounds,
+//       wrongWords: this.props.wrongWords
+//      })
+  //   this.playSound(letter)}
+  // }>
+
   generateLetter(lettersArr,letters, answer){
 
     const timeoutModal = function(){
@@ -59,7 +70,11 @@ class PracticeSounds extends React.Component {
             </div>
             <div className='row'>
               <div className='columns' onClick={timeoutModal}>
-                <button onClick={() => this.playSound(letter)} className='listen-sound-buttons'>
+                <button  className='listen-sound-buttons' onClick={() => {
+
+
+                  this.playSound(letter)}
+                }>
                   {letter}
                 </button>
                   <Modal isOpen={modal} contentLabel='Modal' >
