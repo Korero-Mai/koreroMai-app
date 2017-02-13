@@ -93,7 +93,11 @@ module.exports = function (knex) {
 			})
 		},
 
-		addScore: function(table, scoreData){
+		addScore: function(scoreData){
+			const scores = {
+				prac_sounds_wrong: scoreData.wrongSounds,
+				prac_words_wrong: scoreData.wrongWords
+			}
 			return this.checkIfPlayerExists('players', scoreData)
 				.then((bool)=>{
 					if(!bool){
@@ -103,9 +107,8 @@ module.exports = function (knex) {
 					}
 				})
 				.then((ids)=>{
-						delete scoreData.player_token
-						scoreData.player_id = ids[0].id_player
-					return this.insertScoreData(table,scoreData)
+						scores.player_id = ids[0].id_player
+					return this.insertScoreData(scores)
 				})
 		 },
 
@@ -116,14 +119,51 @@ module.exports = function (knex) {
 		 },
 
 
-		 insertScoreData: function(table,newData){
-			 return knex(table)
+		 insertScoreData: function(newData){
+			 return knex('players_gameScores')
 			 .insert(newData)
 			 .then((ids)=>{
 				 return knex('players_gameScores')
 				 .select('*')
 				 .where({id_game: ids[0]})
 			 })
+		 },
+
+		 updatesTotalScores: function(id){
+			 return knex('players_gameScores')
+			 .where({player_id: id})
+			 .select('*')
+			 .then((scores)=>{
+				 wrongSounds = this.calcTotalScore(scores,'prac_sounds_wrong')
+				 wrongWords = this.calcTotalScore(scores,'prac_words_wrong')
+				 return {
+					 id_player: scores[0].player_id,
+					 prac_sounds_total_wrong: wrongSounds,
+					 prac_words_total_wrong: wrongWords
+				 }
+			 })
+			 .then((updatedPlayer)=>{
+				 return this.changePlayerInfo(updatedPlayer)
+			 })
+			 .then(info=>{
+				 console.log('info', info);
+			 })
+		 },
+
+		 calcTotalScore: function(scores,colName){
+			 return scores.map((score)=>{
+				 return score[colName]
+			 }).reduce((total,num)=>{
+				 return total+num
+			 },0)
+		 },
+
+		 changePlayerInfo: function(updatedPlayer){
+			 console.log(updatedPlayer.id_player);
+			 return knex('players')
+			 .where('players.id_player' , updatedPlayer.id_player)
+			 .update(updatedPlayer)
+
 		 },
 
 		 findPlayersGroupsByUser: function(userId){

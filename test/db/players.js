@@ -77,7 +77,7 @@ return db.addPlayer(table, input)
 test('adds a new player score | adds a new score to the scoresTable', (t) => {
    t.plan(4)
  // arrange
-const table = 'players_gameScores'
+
 const input= {
   player_token:'bobbie123',
   wrongSounds: 4,
@@ -96,7 +96,7 @@ const expected = [{
 
 return db.addScore(input)
   .then(function(data){
-      // console.log('db.addScore ', data);
+      console.log('db.addScore ', data);
 //Assert
     t.is(data[0].id_game,expected[0].id_game,
       'adds score to table')
@@ -108,6 +108,30 @@ return db.addScore(input)
       'adds score to table')
    })
 })
+
+test.only('updates the total score of a player | updates the total score of a player', (t) => {
+   t.plan(1)
+ // arrange
+
+const player_id = 5
+
+const expected = [{
+  id_player: 2,
+  player_name: 'Bobbie'
+
+}]
+ //act
+
+return db.updatesTotalScores(player_id)
+  .then(function(data){
+      console.log('db.updatesTotalScores ', data);
+//Assert
+    t.is(data[0].id_game,expected[0].id_game,
+      'adds score to table')
+
+   })
+})
+
 
 test('find players by user_id| retrieves players by group', (t) => {
    t.plan(3)
