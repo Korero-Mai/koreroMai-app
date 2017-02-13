@@ -40,7 +40,7 @@ class PracticeSounds extends React.Component {
 
     const timeoutModal = function(){
       setTimeout(() => {
-        dispatch({type: 'TOGGLE_MODAL'})}, 550)
+        dispatch({type: 'TOGGLE_MODAL'})}, 400)
     }
 
     const dispatch = this.props.dispatch
@@ -73,7 +73,7 @@ class PracticeSounds extends React.Component {
                    if (err) return console.log('error!')
                    this.playSound(letter)
                  })
-                  setTimeout(() => {dispatch({type: 'HIDE_TRY_AGAIN'})}, 450)
+                  setTimeout(() => {dispatch({type: 'HIDE_TRY_AGAIN'})}, 150)
                 }}>
                 {letter}
               </button>
@@ -100,7 +100,7 @@ class PracticeSounds extends React.Component {
                 <div className='columns' onClick={() => dispatch({type: 'INCREMENT_WRONGSOUNDS'})}>
                   <button className='listen-sound-buttons' onClick={() => {
                       this.playSound(letter)
-                      setTimeout(() => {dispatch({type: 'SHOW_TRY_AGAIN'})}, 450)
+                      setTimeout(() => {dispatch({type: 'SHOW_TRY_AGAIN'})}, 150)
                     }}>
                     {letter}
                   </button>
@@ -121,7 +121,7 @@ class PracticeSounds extends React.Component {
             <div className='columns' onClick={timeoutModal}>
               <button className='listen-sound-buttons' onClick={() => {
                   this.playSound(letter)
-                  setTimeout(() => {dispatch({type: 'HIDE_TRY_AGAIN'})}, 450)
+                  setTimeout(() => {dispatch({type: 'HIDE_TRY_AGAIN'})}, 150)
                 }}>
                 {letter}
               </button>
@@ -145,7 +145,7 @@ class PracticeSounds extends React.Component {
               <div className='columns' onClick={() => dispatch({type: 'INCREMENT_WRONGSOUNDS'})}>
                 <button className='listen-sound-buttons' onClick={() => {
                     this.playSound(letter)
-                    setTimeout(() => {dispatch({type: 'SHOW_TRY_AGAIN'})}, 450)
+                    setTimeout(() => {dispatch({type: 'SHOW_TRY_AGAIN'})}, 150)
                   }}>
                   {letter}
                 </button>
