@@ -20,10 +20,14 @@ class PracticeSounds extends React.Component {
       if (item === answer) {
         return (
           <div>
-            <audio ref={`${answer}`} >
+            <div className='row'>
+              <div className='colums small-10 medium-6 large-4'>
+                <audio ref={`${answer}`} >
                   <source src={`${letters[item].soundFile}`} preload='auto'/>
-            </audio>
-            <div className='note' onClick={() => this.playSound(item)}>♫</div>
+                </audio>
+                <div className='note' onClick={() => this.playSound(item)}>♫</div>
+              </div>
+            </div>
           </div>
         )
       }
@@ -60,36 +64,49 @@ class PracticeSounds extends React.Component {
         if (letter === answer) {
           return (
           <div>
-            <audio ref={`${letter}`} >
+            <div className='row'>
+              <div className='columns'>
+                <audio ref={`${letter}`} >
                   <source src={`${letters[letter].soundFile}`} preload='auto'/>
-            </audio>
-            <div onClick={timeoutModal}>
-              <button  className='listen-sound-buttons' onClick={() => {
-                  this.playSound(letter)
-                  setTimeout(() => {dispatch({type: 'HIDE_TRY_AGAIN'})}, 450)
-                }}>
-                {letter}
-              </button>
-                <Modal isOpen={modal} contentLabel='Modal' className='prac-sounds-modal' >
-                  <div className='correct'>Tika tau - correct!</div>
-                  <Link to={activityRoute+1}><button className='button-radius repeat' onClick={() => dispatch({type: 'END_ROUND'})}>Repeat</button></Link><br />
-                  <Link to='activity'><button className='button-radius new-activity' onClick={() => dispatch({type: 'END_ROUND'})}>Choose another activity</button></Link>
-                </Modal>
+                </audio>
+              </div>
+            </div>
+            <div className='row'>
+              <div className='columns' onClick={timeoutModal}>
+                <button  className='listen-sound-buttons' onClick={() => {
+                    this.playSound(letter)
+                    setTimeout(() => {dispatch({type: 'HIDE_TRY_AGAIN'})}, 450)
+                  }}>
+                  {letter}
+                </button>
+                  <Modal isOpen={modal} contentLabel='Modal' className='prac-sounds-modal' >
+                    <div className='correct'>Tika tau - correct!</div>
+                    <Link to={activityRoute+1}><button className='button-radius repeat' onClick={() => dispatch({type: 'END_ROUND'})}>Repeat</button></Link><br />
+                    <Link to='activity'><button className='button-radius new-activity' onClick={() => dispatch({type: 'END_ROUND'})}>Choose another activity</button></Link>
+                  </Modal>
+              </div>
             </div>
           </div>
           )
         } else {
           return (
             <div>
-              <audio ref={`${letter}`} >
-                <source src={`${letters[letter].soundFile}`} preload='auto'/>
-              </audio>
-              <div onClick={() => dispatch({type: 'INCREMENT_WRONGSOUNDS'})}>
-                <button className='listen-sound-buttons' onClick={() => {
-                    this.playSound(letter)
-                    setTimeout(() => {dispatch({type: 'SHOW_TRY_AGAIN'})}, 450)
-                  }}>
-                </button>
+              <div className='row'>
+                <div className='columns'>
+                  <audio ref={`${letter}`} >
+                    <source src={`${letters[letter].soundFile}`} preload='auto'/>
+                  </audio>
+                </div>
+              </div>
+              <div className='row'>
+                <div className='columns' onClick={() => dispatch({type: 'INCREMENT_WRONGSOUNDS'})}>
+                  <button className='listen-sound-buttons' onClick={() => {
+                      this.playSound(letter)
+                      setTimeout(() => {dispatch({type: 'SHOW_TRY_AGAIN'})}, 450)
+                    }}>
+                    {letter}
+                  </button>
+                </div>
               </div>
             </div>
           )
@@ -97,37 +114,44 @@ class PracticeSounds extends React.Component {
       } else if (letter === answer) {
         return (
         <div>
-          <audio ref={`${letter}`} >
+          <div className='row'>
+            <audio ref={`${letter}`} >
               <source src={`${letters[letter].soundFile}`} preload='auto'/>
-          </audio>
-
-          <div onClick={timeoutModal}>
-            <button className='listen-sound-buttons' onClick={() => {
-              this.playSound(letter)
-              setTimeout(() => {dispatch({type: 'SHOW_TRY_AGAIN'})}, 450)
-              }}>
+            </audio>
+          </div>
+          <div className='row'>
+            <div className='columns' onClick={timeoutModal}>
+              <button className='listen-sound-buttons' onClick={() => {
+                  this.playSound(letter)
+                  setTimeout(() => {dispatch({type: 'HIDE_TRY_AGAIN'})}, 450)
+                }}>
                 {letter}
-            </button>
-            <Modal isOpen={modal} contentLabel='Modal' className='prac-sounds-modal' >
-              <div className='correct'>Tika tau - correct!</div>
-              <Link to={activityRoute+(level+1)}><button className='next-letter' onClick={() => dispatch({type: 'TOGGLE_MODAL'})}>Next one!</button></Link><br />
-            </Modal>
+              </button>
+              <Modal isOpen={modal} contentLabel='Modal' className='prac-sounds-modal' >
+                <div className='correct'>Tika tau - correct!</div>
+                <Link to={activityRoute+(level+1)}><button className='next-letter' onClick={() => dispatch({type: 'TOGGLE_MODAL'})}>Next one!</button></Link><br />
+              </Modal>
+            </div>
           </div>
         </div>
         )
       } else {
         return (
           <div>
-            <audio ref={`${letter}`} >
-              <source src={`${letters[letter].soundFile}`} preload='auto'/>
-            </audio>
-            <div onClick={() => dispatch({type: 'INCREMENT_WRONGSOUNDS'})}>
-            <button className='listen-sound-buttons' onClick={() => {
-                this.playSound(letter)
-                setTimeout(() => {dispatch({type: 'HIDE_TRY_AGAIN'})}, 450)
-              }}>
-              {letter}
-            </button>
+            <div className='row'>
+              <audio ref={`${letter}`} >
+                <source src={`${letters[letter].soundFile}`} preload='auto'/>
+              </audio>
+            </div>
+            <div className='row'>
+              <div className='columns' onClick={() => dispatch({type: 'INCREMENT_WRONGSOUNDS'})}>
+                <button className='listen-sound-buttons' onClick={() => {
+                    this.playSound(letter)
+                    setTimeout(() => {dispatch({type: 'SHOW_TRY_AGAIN'})}, 450)
+                  }}>
+                  {letter}
+                </button>
+              </div>
             </div>
           </div>
         )
@@ -153,8 +177,10 @@ class PracticeSounds extends React.Component {
           <div className='welcome-letters'>
             Click ♫ Listen then choose the right letter!
           </div>
-          <div className='play-box-letters'>
-            {this.generateAnswer(lettersArr, answer, letters)}
+          <div className='play-box row align-spaced'>
+            <div className='row'>
+              <h1>{this.generateAnswer(lettersArr, answer, letters)}</h1>
+            </div>
             {this.generateLetter(lettersArr, letters, answer)}
           </div>
           <WrongAnswerCue showWrong={this.props.showWrong}/>
@@ -166,8 +192,10 @@ class PracticeSounds extends React.Component {
           <div className='welcome-letters'>
             Click ♫ Listen then choose the right letter!
           </div>
-          <div className='play-box-letters'>
-            {this.generateAnswer(lettersArr, answer, letters)}
+          <div className='play-box row align-spaced'>
+            <div className='row'>
+              <h1>{this.generateAnswer(lettersArr, answer, letters)}</h1>
+            </div>
             {this.generateLetter(lettersArr, letters, answer)}
           </div>
           <WrongAnswerCue showWrong={this.props.showWrong}/>
@@ -178,14 +206,16 @@ class PracticeSounds extends React.Component {
           <div className='welcome-letters'>
             Click ♫ Listen then choose the right letter!
           </div>
-          <div className='play-box-letters'>
-            {this.generateAnswer(lettersArr, answer, letters)}
-            {this.generateLetter(lettersArr, letters, answer)}
-          </div>
+          <div className='play-box row align-spaced'>
+            <div className='row'>
+            <h1>{this.generateAnswer(lettersArr, answer, letters)}</h1>
+            </div>
+          {this.generateLetter(lettersArr, letters, answer)}
+        </div>
         <WrongAnswerCue showWrong={this.props.showWrong}/>
       </div>
     )
   }
-}
+  }
 
-module.exports = connect((state) => state)(PracticeSounds)
+  module.exports = connect((state) => state)(PracticeSounds)
