@@ -1,9 +1,9 @@
-module.exports = function (state = false, action) {
+module.exports = function (state = 0, action) {
 
   switch (action.type) {
 
     case 'INCREMENT_WRONGSOUNDS':
-      return state +1
+      return state + 1
 
     case 'END_ROUND':
       return 0

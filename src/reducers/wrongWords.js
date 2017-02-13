@@ -1,4 +1,4 @@
-module.exports = function (state = false, action) {
+module.exports = function (state = 0, action) {
 
   switch (action.type) {
 
