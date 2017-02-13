@@ -27,13 +27,13 @@ class LearnSounds extends React.Component {
             <div>
               <Link to='activity'>
                 <button className='first-back-ll'>
-                  Back
+                  ◄
                 </button>
               </Link>
 
               <Link to={activityRoute+(level+1)}>
                 <button className='first-next-ll'>
-                  Next
+                  ►
                 </button>
               </Link>
             </div>
@@ -56,12 +56,12 @@ class LearnSounds extends React.Component {
             <div>
               <Link to={activityRoute+(level-1)}>
                 <button className='last-back-ll'>
-                  Back
+                  ◄
                 </button>
               </Link>
 
               <button className='finish-ll' onClick={() => dispatch({type: 'TOGGLE_MODAL'})}>
-                Finish!
+                ★
               </button>
 
               <Modal isOpen={modal} contentLabel='Modal' className='learn-sounds-modal'>
@@ -94,8 +94,8 @@ class LearnSounds extends React.Component {
           {this.generateLetter(lettersArr, letters)}
         </div>
         <div>
-          <Link to={activityRoute+(level-1)}><button className='nav-back-ll'>Back</button></Link>
-          <Link to={activityRoute+(level+1)}><button className='nav-next-ll'>Next</button></Link>
+          <Link to={activityRoute+(level-1)}><button className='nav-back-ll'>◄</button></Link>
+          <Link to={activityRoute+(level+1)}><button className='nav-next-ll'>►</button></Link>
         </div>
       </div>
     )
