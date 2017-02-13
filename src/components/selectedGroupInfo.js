@@ -6,14 +6,11 @@ class groupInfo extends React.Component {
 
   componentDidMount() {
     const { dispatch } = this.props
-    const id = Number(this.props.id)
-    request.get(`/api/v1/users/${id}/profile`, function(err, res, next) {
-      dispatch({type: 'UPDATE_PLAYERS', payload: res.body.players})
-    })
   }
 
-  mapPlayers(players) {
-    return players.map((player) => {
+  mapPlayers(group) {
+
+    return group.map((player) => {
       return (
         <tr>
           <td>{player.player_name}</td>
@@ -33,12 +30,15 @@ class groupInfo extends React.Component {
         </tr>
       )
     })
+
+
   }
 
   render() {
-    return (
+
+    return  (
       <div className="row">
-        <h2>Group A Information:</h2>
+        <h2>{this.props.players.group_name} Information:</h2>
         <table className="hover">
             <thead>
               <tr>
@@ -53,7 +53,7 @@ class groupInfo extends React.Component {
               </tr>
             </thead>
             <tbody>
-              {this.mapPlayers(this.props.players)}
+              {this.mapPlayers(this.props.players.players)}
             </tbody>
           </table>
       </div>

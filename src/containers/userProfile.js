@@ -14,7 +14,9 @@ function UserProfile(props) {
       </div>
       <div className="row">
       </div>
-        <GroupInfo id={props.params.id}/>
+        {props.players.players.length > 0
+          ? <GroupInfo id={props.params.id}/>
+          : null}
     </div>
   )
 }
