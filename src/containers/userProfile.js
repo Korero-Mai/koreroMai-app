@@ -3,6 +3,7 @@ const { connect } = require('react-redux')
 const Groups = require('../components/groups')
 const GroupInfo = require('../components/selectedGroupInfo')
 const UserInfo = require('../components/userInfo')
+const EditUserInfo = require('../components/editUserInfo')
 
 function UserProfile(props) {
 
@@ -11,6 +12,7 @@ function UserProfile(props) {
       <div className="row">
         <UserInfo id={props.params.id}/>
         <Groups id={props.params.id}/>
+        <EditUserInfo />
       </div>
       <div className="row">
       </div>
