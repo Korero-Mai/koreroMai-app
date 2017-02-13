@@ -5,7 +5,7 @@ const reducer = require('../../src/reducers')
 const request = require('superagent')
 
 
-test.only('EDIT_USER | edit user ', t => {
+test('EDIT_USER | edit user ', t => {
     t.plan(2)
 
     const input = {type: 'EDIT_USER', payload: true}
