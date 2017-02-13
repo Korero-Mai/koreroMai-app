@@ -32,16 +32,18 @@ module.exports = class LoginForm extends React.Component {
   }
   render() {
     return (
-      <div className="container">
+      <div className='container'>
         <h3>Login</h3>
-          <div className="container__footer">
+          <div className='container__footer'>
             <div className='row'>
-              <div className='colums small-centered small-10 medium-6 large-4'>
+              <div className='columns small-centered small-10 medium-6 large-4'>
                 <div>
                   <form method='post' action='/login'>
-                    <input type='text' name='email' ref='email' placeholder='Email' />
-                    <input type='password' name='password' ref='password' placeholder='Password' />
-                    <button className='button expanded hollow' onClick={this.handleSubmit.bind(this)}>Login</button>
+                    <input type='text' className='email' ref='email' placeholder='Email' />
+                    <input type='password' className='password' ref='password' placeholder='Password' />
+                    <button className='button expanded hollow' onClick={this.handleSubmit.bind(this)}>
+                      Login
+                    </button>
                   </form>
                 </div>
               </div>

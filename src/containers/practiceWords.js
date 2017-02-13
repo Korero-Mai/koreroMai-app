@@ -18,11 +18,11 @@ class PracticeWords extends React.Component {
     return wordsArr.map((word) => {
       if (word === answer) {
         return (
-            <div className='note'>
+            <div>
               <audio ref={`${answer}`} >
                 <source src={`${words[word].soundFile}`} preload=''/>
               </audio>
-              <h1 onClick={() => this.playSound(word)}>♫</h1>
+              <div className='note-word' onClick={() => this.playSound(word)}>♫</div>
             </div>
         )
       }
@@ -68,7 +68,7 @@ class PracticeWords extends React.Component {
                 <button className='listen-sound-words' onClick={() => {this.playSound(word)}}>
                   {word}
                 </button>
-                  <Modal isOpen={modal} contentLabel='Modal' >
+                  <Modal isOpen={modal} contentLabel='Modal' className='prac-words-modal' >
                     <div className='correct'>Tika tau - correct!</div>
                     <Link to={activityRoute+1}><button className='button-radius repeat' onClick={() => dispatch({type: 'END_ROUND'})}>Repeat</button></Link><br />
                     <Link to='activity'><button className='button-radius new-activity' onClick={() => dispatch({type: 'END_ROUND'})}>Choose another activity</button></Link>
@@ -114,7 +114,7 @@ class PracticeWords extends React.Component {
               <button onClick={() => this.playSound(word)} className='listen-sound-words'>
                 {word}
               </button>
-              <Modal isOpen={modal} contentLabel='Modal' >
+              <Modal isOpen={modal} contentLabel='Modal' className='prac-words-modal' >
                 <div className='correct'>Tika tau - correct!</div>
                 <Link to={activityRoute+(level+1)}><button className='button-radius repeat' onClick={() => dispatch({type: 'TOGGLE_MODAL'})}>Next one!</button></Link><br />
               </Modal>
