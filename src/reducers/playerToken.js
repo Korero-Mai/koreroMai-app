@@ -8,7 +8,7 @@ module.exports = function (state = '', action) {
       return state
 
     case 'LOGOUT_PLAYER':
-      return 'null'
+      return ''
 
     default:
       return state
