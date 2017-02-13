@@ -11,10 +11,9 @@ const wrongWords = require('./wrongWords')
 const users = require('./users')
 const players = require('./players')
 const groups = require('./groups')
-
+const playerToken = require('./playerToken')
 
 module.exports = combineReducers({
-  // currentUser
   modal,
   letters,
   learnSoundPage,
@@ -26,6 +25,7 @@ module.exports = combineReducers({
   wrongWords,
   users,
   players,
-  groups
+  groups,
+  playerToken
 
 })

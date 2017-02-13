@@ -19,12 +19,28 @@ class PlayersHome extends React.Component {
           <div className='row main-button'>
             <div className='columns small-centered small-12 medium-6 large-4'>
               <input type="text" placeholder="Enter token" ref="token"/>
-              <input type="submit" />
+              <Link to="activity">
+                <button className="play-button" onClick={() => {
+                    console.log(this.refs.token.value);
+                      this.props.dispatch({type:'UPDATE_PLAYERTOKEN', payload: this.refs.token.value})
+                  }}>
+                    PLAY!
+                  </button>
+                </Link>
             </div>
           </div>
         </div>
       )
   }
 }
+
+// <button className="play-button" onClick={() => {
+//     request.post('api/v1/players/login')
+//     .send(this.refs.token.value)
+//     .end((err, data) => {
+//       if (err) return console.log('error!')
+//       props.dispatch({type:'UPDATE_PLAYERTOKEN', payload: this.refs.token.value})
+//     })
+//   }}>
 
 module.exports = connect((state) => state)(PlayersHome)
