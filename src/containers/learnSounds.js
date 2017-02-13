@@ -11,22 +11,14 @@ class LearnSounds extends React.Component {
     const level = Number(this.props.params.id)
     const activityRoute = 'activity/learn/sounds/'
     const lettersArr = this.props.learnSoundPage[level]
-    const modalStyle = {
-      content:{
-        top:'50%',
-        left:'50%',
-        right:'auto',
-        bottom:'auto',
-        marginRight:'-50%',
-        transform:'translate(-50%, -50%)'
-      }
-    }
 
     if (level === 1) {
       return (
         <div>
-          <h1>Learn how to pronounce Te Reo !</h1>
-          <div className="playBox">
+          <div className='welcome'>
+            Learn how to pronounce Te Reo!
+          </div>
+          <div className="play-box">
             {this.generateLetter(lettersArr, letters)}
             <div className='row'>
               <div className='colums small-centered small-10 medium-6 large-4'>
@@ -40,16 +32,18 @@ class LearnSounds extends React.Component {
     } else if (level === 5){
       return (
         <div>
-          <h1>Learn how to pronounce Te Reo !</h1>
-          <div className="playBox">
+          <div className='welcome'>
+            Learn how to pronounce Te Reo!
+          </div>
+          <div className='play-box'>
             {this.generateLetter(lettersArr, letters)}
             <div>
               <Link to={activityRoute+(level-1)}><button className="last-back">Back</button></Link>
               <button className="finish" onClick={() => dispatch({type: 'TOGGLE_MODAL'})}>Finish!</button>
-              <Modal isOpen={modal} contentLabel='Modal' style={modalStyle}>
-                <h1>Well done!</h1>
-                <Link to={activityRoute+1}><button className="button-radius repeat" onClick={() => dispatch({type: 'END_ROUND'})}>Repeat</button></Link><br />
-                <Link to='activity'><button className="button-radius new-activity" onClick={() => dispatch({type: 'END_ROUND'})}>Choose another activity</button></Link>
+              <Modal isOpen={modal} contentLabel='Modal' >
+              <h1>Well done!</h1>
+              <Link to={activityRoute+1}><button className="button-radius repeat" onClick={() => dispatch({type: 'END_ROUND'})}>Repeat</button></Link><br />
+              <Link to='activity'><button className="button-radius new-activity" onClick={() => dispatch({type: 'END_ROUND'})}>Choose another activity</button></Link>
               </Modal>
             </div>
           </div>
@@ -57,16 +51,16 @@ class LearnSounds extends React.Component {
       )
     } else return (
       <div>
-        <h1>Learn how to pronounce Te Reo !</h1>
-        <div>
-          <div className="playBox">
-            {this.generateLetter(lettersArr, letters)}
-          </div>
-          <div className='row'>
-            <div className='colums small-centered small-10 medium-6 large-4'>
-              <Link to={activityRoute+(level-1)}><button className="nav-back">Back</button></Link>
-              <Link to={activityRoute+(level+1)}><button className="nav-next">Next</button></Link>
-            </div>
+        <div className='welcome'>
+          Learn how to pronounce Te Reo!
+        </div>
+        <div className="play-box">
+          {this.generateLetter(lettersArr, letters)}
+        </div>
+        <div className='row'>
+          <div className='colums small-centered small-10 medium-6 large-4'>
+            <Link to={activityRoute+(level-1)}><button className="nav-back">Back</button></Link>
+            <Link to={activityRoute+(level+1)}><button className="nav-next">Next</button></Link>
           </div>
         </div>
       </div>
@@ -86,11 +80,11 @@ class LearnSounds extends React.Component {
       return lettersArr.map((letter,index)=>{
         return (
           <div className='row'>
-            <div className='colums small-centered small-12 medium-6 large-4'>
+            <div className='columns small-centered small-12 medium-6 large-4'>
               <audio ref={`${index}`} >
                 <source src={`${letters[letter].soundFile}`} preload=''/>
               </audio>
-              <button onClick={() => this.playSound(index)} className={`button-radius`}>
+              <button onClick={() => this.playSound(index)} className='button-radius'>
                 {letter}
               </button>
           </div>
