@@ -18,7 +18,7 @@ class PracticeSounds extends React.Component {
     return lettersArr.map((item) => {
       if (item === answer) {
         return (
-          <div className='note'>
+          <div>
             <div className='row'>
               <div className='colums small-10 medium-6 large-4'>
                 <audio ref={`${answer}`} >
