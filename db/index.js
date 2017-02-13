@@ -125,25 +125,29 @@ module.exports = function (knex) {
 			 .then((ids)=>{
 				 return knex('players_gameScores')
 				 .select('*')
-				 .where({id_game: ids[0]})
+				 .where('players_gameScores.id_game','=', ids[0])
 			 })
 		 },
 
 		 updatesTotalScores: function(id){
 			 return knex('players_gameScores')
-			 .where({player_id: id})
+			 .where('players_gameScores.player_id','=', id)
 			 .select('*')
 			 .then((scores)=>{
-				 wrongSounds = this.calcTotalScore(scores,'prac_sounds_wrong')
-				 wrongWords = this.calcTotalScore(scores,'prac_words_wrong')
-				 return {
-					 id_player: scores[0].player_id,
+				 const wrongSounds = this.calcTotalScore(scores,'prac_sounds_wrong')
+				 const wrongWords = this.calcTotalScore(scores,'prac_words_wrong')
+				 const newScores = {
 					 prac_sounds_total_wrong: wrongSounds,
 					 prac_words_total_wrong: wrongWords
 				 }
+				 return {
+					 id: scores[0].player_id,
+					 newScores
+				 }
 			 })
-			 .then((updatedPlayer)=>{
-				 return this.changePlayerInfo(updatedPlayer)
+			 .then((playerScore)=>{
+				 console.log('playerdata',playerScore);
+				 return this.changePlayerInfo(playerScore.id,playerScore.newScores)
 			 })
 			 .then(info=>{
 				 console.log('info', info);
@@ -158,11 +162,15 @@ module.exports = function (knex) {
 			 },0)
 		 },
 
-		 changePlayerInfo: function(updatedPlayer){
-			 console.log(updatedPlayer.id_player);
+		 changePlayerInfo: function(id,newScore){
+			 console.log('updatedPlayer',id,newScore);
 			 return knex('players')
-			 .where('players.id_player' , updatedPlayer.id_player)
-			 .update(updatedPlayer)
+			 .where('players.id_player','=', id)
+			 .update({})
+			 .then(data=>{
+				 console.log('changePlayerInfo ', data);
+				 return data
+			 })
 
 		 },
 

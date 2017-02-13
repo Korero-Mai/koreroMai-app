@@ -74,7 +74,7 @@ return db.addPlayer(table, input)
    })
 })
 
-test('adds a new player score | adds a new score to the scoresTable', (t) => {
+test.only('adds a new player score | adds a new score to the scoresTable', (t) => {
    t.plan(4)
  // arrange
 
