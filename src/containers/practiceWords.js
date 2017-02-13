@@ -18,7 +18,7 @@ class PracticeWords extends React.Component {
     return wordsArr.map((word) => {
       if (word === answer) {
         return (
-            <div className='big-music-sound-words'>
+            <div className='note'>
               <audio ref={`${answer}`} >
                 <source src={`${words[word].soundFile}`} preload=''/>
               </audio>
@@ -39,18 +39,7 @@ class PracticeWords extends React.Component {
 
     const dispatch = this.props.dispatch
     const modal = this.props.modal
-    const modalStyle = {
-      content:{
-        top:'50%',
-        left:'50%',
-        right:'auto',
-        bottom:'auto',
-        marginRight:'-50%',
-        transform:'translate(-50%, -50%)'
-      }
-    }
-
-    const level = Number(this.props.params.id)
+        const level = Number(this.props.params.id)
     const activityRoute = 'activity/practice/words/'
 
     return wordsArr.map((word,index)=>{
@@ -58,7 +47,7 @@ class PracticeWords extends React.Component {
         if (word === answer) {
           return (
           <div>
-            <div className="row">
+            <div className='row'>
               <div className="columns">
                 <img src={`${words[word].imageFile}`} onClick={() => this.playSound(word)}/>
                 <audio ref={`${word}`} >
@@ -66,17 +55,17 @@ class PracticeWords extends React.Component {
                 </audio>
               </div>
             </div>
-            <div className="row">
-              <div className="columns" onClick={timeoutModal}>
-                <button onClick={() => this.playSound(word)} className={`listen-sound-words`}>
+            <div className='row'>
+              <div className='columns' onClick={timeoutModal}>
+                <button onClick={() => this.playSound(word)} className='listen-sound-words'>
                   {word}
                 </button>
-                <Modal isOpen={modal} contentLabel='Modal' style={modalStyle}>
-                  <h1>Well done!</h1>
-                    <Modal isOpen={modal} contentLabel='Modal' style={modalStyle}>
-                      <h1>Well done!</h1>
-                      <Link to={activityRoute+1}><button className="button-radius repeat" onClick={() => dispatch({type: 'END_ROUND'})}>Repeat</button></Link><br />
-                      <Link to='activity'><button className="button-radius new-activity" onClick={() => dispatch({type: 'END_ROUND'})}>Choose another activity</button></Link>
+                <Modal isOpen={modal} contentLabel='Modal' >
+                  <div className='correct'>Tika tau - correct!</div>
+                    <Modal isOpen={modal} contentLabel='Modal' >
+                      <div className='correct'>Tika tau - correct!</div>
+                      <Link to={activityRoute+1}><button className='button-radius repeat' onClick={() => dispatch({type: 'END_ROUND'})}>Repeat</button></Link><br />
+                      <Link to='activity'><button className='button-radius new-activity' onClick={() => dispatch({type: 'END_ROUND'})}>Choose another activity</button></Link>
                     </Modal>
                 </Modal>
               </div>
@@ -94,9 +83,9 @@ class PracticeWords extends React.Component {
                   </audio>
                 </div>
               </div>
-              <div className="row">
-                <div className="columns" onClick={() => dispatch({type: 'INCREMENT_WRONGWORDS'})}>
-                  <button onClick={() => this.playSound(word)} className={`listen-sound-words`}>
+              <div className='row'>
+                <div className='columns' onClick={() => dispatch({type: 'INCREMENT_WRONGWORDS'})}>
+                  <button onClick={() => this.playSound(word)} className='listen-sound-words'>
                     {word}
                   </button>
                 </div>
@@ -115,20 +104,20 @@ class PracticeWords extends React.Component {
               </audio>
             </div>
           </div>
-          <div className="row">
-            <div className="columns" onClick={timeoutModal}>
-              <button onClick={() => this.playSound(word)} className={`listen-sound-words`}>
+          <div className='row'>
+            <div className='columns' onClick={timeoutModal}>
+              <button onClick={() => this.playSound(word)} className='listen-sound-words'>
                 {word}
               </button>
-              <Modal isOpen={modal} contentLabel='Modal' style={modalStyle}>
-                <h1>Right on!</h1>
-                <Link to={activityRoute+(level+1)}><button className="button-radius repeat" onClick={() => dispatch({type: 'CLOSE_MODAL'})}>Next one!</button></Link><br />
+              <Modal isOpen={modal} contentLabel='Modal' >
+                <div className='correct'>Tika tau - correct!</div>
+                <Link to={activityRoute+(level+1)}><button className='button-radius repeat' onClick={() => dispatch({type: 'TOGGLE_MODAL'})}>Next one!</button></Link><br />
               </Modal>
             </div>
           </div>
         </div>
         )
-      } else {modal
+      } else {
         return (
           <div>
             <div className="row">
@@ -139,9 +128,9 @@ class PracticeWords extends React.Component {
                 </audio>
               </div>
             </div>
-            <div className="row">
-              <div className="columns" onClick={() => dispatch({type: 'INCREMENT_WRONGWORDS'})}>
-                <button onClick={() => this.playSound(word)} className={`listen-sound-words`}>
+            <div className='row'>
+              <div className='columns' onClick={() => dispatch({type: 'INCREMENT_WRONGWORDS'})}>
+                <button onClick={() => this.playSound(word)} className='listen-sound-words'>
                   {word}
                 </button>
               </div>
@@ -159,28 +148,16 @@ class PracticeWords extends React.Component {
     const activityRoute = 'activity/practice/words/'
     const wordsArr = this.props.practiceWordPage[level].words
     const answer = this.props.practiceWordPage[level].answer
-    const modalStyle = {
-      content:{
-        top:'50%',
-        left:'50%',
-        right:'auto',
-        bottom:'auto',
-        marginRight:'-50%',
-        transform:'translate(-50%, -50%)'
-      }
-    }
 
     if (level === 1) {
       return (
-        <div className='header-words'>
-          <div className="row">
-            <h1>Click ♫ then listen and choose the right one!</h1>
+        <div>
+          <div className='welcome-prac'>
+            Click ♫ Listen then choose the right letter!
           </div>
-          <div className="playBox row align-spaced">
-            <div className="row">
-              <div className="columns">
-                <h1>{this.generateAnswer(wordsArr, answer, words)}</h1>
-              </div>
+          <div className="play-box row align-spaced">
+            <div className='row'>
+              <h1>{this.generateAnswer(wordsArr, answer, words)}</h1>
             </div>
             {this.generateWord(wordsArr, words, answer)}
           </div>
@@ -188,30 +165,26 @@ class PracticeWords extends React.Component {
       )
     } else if (level === 5){
       return (
-        <div className='header-words'>
-          <div className="row">
-            <h1>Click ♫ then listen and choose the right one!</h1>
-          </div>
-          <div className="playBox row align-spaced">
-            <div className="row">
-              <div className="columns">
-                <h1>{this.generateAnswer(wordsArr, answer, words)}</h1>
-              </div>
+        <div>
+        <div className='welcome-prac'>
+          Click ♫ Listen then choose the right letter!
+        </div>
+          <div className='play-box row align-spaced'>
+            <div className='row'>
+              <h1>{this.generateAnswer(wordsArr, answer, words)}</h1>
             </div>
             {this.generateWord(wordsArr, words, answer)}
           </div>
         </div>
       )
     } else return (
-      <div className='header-words'>
-        <div className="row">
-          <h1>Click ♫ then listen and choose the right one!</h1>
-        </div>
-        <div className="playBox row align-spaced">
-          <div className="row">
-            <div className="columns">
-              <h1>{this.generateAnswer(wordsArr, answer, words)}</h1>
-            </div>
+      <div>
+      <div className='welcome-prac'>
+        Click ♫ Listen then choose the right letter!
+      </div>
+        <div className='play-box row align-spaced'>
+          <div className='row'>
+            <h1>{this.generateAnswer(wordsArr, answer, words)}</h1>
           </div>
           {this.generateWord(wordsArr, words, answer)}
         </div>
