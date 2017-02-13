@@ -25,3 +25,15 @@ test('UPDATE_USER | inject fetched user in the state', t => {
     const newState = reducer(initialState.users, input)
     t.deepEqual(newState.users, expectedState)
   })
+
+test('LOGOUT_USER | remove user from the state', t => {
+
+    t.plan(1)
+    
+    const input = {type: 'LOGOUT_USER'}
+
+    const expectedState = {}
+
+    const newState = reducer(initialState.users, input)
+    t.deepEqual(newState.users, expectedState)
+  })
