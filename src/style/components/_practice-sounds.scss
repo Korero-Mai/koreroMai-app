@@ -27,10 +27,10 @@
 
 .note {
   position:absolute;
-    top: 63%;
-    left: 35%;
-    font-size:6em;
-    color: $dark-blue;
+  top: 63%;
+  left: 35%;
+  font-size:6em;
+  color: $dark-blue;
 }
 
 .listen-sound-buttons {
@@ -66,7 +66,7 @@
 
 @include ipadLandscape {
   .welcome-letters {
-    font-size: 6em;
+    font-size: 3em;
     padding: .3em;
   }
 
@@ -83,7 +83,7 @@
   }
   .note {
     position:absolute;
-    top: 63%;
+    top: 70%;
     left: 35%;
     font-size: 2em;
     color: $dark-blue;
