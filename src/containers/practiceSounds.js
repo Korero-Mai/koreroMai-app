@@ -39,12 +39,12 @@ class PracticeSounds extends React.Component {
   //   .send({
   //     player_token: this.props.playerToken,
   //     wrongSounds: this.props.wrongSounds,
-//       wrongWords: this.props.wrongWords
-//      })
-//      .end(err, data){
-        // if (err) return console.log('error!')
-        // this.playSound(letter)}
-        //}
+  //     wrongWords: this.props.wrongWords
+  //    })
+  //    .end(err, data){
+  //       if (err) return console.log('error!')
+  //       this.playSound(letter)}
+  //       }
   // }>
 
   generateLetter(lettersArr,letters, answer){

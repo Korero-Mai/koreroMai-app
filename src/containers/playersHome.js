@@ -1,6 +1,7 @@
 const React = require('react')
 const { connect } = require('react-redux')
 const { Link } = require('react-router')
+const request = require('superagent')
 
 class PlayersHome extends React.Component {
   render() {
@@ -19,30 +20,32 @@ class PlayersHome extends React.Component {
           <div className='row main-button'>
             <div className='columns small-centered small-12 medium-6 large-4'>
               <input type="text" placeholder="Enter token" ref="token"/>
-                <button className="play-button" onClick={() => {
-                      this.props.dispatch({type:'UPDATE_PLAYERTOKEN', payload: this.refs.token.value})
-                  }}>
-                    PLAY!
-                  </button>
+              <button className="play-button"
+                onClick={() => {
+                  request.post('api/v1/players/login')
+                    .send({'player_token':this.refs.token.value})
+                    .end((err, data) => {
+                      if (err) return console.log('error!')
+                      if (data.login){
+                        props.dispatch({type:'UPDATE_PLAYERTOKEN', payload: this.refs.token.value})
+                        this.props.router.push('/activity')
+                      } else {
+                        this.props.router.push('/')
+                      }
+                    })
+                  }
+                }>
+                PLAY!
+              </button>
             </div>
           </div>
         </div>
       )
   }
 }
+  // <button className="play-button" onClick={() => {
+  //       this.props.dispatch({type:'UPDATE_PLAYERTOKEN', payload: this.refs.token.value})
+  //   }}>
 
-// <button className="play-button" onClick={() => {
-//     request.post('api/v1/players/login')
-//     .send(this.refs.token.value)
-//     .end((err, data) => {
-//       if (err) return console.log('error!')
-        // if (data.login){
-  //         props.dispatch({type:'UPDATE_PLAYERTOKEN', payload: this.refs.token.value})
-            // this.props.router.push('/activity')
-        // } else {
-          // this.props.router.push('/')
-      // }
-//     })
-//   }}>
 
 module.exports = connect((state) => state)(PlayersHome)
