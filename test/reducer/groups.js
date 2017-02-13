@@ -5,7 +5,7 @@ const reducer = require('../../src/reducers')
 const request = require('superagent')
 
 
-test.only('UPDATE_GROUPS | inject fetched groups in the state', t => {
+test('UPDATE_GROUPS | inject fetched groups in the state', t => {
 
     t.plan(1)
 
@@ -34,7 +34,7 @@ test.only('UPDATE_GROUPS | inject fetched groups in the state', t => {
        group_name: 'group1' }
      ]
     }
-  
+
 
     const newState = reducer(initialState.groups, input)
     t.deepEqual(newState.groups, expectedState)
