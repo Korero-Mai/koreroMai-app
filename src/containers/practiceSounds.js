@@ -78,38 +78,33 @@ class PracticeSounds extends React.Component {
       } else if (letter === answer) {
         return (
         <div>
-          <div>
-            <audio ref={`${letter}`} >
+
+          <audio ref={`${letter}`} >
               <source src={`${letters[letter].soundFile}`} preload=''/>
-            </audio>
+          </audio>
+
+          <div onClick={timeoutModal}>
+            <button onClick={() => this.playSound(letter)} className='listen-sound-buttons'>
+              {letter}
+            </button>
+            <Modal isOpen={modal} contentLabel='Modal' className='prac-sounds-modal' >
+              <div className='correct'>Tika tau - correct!</div>
+              <Link to={activityRoute+(level+1)}><button className='next-letter' onClick={() => dispatch({type: 'TOGGLE_MODAL'})}>Next one!</button></Link><br />
+            </Modal>
           </div>
-          <div>
-            <div onClick={timeoutModal}>
-              <button onClick={() => this.playSound(letter)} className='listen-sound-buttons'>
-                {letter}
-              </button>
-              <Modal isOpen={modal} contentLabel='Modal' className='prac-sounds-modal' >
-                <div className='correct'>Tika tau - correct!</div>
-                <Link to={activityRoute+(level+1)}><button className='next-letter' onClick={() => dispatch({type: 'TOGGLE_MODAL'})}>Next one!</button></Link><br />
-              </Modal>
-            </div>
-          </div>
+
         </div>
         )
       } else {
         return (
           <div>
-            <div>
-              <audio ref={`${letter}`} >
-                <source src={`${letters[letter].soundFile}`} preload=''/>
-              </audio>
-            </div>
-            <div>
-              <div onClick={() => dispatch({type: 'INCREMENT_WRONGSOUNDS'})}>
-                <button onClick={() => this.playSound(letter)} className='listen-sound-buttons'>
-                  {letter}
-                </button>
-              </div>
+            <audio ref={`${letter}`} >
+              <source src={`${letters[letter].soundFile}`} preload=''/>
+            </audio>
+            <div onClick={() => dispatch({type: 'INCREMENT_WRONGSOUNDS'})}>
+              <button onClick={() => this.playSound(letter)} className='listen-sound-buttons'>
+                {letter}
+              </button>
             </div>
           </div>
         )
@@ -132,9 +127,7 @@ class PracticeSounds extends React.Component {
             Click ♫ Listen then choose the right letter!
           </div>
           <div className='play-box-letters'>
-            <div className='row'>
-              <h1>{this.generateAnswer(lettersArr, answer, letters)}</h1>
-            </div>
+            {this.generateAnswer(lettersArr, answer, letters)}
             {this.generateLetter(lettersArr, letters, answer)}
           </div>
         </div>
@@ -146,9 +139,7 @@ class PracticeSounds extends React.Component {
             Click ♫ Listen then choose the right letter!
           </div>
           <div className='play-box-letters'>
-            <div className='row'>
-              <h1>{this.generateAnswer(lettersArr, answer, letters)}</h1>
-            </div>
+            {this.generateAnswer(lettersArr, answer, letters)}
             {this.generateLetter(lettersArr, letters, answer)}
           </div>
         </div>
@@ -159,13 +150,11 @@ class PracticeSounds extends React.Component {
             Click ♫ Listen then choose the right letter!
           </div>
           <div className='play-box-letters'>
-            <div>
-            <h1>{this.generateAnswer(lettersArr, answer, letters)}</h1>
-            </div>
-          {this.generateLetter(lettersArr, letters, answer)}
+            {this.generateAnswer(lettersArr, answer, letters)}
+            {this.generateLetter(lettersArr, letters, answer)}
+          </div>
         </div>
-      </div>
-    )
+      )
   }
 }
 
