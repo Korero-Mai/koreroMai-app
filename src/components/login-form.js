@@ -32,12 +32,11 @@ module.exports = class LoginForm extends React.Component {
   }
   render() {
     return (
-      <div className='container'>
-        <h3>Login</h3>
-          <div className='container__footer'>
+      <div>
+        <div className='login-header'>Login</div>
+          <div className='login-container'>
             <div className='row'>
               <div className='columns small-centered small-10 medium-6 large-4'>
-                <div>
                   <form method='post' action='/login'>
                     <input type='text' className='email' ref='email' placeholder='Email' />
                     <input type='password' className='password' ref='password' placeholder='Password' />
@@ -45,11 +44,10 @@ module.exports = class LoginForm extends React.Component {
                       Login
                     </button>
                   </form>
-                </div>
               </div>
             </div>
           </div>
-        </div>
+      </div>
     )
   }
 }
