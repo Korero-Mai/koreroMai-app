@@ -24,7 +24,7 @@ class PracticeSounds extends React.Component {
                 <audio ref={`${answer}`} >
                   <source src={`${letters[item].soundFile}`} preload=''/>
                 </audio>
-                <h1 onClick={() => this.playSound(item)}>♫</h1>
+                <div className='note' onClick={() => this.playSound(item)}>♫</div>
               </div>
             </div>
           </div>
@@ -147,7 +147,7 @@ class PracticeSounds extends React.Component {
     if (level === 1) {
       return (
         <div>
-          <div className='welcome-prac'>
+          <div className='welcome-letters'>
             Click ♫ Listen then choose the right letter!
           </div>
           <div className='play-box row align-spaced'>
@@ -161,7 +161,7 @@ class PracticeSounds extends React.Component {
     } else if (level === 5){
       return (
         <div>
-          <div className='welcome-prac'>
+          <div className='welcome-letters'>
             Click ♫ Listen then choose the right letter!
           </div>
           <div className='play-box row align-spaced'>
@@ -174,7 +174,7 @@ class PracticeSounds extends React.Component {
       )
     } else return (
         <div>
-          <div className='welcome-prac'>
+          <div className='welcome-letters'>
             Click ♫ Listen then choose the right letter!
           </div>
           <div className='play-box row align-spaced'>
