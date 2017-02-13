@@ -3,7 +3,7 @@
   font-family: 'Opens Sans', sans-serif;
   font-size: 2em;
   color: white;
-  height: 3em;
+  height: 4em;
   position: absolute;
   right: 0;
   bottom: 0;
@@ -12,34 +12,34 @@
   align-items: center;
   justify-content: center;
 }
-
-@include smallwindow {
-  .footer {
-    font-size: 1.2em;
-    height: 2em;
-    padding-top: 8px;
-  }
-}
-
-@include tablet {
-  .footer {
-    font-size: 1.4em;
-    height: 2em;
-  }
-}
-
-@include smalldesk {
-  .footer {
-    font-size: 1.3em;
-    height: 1.7em;
-    padding-top: 9px;
-  }
-}
-
-@include largedesk {
-  .footer {
-    font-size: 1.3em;
-    height: 1.7em;
-    padding-top: 9px;
-  }
-}
+//
+// @include smallwindow {
+//   .footer {
+//     font-size: 1.2em;
+//     height: 2em;
+//     padding-top: 8px;
+//   }
+// }
+//
+// @include tablet {
+//   .footer {
+//     font-size: 1.4em;
+//     height: 2em;
+//   }
+// }
+//
+// @include smalldesk {
+//   .footer {
+//     font-size: 1.3em;
+//     height: 1.7em;
+//     padding-top: 9px;
+//   }
+// }
+//
+// @include largedesk {
+//   .footer {
+//     font-size: 1.3em;
+//     height: 1.7em;
+//     padding-top: 9px;
+//   }
+// }
