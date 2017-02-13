@@ -29,21 +29,19 @@ module.exports = class RegisterForm extends React.Component {
   }
   render() {
     return (
-      <div className='container'>
-        <h3>Register</h3>
-            <div className="container__footer">
-              <div className='row'>
-                <div className='columns small-centered small-10 medium-6 large-4'>
-                  <form method='post' action='/register'>
-                     <input type='text' className='username' ref='username' placeholder='User Name' />
-                     <input type='email' className='email' ref='email' placeholder='Email' />
-                     <input type='password' className='password' ref='password' placeholder='Password' />
-                     <input type='password' className='confirmPassword' ref='confirmPassword' placeholder='Confirm password' />
-                     <button  className='button expanded hollow' onClick={this.handleSubmit.bind(this)}>
-                      Create Account
-                     </button>
-                  </form>
-                </div>
+      <div>
+        <div className='register-header'>Register</div>
+            <div className='register-container'>
+              <div className='columns small-centered small-10 medium-6 large-4'>
+                <form method='post' action='/register'>
+                  <input type='text' className='username' ref='username' placeholder='User Name' />
+                  <input type='email' className='email' ref='email' placeholder='Email' />
+                  <input type='password' className='password' ref='password' placeholder='Password' />
+                  <input type='password' className='confirmPassword' ref='confirmPassword' placeholder='Confirm password' />
+                  <button  className='button expanded hollow' onClick={this.handleSubmit.bind(this)}>
+                    Create Account
+                  </button>
+                </form>
               </div>
             </div>
       </div>

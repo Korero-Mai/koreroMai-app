@@ -1,15 +1,38 @@
-.container {
+.top-bar {
+  margin: 0;
+}
+.top-bar-left {
+  margin: 0;
+}
+.top-bar-right {
+  margin: 0;
+}
+
+.register-container {
   background-color: $light-grey;
   border-radius: 5px;
   padding: 0;
-  margin-bottom: 8em;
-  margin-top: 2em;
+  margin-bottom: 1em;
+  margin-top: .5em;
+}
+.login-container {
+  background-color: $light-grey;
+  border-radius: 5px;
+  padding: 0;
+  margin-bottom: 1em;
+  margin-top: .5em;
 }
 
-h3 {
+.register-header {
   color: $dark-blue;
-  font-size: 5rem;
-  margin-bottom: 0;
+  font-family: 'Muli', cursive;
+  font-size: 3em;
+}
+
+.login-header {
+  color: $dark-blue;
+  font-family: 'Muli', cursive;
+  font-size: 3em;
 }
 
 .email {
@@ -33,14 +56,32 @@ h3 {
 }
 
 @include ipadPortrait {
-  h3 {
-    font-size: 3em;
+  .register-container {
+    background-color: $light-grey;
+    border-radius: 5px;
+    padding: 0;
+    margin-bottom: 1em;
+    margin-top: .5em;
   }
-  .container {
-    margin-bottom: 6em;
-    margin-top: 5em;
+  .login-container {
+    background-color: $light-grey;
+    border-radius: 5px;
+    padding: 0;
+    margin-bottom: 1em;
+    margin-top: .5em;
   }
 
+  .register-header {
+    color: $dark-blue;
+    font-family: 'Muli', cursive;
+    font-size: 3em;
+  }
+
+  .login-header {
+    color: $dark-blue;
+    font-family: 'Muli', cursive;
+    font-size: 3em;
+  }
   .email {
     font-size: 1.5em;
     height: 2em;
@@ -63,13 +104,35 @@ h3 {
 }
 
 @include ipadLandscape {
-  h3 {
-    font-size:1.5em;
+  .register-container {
+    background-color: $light-grey;
+    border-radius: 5px;
+    padding: 0;
     margin-bottom: 1em;
+    margin-top: .5em;
   }
-  form {
-  margin: -25px;
+  .login-container {
+    background-color: $light-grey;
+    border-radius: 5px;
+    padding: 0;
+    margin-bottom: 0;
+    margin-top: .5em;
   }
+
+  .register-header {
+    color: $dark-blue;
+    font-family: 'Muli', cursive;
+    font-size: 2em;
+    margin-top:0;
+  }
+
+  .login-header {
+    color: $dark-blue;
+    font-family: 'Muli', cursive;
+    font-size: 2em;
+    margin-top: 0;
+  }
+
   .email {
     font-size: 1em;
     height: 1.7em;
