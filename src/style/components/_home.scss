@@ -14,20 +14,22 @@
   font-family: 'Muli', sans-serif;
   text-decoration: none;
   color: black;
-  margin: 100px 0 0;
+  margin-top: 2em;
 }
 
 .h1-home {
-  font-family: 'Berkshire Swash', cursive;
+  font-family: 'Life Savers', cursive;
   font-size: 5em;
   font-weight: bold;
   text-align: center;
+  margin: auto;
 }
 
 .h3-home {
   font-family: 'Itim', cursive;
   font-size: 4em;
   text-align: center;
+  margin: auto;
 }
 
 .grass {
@@ -73,14 +75,11 @@
   }
 }
 
-// @include desklap {
-//   .h1-home {
-//     font-size: 4.5em;
-//   }
-//   .h3-home {
-//     font-size: 3.5em;
-//   }
-//   .play-button {
-//     font-size: 4em;
-//   }
-// }
+@include desklap {
+  .homepage-div {
+    margin-top: 5%;
+  }
+  .play-button {
+    font-size: 3em;
+  }
+}
