@@ -44,9 +44,5 @@ class PlayersHome extends React.Component {
       )
   }
 }
-  // <button className="play-button" onClick={() => {
-  //       this.props.dispatch({type:'UPDATE_PLAYERTOKEN', payload: this.refs.token.value})
-  //   }}>
-
 
 module.exports = connect((state) => state)(PlayersHome)
