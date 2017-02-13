@@ -25,14 +25,12 @@
   padding: .3em;
 }
 
-.note {
+.note-word {
   position:absolute;
-    top: 63%;
-    left: 35%;
-    h1 {
-      font-size: 7em;
-      color: $dark-blue;
-    }
+  top: 63%;
+  left: 35%;
+  font-size: 7em;
+  color: $dark-blue;
 }
 
 .listen-sound-words {
@@ -53,6 +51,14 @@
   box-shadow: 0px 1px 0px 0px;
 }
 
-.listen-sound-words:hover{
+.listen-sound-words:hover {
    background-color: #cc9bfd;
+}
+
+@include ipadLandscape {
+  .welcome-prac {
+    font-size: 3em;
+    font-family: 'Itim', sans-serif;
+    padding: .3em;
+  }
 }

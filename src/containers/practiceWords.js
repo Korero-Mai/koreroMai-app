@@ -18,11 +18,11 @@ class PracticeWords extends React.Component {
     return wordsArr.map((word) => {
       if (word === answer) {
         return (
-            <div className='note'>
+            <div>
               <audio ref={`${answer}`} >
                 <source src={`${words[word].soundFile}`} preload=''/>
               </audio>
-              <h1 onClick={() => this.playSound(word)}>♫</h1>
+              <div className='note-word' onClick={() => this.playSound(word)}>♫</div>
             </div>
         )
       }
