@@ -1,16 +1,7 @@
 
 
-.correct {
-  font-size: 6em;
-  margin: .5em;
-  font-family: 'Itim', cursive;
-}
 
-.next-letter {
-  background-color: $light-blue;
-  font-size: 6em;
-  padding: .4em;
-}
+
 
 .welcome-letters {
   font-size: 4em;
@@ -48,13 +39,37 @@
    background-color: #cc9bfd;
 }
 
-.modal {
-  top: 20%;
-  left: 50%;
-  right: auto;
-  bottom: auto;
-  margin-right: -50%;
-  transform: translate(-50%, -50%);
+.prac-sounds-modal {
+  padding-top: 3em;
+  margin-left: 10%;
+  margin-top: 5%;
+  min-height: 30%;
+  min-width: 70%;
+  position: fixed;
+  top: 10%;
+  background-color: $light-grey;
+  .repeat {
+    background-color: $light-blue;
+    font-size: 3.5em;
+    padding: .4em;
+    margin: 1em 0 0;
+  }
+  .new-activity {
+    background-color: $light-blue;
+    font-size: 3.5em;
+    padding: .4em;
+    margin: 1em;
+  }
+  .correct {
+    font-size: 4em;
+    margin: .5em;
+    font-family: 'Itim', cursive;
+  }
+  .next-letter {
+    background-color: $light-blue;
+    font-size: 5em;
+    padding: .4em;
+  }
 }
 
 
