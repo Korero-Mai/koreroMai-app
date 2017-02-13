@@ -1,17 +1,11 @@
-@mixin largedesk {
-  @media (min-width: 1151px) {
+@mixin ipad {
+  @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
     @content;
   }
 };
 
-@mixin smalldesk {
-  @media (min-width: 980px) and (max-width: 1150px) {
-    @content;
-  }
-};
-
-@mixin tablet {
-  @media (min-width: 768px) and (max-width: 979px) {
+@mixin desklap {
+  @media only screen  and (min-width : 1224px) {
     @content;
   }
 };

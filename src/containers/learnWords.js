@@ -17,18 +17,14 @@ class LearnWords extends React.Component {
   generateWord(wordsArr,words){
       return wordsArr.map((word,index)=>{
         return (
-          <div className='learn-words'>
-            <div className='row'>
-              <div className='colums small-centered small-12 medium-6 large-4'>
-                <audio ref={`${index}`} >
-                  <source src={`${words[word].soundFile}`} preload=''/>
-                </audio>
-                <img src={`${words[word].imageFile}`} onClick={() => this.playSound(index)}/>
-                  <button onClick={() => this.playSound(index)} className={`button`}>
-                  {word}
-                </button>
-              </div>
-            </div>
+          <div className='row'>
+            <audio ref={`${index}`} >
+              <source src={`${words[word].soundFile}`} preload=''/>
+            </audio>
+            <img src={`${words[word].imageFile}`} />
+            <button onClick={() => this.playSound(index)} className='lwordbutton'>
+              {word}
+            </button>
           </div>
         )
       })
@@ -40,23 +36,14 @@ class LearnWords extends React.Component {
       const level = Number(this.props.params.id)
       const activityRoute = 'activity/learn/words/'
       const wordsArr = this.props.learnWordPage[level]
-      const modalStyle = {
-        content:{
-          top:'50%',
-          left:'50%',
-          right:'auto',
-          bottom:'auto',
-          marginRight:'-50%',
-          transform:'translate(-50%, -50%)'
-        }
-      }
 
       if (level === 1) {
         return (
-
           <div>
-            <h1>Learn how to pronounce Te Reo !</h1>
-            <div className="playBox">
+            <div className='welcome'>
+              Learn how to pronounce Te Reo!
+            </div>
+            <div className="play-box">
               {this.generateWord(wordsArr, words)}
               <div className='row'>
                 <div className='colums small-centered small-10 medium-6 large-4'>
@@ -66,31 +53,36 @@ class LearnWords extends React.Component {
               </div>
             </div>
           </div>
-
         )
       } else if (level === 5){
         return (
           <div>
-            <h1>Learn how to pronounce Te Reo !</h1>
-              <div className="playBox">
-                {this.generateWord(wordsArr, words)}
-                <div>
-                  <Link to={activityRoute+(level-1)}><button className="last-back">Back</button></Link>
-                  <button className="finish" onClick={() => dispatch({type: 'TOGGLE_MODAL'})}>Finish!</button>
-                  <Modal isOpen={modal} contentLabel='Modal' style={modalStyle}>
-                    <h1>Well done!</h1>
-                    <Link to={activityRoute+1}><button className="button-radius repeat" onClick={() => dispatch({type: 'END_ROUND'})}>Repeat</button></Link><br />
-                    <Link to='activity'><button className="button-radius new-activity" onClick={() => dispatch({type: 'END_ROUND'})}>Choose another activity</button></Link>
-                  </Modal>
-                </div>
-              </div>
+            <div className='welcome'>
+              Learn how to pronounce Te Reo!
             </div>
+
+            <div className='play-box'>
+              {this.generateWord(wordsArr, words)}
+              <div>
+                <Link to={activityRoute+(level-1)}><button className="last-back">Back</button></Link>
+                <button className="finish" onClick={() => dispatch({type: 'TOGGLE_MODAL'})}>Finish!</button>
+                <Modal isOpen={modal} contentLabel='Modal'>
+                  <h1>Well done!</h1>
+                  <Link to={activityRoute+1}><button className="lwordbutton repeat" onClick={() => dispatch({type: 'END_ROUND'})}>Repeat</button></Link><br />
+                  <Link to='activity'><button className="lwordbutton new-activity" onClick={() => dispatch({type: 'END_ROUND'})}>Choose another activity</button></Link>
+                </Modal>
+              </div>
+
+            </div>
+          </div>
         )
       } else return (
         <div>
-          <h1>Learn how to pronounce Te Reo !</h1>
+          <div className='welcome'>
+            Learn how to pronounce Te Reo!
+          </div>
           <div>
-            <div className="playBox">
+            <div className="play-box">
               {this.generateWord(wordsArr, words)}
             </div>
             <div className='row'>
