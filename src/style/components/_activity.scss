@@ -1,3 +1,11 @@
+.activity-div {
+  margin-top: 10%;
+}
+
+.main {
+  width: 100%;
+}
+
 .choose {
   border-radius: 5px;
   background-color: $red;
@@ -53,16 +61,16 @@
 }
 
 
-// @include smalldesk {
-//   .h3-choose {
-//     font-size: 3em;
-//   }
-//   .choose {
-//     font-size: 2em;
-//   }
-// }
-//
-// @include tablet {
+@include ipad {
+  .h3-choose {
+    font-size: 2.5em;
+  }
+  .choose {
+    font-size: 1.7em;
+  }
+}
+
+// @include desklap {
 //   .h3-choose {
 //     font-size: 2.5em;
 //   }

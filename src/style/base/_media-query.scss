@@ -1,34 +1,17 @@
-@mixin largedesk {
-  @media (min-width: 1151px) {
+@mixin ipad {
+  @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
     @content;
   }
 };
 
-@mixin smalldesk {
-  @media (min-width: 980px) and (max-width: 1150px) {
+@mixin desklap {
+  @media only screen  and (min-width : 1224px) {
     @content;
   }
 };
 
-@mixin tablet {
-  @media (min-width: 768px) and (max-width: 979px) {
-    @content;
-  }
-};
 
-/*============================================================
- 	Mobile (Portrait) Design for a width of 320px
- ==============================================================*/
-
- // @media only screen and (max-width: 767px) {
- //     .button-radius {
- //       padding: 5px 5px;;
- //     }
- // }
- //
- // /*============================================================
- // Mobile (Landscape) Design for a width of 480px
- // ==============================================================*/
- //
- // @media only screen and (min-width: 480px) and (max-width: 767px) {
+ // /* Smartphones (portrait and landscape) ----------- */
+ // @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+ // /* Styles */
  // }
