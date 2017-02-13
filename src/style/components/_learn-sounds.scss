@@ -3,14 +3,15 @@
   width: 80%;
   border: solid 5px;
   border-radius: 4%;
-  margin-left: 5em;
+  margin-left: 5.5em;
   margin-top: 5em;
   display: flex;
   align-items: center;
+  justify-content: center;
   height: 30em;
 }
 
-.welcome {
+.welcome-ll {
   font-size: 3em;
   font-family: 'Itim', sans-serif;
   margin-top: 2em;
@@ -23,7 +24,7 @@
   padding: 20px 25px;
   font-size: 5em;
   font-family: 'Muli', sans-serif;
-  margin: 0;
+  margin: .5em;
   text-decoration: none;
   color: black;
 }
@@ -47,7 +48,7 @@
   text-decoration: none;
   color: black;
   position:absolute;
-    top: 70%;
+    top: 60%;
     left: 20%;
 }
 
@@ -71,7 +72,7 @@
   text-decoration: none;
   color: black;
   position:absolute;
-    top: 70%;
+    top: 60%;
     left: 60%;
 }
 
@@ -95,7 +96,7 @@
   text-decoration: none;
   color: black;
   position:absolute;
-    top: 70%;
+    top: 60%;
     left: 60%;
 }
 
@@ -119,7 +120,7 @@
   text-decoration: none;
   color: black;
   position:absolute;
-    top: 70%;
+    top: 60%;
     left: 20%;
 }
 
@@ -143,7 +144,7 @@
   text-decoration: none;
   color: black;
   position:absolute;
-    top: 70%;
+    top: 60%;
     left: 20%;
 }
 
@@ -167,7 +168,7 @@
   text-decoration: none;
   color: black;
   position:absolute;
-    top: 70%;
+    top: 60%;
     left: 60%;
 }
 
@@ -203,7 +204,7 @@
 
 
 @include ipadPortrait {
-  .welcome {
+  .welcome-ll {
     font-size: 2.5em;
     margin-bottom: 1em;
   }
@@ -238,21 +239,18 @@
   .play-box-ll {
     margin-left: 5em;
     margin-top: 2em;
-    height: 15em;
+    height: 20em;
   }
 
-  .welcome {
-    font-size: 1em;
-    font-family: 'Itim', sans-serif;
+  .welcome-ll {
+    font-size: 2em;
     margin-top: .5em;
   }
 
   .button-radius {
     font-size: 3.5em;
-    font-family: 'Muli', sans-serif;
     margin: 0;
-    text-decoration: none;
-    color: black;
+    min-width: 2em;
   }
 
   .learn-sounds-modal {
@@ -262,17 +260,13 @@
     margin-top: 0;
     min-height: 40%;
     min-width: 70%;
-    position: fixed;
     top: 10%;
-    background-color: $light-grey;
-    .repeat {
-      background-color: $light-blue;
+      .repeat {
       font-size: 2em;
       padding: .4em;
       margin: 0;
     }
     .new-activity {
-      background-color: $light-blue;
       font-size: 2em;
       padding: .4em;
       margin: 1em 0 0;
@@ -281,55 +275,114 @@
   .first-back-ll {
     font-size: 1.5em;
     margin: 4px 2px;
-    text-decoration: none;
-    color: black;
-    position:absolute;
     top: 75%;
     left: 20%;
   }
   .last-back-ll {
     font-size: 1.5em;
     margin: 4px 2px;
-    text-decoration: none;
-    color: black;
-    position:absolute;
     top: 75%;
     left: 20%;
   }
   .nav-back-ll {
     font-size: 1.5em;
     margin: 4px 2px;
-    text-decoration: none;
-    color: black;
-    position:absolute;
     top: 75%;
     left: 20%;
   }
   .first-next-ll {
     font-size: 1.5em;
     margin: 4px 2px;
-    text-decoration: none;
-    color: black;
-    position:absolute;
     top: 75%;
     left: 60%;
   }
   .nav-next-ll {
     font-size: 1.5em;
     margin: 4px 2px;
-    text-decoration: none;
-    color: black;
-    position:absolute;
     top: 75%;
     left: 60%;
   }
   .finish-ll {
     font-size: 1.5em;
     margin: 4px 2px;
-    text-decoration: none;
-    color: black;
-    position:absolute;
     top: 75%;
     left: 60%;
+  }
+}
+
+@include desklap {
+  .play-box-ll {
+    margin-left: 8em;
+    margin-top: 1.5em;
+    height: 20em;
+  }
+
+  .welcome-ll {
+    font-size: 3em;
+    margin-top: .5em;
+    margin-bottom: 1em;
+  }
+
+  .button-radius {
+    font-size: 3.5em;
+    margin: 1em;
+    min-width: 2em;
+    align-content: center;
+  }
+
+  .learn-sounds-modal {
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin-left: 15%;
+    margin-top: 0;
+    min-height: 40%;
+    min-width: 70%;
+    top: 10%;
+      .repeat {
+      font-size: 2em;
+      padding: .4em;
+      margin: 0;
+    }
+    .new-activity {
+      font-size: 2em;
+      padding: .4em;
+      margin: 1em 0 0;
+    }
+  }
+  .first-back-ll {
+    font-size: 1.5em;
+    margin: 4px 2px;
+    top: 70%;
+    left: 30%;
+  }
+  .last-back-ll {
+    font-size: 1.5em;
+    margin: 4px 2px;
+    top: 70%;
+    left: 30%;
+  }
+  .nav-back-ll {
+    font-size: 1.5em;
+    margin: 4px 2px;
+    top: 70%;
+    left: 30%;
+  }
+  .first-next-ll {
+    font-size: 1.5em;
+    margin: 4px 2px;
+    top: 70%;
+    left: 55%;
+  }
+  .nav-next-ll {
+    font-size: 1.5em;
+    margin: 4px 2px;
+    top: 70%;
+    left: 55%;
+  }
+  .finish-ll {
+    font-size: 1.5em;
+    margin: 4px 2px;
+    top: 70%;
+    left: 55%;
   }
 }

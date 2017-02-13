@@ -15,53 +15,87 @@ class LearnSounds extends React.Component {
     if (level === 1) {
       return (
         <div>
-          <div className='welcome'>
+
+          <div className='welcome-ll'>
             Learn how to pronounce Te Reo!
           </div>
+
           <div className='play-box-ll'>
+
             {this.generateLetter(lettersArr, letters)}
-            <div className='row'>
-              <div className='columns small-centered small-10 medium-6 large-4'>
-                <Link to='activity'><button className='first-back-ll'>Back</button></Link>
-                <Link to={activityRoute+(level+1)}><button className='first-next-ll'>Next</button></Link>
-              </div>
+
+            <div>
+              <Link to='activity'>
+                <button className='first-back-ll'>
+                  Back
+                </button>
+              </Link>
+
+              <Link to={activityRoute+(level+1)}>
+                <button className='first-next-ll'>
+                  Next
+                </button>
+              </Link>
             </div>
+
           </div>
+
         </div>
       )
     } else if (level === 5){
       return (
         <div>
-          <div className='welcome'>
+
+          <div className='welcome-ll'>
             Learn how to pronounce Te Reo!
           </div>
+
           <div className='play-box-ll'>
             {this.generateLetter(lettersArr, letters)}
+
             <div>
-              <Link to={activityRoute+(level-1)}><button className='last-back-ll'>Back</button></Link>
-              <button className='finish-ll' onClick={() => dispatch({type: 'TOGGLE_MODAL'})}>Finish!</button>
+              <Link to={activityRoute+(level-1)}>
+                <button className='last-back-ll'>
+                  Back
+                </button>
+              </Link>
+
+              <button className='finish-ll' onClick={() => dispatch({type: 'TOGGLE_MODAL'})}>
+                Finish!
+              </button>
+
               <Modal isOpen={modal} contentLabel='Modal' className='learn-sounds-modal'>
-              <h1>Tumeke! Awesome!</h1>
-              <Link to={activityRoute+1}><button className="button-radius repeat" onClick={() => dispatch({type: 'END_ROUND'})}>Repeat</button></Link><br />
-              <Link to='activity'><button className="button-radius new-activity" onClick={() => dispatch({type: 'END_ROUND'})}>Choose another activity</button></Link>
+
+                <h1>Tumeke! Awesome!</h1>
+
+                <Link to={activityRoute+1}>
+                  <button className="button-radius repeat" onClick={() => dispatch({type: 'END_ROUND'})}>
+                    Repeat
+                  </button>
+                </Link><br />
+
+                <Link to='activity'>
+                  <button className="button-radius new-activity" onClick={() => dispatch({type: 'END_ROUND'})}>
+                    Choose another activity
+                  </button>
+                </Link>
               </Modal>
+
             </div>
           </div>
         </div>
       )
     } else return (
       <div>
-        <div className='welcome'>
+        <div className='welcome-ll'>
           Learn how to pronounce Te Reo!
         </div>
         <div className='play-box-ll'>
           {this.generateLetter(lettersArr, letters)}
         </div>
-        <div className='row'>
-          <div className='columns small-centered small-10 medium-6 large-4'>
-            <Link to={activityRoute+(level-1)}><button className='nav-back-ll'>Back</button></Link>
-            <Link to={activityRoute+(level+1)}><button className='nav-next-ll'>Next</button></Link>
-          </div>
+        <div>
+          <Link to={activityRoute+(level-1)}><button className='nav-back-ll'>Back</button></Link>
+          <Link to={activityRoute+(level+1)}><button className='nav-next-ll'>Next</button></Link>
         </div>
       </div>
     )
@@ -79,15 +113,13 @@ class LearnSounds extends React.Component {
   generateLetter(lettersArr,letters){
       return lettersArr.map((letter,index)=>{
         return (
-          <div className='row'>
-            <div className='columns small-centered small-12 medium-6 large-4'>
+          <div>
               <audio ref={`${index}`} >
                 <source src={`${letters[letter].soundFile}`} preload=''/>
               </audio>
               <button onClick={() => this.playSound(index)} className='button-radius'>
                 {letter}
               </button>
-          </div>
         </div>
         )
       })
