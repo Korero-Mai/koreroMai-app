@@ -47,8 +47,8 @@ class LearnWords extends React.Component {
               {this.generateWord(wordsArr, words)}
               <div>
 
-                <Link to='activity'><button className="first-back">Back</button></Link>
-                <Link to={activityRoute+(level+1)}><button className="first-next">Next</button></Link>
+                <Link to='activity'><button className="first-back">◄</button></Link>
+                <Link to={activityRoute+(level+1)}><button className="first-next">►</button></Link>
 
               </div>
             </div>
@@ -64,8 +64,8 @@ class LearnWords extends React.Component {
             <div className='play-box'>
               {this.generateWord(wordsArr, words)}
               <div>
-                <Link to={activityRoute+(level-1)}><button className="last-back">Back</button></Link>
-                <button className="finish" onClick={() => dispatch({type: 'TOGGLE_MODAL'})}>Finish!</button>
+                <Link to={activityRoute+(level-1)}><button className="last-back">◄</button></Link>
+                <button className="finish" onClick={() => dispatch({type: 'TOGGLE_MODAL'})}>★</button>
                 <Modal isOpen={modal} contentLabel='Modal' className='learn-words-modal'>
                   <h1>Tumeke! Awesome!</h1>
                   <Link to={activityRoute+1}><button className="lwordbutton repeat" onClick={() => dispatch({type: 'END_ROUND'})}>Repeat</button></Link><br />
@@ -87,8 +87,8 @@ class LearnWords extends React.Component {
             </div>
             <div>
               <div>
-                <Link to={activityRoute+(level-1)}><button className="nav-back">Back</button></Link>
-                <Link to={activityRoute+(level+1)}><button className="nav-next">Next</button></Link>
+                <Link to={activityRoute+(level-1)}><button className="nav-back">◄</button></Link>
+                <Link to={activityRoute+(level+1)}><button className="nav-next">►</button></Link>
               </div>
             </div>
           </div>
