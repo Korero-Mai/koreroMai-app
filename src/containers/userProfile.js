@@ -9,8 +9,8 @@ function UserProfile(props) {
   return (
     <div>
       <div className="row">
-        <UserInfo />
-        <Groups />
+        <UserInfo id={props.params.id}/>
+        <Groups id={props.params.id}/>
       </div>
       <div className="row">
       </div>
