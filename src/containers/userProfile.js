@@ -4,6 +4,7 @@ const Groups = require('../components/groups')
 const GroupInfo = require('../components/selectedGroupInfo')
 const UserInfo = require('../components/userInfo')
 const EditUserInfo = require('../components/editUserInfo')
+const AddPlayer = require('../components/addplayer')
 
 function UserProfile(props) {
 
@@ -20,6 +21,7 @@ function UserProfile(props) {
         </div>
       </div>
       <div className="row">
+        <AddPlayer />
       </div>
         {props.players.players.length > 0
           ? <GroupInfo id={props.params.id}/>
