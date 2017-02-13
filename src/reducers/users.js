@@ -7,6 +7,10 @@ module.exports = function (state = {}, action) {
       state.username = action.payload.username
       return state
 
+    case 'LOGOUT_USER':
+      state = {}
+      return state
+
     default:
       return state
   }

@@ -11,6 +11,9 @@ module.exports = function (state = false, action) {
     case 'RESET_WRONGSOUNDS':
       return 0
 
+    case 'LOGOUT_USER':
+      return 0
+
     default:
       return state
   }
