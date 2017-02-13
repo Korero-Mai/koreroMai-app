@@ -10,8 +10,8 @@ module.exports = function (knex) {
       })
     },
 
-    findUserByEmail: function (table, email) {
-      return knex(table)
+    findUserByEmail: function (email) {
+      return knex('users')
       .select('*')
       .where('email', email)
       .then((selectedUser) => {

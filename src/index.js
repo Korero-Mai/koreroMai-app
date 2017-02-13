@@ -6,6 +6,7 @@ const { Router, Route, IndexRoute, hashHistory } = require('react-router')
 const reducer = require('./reducers')
 const initialState = require('../state')
 const URL = require('url-parse')
+const request = require('superagent')
 import { routerMiddleware, push } from 'react-router-redux'
 require('./style/main.scss')
 
@@ -57,6 +58,11 @@ const Root = ({store}) => {
 document.addEventListener('DOMContentLoaded', () => {
 	console.log('DOMContentLoaded');
 	const root = document.querySelector('#app')
+  request.get('api/v1/auth/logged-in', (err, res) => {
+    if (res.body.authenticated){
+      store.dispatch({type: 'UPDATE_USER', payload: res.body.user})
+    } 
+  })
 
 	ReactDOM.render(
 		<Root store={store}/>,
