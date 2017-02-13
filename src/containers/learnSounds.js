@@ -22,8 +22,8 @@ class LearnSounds extends React.Component {
             {this.generateLetter(lettersArr, letters)}
             <div className='row'>
               <div className='columns small-centered small-10 medium-6 large-4'>
-                <Link to='activity'><button className="first-back">Back</button></Link>
-                <Link to={activityRoute+(level+1)}><button className="first-next">Next</button></Link>
+                <Link to='activity'><button className='first-back-ll'>Back</button></Link>
+                <Link to={activityRoute+(level+1)}><button className='first-next-ll'>Next</button></Link>
               </div>
             </div>
           </div>
@@ -38,8 +38,8 @@ class LearnSounds extends React.Component {
           <div className='play-box-ll'>
             {this.generateLetter(lettersArr, letters)}
             <div>
-              <Link to={activityRoute+(level-1)}><button className="last-back">Back</button></Link>
-              <button className='finish' onClick={() => dispatch({type: 'TOGGLE_MODAL'})}>Finish!</button>
+              <Link to={activityRoute+(level-1)}><button className='last-back-ll'>Back</button></Link>
+              <button className='finish-ll' onClick={() => dispatch({type: 'TOGGLE_MODAL'})}>Finish!</button>
               <Modal isOpen={modal} contentLabel='Modal' className='learn-sounds-modal'>
               <h1>Tumeke! Awesome!</h1>
               <Link to={activityRoute+1}><button className="button-radius repeat" onClick={() => dispatch({type: 'END_ROUND'})}>Repeat</button></Link><br />
@@ -58,9 +58,9 @@ class LearnSounds extends React.Component {
           {this.generateLetter(lettersArr, letters)}
         </div>
         <div className='row'>
-          <div className='colums small-centered small-10 medium-6 large-4'>
-            <Link to={activityRoute+(level-1)}><button className="nav-back">Back</button></Link>
-            <Link to={activityRoute+(level+1)}><button className="nav-next">Next</button></Link>
+          <div className='columns small-centered small-10 medium-6 large-4'>
+            <Link to={activityRoute+(level-1)}><button className='nav-back-ll'>Back</button></Link>
+            <Link to={activityRoute+(level+1)}><button className='nav-next-ll'>Next</button></Link>
           </div>
         </div>
       </div>
