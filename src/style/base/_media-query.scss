@@ -16,19 +16,40 @@
   }
 };
 
-/*============================================================
- 	Mobile (Portrait) Design for a width of 320px
- ==============================================================*/
 
- // @media only screen and (max-width: 767px) {
- //     .button-radius {
- //       padding: 5px 5px;;
- //     }
- // }
- //
- // /*============================================================
- // Mobile (Landscape) Design for a width of 480px
- // ==============================================================*/
- //
- // @media only screen and (min-width: 480px) and (max-width: 767px) {
- // }
+//https://css-tricks.com/snippets/css/media-queries-for-standard-devices/
+/* ----------- iPad 3 and 4 ----------- */
+/* Portrait and Landscape */
+
+@mixin ipadBoth {
+  @media only screen
+    and (min-device-width: 768px)
+    and (max-device-width: 1024px)
+    and (-webkit-min-device-pixel-ratio: 2) {
+      @content
+    }
+};
+
+/* Portrait */
+
+@mixin ipadPortrait {
+  @media only screen
+    and (min-device-width: 768px)
+    and (max-device-width: 1024px)
+    and (orientation: portrait)
+    and (-webkit-min-device-pixel-ratio: 2) {
+      @content
+  }
+};
+
+/* Landscape */
+
+@mixin ipadLandscape {
+  @media only screen
+    and (min-device-width: 768px)
+    and (max-device-width: 1024px)
+    and (orientation: landscape)
+    and (-webkit-min-device-pixel-ratio: 2) {
+      @content
+  }
+};
