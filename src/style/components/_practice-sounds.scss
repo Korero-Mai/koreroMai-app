@@ -20,7 +20,7 @@
 }
 
 .welcome-letters {
-  font-size: 1em;
+  font-size: 4em;
   font-family: 'Itim', sans-serif;
   padding: .3em;
 }
@@ -29,10 +29,8 @@
   position:absolute;
     top: 63%;
     left: 35%;
-    h1 {
-      font-size: 7em;
-      color: $dark-blue;
-    }
+    font-size:3em;
+    color: $dark-blue;
 }
 
 .listen-sound-buttons {
@@ -68,9 +66,10 @@
 
 @include ipadLandscape {
   .welcome-letters {
-    font-size: 3em;
+    font-size: 6em;
     padding: .3em;
   }
+
   .listen-sound-buttons {
     border-radius: 5px;
     background-color: $red;
