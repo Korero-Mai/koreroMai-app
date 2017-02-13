@@ -15,16 +15,15 @@ function ActivityChoiceBox(props) {
           <Link to="/activity/practice/sounds/1"><button className="choose">Letters</button></Link>
           <Link to="/activity/practice/words/1"><button className="choose">Words</button></Link>
         </div>
-
       </div>
         <div className='sea'>
-          <img src='../images/activity-images/sea2.png' />
+          <img src='../images/decoration-images/activity/sea2.png' />
         </div>
         <div className='starfish'>
-          <img src='../images/activity-images/starfish.png' />
+          <img src='../images/decoration-images/activity/starfish.png' />
         </div>
         <div className='jelly-fish'>
-          <img src='../images/activity-images/jelly-fish.png' />
+          <img src='../images/decoration-images/activity/jelly-fish.png' />
         </div>
 
     </div>
