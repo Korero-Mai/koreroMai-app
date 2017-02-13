@@ -49,7 +49,7 @@ class PracticeWords extends React.Component {
           <div>
             <div className='row'>
               <div className="columns">
-                <img src={`${words[word].imageFile}`} />
+                <img src={`${words[word].imageFile}`} onClick={() => this.playSound(word)}/>
                 <audio ref={`${word}`} >
                   <source src={`${words[word].soundFile}`} preload=''/>
                 </audio>
@@ -75,9 +75,9 @@ class PracticeWords extends React.Component {
         } else {
           return (
             <div>
-              <div className='row'>
-                <div className='columns'>
-                  <img src={`${words[word].imageFile}`} />
+              <div className="row">
+                <div className="columns">
+                  <img src={`${words[word].imageFile}`} onClick={() => this.playSound(word)}/>
                   <audio ref={`${word}`} >
                     <source src={`${words[word].soundFile}`} preload=''/>
                   </audio>
@@ -96,9 +96,9 @@ class PracticeWords extends React.Component {
       } else if (word === answer) {
         return (
         <div>
-          <div className='row'>
-            <div className='columns'>
-              <img src={`${words[word].imageFile}`} />
+          <div className="row">
+            <div className="columns">
+              <img src={`${words[word].imageFile}`} onClick={() => this.playSound(word)}/>
               <audio ref={`${word}`} >
                 <source src={`${words[word].soundFile}`} preload=''/>
               </audio>
@@ -117,12 +117,12 @@ class PracticeWords extends React.Component {
           </div>
         </div>
         )
-      } else {modal
+      } else {
         return (
           <div>
-            <div className='row'>
-              <div className='columns'>
-                <img src={`${words[word].imageFile}`} />
+            <div className="row">
+              <div className="columns">
+                <img src={`${words[word].imageFile}`} onClick={() => this.playSound(word)}/>
                 <audio ref={`${word}`} >
                   <source src={`${words[word].soundFile}`} preload=''/>
                 </audio>

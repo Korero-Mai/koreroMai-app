@@ -18,7 +18,7 @@ class LearnWords extends React.Component {
       return wordsArr.map((word,index)=>{
         return (
           <div className='row'>
-            <div className='colums small-centered small-12 medium-6 large-4'>
+            <div className='columns small-centered small-12 medium-6 large-4'>
               <audio ref={`${index}`} >
                 <source src={`${words[word].soundFile}`} preload=''/>
               </audio>
@@ -38,7 +38,6 @@ class LearnWords extends React.Component {
       const level = Number(this.props.params.id)
       const activityRoute = 'activity/learn/words/'
       const wordsArr = this.props.learnWordPage[level]
-
 
       if (level === 1) {
         return (
@@ -71,8 +70,8 @@ class LearnWords extends React.Component {
                 <button className="finish" onClick={() => dispatch({type: 'TOGGLE_MODAL'})}>Finish!</button>
                 <Modal isOpen={modal} contentLabel='Modal'>
                   <h1>Well done!</h1>
-                  <Link to={activityRoute+1}><button className="lwordbutton repeat" onClick={() => dispatch({type: 'CLOSE_MODAL'})}>Repeat</button></Link><br />
-                  <Link to='activity'><button className="lwordbutton new-activity" onClick={() => dispatch({type: 'CLOSE_MODAL'})}>Choose another activity</button></Link>
+                  <Link to={activityRoute+1}><button className="lwordbutton repeat" onClick={() => dispatch({type: 'END_ROUND'})}>Repeat</button></Link><br />
+                  <Link to='activity'><button className="lwordbutton new-activity" onClick={() => dispatch({type: 'END_ROUND'})}>Choose another activity</button></Link>
                 </Modal>
               </div>
 
