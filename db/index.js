@@ -171,6 +171,7 @@ module.exports = function (knex) {
 			 })
 
 			 filteredData.groups = this.filterGroups(filteredData.players)
+			 delete filteredData.players
 
 			 return filteredData
 		 },

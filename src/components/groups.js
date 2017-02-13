@@ -1,23 +1,45 @@
 const React = require('react')
 const { connect } = require('react-redux')
+const request = require('superagent')
 
-function UserGroups(props) {
 
-  return (
-    <div className="large-8 columns">
-      <h2>Groups</h2>
-      {mapGroups(props)}
-    </div>
-  )
+class UserGroups extends React.Component {
+
+  componentDidMount() {
+    const { dispatch } = this.props
+    const id = Number(this.props.id)
+    request.get(`/api/v1/users/${id}/profile`, function(err, res, next) {
+      dispatch({type: 'UPDATE_GROUPS', payload: res.body.groups})
+    })
+  }
+
+ mapGroups(groups){
+   const { dispatch } = this.props
+   const groupKeys = Object.keys(groups)
+    return groupKeys.map(group => {
+      return (
+        <div className="row">
+          <button className='button expanded hollow large-9 columns'
+              onClick={()=>dispatch({type:"UPDATE_PLAYERS", payload:{players: groups[group], group_name:group}
+            })
+          }>
+            {group}
+          </button>
+          <button className='button expanded large-3 columns'>Delete</button>
+        </div>
+      )
+    })
+  }
+
+  render() {
+    return(
+      <div className="large-8 columns">
+        <h2>Groups</h2>
+          {this.mapGroups(this.props.groups)}
+      </div>
+    )
+  }
+
 }
 
 module.exports = connect((state) => state)(UserGroups)
-
-function mapGroups(props){
-  return (
-    <div className="row">
-      <button className='button expanded hollow large-9 columns'>Group A</button>
-      <button className='button expanded large-3 columns'>Delete</button>
-    </div>
-  )
-}
