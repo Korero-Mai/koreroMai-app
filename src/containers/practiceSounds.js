@@ -34,18 +34,7 @@ class PracticeSounds extends React.Component {
     })
   }
 
-  // <button  className='listen-sound-buttons' onClick={() => {
-  //   request.post('api/v1/players/scores')
-  //   .send({
-  //     player_token: this.props.playerToken,
-  //     wrongSounds: this.props.wrongSounds,
-//       wrongWords: this.props.wrongWords
-//      })
-//      .end(err, data){
-        // if (err) return console.log('error!')
-        // this.playSound(letter)}
-        //}
-  // }>
+
 
   generateLetter(lettersArr,letters, answer){
 
@@ -73,17 +62,26 @@ class PracticeSounds extends React.Component {
             </div>
             <div className='row'>
               <div className='columns' onClick={timeoutModal}>
-                <button  className='listen-sound-buttons' onClick={() => {
-                    this.playSound(letter)
-                    setTimeout(() => {dispatch({type: 'HIDE_TRY_AGAIN'})}, 450)
-                  }}>
-                  {letter}
-                </button>
-                  <Modal isOpen={modal} contentLabel='Modal' className='prac-sounds-modal' >
-                    <div className='correct'>Tika tau - correct!</div>
-                    <Link to={activityRoute+1}><button className='button-radius repeat' onClick={() => dispatch({type: 'END_ROUND'})}>Repeat</button></Link><br />
-                    <Link to='activity'><button className='button-radius new-activity' onClick={() => dispatch({type: 'END_ROUND'})}>Choose another activity</button></Link>
-                  </Modal>
+              <button  className='listen-sound-buttons' onClick={() => {
+                request.post('api/v1/players/scores')
+                .send({
+                  player_token: this.props.playerToken,
+                  wrongSounds: this.props.wrongSounds,
+                  wrongWords: this.props.wrongWords
+                 })
+                 .end((err, res)=>{
+                   if (err) return console.log('error!')
+                   this.playSound(letter)
+                 })
+                  setTimeout(() => {dispatch({type: 'HIDE_TRY_AGAIN'})}, 450)
+                }}>
+                {letter}
+              </button>
+                <Modal isOpen={modal} contentLabel='Modal' className='prac-sounds-modal' >
+                  <div className='correct'>Tika tau - correct!</div>
+                  <Link to={activityRoute+1}><button className='button-radius repeat' onClick={() => dispatch({type: 'END_ROUND'})}>Repeat</button></Link><br />
+                  <Link to='activity'><button className='button-radius new-activity' onClick={() => dispatch({type: 'END_ROUND'})}>Choose another activity</button></Link>
+                </Modal>
               </div>
             </div>
           </div>
