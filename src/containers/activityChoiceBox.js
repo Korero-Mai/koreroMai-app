@@ -19,8 +19,8 @@ function ActivityChoiceBox(props) {
         <div className='sea'>
           <img src='../images/decoration-images/activity/sea2.png' />
         </div>
-        <div className='starfish'>
-          <img src='../images/decoration-images/activity/starfish.png' />
+        <div className='dolphin'>
+          <img src='../images/decoration-images/activity/dolphin.png' />
         </div>
         <div className='jelly-fish'>
           <img src='../images/decoration-images/activity/jelly-fish.png' />
