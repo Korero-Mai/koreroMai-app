@@ -1,12 +1,14 @@
 const React = require('react')
 const { connect } = require('react-redux')
 const { Link } = require('react-router')
+const HelpButton = require('./helpButton')
 
 function Footer(props) {
 
   return (
     <div className="footer">
       { contactInfo() }
+    <HelpButton />
     </div>
   )
 }
