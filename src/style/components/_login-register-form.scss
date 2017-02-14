@@ -153,3 +153,36 @@
     height: 1.7em;
   }
 }
+
+@include desklap {
+
+  .register-header {
+    font-size: 1.5em;
+    margin-top:0;
+  }
+
+  .login-header {
+    font-size: 1.5em;
+    margin-top: 0;
+  }
+
+  .email {
+    font-size: 1em;
+    height: 1.7em;
+  }
+
+  .password {
+    font-size: 1em;
+    height: 1.7em;
+  }
+
+  .username {
+    font-size: 1em;
+    height: 1.7em;
+  }
+
+  .confirmPassword {
+    font-size: 1em;
+    height: 1.7em;
+  }
+}

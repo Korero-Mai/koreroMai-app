@@ -4,12 +4,23 @@ const route = express.Router();
 
 module.exports = function(db) {
 
-  route.get('/', get)
+  route.get('/player', getPlayer)
+  route.get('/score-data', getScoreData)
   route.post('/login',postLoginToken)
   route.post('/scores',postNewScore)
 
-  function get(req, res, next) {
-    res.json({users: []})
+  function getPlayer(req, res, next) {
+    db.findPlayerByToken(req.query.token)
+    .then((player) => {
+      res.json(player)
+    })
+  }
+
+  function getScoreData(req, res, next) {
+    db.getScoreData(req.query.playerId)
+    .then((scoreData) => {
+      res.json(scoreData)
+    })
   }
 
   function postLoginToken(req, res, next) {

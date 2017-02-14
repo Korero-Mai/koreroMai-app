@@ -14,6 +14,7 @@ require('./style/main.scss')
 const App = require('./app')
 const Home = require('./containers/home')
 const PlayersHome = require('./containers/playersHome')
+const PlayerTrend = require('./components/playerTrend')
 const ActivityChoiceBox = require('./containers/activityChoiceBox')
 const LearnSounds = require('./containers/learnSounds')
 const LearnWords = require('./containers/learnWords')
@@ -42,6 +43,7 @@ const Root = ({store}) => {
         <IndexRoute component={Home} />
         <Route path = '/home' component={Home} />
         <Route path = '/players' component={PlayersHome} />
+        <Route path = '/players/:id/trend' component={PlayerTrend} />
         <Route path ='/activity' component={ActivityChoiceBox} />
         <Route path ='/activity/learn/sounds/:id' component={LearnSounds} />
         <Route path ='/activity/learn/words/:id' component={LearnWords} />

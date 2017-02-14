@@ -16,6 +16,7 @@ const playerToken = require('./playerToken')
 const addPlayer = require('./addPlayer')
 const showWrong = require('./showWrong')
 const editPlayer = require('./editPlayer')
+const scoreData = require('./scoreData')
 
 
 module.exports = combineReducers({
@@ -35,6 +36,7 @@ module.exports = combineReducers({
   playerToken,
   addPlayer,
   showWrong,
-  editPlayer
+  editPlayer,
+  scoreData
 
 })
