@@ -20,9 +20,10 @@ const request = require('superagent')
       id_player: player.id_player
      })
      .end((err, res)=>{
+       console.log('res.body', res.body);
        if (err) return console.log('error!')
         dispatch({type:"EDIT_PLAYER", payload:""})
-    
+        // dispatch({type: 'UPDATE_GROUPS', payload: res.body.groups})
       })
 
   }
