@@ -16,7 +16,7 @@ function Nav(props) {
             <Link to="/activity" activeClassName="active-link" className='nav-text'>Activities</Link>
           </li>
           <li onClick={() => dispatch({type: 'END_ROUND'})}>
-            <Link to="/players" activeClassName="active-link" className='nav-text'>Login as a player</Link>
+            <Link to="/players" activeClassName="active-link" className='nav-text'>Student login</Link>
           </li>
         </ul>
       </div>
@@ -65,7 +65,7 @@ function EnterOrExit(props){
   } else {
     return (
       <li className="menu-text" onClick={endRound}>
-         <Link to="login-register"> Login / Register </Link>
+         <Link to="login-register"> Teacher login / Register </Link>
       </li>
     )
   }
