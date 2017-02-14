@@ -45,12 +45,10 @@ class LearnWords extends React.Component {
             </div>
             <div className="play-box-lw">
               {this.generateWord(wordsArr, words)}
-              <div>
-
-                <Link to='activity'><button className="first-back">↩</button></Link>
-                <Link to={activityRoute+(level+1)}><button className="first-next">↪</button></Link>
-
-              </div>
+            </div>
+            <div>
+              <Link to='activity'><button className="first-back">↩</button></Link>
+              <Link to={activityRoute+(level+1)}><button className="first-next">↪</button></Link>
             </div>
           </div>
         )
