@@ -6,6 +6,7 @@ const request = require('superagent')
 class AddPlayer extends React.Component {
   handleSave(e){
     const{id, dispatch} = this.props
+    console.log('refs', ref);
   }
 
 
@@ -15,7 +16,7 @@ class AddPlayer extends React.Component {
       return (
 
           <tr>
-            <td><input type='text' name='name' ref={input} 
+            <td><input type='text' name='name'
             placeholder='Player Name' /></td>
             <td><input type='text' name='token' ref='token' placeholder='Token' /></td>
             <td><input type='text' name='group_name' ref='token' placeholder='group name' /></td>
@@ -36,3 +37,4 @@ class AddPlayer extends React.Component {
 }
 
 module.exports = connect((state) => state)(AddPlayer)
+// ref={(input) =>{textInput = input}}

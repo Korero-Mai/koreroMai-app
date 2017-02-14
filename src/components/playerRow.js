@@ -3,6 +3,7 @@ const { Link } = require('react-router')
 
 const playerRow = (props) => {
   const {dispatch, player} = props
+  console.log('props for playerRow', props);
 
   return (
     <tr>
