@@ -67,6 +67,21 @@
    background-color: #cc9bfd;
 }
 
+.listenButton {
+  border-radius: 5px;
+  background-color: $red;
+  box-shadow: 2px 5px 2px 0px  #fd9bb8;
+  padding: 20px 25px;
+  font-size: 1em;
+  font-family: 'Muli', sans-serif;
+  margin: 4px 2px;
+  text-decoration: none;
+  color: black;
+}
+
+.listenButton:hover {
+   background-color: #cc9bfd;
+}
 
 @include ipadPortrait {
   .welcome-prac {
