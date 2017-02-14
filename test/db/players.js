@@ -19,8 +19,46 @@ test.beforeEach(() => {
 //   return testKnex.migrate.rollback()
 // })
 
+test.only('Delete player from the join table users_players', (t) => {
+   t.plan(1)
+ // arrange
+const id_player = 4
+const id = 2
+
+ //act
+
+return db.deletePlayerFromJoin(id_player, id)
+  .then(function(data){
+    console.log('deletePlayerFromJoin data', data);
+//Assert
+    t.deepEqual(data.groups.group2.length, 1,
+      'deletes player from db')
+    })
+})
+
+
+
+
+test('Delete player | it should delete a player from the players table', (t) => {
+   t.plan(1)
+ // arrange
+const id_player = 3
+const id = 1
+
+const expected = []
+ //act
+
+return db.deletePlayer(id_player, id)
+  .then(function(data){
+//Assert
+    t.deepEqual(data, expected,
+      'deletes player from db')
+    })
+})
+
+
 test('Add new player and link to user| it should add a new player to the players table', (t) => {
-   t.plan(4)
+   t.plan(5)
  // arrange
 const table = 'players'
 const input = {
@@ -33,6 +71,7 @@ const input = {
 const expected = [{
   id:3,
   player_id:6,
+  player_token:"joyce123",
   player_name:"Joyce",
   group_name:"group2"
 }]
@@ -42,11 +81,13 @@ return db.addPlayer(table, input)
   .then(function(data){
       // console.log('db.addPlayer ', data);
 //Assert
-    t.is(data.player.id_player, expected[0].player_id ,
+    t.is(data.players[0].id_player, expected[0].player_id ,
       'adds player to db')
-    t.is(data.player.player_name, expected[0].player_name ,
+    t.is(data.players[0].player_name, expected[0].player_name ,
       'adds player to db')
-    t.is(data.player.group_name, expected[0].group_name ,
+    t.is(data.players[0].group_name, expected[0].group_name ,
+      'adds player to db')
+    t.is(data.players[0].player_token, expected[0].player_token ,
       'adds player to db')
     t.is(data.user.id, expected[0].id,
       'adds player to db')
@@ -160,9 +201,6 @@ return db.changePlayerInfo(player_id, newData)
     t.is(data.prac_sounds_total_wrong,12,'adds score to table')
     t.is(data.prac_words_total_wrong,6,'adds score to table')
   })
-//Assert
-
-
 })
 
 

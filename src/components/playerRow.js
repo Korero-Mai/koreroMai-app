@@ -1,8 +1,11 @@
 const React = require('react')
 const { Link } = require('react-router')
+const request = require('superagent')
 
 const playerRow = (props) => {
-  const {dispatch, player} = props
+  const {dispatch, player, users} = props
+  console.log('playerRow.js props', props)
+
 
   return (
     <tr>
@@ -16,16 +19,27 @@ const playerRow = (props) => {
       </td>
       <td>
         <button className='button expanded'onClick={
-          ()=>dispatch({type:"EDIT_PLAYER", payload:player.player_token})
+          ()=>dispatch({type:'EDIT_PLAYER', payload:player.player_token})
           }>
-          Edit
+            Edit
         </button>
       </td>
+        <button className='button expanded' onClick={()=>handleDelete(player.id_player, users.id)}>
+            Delete
+        </button>
       <td>
-        <button className='button expanded'>Delete</button>
       </td>
     </tr>
   )
 }
 
 module.exports = playerRow
+
+function handleDelete(id_player, id) {
+  request.post('api/v1/players/deletePlayer')
+  .send({id_player: id_player, id: id})
+  .end((err, res)=>{
+    console.log('playerRow res.body', res.body);
+    if (err) return console.log('error!')
+  })
+}
