@@ -1,6 +1,7 @@
 const React = require('react')
 const { connect } = require('react-redux')
 const request = require('superagent')
+const AddGroup = require('./addGroup')
 
 
 class UserGroups extends React.Component {
@@ -24,8 +25,10 @@ class UserGroups extends React.Component {
             })
           }>
             {group}
+
           </button>
           <button className='button expanded large-3 columns'>Delete</button>
+
         </div>
       )
     })
@@ -36,6 +39,7 @@ class UserGroups extends React.Component {
       <div className="large-8 columns">
         <h2>Groups</h2>
           {this.mapGroups(this.props.groups)}
+          <AddGroup />
       </div>
     )
   }
