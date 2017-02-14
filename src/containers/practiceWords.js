@@ -19,12 +19,14 @@ class PracticeWords extends React.Component {
     return wordsArr.map((word) => {
       if (word === answer) {
         return (
+          <div>
+            <audio ref={`${answer}`} >
+              <source src={`${words[word].soundFile}`} preload='auto'/>
+            </audio>
             <div>
-              <audio ref={`${answer}`} >
-                <source src={`${words[word].soundFile}`} preload='auto'/>
-              </audio>
-              <div className='note-word' onClick={() => this.playSound(word)}>♫</div>
+              <button className='button listenButton' onClick={() => this.playSound(word)}>Listen!</button> Choose the right one!
             </div>
+          </div>
         )
       }
     })
@@ -200,12 +202,9 @@ class PracticeWords extends React.Component {
       return (
         <div>
           <div className='welcome-prac'>
-            Click ♫ Listen then choose the right letter!
+            {this.generateAnswer(wordsArr, answer, words)}
           </div>
           <div className="play-box row align-spaced">
-            <div className='row'>
-              <h1>{this.generateAnswer(wordsArr, answer, words)}</h1>
-            </div>
             {this.generateWord(wordsArr, words, answer)}
           </div>
           <WrongAnswerCue showWrong={this.props.showWrong}/>
@@ -215,12 +214,9 @@ class PracticeWords extends React.Component {
       return (
         <div>
         <div className='welcome-prac'>
-          Click ♫ Listen then choose the right letter!
+          {this.generateAnswer(wordsArr, answer, words)}
         </div>
           <div className='play-box row align-spaced'>
-            <div className='row'>
-              <h1>{this.generateAnswer(wordsArr, answer, words)}</h1>
-            </div>
             {this.generateWord(wordsArr, words, answer)}
           </div>
           <WrongAnswerCue showWrong={this.props.showWrong}/>
@@ -229,12 +225,9 @@ class PracticeWords extends React.Component {
     } else return (
       <div>
       <div className='welcome-prac'>
-        Click ♫ Listen then choose the right letter!
+        {this.generateAnswer(wordsArr, answer, words)}
       </div>
         <div className='play-box row align-spaced'>
-          <div className='row'>
-            <h1>{this.generateAnswer(wordsArr, answer, words)}</h1>
-          </div>
           {this.generateWord(wordsArr, words, answer)}
         </div>
         <WrongAnswerCue showWrong={this.props.showWrong}/>
