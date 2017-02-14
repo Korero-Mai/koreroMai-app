@@ -14,12 +14,14 @@ class groupInfo extends React.Component {
 
   mapPlayers(players) {
 
-    const { dispatch ,editPlayer} = this.props
+    const { dispatch, editPlayer, id, users} = this.props
+    console.log('selectedGroupInfo.js', this.props);
+
 
     return players.map((player) => {
         return player.player_token === editPlayer
           ? <EditPLayerRow dispatch={dispatch} player={player} />
-          : <PlayerRow dispatch={dispatch} player={player} />
+          : <PlayerRow dispatch={dispatch} player={player} users={users} />
     })
   }
 

@@ -2,8 +2,8 @@ const React = require('react')
 const { Link } = require('react-router')
 
 const playerRow = (props) => {
-  const {dispatch, player} = props
-
+  const {dispatch, player, users} = props
+  console.log('playerRow.js props', props)
   return (
     <tr>
       <td>{player.player_name}</td>
@@ -16,13 +16,17 @@ const playerRow = (props) => {
       </td>
       <td>
         <button className='button expanded'onClick={
-          ()=>dispatch({type:"EDIT_PLAYER", payload:player.player_token})
+          ()=>dispatch({type:'EDIT_PLAYER', payload:player.player_token})
           }>
-          Edit
+            Edit
         </button>
       </td>
+        <button className='button expanded' onClick={
+          ()=>dispatch({type:'DELETE_PLAYER', payload:{playerId:player.id_player, userId:users.id}})
+          }>
+            Delete
+        </button>
       <td>
-        <button className='button expanded'>Delete</button>
       </td>
     </tr>
   )
