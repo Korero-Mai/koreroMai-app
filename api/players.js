@@ -52,11 +52,9 @@ module.exports = function(db) {
   function postNewPlayer(req,res,next){
     db.addPlayer('players',req.body)
     .then((playerData)=>{
-      console.log('playerData', playerData);
       db.findPlayersByUser('users',playerData.user.id)
-      .then(data=>{
-        console.log('data', data);
-        res.json(data)
+      .then(groups=>{
+        res.json(groups)
       })
     })
 

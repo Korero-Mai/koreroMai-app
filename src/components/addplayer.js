@@ -17,9 +17,9 @@ class AddPlayer extends React.Component {
       id : id
      })
      .end((err, res)=>{
-       console.log('res.body', res);
+       console.log('res.body', res.body);
        if (err) return console.log('error!')
-        // dispatch({type: 'UPDATE_GROUPS', payload: res.body.groups})
+        dispatch({type: 'UPDATE_GROUPS', payload: res.body.groups})
       })
 
   }
