@@ -86,25 +86,25 @@ const input= {
   wrongWords: 5,
 }
 
-const expected = [{
-  id_game: 9,
-  player_id: 2,
-  prac_sounds_wrong: 4,
-  prac_sounds_timestamp:'',
-  prac_words_wrong: 5,
-  prac_words_timestamp: ''
-}]
+const expected = [ { id_player: 2,
+    player_name: 'Bobbie',
+    player_token: 'bobbie123',
+    prac_sounds_total_wrong: 8,
+    prac_words_total_wrong: 10,
+    group_name: 'group1'
+  } ]
+
  //act
 
 return db.addScore(input)
   .then(function(data){
-      console.log('db.addScore ', data);
+      // console.log('db.addScore ', data);
 //Assert
-    t.is(data[0].id_game,expected[0].id_game,
+    t.is(data[0].id_player,expected[0].id_player,
       'adds score to table')
-    t.is(data[0].prac_sounds_wrong,expected[0].prac_sounds_wrong,
+    t.is(data[0].prac_sounds_total_wrong,expected[0].prac_sounds_total_wrong,
       'adds score to table')
-    t.is(data[0].prac_words_wrong,expected[0].prac_words_wrong,
+    t.is(data[0].prac_words_total_wrong,expected[0].prac_words_total_wrong,
       'adds score to table')
    })
 })
