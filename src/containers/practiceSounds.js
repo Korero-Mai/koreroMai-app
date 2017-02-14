@@ -16,17 +16,15 @@ class PracticeSounds extends React.Component {
   }
 
   generateAnswer(lettersArr, answer, letters) {
-    return lettersArr.map((item) => {
-      if (item === answer) {
+    return lettersArr.map((letter) => {
+      if (letter === answer) {
         return (
           <div>
-            <div className='row'>
-              <div className='columns small-10 medium-6 large-4'>
-                <audio ref={`${answer}`} >
-                  <source src={`${letters[item].soundFile}`} preload='auto'/>
-                </audio>
-                <div className='note' onClick={() => this.playSound(item)}>♫</div>
-              </div>
+            <audio ref={`${answer}`} >
+              <source src={`${letters[letter].soundFile}`} preload='auto'/>
+            </audio>
+            <div>
+              <button className='button listenButton' onClick={() => this.playSound(letter)}>Listen!</button> Choose the right one!
             </div>
           </div>
         )
@@ -173,12 +171,9 @@ class PracticeSounds extends React.Component {
       return (
         <div>
           <div className='welcome-letters'>
-            Click ♫ Listen then choose the right letter!
+            {this.generateAnswer(lettersArr, answer, letters)}
           </div>
           <div className='play-box row align-spaced'>
-            <div className='row'>
-              <h1>{this.generateAnswer(lettersArr, answer, letters)}</h1>
-            </div>
             {this.generateLetter(lettersArr, letters, answer)}
           </div>
           <WrongAnswerCue showWrong={this.props.showWrong}/>
@@ -188,12 +183,8 @@ class PracticeSounds extends React.Component {
       return (
         <div>
           <div className='welcome-letters'>
-            Click ♫ Listen then choose the right letter!
-          </div>
-          <div className='play-box row align-spaced'>
-            <div className='row'>
-              <h1>{this.generateAnswer(lettersArr, answer, letters)}</h1>
-            </div>
+            {this.generateAnswer(lettersArr, answer, letters)}
+          </div>          <div className='play-box row align-spaced'>
             {this.generateLetter(lettersArr, letters, answer)}
           </div>
           <WrongAnswerCue showWrong={this.props.showWrong}/>
@@ -202,12 +193,8 @@ class PracticeSounds extends React.Component {
     } else return (
         <div>
           <div className='welcome-letters'>
-            Click ♫ Listen then choose the right letter!
-          </div>
-          <div className='play-box row align-spaced'>
-            <div className='row'>
-            <h1>{this.generateAnswer(lettersArr, answer, letters)}</h1>
-            </div>
+            {this.generateAnswer(lettersArr, answer, letters)}
+          </div>          <div className='play-box row align-spaced'>
           {this.generateLetter(lettersArr, letters, answer)}
         </div>
         <WrongAnswerCue showWrong={this.props.showWrong}/>

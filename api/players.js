@@ -31,7 +31,7 @@ module.exports = function(db) {
   }
 
   function postNewScore(req, res, next) {
-    console.log('req.body', req.body);
+    if (!req.body.player_token.length) return
     db.addScore(req.body)
   }
   return route;
