@@ -12,16 +12,17 @@ class groupInfo extends React.Component {
     const { dispatch } = this.props
   }
 
-  mapPlayers(players) {
 
+
+  mapPlayers(players) {
     const { dispatch, editPlayer, id, users} = this.props
     console.log('selectedGroupInfo.js', this.props);
 
 
     return players.map((player) => {
         return player.player_token === editPlayer
-          ? <EditPLayerRow dispatch={dispatch} player={player} />
-          : <PlayerRow dispatch={dispatch} player={player} users={users} />
+          ? <EditPLayerRow dispatch={dispatch} player={player} id={id}/>
+          : <PlayerRow dispatch={dispatch} player={player} users={users} id={id} />
     })
   }
 
