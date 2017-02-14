@@ -20,8 +20,25 @@ module.exports = class RegisterForm extends React.Component {
             if(!res.body.isUser){
               alert('User email already exists')
             } else {
-                alert('You are now registered!')
-                this.props.router.push('/')
+              request.post('/api/v1/auth/login')
+                .send({email, password})
+                .end((err, res) => {
+                  if(err) {
+                    console.log(err);
+                  } else {
+                    if(!res.body.isUser){
+                      alert('Please login')
+                      this.props.router.push('/login-register')
+                    } else {
+                      console.log(user);
+                        const user = res.body.userData
+                        const userID = res.body.userData.id
+                        const userName = res.body.userData.username
+                        this.props.dispatch({type:'UPDATE_USER', payload: user})
+                        this.props.router.push(`/users/${userID}/profile`)
+                      }
+                    }
+                })
               }
           }
       })
