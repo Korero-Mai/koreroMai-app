@@ -4,15 +4,14 @@ const request = require('superagent')
 
 
 class AddGroup extends React.Component {
+
+
   render() {
       return (
         <tr>
           <td><input type='text' name='name' ref='name' placeholder='Add Group Name' /></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          <td><button className="button expanded">Add</button></td>
-        </tr>  
+          <td><button className="button expanded">Add Group</button></td>
+        </tr>
       )
   }
 }
