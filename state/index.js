@@ -4,10 +4,11 @@ module.exports = {
 
   editPlayer:'',
 
+  scoreData : [],
+
   addPlayer: false,
 
   showWrong: false,
-
 
   editUser: false,
 

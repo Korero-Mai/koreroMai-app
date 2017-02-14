@@ -1,7 +1,6 @@
 const React = require('react')
 const { connect } = require('react-redux')
 const request = require('superagent')
-const { Link } = require('react-router')
 const AddPlayer = require('./addplayer')
 const PlayerRow = require('./playerRow')
 const EditPLayerRow = require('./editPlayer')
