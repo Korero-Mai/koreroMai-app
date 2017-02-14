@@ -1,5 +1,5 @@
 const React = require('react')
-
+const { Link } = require('react-router')
 
 const playerRow = (props) => {
   const {dispatch, player} = props
@@ -12,7 +12,7 @@ const playerRow = (props) => {
       <td>{player.prac_sounds_total_wrong}</td>
       <td>{player.prac_words_total_wrong}</td>
       <td>
-        <button className="button expanded">Trend</button>
+        <Link to={`/players/${player.player_token}/trend`}><button className="button expanded">Trend</button></Link>
       </td>
       <td>
         <button className='button expanded'onClick={
