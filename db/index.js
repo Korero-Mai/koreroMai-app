@@ -110,6 +110,9 @@ module.exports = function (knex) {
 						scores.player_id = ids[0].id_player
 					return this.insertScoreData(scores)
 				})
+				.then((playerScore)=>{
+					return this.updatesTotalScores(playerScore[0].player_id)
+				})
 		 },
 
 		 getPlayerId: function(token){
