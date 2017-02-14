@@ -32,9 +32,6 @@ class PracticeWords extends React.Component {
     })
   }
 
-
-
-
   generateWord(wordsArr, words, answer){
 
     const timeoutModal = function(){
@@ -150,7 +147,7 @@ class PracticeWords extends React.Component {
               </button>
               <Modal isOpen={modal} contentLabel='Modal' className='prac-words-modal' >
                 <div className='correct'>Tika tau - correct!</div>
-                <Link to={activityRoute+(level+1)}><button className='button-radius repeat' onClick={() => dispatch({type: 'TOGGLE_MODAL'})}>Next one!</button></Link><br />
+                <Link to={activityRoute+(level+1)}><button className='button-radius repeat' onClick={() => dispatch({type: 'TOGGLE_MODAL'})}>↪</button></Link><br />
               </Modal>
             </div>
           </div>

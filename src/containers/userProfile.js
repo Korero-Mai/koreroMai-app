@@ -7,27 +7,32 @@ const EditUserInfo = require('../components/editUserInfo')
 const AddPlayer = require('../components/addplayer')
 
 function UserProfile(props) {
+  if (!Object.keys(props.users).length){
+    return (
+        <h1 className="h1-home">Unauthorized!</h1>
+    )
+  } else {
+    return (
+      <div>
+        <div className="row">
+          <Groups id={props.params.id}/>
+          <div className='columns '>
+            {props.editUser
+              ? <EditUserInfo />
+              : <UserInfo id={props.params.id}/>
+            }
 
-  return (
-    <div>
-      <div className="row">
-        <Groups id={props.params.id}/>
-        <div className='columns '>
-          {props.editUser
-            ? <EditUserInfo />
-            : <UserInfo id={props.params.id}/>
-          }
-
+          </div>
         </div>
-      </div>
-      <div className="row">
-      </div>
-        {props.players.players.length > 0
-          ? <GroupInfo id={props.params.id}/>
-          : null}
+        <div className="row">
+        </div>
+          {props.players.players.length > 0
+            ? <GroupInfo id={props.params.id}/>
+            : null}
 
-    </div>
-  )
+      </div>
+    )
+  }
 }
 
 module.exports = connect((state) => state)(UserProfile)
