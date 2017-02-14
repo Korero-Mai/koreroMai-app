@@ -1,5 +1,5 @@
 {
-  "name": "KoreroMai",
+  "name": "Korero Mai",
   "version": "1.0.0",
   "description": "Learn Te Reo",
   "main": "index.js",
@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/TexMix-Drink-Splitter/Drink-Splitter.git"
+    "url": "http://korero-mai.herokuapp.com"
   },
   "keywords": [],
   "author": "",
