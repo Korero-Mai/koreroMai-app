@@ -1,0 +1,97 @@
+.player-homepage-div {
+  margin-top: 10%;
+}
+.player-main-heading {
+  width: 100%;
+}
+
+.play-button-pl {
+  border-radius: 5px;
+  background-color: $yellow;
+  box-shadow: 2px 5px 2px 0px  #fd9b9b;
+  padding: 30px 35px;
+  font-size: 5em;
+  font-family: 'Muli', sans-serif;
+  text-decoration: none;
+  color: black;
+  margin-top: 1em;
+}
+
+.main-button {
+  max-width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.player-input {
+  font-size: 3em;
+  text-align: center;
+  margin-top: 1em;
+  height:auto;
+}
+
+.h1-home-pl {
+  font-family: 'Life Savers', cursive;
+  font-size: 5em;
+  font-weight: bold;
+  text-align: center;
+  margin: auto;
+}
+
+.h3-home-pl {
+  font-family: 'Itim', cursive;
+  font-size: 4em;
+  text-align: center;
+  margin: auto;
+}
+
+@include phoneLand {
+  .player-homepage-div {
+    margin-top: 5%;
+  }
+  .player-main-heading {
+    width: 100%;
+  }
+
+  .play-button-pl {
+    border-radius: 5px;
+    background-color: $yellow;
+    box-shadow: 2px 5px 2px 0px  #fd9b9b;
+    padding: 30px 35px;
+    font-size: 5em;
+    font-family: 'Muli', sans-serif;
+    text-decoration: none;
+    color: black;
+    margin-top: 1em;
+  }
+
+  .main-button {
+    max-width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .player-input {
+    font-size: 3em;
+    text-align: center;
+    margin-top: 1em;
+    height:auto;
+  }
+
+  .h1-home-pl {
+    font-family: 'Life Savers', cursive;
+    font-size: 5em;
+    font-weight: bold;
+    text-align: center;
+    margin: auto;
+  }
+
+  .h3-home-pl {
+    font-family: 'Itim', cursive;
+    font-size: 4em;
+    text-align: center;
+    margin: auto;
+  }
+}
