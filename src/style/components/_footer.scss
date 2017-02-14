@@ -13,6 +13,11 @@
   justify-content: center;
 }
 
+.white {
+  color: white;
+}
+
+
 @include phoneLand {
   .footer {
     font-size: 1em;
@@ -31,6 +36,7 @@
 
 @include ipadLandscape {
   .footer {
+    text-align:center;
     font-size: 1.2em;
     height: 1.6em;
     padding-top: 15px;

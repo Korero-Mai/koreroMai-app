@@ -25,7 +25,7 @@ function HelpPage(props) {
       <Link to='/'><button className='play-button'>Play!</button></Link>
       <br />
       <br />
-      <a href='https://github.com/Korero-Mai/koreroMai-app/'><button className='button radius'>Contribute!</button></a>
+      <a href='https://github.com/Korero-Mai/koreroMai-app/' target="_blank" ><button className='button radius'>Contribute!</button></a>
     </div>
   )
 }
