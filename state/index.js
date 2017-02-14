@@ -2,6 +2,7 @@ import { routerMiddleware, push } from 'react-router-redux'
 
 module.exports = {
 
+  editPlayer:'',
 
   addPlayer: false,
 
