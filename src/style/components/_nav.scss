@@ -24,7 +24,30 @@
   .nav-text {
     font-size: 2.5em;
   }
+
+  button{
+    border-radius: 5px;
+    background-color: $red;
+    box-shadow: 0px 5px 0px 0px $light-blue;
+    padding: 3px;
+    font-size: 0.9em;
+    margin-left: 3px;
+    text-decoration: none;
+    color: black;
+  }
+
+  button:active {
+    transform: translate(0px, 5px);
+    -webkit-transform: translate(0px, 5px);
+    background-color: #6FC6FF;
+  }
+
+  button:hover {
+    background-color: #6FC6FF;
+  }
+
 }
+
 
 @include phoneLand {
   .top-bar {
