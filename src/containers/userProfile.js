@@ -23,8 +23,8 @@ function UserProfile(props) {
       <div className="row">
       </div>
         {props.players.players.length > 0
-          ? <GroupInfo id={props.params.id}/>
-          : <AddPlayer id={props.params.id} stand={true}/>
+          ? <GroupInfo id={props.params.id} />
+          : <AddPlayer id={props.params.id} />
         }
 
     </div>
