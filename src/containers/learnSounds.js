@@ -27,13 +27,13 @@ class LearnSounds extends React.Component {
             <div>
               <Link to='activity'>
                 <button className='first-back-ll'>
-                  ◄
+                  ↩
                 </button>
               </Link>
 
               <Link to={activityRoute+(level+1)}>
                 <button className='first-next-ll'>
-                  ►
+                  ↪
                 </button>
               </Link>
             </div>
@@ -56,7 +56,7 @@ class LearnSounds extends React.Component {
             <div>
               <Link to={activityRoute+(level-1)}>
                 <button className='last-back-ll'>
-                  ◄
+                  ↩
                 </button>
               </Link>
 
@@ -94,8 +94,8 @@ class LearnSounds extends React.Component {
           {this.generateLetter(lettersArr, letters)}
         </div>
         <div>
-          <Link to={activityRoute+(level-1)}><button className='nav-back-ll'>◄</button></Link>
-          <Link to={activityRoute+(level+1)}><button className='nav-next-ll'>►</button></Link>
+          <Link to={activityRoute+(level-1)}><button className='nav-back-ll'>↩</button></Link>
+          <Link to={activityRoute+(level+1)}><button className='nav-next-ll'>↪</button></Link>
         </div>
       </div>
     )
