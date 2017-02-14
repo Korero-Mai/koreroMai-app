@@ -21,7 +21,7 @@ class PracticeSounds extends React.Component {
         return (
           <div>
             <div className='row'>
-              <div className='colums small-10 medium-6 large-4'>
+              <div className='columns small-10 medium-6 large-4'>
                 <audio ref={`${answer}`} >
                   <source src={`${letters[item].soundFile}`} preload='auto'/>
                 </audio>
