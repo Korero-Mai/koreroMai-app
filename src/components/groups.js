@@ -19,7 +19,7 @@ class UserGroups extends React.Component {
    const groupKeys = Object.keys(groups)
     return groupKeys.map(group => {
       return (
-        <div className="">
+        <div className="row">
           <button className='button expanded hollow '
               onClick={()=>dispatch({type:"UPDATE_PLAYERS", payload:{players: groups[group], group_name:group}
             })
@@ -37,7 +37,6 @@ class UserGroups extends React.Component {
       <div className="large-8 columns">
         <h2>Groups</h2>
           {this.mapGroups(this.props.groups)}
-          <AddGroup />
       </div>
     )
   }

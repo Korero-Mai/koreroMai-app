@@ -10,9 +10,9 @@ function UserProfile(props) {
 
   return (
     <div>
-      <div className="">
+      <div className="row">
         <Groups id={props.params.id}/>
-        <div className=''>
+        <div className='large-4 columns'>
           {props.editUser
             ? <EditUserInfo />
             : <UserInfo id={props.params.id}/>

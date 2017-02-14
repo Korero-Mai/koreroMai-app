@@ -10,7 +10,7 @@ class AddGroup extends React.Component {
       return (
         <div className="">
           <input className=''type='text' name='name' ref='name' placeholder='Add Group Name' />
-          <button className="button">Add Group</button>
+          <button className="button extended">Add Group</button>
         </div>
       )
   }
