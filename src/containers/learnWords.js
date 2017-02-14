@@ -43,7 +43,7 @@ class LearnWords extends React.Component {
             <div className='welcome'>
               Learn how to pronounce Te Reo!
             </div>
-            <div className="play-box">
+            <div className="play-box-lw">
               {this.generateWord(wordsArr, words)}
               <div>
 
@@ -61,7 +61,7 @@ class LearnWords extends React.Component {
               Learn how to pronounce Te Reo!
             </div>
 
-            <div className='play-box'>
+            <div className='play-box-lw'>
               {this.generateWord(wordsArr, words)}
               <div>
                 <Link to={activityRoute+(level-1)}><button className="last-back">◄</button></Link>
@@ -82,7 +82,7 @@ class LearnWords extends React.Component {
             Learn how to pronounce Te Reo!
           </div>
           <div>
-            <div className="play-box">
+            <div className="play-box-lw">
               {this.generateWord(wordsArr, words)}
             </div>
             <div>

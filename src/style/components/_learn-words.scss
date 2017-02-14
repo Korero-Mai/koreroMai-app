@@ -1,4 +1,4 @@
-.play-box {
+.play-box-lw {
   background-color: $yellow;
   width: 90%;
   border: solid 5px;
@@ -51,6 +51,7 @@
   margin: .5em;
   text-decoration: none;
   color: black;
+  align-content: center;
 }
 
 .lwordbutton:active {
@@ -217,7 +218,7 @@
     font-size: 3em;
   }
 
-  .play-box {
+  .play-box-lw {
     margin:0;
     height: 20em;
     padding: 3em;
@@ -249,17 +250,18 @@
 }
 
 @include desklap {
-  .play-box {
+  .play-box-lw {
     margin-left: 6.5em;
-    margin-top: 1.5em;
-    height: 28em;
+    margin-top: 0;
+    margin-bottom: .5em;
+    height: 25em;
     width: 85%;
   }
 
   .welcome {
-    font-size: 2.5em;
+    font-size: 2em;
     margin-top: .5em;
-    margin-bottom: 1em;
+    margin-bottom: 0;
   }
 
   .lwordbutton {
@@ -291,37 +293,37 @@
   .first-back {
     font-size: 1.5em;
     margin: 4px 2px;
-    top: 75%;
+    top: 77%;
     left: 35%;
   }
   .last-back {
     font-size: 1.5em;
     margin: 4px 2px;
-    top: 75%;
+    top: 77%;
     left: 35%;
   }
   .nav-back {
     font-size: 1.5em;
     margin: 4px 2px;
-    top: 75%;
+    top: 77%;
     left: 35%;
   }
   .first-next {
     font-size: 1.5em;
     margin: 4px 2px;
-    top: 75%;
+    top: 77%;
     left: 55%;
   }
   .nav-next {
     font-size: 1.5em;
     margin: 4px 2px;
-    top: 75%;
+    top: 77%;
     left: 55%;
   }
   .finish {
     font-size: 1.5em;
     margin: 4px 2px;
-    top: 75%;
+    top: 77%;
     left: 55%;
   }
 }

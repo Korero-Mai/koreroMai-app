@@ -9,10 +9,10 @@ function Home(props) {
       <div className='main-heading'>
         <h1 className="h1-home">Kōrero Mai</h1><br />
       </div>
-      <div className='sub-heading'>
+      <div className='row sub-heading'>
         <h3 className="h3-home">Learn Te Reo!</h3>
       </div>
-      <div className='main-button'>
+      <div className='row main-button'>
         <Link to="activity"><button className="play-button">PLAY!</button></Link>
       </div>
 

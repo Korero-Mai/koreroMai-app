@@ -7,21 +7,16 @@ class PlayersHome extends React.Component {
   render() {
     const {router,dispatch} = this.props
     return (
-        <div className='homepage-div'>
-          <div className='row main-heading'>
-            <div className='columns small-centered small-12 medium-6 large-4'>
-              <h1 className="h1-home">Kōrero Mai</h1><br />
-            </div>
+        <div className='player-homepage-div'>
+          <div className='player-main-heading'>
+            <h1 className='h1-home-pl'>Kōrero Mai</h1><br />
           </div>
           <div className='row sub-heading'>
-            <div className='columns small-centered small-12 medium-6 large-4'>
-              <h3 className="h3-home">Learn Te Reo!</h3>
-            </div>
+            <h3 className='h3-home-pl'>Learn Te Reo!</h3>
           </div>
           <div className='row main-button'>
-            <div className='columns small-centered small-12 medium-6 large-4'>
-              <input type="text" placeholder="Enter token" ref="token"/>
-              <button className="play-button"
+            <input type='text' className='player-input' placeholder='Enter token' ref='token'/>
+              <button className='play-button-pl'
                 onClick={() => {
                   request.post('api/v1/players/login')
                     .send({'player_token':this.refs.token.value})
@@ -38,7 +33,6 @@ class PlayersHome extends React.Component {
                 }>
                 PLAY!
               </button>
-            </div>
           </div>
         </div>
       )
