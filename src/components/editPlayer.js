@@ -11,19 +11,19 @@ const { connect } = require('react-redux')
   // }
 
   render() {
-    const {dispatch} = this.props
+    const {dispatch, player} = this.props
     return (
       <tr>
-        <td><input type="text" placeholder="{`${player.player_name}`}"></input></td>
-        <td>{player.player_token}</td>
-        <td>{player.group_name}</td>
+        <td><input type="text" value={`${player.player_name}`}></input></td>
+        <td><input type="text" value={`${player.player_token}`}></input></td>
+        <td><input type="text" value={`${player.group_name}`}></input></td>
         <td>{player.prac_sounds_total_wrong}</td>
         <td>{player.prac_words_total_wrong}</td>
         <td>
           <button className="button expanded">Trend</button>
         </td>
         <td>
-          <button className='button expanded'>Edit</button>
+          <button className="button expanded">Submit</button>
         </td>
         <td>
           <button className='button expanded'>Delete</button>
