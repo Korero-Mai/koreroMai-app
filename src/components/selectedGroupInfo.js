@@ -2,6 +2,7 @@ const React = require('react')
 const { connect } = require('react-redux')
 const request = require('superagent')
 const AddPlayer = require('./addplayer')
+const dispatch = require('superagent')
 
 class groupInfo extends React.Component {
 
@@ -12,6 +13,8 @@ class groupInfo extends React.Component {
   mapPlayers(group) {
 
     return group.map((player) => {
+        const { dispatch } = this.props
+      console.log('props in groupInfo', this.props);
       return (
         <tr>
           <td>{player.player_name}</td>
@@ -23,7 +26,11 @@ class groupInfo extends React.Component {
             <button className="button expanded">Trend</button>
           </td>
           <td>
-            <button className='button expanded'>Edit</button>
+            <button className='button expanded'onClick={
+              ()=>dispatch({type:"EDIT_PLAYER", payload:player.player_token})
+              }>
+              Edit
+            </button>
           </td>
           <td>
             <button className='button expanded'>Delete</button>
