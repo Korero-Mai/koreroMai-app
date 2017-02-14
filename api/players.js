@@ -49,7 +49,6 @@ module.exports = function(db) {
   }
 
   function postEditedPlayer(req,res,next){
-    console.log('req.body', req.body);
     const formattedData=req.body
     const id =req.body.id_player
     delete formattedData.id_player
@@ -61,7 +60,6 @@ module.exports = function(db) {
   }
 
   function postNewPlayer(req,res,next){
-    console.log('postNewPlayer ',req.body);
     db.addPlayer('players',req.body)
     .then((playerData)=>{
       db.findPlayersByUser('users',playerData.user.id)
