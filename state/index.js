@@ -120,45 +120,21 @@ module.exports = {
   },
 
   words: {
-    anuhe:{
-      soundFile: '/sounds/anuhe.mp3',
-      imageFile: '/images/activity-images/anuhe.png'
-    },
-    aporo:{
-      soundFile: '/sounds/aporo.mp3',
-      imageFile: '/images/activity-images/aporo.png'
-    },
-    aniwaniwa:{
+    āniwaniwa:{
       soundFile: '/sounds/aniwaniwa.mp3',
       imageFile: '/images/activity-images/aniwaniwa.png'
     },
-    ekara:{
+    ēkara:{
       soundFile: '/sounds/ekara.mp3',
       imageFile: '/images/activity-images/ekara.png'
     },
-    hoiho:{
+    hōiho:{
       soundFile: '/sounds/hoiho.mp3',
       imageFile: '/images/activity-images/hoiho.png'
     },
-    heki:{
-      soundFile: '/sounds/heki.mp3',
-      imageFile: '/images/activity-images/heki.png'
-    },
-    harakeke:{
-      soundFile: '/sounds/harakeke.mp3',
-      imageFile: '/images/activity-images/harakeke.png'
-    },
-    koura:{
+    kōura:{
       soundFile: '/sounds/koura.mp3',
       imageFile: '/images/activity-images/koura.png'
-    },
-    kanga:{
-      soundFile: '/sounds/kanga.mp3',
-      imageFile: '/images/activity-images/kanga.png'
-    },
-    moana:{
-      soundFile: '/sounds/moana.mp3',
-      imageFile: '/images/activity-images/moana.png'
     },
     maunga:{
       soundFile: '/sounds/maunga.mp3',
@@ -168,10 +144,6 @@ module.exports = {
       soundFile: '/sounds/noke.mp3',
       imageFile: '/images/activity-images/noke.png'
     },
-    nanikoti:{
-      soundFile: '/sounds/nanikoti.mp3',
-      imageFile: '/images/activity-images/nanikoti.png'
-    },
     ngata:{
       soundFile: '/sounds/ngata.mp3',
       imageFile: '/images/activity-images/ngata.png'
@@ -180,35 +152,15 @@ module.exports = {
       soundFile: '/sounds/oru.mp3',
       imageFile: '/images/activity-images/oru.png'
     },
-    ono:{
-      soundFile: '/sounds/ono.mp3',
-      imageFile: '/images/activity-images/ono.png'
-    },
-    popokorua:{
-      soundFile: '/sounds/popokorua.mp3',
-      imageFile: '/images/activity-images/popokorua.png'
-    },
-    purerehua:{
+    pūrerehua:{
       soundFile: '/sounds/purerehua.mp3',
       imageFile: '/images/activity-images/purerehua.png'
-    },
-    pungawerewere:{
-      soundFile: '/sounds/pungawerewere.mp3',
-      imageFile: '/images/activity-images/pungawerewere.png'
-    },
-    ranginui:{
-      soundFile: '/sounds/ranginui.mp3',
-      imageFile: '/images/activity-images/ranginui.png'
     },
     ruru:{
       soundFile: '/sounds/ruru.mp3',
       imageFile: '/images/activity-images/ruru.png'
     },
-    tanemahuta:{
-      soundFile: '/sounds/tanemahuta.mp3',
-      imageFile: '/images/activity-images/tanemahuta.png'
-    },
-    tamanuitera:{
+    Tamanuiterā:{
       soundFile: '/sounds/tamanuitera.mp3',
       imageFile: '/images/activity-images/tamanuitera.png'
     },
@@ -216,16 +168,12 @@ module.exports = {
       soundFile: '/sounds/ua.mp3',
       imageFile: '/images/activity-images/ua.png'
     },
-    weta:{
+    wētā:{
       soundFile: '/sounds/weta.mp3',
       imageFile: '/images/activity-images/weta.png'
 
     },
-    wai:{
-      soundFile: '/sounds/wai.mp3',
-      imageFile: '/images/activity-images/wai.png'
-    },
-    whanau:{
+    whānau:{
       soundFile: '/sounds/whanau.mp3',
       imageFile: '/images/activity-images/whanau.png'
     },
@@ -236,33 +184,33 @@ module.exports = {
   },
 
   learnWordPage:{
-       '1':['aniwaniwa','ekara','hoiho'],
-       '2':['koura','maunga','noke'],
-       '3':['ngata','oru','purerehua'],
-       '4':['ruru','tamanuitera','ua'],
-       '5':['weta','whanau','ika']
+       '1':['āniwaniwa','ēkara','hōiho'],
+       '2':['kōura','maunga','noke'],
+       '3':['ngata','oru','pūrerehua'],
+       '4':['ruru','Tamanuiterā','ua'],
+       '5':['wētā','whānau','ika']
   },
 
   practiceWordPage:{
     '1':{
-      words: ['aniwaniwa','ekara','hoiho'],
-      answer: 'aniwaniwa'
+      words: ['āniwaniwa','ēkara','hōiho'],
+      answer: 'āniwaniwa'
     },
     '2':{
-      words: ['koura','maunga','noke'],
-      answer: 'koura'
+      words: ['kōura','maunga','noke'],
+      answer: 'kōura'
     },
     '3':{
-      words: ['ngata','oru','purerehua'],
+      words: ['ngata','oru','pūrerehua'],
       answer: 'ngata'
     },
     '4':{
-      words: ['ruru','tamanuitera','ua'],
+      words: ['ruru','Tamanuiterā','ua'],
       answer: 'ua'
     },
     '5':{
-      words: ['weta','whanau','ika'],
-      answer: 'whanau'
+      words: ['wētā','whānau','ika'],
+      answer: 'whānau'
     }
   },
 
