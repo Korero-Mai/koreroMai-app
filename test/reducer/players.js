@@ -41,7 +41,7 @@ const request = require('superagent')
 //     t.deepEqual(newState.players, expectedState)
 //   })
 
-  test.only('UPDATE_PLAYER_ATTRIBUTE | inject fetched players in the state', t => {
+  test('UPDATE_PLAYER_ATTRIBUTE | inject fetched players in the state', t => {
 
       t.plan(1)
 

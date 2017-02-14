@@ -9,6 +9,7 @@ module.exports = function(db) {
   route.post('/login',postLoginToken)
   route.post('/scores',postNewScore)
   route.post('/editPlayer',postEditedPlayer)
+  route.post('/addPlayer',postNewPlayer)
 
   function getPlayer(req, res, next) {
     db.findPlayerByToken(req.query.token)
@@ -46,6 +47,20 @@ module.exports = function(db) {
     .then(data=>{
       res.json(data)
     })
+  }
+
+  function postNewPlayer(req,res,next){
+    db.addPlayer('players',req.body)
+    .then((playerData)=>{
+      console.log('playerData', playerData);
+      db.findPlayersByUser('users',playerData.user.id)
+      .then(data=>{
+        console.log('data', data);
+        res.json(data)
+      })
+    })
+
+    return {data:'success'}
   }
 
   return route;

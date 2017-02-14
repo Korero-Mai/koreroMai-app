@@ -20,13 +20,13 @@ module.exports = function (knex) {
     },
 
 //players table methods
-		addPlayer: function(table, input){
-			return this.checkIfPlayerExists(table, input)
+		addPlayer: function(table,input){
+			return this.checkIfPlayerExists('players',input)
 				.then((bool)=>{
 					if(bool){
 						return []
 					} else{
-						return this.insertplayerData(table, input)
+						return this.insertplayerData('players', input)
 					}
 				})
 		},
@@ -36,10 +36,10 @@ module.exports = function (knex) {
 			const userID = input.id
 			delete newData.id
 
-			return knex(table)
+			return knex('players')
 			.insert(newData)
 			.then((ids)=>{
-				return knex(table)
+				return knex('players')
 				.select('*')
 				.where({id_player: ids[0]})
 			})
@@ -67,7 +67,7 @@ module.exports = function (knex) {
 					username:teacher.username,
 					email:teacher.email
 				},
-				player:student
+				players:[student]
 			}
 			return filteredData
 		},
@@ -173,6 +173,7 @@ module.exports = function (knex) {
 		 },
 
 		 findPlayersByUser: function(table, input){
+			 console.log('findPlayersByUser',table,input);
 			 return knex('users_players')
 			 .join('users','users.id','=','user_id')
 			 .join('players','players.id_player','=','player_id')
@@ -189,7 +190,7 @@ module.exports = function (knex) {
 				 filteredData.user.id = student.id
 				 filteredData.user.username = student.username
 				 filteredData.user.email = student.email
-				 filteredData.user.password = student.password
+
 
 				 const player = {}
 				 player.id_player = student.id_player
