@@ -103,3 +103,32 @@
     font-size: 2em;
   }
 }
+
+@include desklap {
+  .player-homepage-div {
+    margin-top: 5%;
+  }
+
+  .play-button-pl {
+    font-size: 2.5em;
+    margin-top: 1em;
+  }
+
+  .main-button {
+    max-width: 40%;
+  }
+
+  .player-input {
+    font-size: 1.5em;
+    margin-top: 1em;
+
+  }
+
+  .h1-home-pl {
+    font-size:4em;
+  }
+
+  .h3-home-pl {
+    font-size: 3em;
+  }
+}
