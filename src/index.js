@@ -20,6 +20,7 @@ const LearnSounds = require('./containers/learnSounds')
 const LearnWords = require('./containers/learnWords')
 const PracticeSounds = require('./containers/practiceSounds')
 const PracticeWords = require('./containers/practiceWords')
+const HelpPage = require('./containers/helpPage')
 const AuthForm = require('./containers/auth-form')
 const UserProfile = require('./containers/userProfile')
 const middleware = routerMiddleware(hashHistory)
@@ -45,6 +46,7 @@ const Root = ({store}) => {
         <Route path = '/players' component={PlayersHome} />
         <Route path = '/players/:id/trend' component={PlayerTrend} />
         <Route path ='/activity' component={ActivityChoiceBox} />
+        <Route path ='/help' component={HelpPage} />
         <Route path ='/activity/learn/sounds/:id' component={LearnSounds} />
         <Route path ='/activity/learn/words/:id' component={LearnWords} />
         <Route path ='/activity/practice/sounds/:id' component={PracticeSounds} />
