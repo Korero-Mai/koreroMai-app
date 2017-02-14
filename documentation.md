@@ -1,5 +1,12 @@
 # Korero Mai
-* This app is intended to be used by 5-6 year old to enforce learning a different language.
+* This app is intended to be used as a tool to help children 5 and 6 get acquainted with Te reo. It focuses on learning pronounciation and simple words through two main types of activities :
+- "Learn the pronounciation" : click on the letters or words to hear their proper pronounciation.
+- "Practice your learning" : click on "Listen" to hear a letter or word, then choose the right one below.
+* You do not need to register to use the app : all the activities are open to free play. You can however leverage more options by registering / logging in as on of two types of users.
+* The two different types of users are :
+  - the "teacher" can create an admin account and log into it. he has a "profile page" where he can manage his "pupils" (create, assign to group, follow their scores' trends)
+  - the "pupil" can login with the "token" assigned to them by the "teacher". Once logged in, their score in the "practice" activities will be recorded and available to the "teacher" on their "profile page".
+
 
 ## Programming
 * This app was developed using javascript by making use of node, npm modules, react, redux, and sass.
