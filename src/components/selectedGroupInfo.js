@@ -18,7 +18,7 @@ class groupInfo extends React.Component {
 
     return players.map((player) => {
         return player.player_token === editPlayer
-          ? <EditPLayerRow dispatch={dispatch} player={player} />
+          ? <EditPLayerRow dispatch={dispatch} player={player} id={id} />
           : <PlayerRow dispatch={dispatch} player={player} id={id}/>
     })
   }

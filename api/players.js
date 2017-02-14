@@ -50,6 +50,7 @@ module.exports = function(db) {
   }
 
   function postNewPlayer(req,res,next){
+    console.log('postNewPlayer ',req.body);
     db.addPlayer('players',req.body)
     .then((playerData)=>{
       db.findPlayersByUser('users',playerData.user.id)

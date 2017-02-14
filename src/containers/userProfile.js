@@ -7,7 +7,11 @@ const EditUserInfo = require('../components/editUserInfo')
 const AddPlayer = require('../components/addplayer')
 
 function UserProfile(props) {
-
+  if (!Object.keys(props.users).length){
+    return (
+        <h1 className="h1-home">Unauthorized!</h1>
+    )
+  } else {
   return (
     <div>
       <div className="row">
@@ -26,9 +30,9 @@ function UserProfile(props) {
           ? <GroupInfo id={props.params.id} />
           : <AddPlayer id={props.params.id} />
         }
-
-    </div>
-  )
+      </div>
+    )
+  }
 }
 
 module.exports = connect((state) => state)(UserProfile)

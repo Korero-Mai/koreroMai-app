@@ -5,8 +5,10 @@ const { connect } = require('react-redux')
 function UserInfo(props) {
 const{users, dispatch} = props
   return (
+
     <div className="">
-      <h2>{users.username}</h2>
+      <h3>Hello, {users.username} !</h3>
+
       <button className='button expanded'
         onClick={()=>dispatch({type:"EDIT_USER"})}>Edit Profile</button>
     </div>

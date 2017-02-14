@@ -16,7 +16,7 @@ function Nav(props) {
             <Link to="/activity" activeClassName="active-link" className='nav-text'>Activities</Link>
           </li>
           <li onClick={() => dispatch({type: 'END_ROUND'})}>
-            <Link to="/players" activeClassName="active-link" className='nav-text'>Login as a player</Link>
+            <Link to="/players" activeClassName="active-link" className='nav-text'>Student login</Link>
           </li>
         </ul>
       </div>
@@ -35,10 +35,9 @@ function EnterOrExit(props){
   if (Object.keys(props.users)[0]){
     return (
       <li className="menu-text" onClick={endRound}>
-        <Link to={`/users/${props.users.id}/profile`}>{props.users.username}'s profile</Link>
-        <br />
+        <Link to={`/users/${props.users.id}/profile`}>{props.users.username}'s profile &emsp;</Link>
         <Link to='/'>
-          <button onClick={() => {
+          <button className='button-logout' onClick={() => {
             request.get('api/v1/auth/logout')
             .end((err, data) => {
               if (err) return console.log('error')
@@ -53,8 +52,7 @@ function EnterOrExit(props){
   } else if (props.playerToken){
     return (
       <li className="menu-text" onClick={endRound}>
-        {props.playerToken}'s session
-        <br />
+        {props.playerToken}'s session  &emsp;
         <Link to='/players'>
           <button onClick={() => {
               props.dispatch({type: 'LOGOUT_PLAYER'})
@@ -67,7 +65,7 @@ function EnterOrExit(props){
   } else {
     return (
       <li className="menu-text" onClick={endRound}>
-         <Link to="login-register"> Login / Register </Link>
+         <Link to="login-register"> Teacher login / Register </Link>
       </li>
     )
   }

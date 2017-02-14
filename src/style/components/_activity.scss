@@ -12,7 +12,7 @@
   box-shadow: 2px 5px 2px 0px #9bfde4;
   border: 3px solid transparent;
   padding: 10px;
-  font-size: 5em;
+  font-size: 2em;
   font-family: 'Muli', sans-serif;
   margin: 20px;
   text-decoration: none;
@@ -36,7 +36,7 @@
 
 .h3-choose {
   font-family: 'Itim', cursive;
-  font-size:4.8em;
+  font-size:2em;
 }
 
 .sea {
@@ -63,7 +63,7 @@
 
 @include ipadBoth {
   .h3-choose {
-    font-size: 5em;
+    font-size: 2em;
   }
   .choose {
     font-size: 4em;
@@ -72,8 +72,8 @@
 
 @include ipadLandscape {
   .h3-choose {
-    font-size: 3em;
-    margin: 0;
+    font-size: 2em;
+    margin-bottom: 0.5em;
   }
   .choose {
     font-size: 2em;
@@ -85,7 +85,7 @@
 
 @include desklap {
   .h3-choose {
-    font-size: 3em;
+    font-size: 2em;
   }
   .choose {
     font-size: 2em;
