@@ -2,6 +2,8 @@ const React = require('react')
 const { connect } = require('react-redux')
 const request = require('superagent')
 const AddPlayer = require('./addplayer')
+const { Link } = require('react-router')
+
 
 class groupInfo extends React.Component {
 
@@ -10,17 +12,16 @@ class groupInfo extends React.Component {
   }
 
   mapPlayers(group) {
-
     return group.map((player) => {
       return (
         <tr>
           <td>{player.player_name}</td>
-          <td>{player.player_token}</td>
+          <td ref="token">{player.player_token}</td>
           <td>{player.group_name}</td>
           <td>{player.prac_sounds_total_wrong}</td>
           <td>{player.prac_words_total_wrong}</td>
           <td>
-            <button className="button expanded">Trend</button>
+            <Link to={`/players/${player.player_token}/trend`}><button className="button expanded">Trend</button></Link>
           </td>
           <td>
             <button className='button expanded'>Edit</button>

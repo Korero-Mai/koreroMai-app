@@ -245,10 +245,22 @@ module.exports = function (knex) {
 			 .where({id_player: id})
 		 },
 
+		 findPlayerByToken: function(token){
+			 return knex('players')
+			 .select('*')
+			 .where({player_token: token})
+		 },
+
 		 findUserById: function(id){
 			 return knex('users')
 			 .select('*')
 			 .where({id: id})
-		 }
+		 },
+
+     getScoreData: function(playerId){
+       return knex('players_gameScores')
+       .select('*')
+       .where({player_id: playerId})
+     }
 	}
 }
