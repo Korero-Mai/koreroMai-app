@@ -160,9 +160,6 @@ return db.changePlayerInfo(player_id, newData)
     t.is(data.prac_sounds_total_wrong,12,'adds score to table')
     t.is(data.prac_words_total_wrong,6,'adds score to table')
   })
-//Assert
-
-
 })
 
 
