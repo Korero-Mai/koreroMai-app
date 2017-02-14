@@ -64,7 +64,7 @@ const request = require('superagent')
         payload: {
           value: "Bob",
           key: 'player_name',
-          id_player: 3
+          player_token: "candis123"
         }
       }
 

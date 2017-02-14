@@ -10,16 +10,19 @@ const request = require('superagent')
 }
 
   handleSave(e) {
-    const {player} = this.props
+    const {player, dispatch} = this.props
+    console.log('player', player);
     request.post('api/v1/players/editPlayer')
     .send({
-      player_id: player.id_player,
+      player_token: player.player_token,
       player_name: player.player_name,
-      group_name: player.group_name
+      group_name: player.group_name,
+      id_player: player.id_player
      })
      .end((err, res)=>{
        if (err) return console.log('error!')
-       this.playSound(word)
+        dispatch({type:"EDIT_PLAYER", payload:""})
+    
       })
 
   }
@@ -46,13 +49,13 @@ const request = require('superagent')
       <tr>
         <td>
           <input type="text" placeholder={`${player.player_name}`}
-            onChange={this.handleChange(player.id_player,'player_name')}
+            onChange={this.handleChange(player.player_token,'player_name')}
           >
           </input>
         </td>
         <td>{player.player_token}</td>
           <td>
-            <input onChange={this.handleChange(player.id_player,'group_name')} type="text" placeholder={`${player.group_name}`}
+            <input onChange={this.handleChange(player.player_token,'group_name')} type="text" placeholder={`${player.group_name}`}
             name='group_name'
             >
             </input>

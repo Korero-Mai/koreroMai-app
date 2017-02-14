@@ -38,7 +38,14 @@ module.exports = function(db) {
 
   function postEditedPlayer(req,res,next){
     console.log('req.body', req.body);
+    const formattedData=req.body
+    const id =req.body.id_player
+    delete formattedData.id_player
 
+    db.changePlayerInfo(id,formattedData)
+    .then(data=>{
+      res.json(data)
+    })
   }
 
   return route;

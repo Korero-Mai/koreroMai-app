@@ -10,10 +10,9 @@ module.exports = function (state = initialState.players, action) {
     case 'UPDATE_PLAYER_ATTRIBUTE':
       return Object.assign({}, state, {
         players: state.players.map((player) => {
-          console.log('reducer',player.player_id , action.payload.player_id);
-          if (player.player_id === action.payload.player_id) {
+          if (player.player_token === action.payload.player_token) {
             return Object.assign({}, player, {
-              [action.payload.key]: action.payload.value
+              [action.payload.key]: action.payload.value,
             })
           }
           return player
