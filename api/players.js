@@ -1,4 +1,4 @@
-const express = require("express");
+const express = require('express');
 const route = express.Router();
 
 
@@ -34,5 +34,10 @@ module.exports = function(db) {
     if (!req.body.player_token.length) return
     db.addScore(req.body)
   }
+
+  function deletePlayer(req, res, next) {
+    
+  }
+
   return route;
 };

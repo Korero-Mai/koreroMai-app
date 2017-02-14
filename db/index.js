@@ -31,6 +31,8 @@ module.exports = function (knex) {
 				})
 		},
 
+
+
 		insertplayerData: function(table,input){
 			const newData = input
 			const userID = input.id
