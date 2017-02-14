@@ -1,41 +1,40 @@
-.note-prac-sounds {
-  width: 100%;
+zzz.play-box {
+  background-color: $yellow;
+  width: 80%;
+  border: solid 5px;
+  border-radius: 4%;
+  margin-left: 5.5em;
+  margin-top: 5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30em;
+}
 
-  .row {
-    width: 100%;
+.welcome-letters {
+  font-size: 4em;
+  font-family: 'Itim', sans-serif;
+  padding: .3em;
+}
 
-    .listen-answer-button {
-      font-size: 1.5em;
-      padding: 1em;
-    }
-    .welcome-letters {
-      font-size: 4em;
-      font-family: 'Itim', sans-serif;
-      padding: 1em;
-      width: 100%;
-    }
-    .play-box-ps {
-      background-color: $yellow;
-      width: 100%;
-      border: solid 5px;
-      border-radius: 4%;
-      margin-left: 3em;
-      margin-top: 5em;
-      height: 30em;
-    }
+.note {
+  position:absolute;
+  top: 53%;
+  left: 20%;
+  font-size:6em;
+  color: $dark-blue;
+}
 
-    .listen-sound-buttons {
-      border-radius: 5px;
-      background-color: $red;
-      box-shadow: 2px 5px 2px 0px  #fd9bb8;
-      padding: .3em;
-      font-size: 2em;
-      font-family: 'Muli', sans-serif;
-      margin: .4em;
-      text-decoration: none;
-      color: black;
-      }
-    }
+.listen-sound-buttons {
+  border-radius: 5px;
+  background-color: $red;
+  box-shadow: 2px 5px 2px 0px  #fd9bb8;
+  padding: .3em;
+  font-size: 7em;
+  font-family: 'Muli', sans-serif;
+  margin: .4em;
+  text-decoration: none;
+  color: black;
 }
 
 .listen-sound-buttons:active {
