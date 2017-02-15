@@ -32,9 +32,8 @@ class PracticeWords extends React.Component {
     })
   }
 
-  generateWord(wordsArr, words, answer){
-
-    const timeoutModal = function(){
+  generateWord(wordsArr, words, answer) {
+    const timeoutModal = function() {
       setTimeout(() => {
         dispatch({type: 'TOGGLE_MODAL'})}, 400)
     }
@@ -44,7 +43,7 @@ class PracticeWords extends React.Component {
     const level = Number(this.props.params.id)
     const activityRoute = 'activity/practice/words/'
 
-    return wordsArr.map((word,index)=>{
+    return wordsArr.map((word, index) => {
       if (level === 5) {
         if (word === answer) {
           return (
@@ -58,7 +57,7 @@ class PracticeWords extends React.Component {
                     wrongSounds: this.props.wrongSounds,
                     wrongWords: this.props.wrongWords
                    })
-                   .end((err, res)=>{
+                   .end((err, res) => {
                      if (err) return console.log('error!')
                      this.playSound(word)
                    })
@@ -78,7 +77,7 @@ class PracticeWords extends React.Component {
                   wrongSounds: this.props.wrongSounds,
                   wrongWords: this.props.wrongWords
                  })
-                 .end((err, res)=>{
+                 .end((err, res) => {
                    console.log('res,', res);
                    if (err) return console.log('error!')
                    this.playSound(word)
@@ -130,7 +129,7 @@ class PracticeWords extends React.Component {
             <div className='columns' onClick={timeoutModal}>
               <img src={`${words[word].imageFile}`}  onClick={() => {
                   this.playSound(word)
-                  setTimeout(() => {dispatch({type: 'HIDE_TRY_AGAIN'})}, 150)
+                  setTimeout(() => {dispatch({ type: 'HIDE_TRY_AGAIN'})}, 150)
                 }}/>
               <audio ref={`${word}`} >
                 <source src={`${words[word].soundFile}`} preload='auto'/>
@@ -141,7 +140,7 @@ class PracticeWords extends React.Component {
             <div className='columns' onClick={timeoutModal}>
               <button className='listen-sound-words' onClick={() => {
                   this.playSound(word)
-                  setTimeout(() => {dispatch({type: 'HIDE_TRY_AGAIN'})}, 150)
+                  setTimeout(() => { dispatch({ type: 'HIDE_TRY_AGAIN'})}, 150)
                 }}>
                 {word}
               </button>
@@ -192,7 +191,7 @@ class PracticeWords extends React.Component {
     const answer = this.props.practiceWordPage[level].answer
 
     function WrongAnswerCue(props){
-      return props.showWrong ? <h1>Try again!</h1> :  <div></div>
+      return props.showWrong ? <h1>Try again!</h1> : <div></div>
     }
 
     if (level === 1) {

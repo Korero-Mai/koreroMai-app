@@ -32,9 +32,9 @@ class PracticeSounds extends React.Component {
     })
   }
 
-  generateLetter(lettersArr,letters, answer){
+  generateLetter(lettersArr, letters, answer) {
 
-    const timeoutModal = function(){
+    const timeoutModal = function() {
       setTimeout(() => {
         dispatch({type: 'TOGGLE_MODAL'})}, 400)
     }
@@ -44,7 +44,7 @@ class PracticeSounds extends React.Component {
     const level = Number(this.props.params.id)
     const activityRoute = 'activity/practice/sounds/'
 
-    return lettersArr.map((letter,index)=>{
+    return lettersArr.map((letter,index) => {
       if (level === 5) {
         if (letter === answer) {
           return (
@@ -65,18 +65,18 @@ class PracticeSounds extends React.Component {
                   wrongSounds: this.props.wrongSounds,
                   wrongWords: this.props.wrongWords
                  })
-                 .end((err, res)=>{
+                 .end((err, res) => {
                    if (err) return console.log('error!')
                    this.playSound(letter)
                  })
-                  setTimeout(() => {dispatch({type: 'HIDE_TRY_AGAIN'})}, 150)
+                  setTimeout(() => { dispatch({ type: 'HIDE_TRY_AGAIN'})}, 150)
                 }}>
                 {letter}
               </button>
                 <Modal isOpen={modal} contentLabel='Modal' className='prac-sounds-modal' >
                   <div className='correct'>Tika tau - correct!</div>
-                  <Link to={activityRoute+1}><button className='button-radius repeat' onClick={() => dispatch({type: 'END_ROUND'})}>Repeat</button></Link><br />
-                  <Link to='activity'><button className='button-radius new-activity' onClick={() => dispatch({type: 'END_ROUND'})}>Choose another activity</button></Link>
+                  <Link to={activityRoute+1}><button className='button-radius repeat' onClick={() => dispatch({ type: 'END_ROUND'})}>Repeat</button></Link><br />
+                  <Link to='activity'><button className='button-radius new-activity' onClick={() => dispatch({ type: 'END_ROUND'})}>Choose another activity</button></Link>
                 </Modal>
               </div>
             </div>
@@ -93,7 +93,7 @@ class PracticeSounds extends React.Component {
                 </div>
               </div>
               <div className='row'>
-                <div className='columns' onClick={() => dispatch({type: 'INCREMENT_WRONGSOUNDS'})}>
+                <div className='columns' onClick={() => dispatch({ type: 'INCREMENT_WRONGSOUNDS'})}>
                   <button className='listen-sound-buttons' onClick={() => {
                       this.playSound(letter)
                       setTimeout(() => {dispatch({type: 'SHOW_TRY_AGAIN'})}, 150)
@@ -117,7 +117,7 @@ class PracticeSounds extends React.Component {
             <div className='columns' onClick={timeoutModal}>
               <button className='listen-sound-buttons' onClick={() => {
                   this.playSound(letter)
-                  setTimeout(() => {dispatch({type: 'HIDE_TRY_AGAIN'})}, 150)
+                  setTimeout(() => { dispatch({ type: 'HIDE_TRY_AGAIN'})}, 150)
                 }}>
                 {letter}
               </button>
@@ -141,7 +141,7 @@ class PracticeSounds extends React.Component {
               <div className='columns' onClick={() => dispatch({type: 'INCREMENT_WRONGSOUNDS'})}>
                 <button className='listen-sound-buttons' onClick={() => {
                     this.playSound(letter)
-                    setTimeout(() => {dispatch({type: 'SHOW_TRY_AGAIN'})}, 150)
+                    setTimeout(() => { dispatch({ type: 'SHOW_TRY_AGAIN'})}, 150)
                   }}>
                   {letter}
                 </button>
@@ -161,8 +161,8 @@ class PracticeSounds extends React.Component {
     const lettersArr = this.props.practiceSoundPage[level].letters
     const answer = this.props.practiceSoundPage[level].answer
 
-    function WrongAnswerCue(props){
-      return props.showWrong ? <h1>Try again!</h1> :  <div></div>
+    function WrongAnswerCue(props) {
+      return props.showWrong ? <h1>Try again!</h1> : <div></div>
     }
 
     if (level === 1) {
@@ -177,7 +177,7 @@ class PracticeSounds extends React.Component {
           <WrongAnswerCue showWrong={this.props.showWrong}/>
         </div>
       )
-    } else if (level === 5){
+    } else if (level === 5) {
       return (
         <div>
           <div className='welcome-letters'>
@@ -192,7 +192,8 @@ class PracticeSounds extends React.Component {
         <div>
           <div className='welcome-letters'>
             {this.generateAnswer(lettersArr, answer, letters)}
-          </div>          <div className='play-box row align-spaced'>
+          </div>
+          <div className='play-box row align-spaced'>
           {this.generateLetter(lettersArr, letters, answer)}
         </div>
         <WrongAnswerCue showWrong={this.props.showWrong}/>

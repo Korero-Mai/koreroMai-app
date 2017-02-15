@@ -1,5 +1,5 @@
 const React = require('react')
-const {Link, IndexLink} = require('react-router')
+const { Link } = require('react-router')
 const { connect } = require('react-redux')
 
 function ActivityChoiceBox(props) {

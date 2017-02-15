@@ -7,7 +7,7 @@ const EditUserInfo = require('../components/editUserInfo')
 const AddPlayer = require('../components/addplayer')
 
 function UserProfile(props) {
-  if (!Object.keys(props.users).length){
+  if (!Object.keys(props.users).length) {
     return (
         <h1 className='h1-home'>Unauthorized!</h1>
     )

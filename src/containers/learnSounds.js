@@ -35,7 +35,7 @@ class LearnSounds extends React.Component {
           </div>
         </div>
       )
-    } else if (level === 5){
+    } else if (level === 5) {
       return (
         <div>
           <div className='welcome-ll'>
@@ -94,8 +94,8 @@ class LearnSounds extends React.Component {
     this.refs[index].play()
   }
 
-  generateLetter(lettersArr,letters){
-      return lettersArr.map((letter,index)=>{
+  generateLetter(lettersArr, letters) {
+      return lettersArr.map((letter, index) => {
         return (
           <div>
             <audio ref={`${index}`} >

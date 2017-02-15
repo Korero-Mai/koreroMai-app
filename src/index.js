@@ -28,7 +28,7 @@ const middleware = routerMiddleware(hashHistory)
 
 const store = createStore(reducer, initialState, applyMiddleware(middleware))
 
-store.subscribe(()=> {
+store.subscribe(() => {
   console.log('Index.js state log', store.getState());
 })
 
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
   console.log('DOMContentLoaded');
   const root = document.querySelector('#app')
   request.get('api/v1/auth/logged-in', (err, res) => {
-    if (res.body.authenticated){
+    if (res.body.authenticated) {
       store.dispatch({type: 'UPDATE_USER', payload: res.body.user})
     }
   })

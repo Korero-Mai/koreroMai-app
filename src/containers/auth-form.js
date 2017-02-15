@@ -8,8 +8,8 @@ function AuthForm(props) {
 
   return (
     <div>
-      <LoginForm  dispatch={dispatch} router={router}/>
-      <RegisterForm  dispatch={dispatch} router={router}/>
+      <LoginForm dispatch={dispatch} router={router}/>
+      <RegisterForm dispatch={dispatch} router={router}/>
     </div>
   )
 }

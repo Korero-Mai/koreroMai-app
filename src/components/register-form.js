@@ -1,7 +1,5 @@
 const React = require('react')
 const request = require('superagent')
-const { connect } = require('react-redux')
-
 
 module.exports = class RegisterForm extends React.Component {
   handleSubmit(e) {
@@ -14,19 +12,19 @@ module.exports = class RegisterForm extends React.Component {
     request.post('/api/v1/auth/register')
       .send({email, password, username})
       .end((err, res) => {
-        if(err){
+        if (err){
           console.log(err)
         } else {
-            if(!res.body.isUser){
+            if (!res.body.isUser) {
               alert('User email already exists')
             } else {
               request.post('/api/v1/auth/login')
                 .send({email, password})
                 .end((err, res) => {
-                  if(err) {
+                  if (err) {
                     console.log(err);
                   } else {
-                    if(!res.body.isUser){
+                    if(!res.body.isUser) {
                       alert('Please login')
                       this.props.router.push('/login-register')
                     } else {
@@ -55,7 +53,7 @@ module.exports = class RegisterForm extends React.Component {
                   <input type='email' className='email' ref='email' placeholder='Email' />
                   <input type='password' className='password' ref='password' placeholder='Password' />
                   <input type='password' className='confirmPassword' ref='confirmPassword' placeholder='Confirm password' />
-                  <button  className='button expanded hollow' onClick={this.handleSubmit.bind(this)}>
+                  <button className='button expanded hollow' onClick={this.handleSubmit.bind(this)}>
                     Create Account
                   </button>
                 </form>
