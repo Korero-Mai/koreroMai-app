@@ -4,10 +4,8 @@ module.exports = function (state = [], action) {
 
     case 'UPDATE_SCORE_DATA':
       return Object.assign({}, state, action.payload)
-
     case 'RESET_SCORE_DATA':
       return []
-
     default:
       return state
   }

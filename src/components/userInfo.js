@@ -6,11 +6,11 @@ function UserInfo(props) {
 const{users, dispatch} = props
   return (
 
-    <div className="">
+    <div className=''>
       <h3>Hello, {users.username} !</h3>
 
       <button className='button expanded'
-        onClick={()=>dispatch({type:"EDIT_USER"})}>Edit Profile</button>
+        onClick={()=>dispatch({type:'EDIT_USER'})}>Edit Profile</button>
     </div>
   )
 }

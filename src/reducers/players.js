@@ -3,7 +3,6 @@ const initialState = require('../../state')
 module.exports = function (state = initialState.players, action) {
 
   switch (action.type) {
-
     case 'UPDATE_PLAYERS':
       return Object.assign({}, state, action.payload)
 

@@ -8,9 +8,9 @@ class AddGroup extends React.Component {
 
   render() {
       return (
-        <div className="">
+        <div>
           <input className=''type='text' name='name' ref='name' placeholder='Add Group Name' />
-          <button className="button extended">Add Group</button>
+          <button className='button extended'>Add Group</button>
         </div>
       )
   }

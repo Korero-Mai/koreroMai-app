@@ -15,7 +15,7 @@ const playerRow = (props) => {
       <td>{player.prac_sounds_total_wrong}</td>
       <td>{player.prac_words_total_wrong}</td>
       <td>
-        <Link to={`/players/${player.player_token}/trend`}><button className="button expanded">Trend</button></Link>
+        <Link to={`/players/${player.player_token}/trend`}><button className='button expanded'>Trend</button></Link>
       </td>
       <td>
         <button className='button expanded'onClick={

@@ -6,7 +6,6 @@ const request = require('superagent')
 class AddPlayer extends React.Component {
   // let nameInput = null
   // let tokenInput = null
-
   handleSave(e){
     const{id, dispatch} = this.props
     request.post('api/v1/players/addPlayer')
@@ -21,14 +20,11 @@ class AddPlayer extends React.Component {
        if (err) return console.log('error!')
         dispatch({type: 'UPDATE_GROUPS', payload: res.body.groups})
       })
-
   }
-
 
   render() {
   const {alone, id} = this.props
       return (
-
           <tr>
             <td><input type='text' name='name'
             placeholder='Player Name' ref='player_name' /></td>
@@ -39,13 +35,12 @@ class AddPlayer extends React.Component {
             <td></td>
             <td></td>
             <td>
-              <button className="button expanded"
+              <button className='button expanded'
                 onClick={this.handleSave.bind(this)}>
                 Add
               </button>
             </td>
           </tr>
-
       )
   }
 }

@@ -8,16 +8,16 @@ function GenerateLetter(props) {
         if (letter === answer) {
           return (
           <div>
-            <div className="row">
-              <div className="columns">
+            <div className='row'>
+              <div className='columns'>
                 <audio ref={`${letter}`} >
                   <source src={`${letters[letter].soundFile}`} preload='auto'/>
                 </audio>
               </div>
             </div>
-            <div className="row">
-              <div className="columns">
-                <button onClick={() => this.playSound(letter)} className={`button radius`}>
+            <div className='row'>
+              <div className='columns'>
+''                <button onClick={() => this.playSound(letter)} className={`button radius`}>
                   {letter}
                 </button>
               </div>
@@ -27,15 +27,15 @@ function GenerateLetter(props) {
         } else {
           return (
             <div>
-              <div className="row">
-                <div className="columns">
+              <div className='row'>
+                <div className='columns'>
                   <audio ref={`${letter}`} >
                     <source src={`${letters[letter].soundFile}`} preload='auto'/>
                   </audio>
                 </div>
               </div>
-              <div className="row">
-                <div className="columns" onClick={() => dispatch({type: 'INCREMENT_WRONGSOUNDS'})}>
+              <div className='row'>
+                <div className='columns' onClick={() => dispatch({type: 'INCREMENT_WRONGSOUNDS'})}>
                   <button onClick={() => this.playSound(letter)} className={`button radius`}>
                     {letter}
                   </button>

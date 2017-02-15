@@ -9,12 +9,12 @@ const AddPlayer = require('../components/addplayer')
 function UserProfile(props) {
   if (!Object.keys(props.users).length){
     return (
-        <h1 className="h1-home">Unauthorized!</h1>
+        <h1 className='h1-home'>Unauthorized!</h1>
     )
   } else {
   return (
     <div>
-      <div className="row">
+      <div className='row'>
         <Groups id={props.params.id}/>
         <div className='large-4 columns'>
           {props.editUser
@@ -24,7 +24,7 @@ function UserProfile(props) {
 
         </div>
       </div>
-      <div className="row">
+      <div className='row'>
       </div>
         {props.players.players.length > 0
           ? <GroupInfo id={props.params.id} />

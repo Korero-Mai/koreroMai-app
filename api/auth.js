@@ -1,17 +1,13 @@
-const express = require("express");
+const express = require('express');
 const route = express.Router();
 const bcrypt = require('bcryptjs')
 const session = require('express-session')
 
-
 module.exports = function(db) {
-
-
   route.post('/register', confirmUniqueEmail, postNewUser)
   route.post('/login', loginUser)
   route.get('/logout', logoutUser)
   route.get('/logged-in', serializeUser, getAuthenticatedUser)
-
 
   function getAuthenticatedUser(req, res, next) {
     if (req.session.isAuthenticated) {
@@ -20,7 +16,7 @@ module.exports = function(db) {
     res.json({authenticated: false, user: null})
   }
 
-  function serializeUser(req,res, next){
+  function serializeUser(req,res, next) {
     if (req.session.isAuthenticated){
       db.findUserByEmail(req.session.userEmail)
         .then(users => {
@@ -46,7 +42,6 @@ module.exports = function(db) {
       })
     })
   }
-
 
   function loginUser(req, res, next) {
     db.findUserByEmail(req.body.email)
@@ -77,9 +72,8 @@ module.exports = function(db) {
     res.json({session: 'destroyed'})
   }
 
-  function isAuthenticated(req, res, next){
-    console.log('req.session', req.session);
-    if(req.session.isAuthenticated === true){
+  function isAuthenticated(req, res, next) {
+    if(req.session.isAuthenticated === true) {
       alert('You are logged in')
     } else {
         res.redirect('/login-register')
@@ -98,9 +92,8 @@ module.exports = function(db) {
       }
     })
   }
-
   return route;
-};
+}
 
 
     // console.log('resources.js req.body.email', req.body.email)

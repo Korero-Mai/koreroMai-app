@@ -18,7 +18,7 @@ module.exports = {
 
   players: {
     players:[],
-    group_name:""
+    group_name:''
   },
 
   users: {},
