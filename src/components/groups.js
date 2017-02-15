@@ -18,13 +18,17 @@ class UserGroups extends React.Component {
     return groupKeys.map(group => {
       return (
         <div className='row'>
+<<<<<<< HEAD
           <button className='button expanded hollow  large-8 columns'
            onClick={() => dispatch({ type:'UPDATE_PLAYERS', payload:{ players: groups[group], group_name:group}
+=======
+          <button className='button expanded hollow'
+              onClick={() => dispatch({type:'UPDATE_PLAYERS', payload:{players: groups[group], group_name:group}
+>>>>>>> a7ae5fa117a949f2694d86b877e06e00c20856e1
             })
           }>
             {group}
           </button>
-          <button className='button expanded alert large-4 columns'>Delete</button>
         </div>
       )
     })
@@ -35,6 +39,7 @@ class UserGroups extends React.Component {
       <div className='large-8 columns'>
         <h2>Groups</h2>
           {this.mapGroups(this.props.groups)}
+
       </div>
     )
   }

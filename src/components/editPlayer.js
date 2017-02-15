@@ -10,7 +10,6 @@ const request = require('superagent')
 
   handleSave(e) {
     const {player, dispatch} = this.props
-    console.log('player', player)
     request.post('api/v1/players/editPlayer')
     .send({
       player_token: player.player_token,
@@ -19,15 +18,18 @@ const request = require('superagent')
       id_player: player.id_player
      })
      .end((err, res) => {
-       console.log('res.body', res.body);
        if (err) return console.log('error!')
         dispatch({ type:'EDIT_PLAYER', payload:''})
         // dispatch({ type: 'UPDATE_GROUPS', payload: res.body.groups })
       })
   }
 
+<<<<<<< HEAD
   handleChange(token, key) {
     console.log('things', token,key);
+=======
+  handleChange(token,key) {
+>>>>>>> a7ae5fa117a949f2694d86b877e06e00c20856e1
     const {dispatch} = this.props
     return function(e) {
       dispatch({ type:'UPDATE_PLAYER_ATTRIBUTE', payload: {

@@ -10,6 +10,3 @@ module.exports = function(db) {
   }
   return route;
 }
-
-
-    // console.log('resources.js req.body.email', req.body.email)
