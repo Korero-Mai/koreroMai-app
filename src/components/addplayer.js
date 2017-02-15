@@ -4,8 +4,8 @@ const request = require('superagent')
 
 
 class AddPlayer extends React.Component {
-  handleSave(e){
-    const{id, dispatch,groups} = this.props
+  handleSave(e) {
+    const {id, dispatch, groups} = this.props
     const groupName = this.refs.group_name.value
 
     request.post('api/v1/players/addPlayer')
@@ -15,14 +15,13 @@ class AddPlayer extends React.Component {
       group_name: this.refs.group_name.value,
       id: id
      })
-     .end((err, res)=>{
+     .end((err, res) => {
        if (err) return console.log('error!')
        dispatch({type: 'UPDATE_GROUPS', payload: res.body.groups})
       })
   }
 
   render() {
-  const {alone, id, groups} = this.props
       return (
           <tr>
             <td><input type='text' name='name'

@@ -13,11 +13,11 @@ const { connect } = require('react-redux')
     const { dispatch } = this.props
     return (
         <div className=''>
-            <input type='text' name='name' ref='email' placeholder='User Name' />
-            <input type='text' name='email' ref='email' placeholder='Email' />
-            <button className='button expanded'
-              onClick={() => dispatch({ type:'EDIT_USER' })}>Submit</button>
-          </div>
+          <input type='text' name='name' ref='email' placeholder='User Name' />
+          <input type='text' name='email' ref='email' placeholder='Email' />
+          <button className='button expanded'
+            onClick={() => dispatch({ type: 'EDIT_USER' })}>Submit</button>
+        </div>
     )
   }
 }

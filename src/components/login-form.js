@@ -12,7 +12,7 @@ module.exports = class LoginForm extends React.Component {
       .send({email, password})
       .end((err, res) => {
         if (err) {
-          console.log(err);
+          console.log(err)
         } else {
           if (!res.body.isUser) {
             alert('Please login')

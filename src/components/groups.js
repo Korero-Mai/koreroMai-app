@@ -7,9 +7,9 @@ class UserGroups extends React.Component {
   componentDidMount() {
     const { dispatch } = this.props
     const id = Number(this.props.id)
-    request.get(`/api/v1/users/${id}/profile`, function(err, res, next) {
-      dispatch({type: 'UPDATE_GROUPS', payload: res.body.groups})
-    })
+      request.get(`/api/v1/users/${id}/profile`, function(err, res, next) {
+        dispatch({type: 'UPDATE_GROUPS', payload: res.body.groups})
+      })
   }
 
  mapGroups(groups) {

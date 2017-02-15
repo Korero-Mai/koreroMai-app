@@ -1,9 +1,9 @@
-const express = require('express');
-const route = express.Router();
+const express = require('express')
+const route = express.Router()
 const bcrypt = require('bcryptjs')
 const session = require('express-session')
 
-module.exports = function(db) {
+module.exports = (db) => {
   route.post('/register', confirmUniqueEmail, postNewUser)
   route.post('/login', loginUser)
   route.get('/logout', logoutUser)
@@ -31,12 +31,12 @@ module.exports = function(db) {
   }
 
   function postNewUser(req, res, next) {
-    bcrypt.genSalt(10, function(err, salt) {
-      bcrypt.hash(req.body.password, salt, function(err, hash) {
+    bcrypt.genSalt(10, (err, salt) => {
+      bcrypt.hash(req.body.password, salt, (err, hash) => {
         req.body.password = hash
         db.addUser('users', req.body)
         .then((user) => {
-          res.json({isUser:true, error: null, user: user[0]})
+          res.json({ isUser:true, error: null, user: user[0]})
         })
       })
     })
@@ -48,7 +48,7 @@ module.exports = function(db) {
         if(!dbData[0]) {
           return res.json({isUser: false, error:'This does not exist'})
         } else {
-            bcrypt.compare(req.body.password, dbData[0].password, function(error, match) {
+            bcrypt.compare(req.body.password, dbData[0].password, (error, match) => {
               if (match) {
                 req.session.isAuthenticated = true
                 req.session.userId = dbData[0].id
@@ -88,5 +88,5 @@ module.exports = function(db) {
       }
     })
   }
-  return route;
+  return route
 }

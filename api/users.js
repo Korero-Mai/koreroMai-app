@@ -8,5 +8,5 @@ module.exports = function(db) {
     db.findPlayersByUser('users', req.params.id)
     .then((data) => res.json(data))
   }
-  return route;
+  return route
 }

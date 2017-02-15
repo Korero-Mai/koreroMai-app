@@ -2,34 +2,34 @@ module.exports = function (knex) {
 
 	return {
 
-		  deletePlayer: function (id_player, id) {
+		  deletePlayer: function(id_player, id) {
 				return knex('players')
 				.where('id_player', id_player)
 				.del()
-				.then(()=> {
+				.then(() => {
 					return this.findPlayerByID(id_player)
 				})
 			},
 
-			deletePlayerFromJoin: function (id_player, id) {
+			deletePlayerFromJoin: function(id_player, id) {
 				return knex('users_players')
 				.where('player_id', id_player)
 				.del()
-				.then(()=> {
+				.then(() => {
 					return this.findPlayersByUser('users', id)
 				})
 			},
 
 //users table methods
-    addUser: function (table='users', newUserData) {
+    addUser: function(table='users', newUserData) {
       return knex(table)
       .insert(newUserData)
-      .then((ids)=>{
+      .then((ids) => {
 				return this.findUserById(ids[0])
       })
     },
 
-    findUserByEmail: function (email) {
+    findUserByEmail: function(email) {
       return knex('users')
       .select('*')
       .where('email', email)
@@ -39,8 +39,8 @@ module.exports = function (knex) {
     },
 
 //players table methods
-		addPlayer: function(table,input){
-			return this.checkIfPlayerExists('players',input)
+		addPlayer: function(table, input) {
+			return this.checkIfPlayerExists('players', input)
 				.then((bool) => {
 					if(bool){
 						return []
@@ -52,14 +52,14 @@ module.exports = function (knex) {
 
 
 
-		insertplayerData: function(table,input) {
+		insertplayerData: function(table, input) {
 			const newData = input
 			const userID = input.id
 			delete newData.id
 
 			return knex('players')
 			.insert(newData)
-			.then((ids)=>{
+			.then((ids) => {
 				return knex('players')
 				.select('*')
 				.where({id_player: ids[0]})
@@ -81,7 +81,7 @@ module.exports = function (knex) {
 			})
 		},
 
-		addUserToPlayerData: function(teacher,student){
+		addUserToPlayerData: function(teacher,student) {
 			const filteredData = {
 				user: {
 					id:teacher.id,
@@ -93,19 +93,19 @@ module.exports = function (knex) {
 			return filteredData
 		},
 
-		linkPlayerToJoinTable:function(playerID,userID){
+		linkPlayerToJoinTable:function(playerID,userID) {
 			return knex('users_players')
 			.insert({user_id:userID , player_id:playerID})
 			.select('*')
 		},
 
-		findUserByJoinTableID: function(id){
+		findUserByJoinTableID: function(id) {
 			return knex('users_players')
 			.select('*')
 			.where({users_players_id: id})
 		},
 
-		checkIfPlayerExists:function(table, newPlayer){
+		checkIfPlayerExists:function(table, newPlayer) {
 			return knex(table)
 			.select('*')
 			.where('player_token',newPlayer.player_token)
@@ -114,7 +114,7 @@ module.exports = function (knex) {
 			})
 		},
 
-		addScore: function(scoreData){
+		addScore: function(scoreData) {
 			const scores = {
 				prac_sounds_wrong: scoreData.wrongSounds,
 				prac_words_wrong: scoreData.wrongWords
@@ -136,14 +136,14 @@ module.exports = function (knex) {
 				})
 		 },
 
-		 getPlayerId: function(token){
+		 getPlayerId: function(token) {
 			 return knex('players')
 			 .select('id_player')
 			 .where('player_token', token)
 		 },
 
 
-		 insertScoreData: function(newData){
+		 insertScoreData: function(newData) {
 			 return knex('players_gameScores')
 			 .insert(newData)
 			 .then((ids) => {
@@ -153,7 +153,7 @@ module.exports = function (knex) {
 			 })
 		 },
 
-		 updatesTotalScores: function(id){
+		 updatesTotalScores: function(id) {
 			 return knex('players_gameScores')
 			 .where('player_id',id)
 			 .select('*')
@@ -178,7 +178,7 @@ module.exports = function (knex) {
 			 })
 		 },
 
-		 calcTotalScore: function(scores,colName){
+		 calcTotalScore: function(scores,colName) {
 			 return scores.map((score) => {
 				 return score[colName]
 			 }).reduce((total, num) => {
@@ -186,13 +186,13 @@ module.exports = function (knex) {
 			 },0)
 		 },
 
-		 changePlayerInfo: function(id,newScore){
+		 changePlayerInfo: function(id,newScore) {
 			 return knex('players')
 			 .where('id_player','=', id)
 			 .update(newScore)
 		 },
 
-		 findPlayersByUser: function(table, input){
+		 findPlayersByUser: function(table, input) {
 			 return knex('users_players')
 			 .join('users','users.id','=','user_id')
 			 .join('players','players.id_player','=','player_id')
@@ -203,7 +203,7 @@ module.exports = function (knex) {
 			 })
 		 },
 
-		 filterUsersPlayersData: function(input){
+		 filterUsersPlayersData: function(input) {
 			 const filteredData ={user:{},players:[],groups:{}}
 			 input.map((student ,i) => {
 				 filteredData.user.id = student.id
@@ -227,7 +227,7 @@ module.exports = function (knex) {
 			 return filteredData
 		 },
 
-		 filterGroups: function(arr){
+		 filterGroups: function(arr) {
 			 const keys = arr.map((item) => {
 				 return item.group_name
 			 })
@@ -236,13 +236,13 @@ module.exports = function (knex) {
 				 if (groupNames.indexOf(keys[i]) == -1) groupNames.push(keys[i]);
 			 }
 			 const groups={}
-			 for(var x =0; x<groupNames.length;x++){
+			 for(var x =0; x<groupNames.length;x++) {
 				 groups[groupNames[x]]=[]
 			 }
 
-			 for(var j=0;j<groupNames.length;j++){
+			 for(var j=0;j<groupNames.length;j++) {
 				 for(var k=0;k<arr.length;k++){
-					 if(groupNames[j]===arr[k].group_name){
+					 if(groupNames[j]===arr[k].group_name) {
 						 groups[groupNames[j]].push(arr[k])
 					 }
 				 }
@@ -250,7 +250,7 @@ module.exports = function (knex) {
 			 return groups
 		},
 
-		 findSelectedPlayerData: function(table,token){
+		 findSelectedPlayerData: function(table,token) {
 			 const formattedToken = {player_token:token}
 			 return this.checkIfPlayerExists('players', formattedToken)
 			 	.then((bool) => {
@@ -262,25 +262,25 @@ module.exports = function (knex) {
 				})
 		 },
 
-		 findPlayerByID: function(id){
+		 findPlayerByID: function(id) {
 			 return knex('players')
 			 .select('*')
 			 .where({id_player: id})
 		 },
 
-		 findPlayerByToken: function(token){
+		 findPlayerByToken: function(token) {
 			 return knex('players')
 			 .select('*')
 			 .where({player_token: token})
 		 },
 
-		 findUserById: function(id){
+		 findUserById: function(id) {
 			 return knex('users')
 			 .select('*')
 			 .where({id: id})
 		 },
 
-     getScoreData: function(playerId){
+     getScoreData: function(playerId) {
        return knex('players_gameScores')
        .select('*')
        .where({player_id: playerId})

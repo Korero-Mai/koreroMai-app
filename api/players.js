@@ -1,5 +1,5 @@
-const express = require('express');
-const route = express.Router();
+const express = require('express')
+const route = express.Router()
 
 
 module.exports = function(db) {
@@ -40,9 +40,9 @@ module.exports = function(db) {
 
   function postDeletePlayer(req, res, next) {
     db.deletePlayer(req.body.id_player, req.body.id)
-    .then(()=> {
+    .then(() => {
       db.deletePlayerFromJoin(req.body.id_player, req.body.id)
-        .then(updatedTable=>{
+        .then(updatedTable => {
           res.json(updatedTable)
         })
       })
@@ -53,20 +53,20 @@ module.exports = function(db) {
     const id =req.body.id_player
     delete formattedData.id_player
     db.changePlayerInfo(id,formattedData)
-    .then(data=>{
+    .then(data => {
       res.json(data)
     })
   }
 
   function postNewPlayer(req,res,next) {
     db.addPlayer('players',req.body)
-    .then((playerData)=>{
+    .then((playerData) => {
       db.findPlayersByUser('users',playerData.user.id)
-      .then(groups=>{
+      .then(groups => {
         res.json(groups)
       })
     })
-    return {data:'success'}
+    return { data:'success' }
   }
-  return route;
-};
+  return route
+}

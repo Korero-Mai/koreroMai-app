@@ -3,7 +3,7 @@ const users = require('./users')
 const players = require('./players')
 
 module.exports = {
-    auth,
-    users,
-    players
+  auth,
+  users,
+  players
 }

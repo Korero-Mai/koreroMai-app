@@ -37,20 +37,18 @@ const request = require('superagent')
   }
 
   render() {
-    const { dispatch, player } = this.props
+    const { player } = this.props
     return (
       <tr>
         <td>
           <input type='text' placeholder={`${player.player_name}`}
-            onChange={this.handleChange(player.player_token, 'player_name')}
-          >
+            onChange={this.handleChange(player.player_token, 'player_name')}>
           </input>
         </td>
         <td>{player.player_token}</td>
           <td>
             <input onChange={this.handleChange(player.player_token, 'group_name')} type='text' placeholder={`${player.group_name}`}
-            name='group_name'
-            >
+             name='group_name'>
             </input>
         </td>
         <td>{player.prac_sounds_total_wrong}</td>
