@@ -1,11 +1,7 @@
 const React = require('react')
 const { connect } = require('react-redux')
-const request = require('superagent')
-
 
 class AddGroup extends React.Component {
-
-
   render() {
       return (
         <div>

@@ -31,8 +31,8 @@ function Nav(props) {
 
 module.exports = connect((state) => state)(Nav)
 
-function EnterOrExit(props){
-  if (Object.keys(props.users)[0]){
+function EnterOrExit(props) {
+  if (Object.keys(props.users)[0]) {
     return (
       <li className='menu-text' onClick={endRound}>
         <Link to={`/users/${props.users.id}/profile`}>{props.users.username}'s profile &emsp;</Link>
@@ -70,7 +70,7 @@ function EnterOrExit(props){
     )
   }
 
-  function endRound(){
+  function endRound() {
     props.dispatch({type: 'END_ROUND'})
   }
 }
