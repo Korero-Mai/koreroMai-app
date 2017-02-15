@@ -24,8 +24,8 @@ module.exports = function (knex) {
     addUser: function (table='users', newUserData) {
       return knex(table)
       .insert(newUserData)
-      .then((ids)=>{
-				return this.findUserById(ids[0])
+      .then(()=>{
+				return this.findUserByEmail(newUserData.email)
       })
     },
 
@@ -59,10 +59,8 @@ module.exports = function (knex) {
 
 			return knex('players')
 			.insert(newData)
-			.then((ids)=>{
-				return knex('players')
-				.select('*')
-				.where({id_player: ids[0]})
+			.then(()=>{
+				return this.findPlayerByToken(input.player_token)
 			})
 			.then((player) => {
 				return this.linkPlayerToJoinTable(player[0].id_player, userID)
@@ -146,10 +144,20 @@ module.exports = function (knex) {
 		 insertScoreData: function(newData){
 			 return knex('players_gameScores')
 			 .insert(newData)
-			 .then((ids) => {
-				 return knex('players_gameScores')
-				 .select('*')
-				 .where('players_gameScores.id_game','=', ids[0])
+			 .then(() => {
+				 console.log('insertScoreData', newData.player_id);
+				 return this.findLastEntryinGameScoresByPlayerID(newData.player_id)
+			 })
+		 },
+
+		 findLastEntryinGameScoresByPlayerID(player_id){
+			 knex('players_gameScores')
+			 .select('*')
+			 .where('players_gameScores.player_id','=',player_id)
+			 .then((playerScore) =>{
+				 const arrLength = playerScore.length
+				 console.log('playerScore', playerScore[arrLength-1]);
+				 return [playerScore[arrLength-1]]
 			 })
 		 },
 
