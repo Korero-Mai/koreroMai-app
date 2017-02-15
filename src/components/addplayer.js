@@ -4,11 +4,8 @@ const request = require('superagent')
 
 
 class AddPlayer extends React.Component {
-  // let nameInput = null
-  // let tokenInput = null
-  handleSave(e) {
-    const {id, dispatch, groups} = this.props
-    console.log('addPlayer props', this.props)
+  handleSave(e){
+    const{id, dispatch,groups} = this.props
     const groupName = this.refs.group_name.value
 
     request.post('api/v1/players/addPlayer')
@@ -18,13 +15,9 @@ class AddPlayer extends React.Component {
       group_name: this.refs.group_name.value,
       id: id
      })
-     .end((err, res) => {
-       console.log('res.body', res.body)
-       console.log('groups[groupName]', groups[groupName])
+     .end((err, res)=>{
        if (err) return console.log('error!')
        dispatch({type: 'UPDATE_GROUPS', payload: res.body.groups})
-
-        // dispatch({type:"UPDATE_PLAYERS", payload:{players: groups[groupName], group_name:groupName}})
       })
   }
 

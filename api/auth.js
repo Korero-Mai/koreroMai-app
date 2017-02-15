@@ -36,7 +36,6 @@ module.exports = function(db) {
         req.body.password = hash
         db.addUser('users', req.body)
         .then((user) => {
-          console.log('this is the new user:', user);
           res.json({isUser:true, error: null, user: user[0]})
         })
       })
@@ -51,7 +50,6 @@ module.exports = function(db) {
         } else {
             bcrypt.compare(req.body.password, dbData[0].password, function(error, match) {
               if (match) {
-                console.log('this is the match', match);
                 req.session.isAuthenticated = true
                 req.session.userId = dbData[0].id
                 req.session.userEmail = dbData[0].email
@@ -59,7 +57,6 @@ module.exports = function(db) {
                 delete dbData[0].email
                 res.json({isUser: true, userData: dbData[0]})
               }  else {
-                  console.log('this is the res === false', match);
                   res.json({isUser: false, error: 'Invalid email or password'})
                 }
             })
@@ -84,7 +81,6 @@ module.exports = function(db) {
   function confirmUniqueEmail(req, res, next) {
     db.findUserByEmail(req.body.email)
     .then((user) => {
-        console.log('user:', user);
       if(!user[0]) {
         next()
       } else {
@@ -94,6 +90,3 @@ module.exports = function(db) {
   }
   return route;
 }
-
-
-    // console.log('resources.js req.body.email', req.body.email)

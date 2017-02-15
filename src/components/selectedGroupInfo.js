@@ -16,8 +16,6 @@ class groupInfo extends React.Component {
 
   mapPlayers(players) {
     const { dispatch, editPlayer, id, users, groups} = this.props
-    console.log('selectedGroupInfo.js', this.props);
-
 
     return players.map((player) => {
         return player.player_token === editPlayer
@@ -28,7 +26,7 @@ class groupInfo extends React.Component {
 
   render() {
     const { dispatch, editPlayer, id, users} = this.props
-    console.log('selectedGroupInfo', this.props);
+
     return  (
       <div className='row'>
         <h2>{this.props.players.group_name} Information:</h2>
