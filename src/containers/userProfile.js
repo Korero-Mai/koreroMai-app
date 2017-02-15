@@ -28,7 +28,7 @@ function UserProfile(props) {
       </div>
         {props.players.players.length > 0
           ? <GroupInfo id={props.params.id} />
-          : <AddPlayer id={props.params.id} />
+          : <div className="row"><AddPlayer id={props.params.id} /></div>
         }
       </div>
     )
