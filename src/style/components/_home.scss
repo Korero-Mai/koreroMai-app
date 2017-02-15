@@ -1,6 +1,11 @@
 .homepage-div {
-  margin-top: 10%;
+  margin-top: 30%;
+background-image: url(/images/decoration-images/home/home.png);
+background-repeat: no-repeat;
+background-size: 100%;
+height: auto;
 }
+
 .main-heading {
   width: 100%;
 }
@@ -39,34 +44,7 @@
   margin: auto;
 }
 
-.grass {
-  width: 100%;
-  position:absolute;
-    top: 77%;
-}
 
-.kiwi {
-  width: 30%;
-  position:absolute;
-    top: 75%;
-    right: 70%;
-}
-
-.butterfly {
-  position:absolute;
-    top: 15%;
-    right: 70%;
-  -ms-transform: rotate(40deg); /* IE 9 */
-  -webkit-transform: rotate(40deg); /* Chrome, Safari, Opera */
-     transform: rotate(5deg);
-}
-
-.bee {
-  width: 20%;
-  position:absolute;
-    top: 55%;
-    right: 5%;
-}
 
 @include ipadLandscape {
   .h1-home {

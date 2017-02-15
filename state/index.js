@@ -4,8 +4,6 @@ module.exports = {
 
   editPlayer:'',
 
-  deletePlayer:'',
-
   scoreData : [],
 
   addPlayer: false,
