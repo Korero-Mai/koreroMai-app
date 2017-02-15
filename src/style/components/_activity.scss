@@ -28,7 +28,7 @@
   -moz-transition: all 0.3s ease 0s;
   -ms-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
+  transition: all 0.3s eas.3s ease 0s;
 }
 
 .choose:active {
@@ -44,28 +44,6 @@
   font-family: 'Itim', cursive;
   font-size:2em;
 }
-
-.sea {
-  width: 100%;
-  position:absolute;
-    top: 71%;
-
-}
-
-.jelly-fish {
-  width: 30%;
-  position:absolute;
-    top: 10%;
-    right: 68%;
-}
-
-.dolphin {
-  width: 60%;
-  position: relative;
-    left: 40%;
-
-}
-
 
 @include ipadBoth {
   .h3-choose {
@@ -86,6 +64,7 @@
   }
   .activity-div {
     margin-top: 0;
+    height: 650px;
   }
   .main {
     margin-top: 0;

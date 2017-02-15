@@ -5,79 +5,48 @@ function PrivacyPolicy(props) {
   return (
     <div>
     <div className='help-page'>
-      <h1 className='h1-home'>Korero Mai privacy policy</h1>
-      This privacy policy has been compiled to better serve those who are concerned with how their 'Personally Identifiable Information' (PII) is being used online. PII, as described in US privacy law and information security, is information that can be used on its own or with other information to identify, contact, or locate a single person, or to identify an individual in context. Please read our privacy policy carefully to get a clear understanding of how we collect, use, protect or otherwise handle your Personally Identifiable Information in accordance with our website.
+      <h1 className='privacy'>Korero Mai privacy policy</h1>
 
-      What personal information do we collect from the people that visit our blog, website or app?
+<p>Your privacy on the Internet is important to us. This privacy policy discloses what information we gather, how we use it, and how to correct or change it.</p>
 
-      When ordering or registering on our site, as appropriate, you may be asked to enter your email address or other details to help you with your experience.
+<h2>Information</h2>
 
-      When do we collect information?
+<p>We gather various information about customers and users of our website. This information includes:
+personal information through your voluntary use of the Website and the purchase process (such as your first and last names and email);
+personal information, provided to us by you through any other method (including without limitation correspondence and discussions);
+information collected by us through click tracking in relation to your use of the Website, including the content you upload and the content you access; and
+aggregated data, which tracks traffic to the Website; and cookies, which are pieces of information transferred to your computer hard drive for record keeping (such as your preferences on our Website).</p>
 
-      We collect information from you when you register on our site or enter information on our site.
+<h2>Security</h2>
 
+<p>We are committed to ensuring that your information is secure. In order to prevent unauthorised access or disclosure we have put in place suitable physical, electronic and managerial procedures to safeguard and secure the information we collect online.</p>
 
-      How do we use your information?
+<h2>Use of your information</h2>
 
-      We may use the information we collect from you when you register, make a purchase, sign up for our newsletter, respond to a survey or marketing communication, surf the website, or use certain other site features in the following ways:
+<p>We will never sell or rent your personal information to third parties.
+We will use information we collect from you for the primary purpose for which it is collected and for such other secondary purposes that are related to the primary purpose of collection.</p>
 
-            • To personalize your experience and to allow us to deliver the type of content and product offerings in which you are most interested.
+<h2>Email Newsletters and other notices</h2>
 
-      How do we protect your information?
+<p>It is our policy to send emails throughout the purchasing process and other Newsletter emails you elect to receive. In addition, we may send out promotional material to you promoting new or amended material on our site where we think that may be relevant to you. It is our policy to immediately remove any person from any mailing list upon the person’s request.</p>
 
-      Our website is scanned on a regular basis for security holes and known vulnerabilities in order to make your visit to our site as safe as possible.
+<h2>Cookies</h2>
 
-      We use regular Malware Scanning.
+<p>Cookies are small pieces of information that are stored in a browser-related file on your computer’s hard drive when you use our Web site. Cookies are widely used on most major Web sites. Overall, cookies help us provide you with a better website, by enabling us to monitor which pages you find useful and which you do not. This helps us analyse data about web page traffic and improve our website in order to tailor it to customer needs. A cookie in no way gives us access to your computer or any information about you other than the data you choose to share with us.
+We may use information contained in cookies to make assumptions about the user of the computer and to provide users of that computer with focused advertising that we believe may be of interest, based on that information.
+You can choose to accept or decline cookies. Most web browsers automatically accept cookies but you can usually modify your browser setting to decline cookies if you prefer. This may prevent you from taking full advantage of our website.</p>
 
-      We do not use an SSL certificate
-            • We only provide articles and information. We never ask for personal or private information like names, email addresses, or credit card numbers.
+<h2>Access and removal of Information</h2>
 
-      Do we use 'cookies'?
+<p>You have the right to seek access the personal information held about you and to advise us of any inaccuracy. There are some exceptions to this right set out in the Privacy Act. If you make an access request, we will ask you to verify your identity and specify what information you require. We may charge a fee to cover the costs of meeting your request.</p>
 
-      Yes. Cookies are small files that a site or its service provider transfers to your computer's hard drive through your Web browser (if you allow) that enables the site's or service provider's systems to recognize your browser and capture and remember certain information. For instance, we use cookies to help us remember and process the items in your shopping cart. They are also used to help us understand your preferences based on previous or current site activity, which enables us to provide you with improved services. We also use cookies to help us compile aggregate data about site traffic and site interaction so that we can offer better site experiences and tools in the future.
+<h2>Links to other websites</h2>
 
-      We use cookies to:
-            • Understand and save user's preferences for future visits.
+<p>Our website may contain links to enable you to visit other websites of interest easily. However, once you have used these links to leave our site, you should note that we do not have any control over that other website. Therefore, we cannot be responsible for the protection and privacy of any information which you provide whilst visiting such sites and such sites are not governed by this privacy statement. You should exercise caution and look at the privacy statement applicable to the website in question.</p>
 
-      You can choose to have your computer warn you each time a cookie is being sent, or you can choose to turn off all cookies. You do this through your browser settings. Since browser is a little different, look at your browser's Help Menu to learn the correct way to modify your cookies.
+<h2>Updates to our information practices</h2>
 
-      If users disable cookies in their browser:
-
-      If you turn cookies off, some features will be disabled. Some of the features that make your site experience more efficient and may not function properly.
-
-      However, you will still be able to place orders
-      Remembering a user's session
-      .
-
-
-      Third-party disclosure
-
-      We do not sell, trade, or otherwise transfer to outside parties your Personally Identifiable Information.
-
-      Third-party links
-
-      We do not include or offer third-party products or services on our website.
-
-      Google
-
-      Google's advertising requirements can be summed up by Google's Advertising Principles. They are put in place to provide a positive experience for users. https://support.google.com/adwordspolicy/answer/1316548?hl=en
-
-      We have not enabled Google AdSense on our site but we may do so in the future.
-
-      COPPA (Children Online Privacy Protection Act)
-
-      When it comes to the collection of personal information from children under the age of 13 years old, the Children's Online Privacy Protection Act (COPPA) puts parents in control. The Federal Trade Commission, United States' consumer protection agency, enforces the COPPA Rule, which spells out what operators of websites and online services must do to protect children's privacy and safety online.
-
-      We market to
-      We do not collect information from children under 13
-      children under 13.
-      No
-
-      In order to remove your child's information please contact the following personnel:
-
-      We adhere to the following COPPA tenants:
-            • Parents can review, delete, manage or refuse with whom their child's information is shared through contacting us directly.
-      or contacting us directly.
+<p>We reserve the right to change this policy. By continuing to use the Website, you agree to be bound by the amended policy. You should check from time to time to see if the policy has changed.</p>
     </div>
   </div>
   )
