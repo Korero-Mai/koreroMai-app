@@ -52,6 +52,7 @@ class PracticeWords extends React.Component {
             <div className='row'>
               <div className='columns'  onClick={timeoutModal}>
                 <img src={`${words[word].imageFile}`}  onClick={() => {
+                  this.playSound(word)
                   request.post('api/v1/players/scores')
                   .send({
                     player_token: this.props.playerToken,
@@ -60,7 +61,6 @@ class PracticeWords extends React.Component {
                    })
                    .end((err, res)=>{
                      if (err) return console.log('error!')
-                     this.playSound(word)
                    })
                     setTimeout(() => {dispatch({type: 'HIDE_TRY_AGAIN'})}, 150)
                   }}/>
@@ -71,7 +71,8 @@ class PracticeWords extends React.Component {
             </div>
             <div className='row'>
               <div className='columns' onClick={timeoutModal}>
-              <button  className='listen-sound-buttons' onClick={() => {
+              <button  className='listen-sound-words' onClick={() => {
+                this.playSound(word)
                 request.post('api/v1/players/scores')
                 .send({
                   player_token: this.props.playerToken,
@@ -81,7 +82,6 @@ class PracticeWords extends React.Component {
                  .end((err, res)=>{
                    console.log('res,', res);
                    if (err) return console.log('error!')
-                   this.playSound(word)
                  })
                   setTimeout(() => {dispatch({type: 'HIDE_TRY_AGAIN'})}, 150)
                 }}>
