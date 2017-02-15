@@ -3,7 +3,7 @@ const { Link } = require('react-router')
 const request = require('superagent')
 
 const playerRow = (props) => {
-  const {dispatch, player, users} = props
+  const {dispatch, player, users, groups} = props
 
   return (
     <tr>
