@@ -6,22 +6,22 @@ const request = require('superagent')
 function Nav(props) {
   const dispatch = props.dispatch
   return (
-    <div className="top-bar">
-      <div className="top-bar-left">
-        <ul className="menu">
+    <div className='top-bar'>
+      <div className='top-bar-left'>
+        <ul className='menu'>
           <li onClick={() => dispatch({type: 'END_ROUND'})}>
-            <IndexLink to="/" activeClassName="active-link" className='nav-text'>Home</IndexLink>
+            <IndexLink to='/' activeClassName='active-link' className='nav-text'>Home</IndexLink>
           </li>
           <li onClick={() => dispatch({type: 'END_ROUND'})}>
-            <Link to="/activity" activeClassName="active-link" className='nav-text'>Activities</Link>
+            <Link to='/activity' activeClassName='active-link' className='nav-text'>Activities</Link>
           </li>
           <li onClick={() => dispatch({type: 'END_ROUND'})}>
-            <Link to="/players" activeClassName="active-link" className='nav-text'>Student login</Link>
+            <Link to='/players' activeClassName='active-link' className='nav-text'>Student login</Link>
           </li>
         </ul>
       </div>
-      <div className="top-bar-right">
-        <ul className="menu">
+      <div className='top-bar-right'>
+        <ul className='menu'>
           <EnterOrExit users={props.users} playerToken={props.playerToken} dispatch={dispatch}/>
         </ul>
       </div>
@@ -31,10 +31,10 @@ function Nav(props) {
 
 module.exports = connect((state) => state)(Nav)
 
-function EnterOrExit(props){
-  if (Object.keys(props.users)[0]){
+function EnterOrExit(props) {
+  if (Object.keys(props.users)[0]) {
     return (
-      <li className="menu-text" onClick={endRound}>
+      <li className='menu-text' onClick={endRound}>
         <Link to={`/users/${props.users.id}/profile`}>{props.users.username}'s profile &emsp;</Link>
         <Link to='/'>
           <button className='button-logout' onClick={() => {
@@ -51,7 +51,7 @@ function EnterOrExit(props){
     )
   } else if (props.playerToken){
     return (
-      <li className="menu-text" onClick={endRound}>
+      <li className='menu-text' onClick={endRound}>
         {props.playerToken}'s session  &emsp;
         <Link to='/players'>
           <button onClick={() => {
@@ -64,13 +64,13 @@ function EnterOrExit(props){
     )
   } else {
     return (
-      <li className="menu-text" onClick={endRound}>
-         <Link to="login-register"> Teacher login / Register </Link>
+      <li className='menu-text' onClick={endRound}>
+         <Link to='login-register'> Teacher login / Register </Link>
       </li>
     )
   }
 
-  function endRound(){
+  function endRound() {
     props.dispatch({type: 'END_ROUND'})
   }
 }

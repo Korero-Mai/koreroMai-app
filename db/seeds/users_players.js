@@ -45,7 +45,6 @@ exports.seed = function(knex, Promise) {
           user_id: 3,
           player_id: 3
         })
-
-      ]);
-    });
-};
+      ])
+    })
+}

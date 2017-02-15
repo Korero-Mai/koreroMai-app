@@ -11,10 +11,10 @@ module.exports = class LoginForm extends React.Component {
     request.post('/api/v1/auth/login')
       .send({email, password})
       .end((err, res) => {
-        if(err) {
+        if (err) {
           console.log(err);
         } else {
-          if(!res.body.isUser){
+          if (!res.body.isUser) {
             alert('Please login')
             this.props.router.push('/login-register')
           } else {
@@ -27,9 +27,9 @@ module.exports = class LoginForm extends React.Component {
             }
           }
       })
-
-
   }
+
+  
   render() {
     return (
       <div>

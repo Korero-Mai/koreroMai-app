@@ -11,7 +11,7 @@
     "postinstall": "npm run migrate && npm run build",
     "start": "node ./bin/www",
     "dev": "nodemon ./bin/www",
-    "lint": "eslint . || true"
+    "lint": "eslint src/ || true"
   },
   "repository": {
     "type": "git",

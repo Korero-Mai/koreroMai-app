@@ -5,8 +5,8 @@ exports.up = function(knex, Promise) {
     t.string('email');
     t.string('password');
   })
-};
+}
 
 exports.down = function(knex, Promise) {
   return knex.schema.dropTableIfExists('users');
-};
+}

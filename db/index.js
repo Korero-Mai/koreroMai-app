@@ -41,7 +41,7 @@ module.exports = function (knex) {
 //players table methods
 		addPlayer: function(table,input){
 			return this.checkIfPlayerExists('players',input)
-				.then((bool)=>{
+				.then((bool) => {
 					if(bool){
 						return []
 					} else{
@@ -52,7 +52,7 @@ module.exports = function (knex) {
 
 
 
-		insertplayerData: function(table,input){
+		insertplayerData: function(table,input) {
 			const newData = input
 			const userID = input.id
 			delete newData.id
@@ -64,18 +64,18 @@ module.exports = function (knex) {
 				.select('*')
 				.where({id_player: ids[0]})
 			})
-			.then((player)=>{
+			.then((player) => {
 				return this.linkPlayerToJoinTable(player[0].id_player, userID)
 			})
-			.then((ids)=>{
+			.then((ids) => {
 				return this.findUserByJoinTableID(ids[0])
 			})
-			.then(joinTableRow=>{
+			.then(joinTableRow => {
 				return this.findPlayerByID(joinTableRow[0].player_id)
 			})
-			.then(playerData=>{
+			.then(playerData => {
 				return this.findUserById(userID)
-				.then((user)=>{
+				.then((user) => {
 					return this.addUserToPlayerData(user[0],playerData[0])
 				})
 			})
@@ -120,18 +120,18 @@ module.exports = function (knex) {
 				prac_words_wrong: scoreData.wrongWords
 			}
 			return this.checkIfPlayerExists('players', scoreData)
-				.then((bool)=>{
+				.then((bool) => {
 					if(!bool){
 						return []
 					} else{
 						return this.getPlayerId(scoreData.player_token)
 					}
 				})
-				.then((ids)=>{
+				.then((ids) => {
 						scores.player_id = ids[0].id_player
 					return this.insertScoreData(scores)
 				})
-				.then((playerScore)=>{
+				.then((playerScore) => {
 					return this.updatesTotalScores(playerScore[0].player_id)
 				})
 		 },
@@ -146,7 +146,7 @@ module.exports = function (knex) {
 		 insertScoreData: function(newData){
 			 return knex('players_gameScores')
 			 .insert(newData)
-			 .then((ids)=>{
+			 .then((ids) => {
 				 return knex('players_gameScores')
 				 .select('*')
 				 .where('players_gameScores.id_game','=', ids[0])
@@ -157,7 +157,7 @@ module.exports = function (knex) {
 			 return knex('players_gameScores')
 			 .where('player_id',id)
 			 .select('*')
-			 .then((scores)=>{
+			 .then((scores) => {
 				 const wrongSounds = this.calcTotalScore(scores,'prac_sounds_wrong')
 				 const wrongWords = this.calcTotalScore(scores,'prac_words_wrong')
 
@@ -170,18 +170,18 @@ module.exports = function (knex) {
 					 newScores
 				 }
 			 })
-			 .then((playerScore)=>{
+			 .then((playerScore) => {
 				 return this.changePlayerInfo(playerScore.id,playerScore.newScores)
 			 })
-			 .then(()=>{
+			 .then(() => {
 				 return this.findPlayerByID(id)
 			 })
 		 },
 
 		 calcTotalScore: function(scores,colName){
-			 return scores.map((score)=>{
+			 return scores.map((score) => {
 				 return score[colName]
-			 }).reduce((total,num)=>{
+			 }).reduce((total, num) => {
 				 return total+num
 			 },0)
 		 },
@@ -199,15 +199,15 @@ module.exports = function (knex) {
 			 .join('users','users.id','=','user_id')
 			 .join('players','players.id_player','=','player_id')
 			 .select('*')
-			 .where('users.id',input)
-			 .then((all)=>{
+			 .where('users.id', input)
+			 .then((all) => {
 				 return this.filterUsersPlayersData(all)
 			 })
 		 },
 
 		 filterUsersPlayersData: function(input){
 			 const filteredData ={user:{},players:[],groups:{}}
-			 input.map((student,i)=>{
+			 input.map((student ,i) => {
 				 filteredData.user.id = student.id
 				 filteredData.user.username = student.username
 				 filteredData.user.email = student.email
@@ -230,7 +230,7 @@ module.exports = function (knex) {
 		 },
 
 		 filterGroups: function(arr){
-			 const keys = arr.map((item)=>{
+			 const keys = arr.map((item) => {
 				 return item.group_name
 			 })
 			 var groupNames = [];
@@ -255,11 +255,11 @@ module.exports = function (knex) {
 		 findSelectedPlayerData: function(table,token){
 			 const formattedToken = {player_token:token}
 			 return this.checkIfPlayerExists('players', formattedToken)
-			 	.then((bool)=>{
+			 	.then((bool) => {
 			 		if(!bool){ return [] }
 			 		return this.getPlayerId(token)
 			 	})
-				.then((ids)=>{
+				.then((ids) => {
 					return this.findPlayerByID(ids[0].id_player)
 				})
 		 },

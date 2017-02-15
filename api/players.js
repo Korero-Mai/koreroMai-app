@@ -48,18 +48,17 @@ module.exports = function(db) {
       })
   }
 
-  function postEditedPlayer(req,res,next){
+  function postEditedPlayer(req,res,next) {
     const formattedData=req.body
     const id =req.body.id_player
     delete formattedData.id_player
-
     db.changePlayerInfo(id,formattedData)
     .then(data=>{
       res.json(data)
     })
   }
 
-  function postNewPlayer(req,res,next){
+  function postNewPlayer(req,res,next) {
     db.addPlayer('players',req.body)
     .then((playerData)=>{
       db.findPlayersByUser('users',playerData.user.id)
@@ -67,9 +66,7 @@ module.exports = function(db) {
         res.json(groups)
       })
     })
-
     return {data:'success'}
   }
-
   return route;
 };
