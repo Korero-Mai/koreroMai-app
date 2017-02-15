@@ -17,7 +17,6 @@ const addPlayer = require('./addPlayer')
 const showWrong = require('./showWrong')
 const editPlayer = require('./editPlayer')
 const scoreData = require('./scoreData')
-const deletePlayer = require('./deletePlayer')
 
 
 module.exports = combineReducers({
@@ -38,9 +37,7 @@ module.exports = combineReducers({
   addPlayer,
   showWrong,
   editPlayer,
-  scoreData,
-  deletePlayer
-
+  scoreData
 })
 
 

@@ -19,7 +19,19 @@ module.exports = function (state = initialState.players, action) {
         })
       })
 
+    case 'DELETE_PLAYER':
+    return Object.assign({}, state, {
+      players: state.players.filter((player) => {
+        return player.id_player !== action.payload
+      })
+    })
+
     default:
       return state
   }
 }
+
+// players: {
+//   players:[],
+//   group_name:""
+// },
