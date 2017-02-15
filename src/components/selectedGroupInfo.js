@@ -21,37 +21,31 @@ class groupInfo extends React.Component {
   }
 
   render() {
-    const { dispatch, editPlayer, id, users} = this.props
-<<<<<<< HEAD
-    console.log('selectedGroupInfo', this.props);
-    return (
-=======
-
-    return  (
->>>>>>> a7ae5fa117a949f2694d86b877e06e00c20856e1
-      <div className='row'>
-        <h2>{this.props.players.group_name} Information:</h2>
-        <table className='hover'>
-          <thead>
-            <tr>
-              <th>Student</th>
-              <th>Token</th>
-              <th>Group</th>
-              <th>Practice Sounds Total Score</th>
-              <th>Practice Words Total Score</th>
-              <th>trends</th>
-              <th>Edit</th>
-              <th>Delete</th>
-            </tr>
-          </thead>
-            <tbody>
-              {this.mapPlayers(this.props.players.players)}
-              <AddPlayer id={id} />
-            </tbody>
-          </table>
-      </div>
-    )
+    const { dispatch, editPlayer, id, users } = this.props
+      return (
+        <div className='row'>
+          <h2>{this.props.players.group_name} Information:</h2>
+          <table className='hover'>
+            <thead>
+              <tr>
+                <th>Student</th>
+                <th>Token</th>
+                <th>Group</th>
+                <th>Practice Sounds Total Score</th>
+                <th>Practice Words Total Score</th>
+                <th>trends</th>
+                <th>Edit</th>
+                <th>Delete</th>
+              </tr>
+            </thead>
+              <tbody>
+                {this.mapPlayers(this.props.players.players)}
+                <AddPlayer id={id} />
+              </tbody>
+            </table>
+        </div>
+      )
+    }
   }
-}
 
 module.exports = connect((state) => state)(groupInfo)

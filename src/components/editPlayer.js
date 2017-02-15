@@ -24,12 +24,7 @@ const request = require('superagent')
       })
   }
 
-<<<<<<< HEAD
   handleChange(token, key) {
-    console.log('things', token,key);
-=======
-  handleChange(token,key) {
->>>>>>> a7ae5fa117a949f2694d86b877e06e00c20856e1
     const {dispatch} = this.props
     return function(e) {
       dispatch({ type:'UPDATE_PLAYER_ATTRIBUTE', payload: {
