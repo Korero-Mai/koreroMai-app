@@ -187,14 +187,12 @@ module.exports = function (knex) {
 		 },
 
 		 changePlayerInfo: function(id,newScore){
-			 console.log('updatedPlayer',id,newScore);
 			 return knex('players')
 			 .where('id_player','=', id)
 			 .update(newScore)
 		 },
 
 		 findPlayersByUser: function(table, input){
-			 console.log('findPlayersByUser',table,input);
 			 return knex('users_players')
 			 .join('users','users.id','=','user_id')
 			 .join('players','players.id_player','=','player_id')
