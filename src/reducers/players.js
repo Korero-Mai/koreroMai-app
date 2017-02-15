@@ -26,6 +26,15 @@ module.exports = function (state = initialState.players, action) {
       })
     })
 
+    case 'UPDATE_GROUPS':
+    if (!state.group_name){
+      return state
+    } else {
+      return Object.assign({}, state, {
+        players: action.payload[state.group_name]
+      })      
+    }
+
     default:
       return state
   }

@@ -24,6 +24,7 @@ class AddPlayer extends React.Component {
        console.log('groups[groupName]', groups[groupName]);
        if (err) return console.log('error!')
        dispatch({type: 'UPDATE_GROUPS', payload: res.body.groups})
+
         // dispatch({type:"UPDATE_PLAYERS", payload:{players: groups[groupName], group_name:groupName}})
       })
 
