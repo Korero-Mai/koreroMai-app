@@ -33,10 +33,11 @@ const playerRow = (props) => {
 
 module.exports = playerRow
 
-function handleDelete(id_player, id) {
+function handleDelete(dispatch, id_player, id) {
   request.post('api/v1/players/deletePlayer')
   .send({id_player: id_player, id: id})
   .end((err, res)=>{
     if (err) return console.log('error!')
+    dispatch({type:'DELETE_PLAYER', payload: id_player})
   })
 }
