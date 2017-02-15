@@ -28,7 +28,25 @@ function UserProfile(props) {
       </div>
         {props.players.players.length > 0
           ? <GroupInfo id={props.params.id} />
-          : <AddPlayer id={props.params.id} />
+          : (
+            <table className="hover">
+                <thead>
+                  <tr>
+                    <th>Student</th>
+                    <th>Token</th>
+                    <th>Group</th>
+                    <th>Practice Sounds Total Score</th>
+                    <th>Practice Words Total Score</th>
+                    <th>trends</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <AddPlayer id={props.params.id} />
+                </tbody>
+              </table>
+          )
         }
       </div>
     )
