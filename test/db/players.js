@@ -57,7 +57,7 @@ return db.deletePlayer(id_player, id)
 })
 
 
-test('Add new player and link to user| it should add a new player to the players table', (t) => {
+test.only('Add new player and link to user| it should add a new player to the players table', (t) => {
    t.plan(5)
  // arrange
 const table = 'players'
@@ -117,7 +117,7 @@ return db.addPlayer(table, input)
    })
 })
 
-test.only('adds a new player score | adds a new score to the scoresTable', (t) => {
+test('adds a new player score | adds a new score to the scoresTable', (t) => {
    t.plan(3)
  // arrange
 

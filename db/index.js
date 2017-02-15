@@ -66,6 +66,7 @@ module.exports = function (knex) {
 				return this.linkPlayerToJoinTable(player[0].id_player, userID)
 			})
 			.then((ids) => {
+
 				return this.findUserByJoinTableID(ids[0])
 			})
 			.then(joinTableRow => {
@@ -94,7 +95,15 @@ module.exports = function (knex) {
 		linkPlayerToJoinTable:function(playerID,userID){
 			return knex('users_players')
 			.insert({user_id:userID , player_id:playerID})
-			.select('*')
+			.then(()=>{
+			return knex('users_players')
+				.select('*')
+			})
+			.then(data=>{
+				const thisId = (data[data.length-1].users_players_id)
+				return [thisId]
+
+			})
 		},
 
 		findUserByJoinTableID: function(id){
