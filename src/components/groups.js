@@ -19,7 +19,7 @@ class UserGroups extends React.Component {
       return (
         <div className='row'>
           <button className='button expanded hollow'
-              onClick={() => dispatch({type:'UPDATE_PLAYERS', payload:{players: groups[group], group_name:group}
+           onClick={() => dispatch({ type:'UPDATE_PLAYERS', payload:{ players: groups[group], group_name: group}
             })
           }>
             {group}

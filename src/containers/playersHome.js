@@ -1,11 +1,10 @@
 const React = require('react')
 const { connect } = require('react-redux')
-const { Link } = require('react-router')
 const request = require('superagent')
 
 class PlayersHome extends React.Component {
   render() {
-    const {router,dispatch} = this.props
+    const {router, dispatch} = this.props
     return (
         <div className='player-homepage-div'>
           <div className='player-main-heading'>
@@ -19,11 +18,11 @@ class PlayersHome extends React.Component {
               <button className='play-button-pl'
                 onClick={() => {
                   request.post('api/v1/players/login')
-                    .send({'player_token':this.refs.token.value})
+                    .send({ 'player_token': this.refs.token.value})
                     .end((err, res) => {
                       if (err) return console.log('error!')
                       if (res.body.login){
-                        dispatch({type:'UPDATE_PLAYERTOKEN', payload: this.refs.token.value})
+                        dispatch({ type: 'UPDATE_PLAYERTOKEN', payload: this.refs.token.value})
                         router.push('/activity')
                       } else {
                         router.push('/')

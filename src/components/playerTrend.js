@@ -7,31 +7,30 @@ const _ = require('lodash')
 
 class PlayersTrend extends React.Component {
 
-  componentDidMount(){
+  componentDidMount() {
       const playerToken = this.props.params.id
       const dispatch = this.props.dispatch
 
       request.get('api/v1/players/player')
       .query(`token=${playerToken}`)
-      .end((err,res) => {
+      .end((err, res) => {
         if (err) return console.log('error!')
         getScoreData(res.body[0].id_player)
       })
 
-      function getScoreData(id){
+      function getScoreData(id) {
         request.get('api/v1/players/score-data')
           .query(`playerId=${id}`)
-          .end((err,res) => {
+          .end((err, res) => {
             if (err) return console.log('error!')
-            dispatch({type:'UPDATE_SCORE_DATA', payload:res.body})
+            dispatch({ type:'UPDATE_SCORE_DATA', payload: res.body })
           })
       }
   }
 
-  render(){
+  render() {
     const scoreData = this.props.scoreData
     const playerToken = this.props.params.id
-
     const labels = _.map(scoreData, (scoreItem) => {
       return scoreItem.id_game
     })
@@ -64,7 +63,7 @@ class PlayersTrend extends React.Component {
           pointHoverBorderWidth: 2,
           pointRadius: 1,
           pointHitRadius: 10,
-          data: SoundsScores,
+          data: SoundsScores
         },
         {
           label: 'Practice words mistakes',
@@ -85,7 +84,7 @@ class PlayersTrend extends React.Component {
           pointHoverBorderWidth: 2,
           pointRadius: 1,
           pointHitRadius: 10,
-          data: WordsScores,
+          data: WordsScores
         }
       ]
     }

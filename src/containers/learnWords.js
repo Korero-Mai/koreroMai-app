@@ -1,7 +1,7 @@
 const React = require('react')
 const { connect } = require('react-redux')
 const { Link } = require('react-router')
-const Modal = require('react-modal');
+const Modal = require('react-modal')
 
 class LearnWords extends React.Component {
 
@@ -14,8 +14,8 @@ class LearnWords extends React.Component {
     this.refs[index].play()
   }
 
-  generateWord(wordsArr,words){
-      return wordsArr.map((word,index)=>{
+  generateWord(wordsArr, words) {
+      return wordsArr.map((word, index) => {
         return (
           <div>
             <audio ref={`${index}`} >

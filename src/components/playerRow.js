@@ -3,7 +3,7 @@ const { Link } = require('react-router')
 const request = require('superagent')
 
 const playerRow = (props) => {
-  const {dispatch, player, users, groups} = props
+  const { dispatch, player, users, groups } = props
 
   return (
     <tr>
@@ -35,9 +35,9 @@ module.exports = playerRow
 
 function handleDelete(dispatch, id_player, id) {
   request.post('api/v1/players/deletePlayer')
-  .send({id_player: id_player, id: id})
-  .end((err, res)=>{
+  .send({ id_player: id_player, id: id })
+  .end((err, res) => {
     if (err) return console.log('error!')
-    dispatch({type:'DELETE_PLAYER', payload: id_player})
+    dispatch({ type:'DELETE_PLAYER', payload: id_player})
   })
 }

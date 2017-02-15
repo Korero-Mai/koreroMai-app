@@ -19,15 +19,15 @@ const request = require('superagent')
      })
      .end((err, res) => {
        if (err) return console.log('error!')
-        dispatch({type:'EDIT_PLAYER', payload:''})
+        dispatch({ type:'EDIT_PLAYER', payload:''})
         // dispatch({ type: 'UPDATE_GROUPS', payload: res.body.groups })
       })
   }
 
-  handleChange(token,key) {
+  handleChange(token, key) {
     const {dispatch} = this.props
     return function(e) {
-      dispatch({type:'UPDATE_PLAYER_ATTRIBUTE',payload: {
+      dispatch({ type:'UPDATE_PLAYER_ATTRIBUTE', payload: {
         value: e.target.value,
         key: key,
         player_token: token
@@ -37,7 +37,7 @@ const request = require('superagent')
   }
 
   render() {
-    const {dispatch, player} = this.props
+    const { dispatch, player } = this.props
     return (
       <tr>
         <td>
