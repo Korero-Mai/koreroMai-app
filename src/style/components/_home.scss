@@ -4,7 +4,7 @@
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  height: 1000px;
+  height: 700px;
 }
 .privacy {
 font: 1em;
@@ -54,8 +54,6 @@ margin: auto;
   margin: auto;
 }
 
-
-
 @include ipadLandscape {
   .h1-home {
     font-size: 4em;
@@ -69,7 +67,7 @@ margin: auto;
     margin: .4em;
   }
   .homepage-div {
-    height: 700px;
+    height: 500px;
   }
 }
 
@@ -83,9 +81,9 @@ margin: auto;
 
 @include desklap {
   .homepage-div {
-    margin-top:2%;
+    margin-top:1%;
     background-size: 62%;
-    height: 850px;
+    height: 750px;
   }
   .play-button {
     font-size: 3em;
