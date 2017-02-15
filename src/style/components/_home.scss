@@ -4,7 +4,7 @@
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-height: 1000px;
+  height: 1000px;
 }
 
 .main-heading {
@@ -60,7 +60,7 @@ height: 1000px;
     margin: .4em;
   }
   .homepage-div {
-    height: 650px;
+    height: 700px;
   }
 }
 
@@ -74,8 +74,8 @@ height: 1000px;
 
 @include desklap {
   .homepage-div {
-    margin-top:5%;
-  background-size: 80%;
+    margin-top:2%;
+background-size: 62%;
   }
   .play-button {
     font-size: 3em;
