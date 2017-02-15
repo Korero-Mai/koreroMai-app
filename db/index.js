@@ -24,8 +24,13 @@ module.exports = function (knex) {
     addUser: function(table='users', newUserData) {
       return knex(table)
       .insert(newUserData)
+<<<<<<< HEAD
       .then((ids) => {
 				return this.findUserById(ids[0])
+=======
+      .then(()=>{
+				return this.findUserByEmail(newUserData.email)
+>>>>>>> 290ffd926c72413ea2dc2814d56326a1d3ec0354
       })
     },
 
@@ -59,15 +64,21 @@ module.exports = function (knex) {
 
 			return knex('players')
 			.insert(newData)
+<<<<<<< HEAD
 			.then((ids) => {
 				return knex('players')
 				.select('*')
 				.where({id_player: ids[0]})
+=======
+			.then(()=>{
+				return this.findPlayerByToken(input.player_token)
+>>>>>>> 290ffd926c72413ea2dc2814d56326a1d3ec0354
 			})
 			.then((player) => {
 				return this.linkPlayerToJoinTable(player[0].id_player, userID)
 			})
 			.then((ids) => {
+
 				return this.findUserByJoinTableID(ids[0])
 			})
 			.then(joinTableRow => {
@@ -96,7 +107,15 @@ module.exports = function (knex) {
 		linkPlayerToJoinTable:function(playerID,userID) {
 			return knex('users_players')
 			.insert({user_id:userID , player_id:playerID})
-			.select('*')
+			.then(()=>{
+			return knex('users_players')
+				.select('*')
+			})
+			.then(data=>{
+				const thisId = (data[data.length-1].users_players_id)
+				return [thisId]
+
+			})
 		},
 
 		findUserByJoinTableID: function(id) {
@@ -146,10 +165,20 @@ module.exports = function (knex) {
 		 insertScoreData: function(newData) {
 			 return knex('players_gameScores')
 			 .insert(newData)
-			 .then((ids) => {
-				 return knex('players_gameScores')
-				 .select('*')
-				 .where('players_gameScores.id_game','=', ids[0])
+			 .then(() => {
+				 console.log('insertScoreData', newData.player_id);
+				 return this.findLastEntryinGameScoresByPlayerID(newData.player_id)
+			 })
+		 },
+
+		 findLastEntryinGameScoresByPlayerID(player_id){
+			 knex('players_gameScores')
+			 .select('*')
+			 .where('players_gameScores.player_id','=',player_id)
+			 .then((playerScore) =>{
+				 const arrLength = playerScore.length
+				 console.log('playerScore', playerScore[arrLength-1]);
+				 return [playerScore[arrLength-1]]
 			 })
 		 },
 
