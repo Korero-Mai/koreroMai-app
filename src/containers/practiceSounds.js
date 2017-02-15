@@ -32,8 +32,6 @@ class PracticeSounds extends React.Component {
     })
   }
 
-
-
   generateLetter(lettersArr,letters, answer){
 
     const timeoutModal = function(){

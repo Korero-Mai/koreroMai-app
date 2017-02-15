@@ -50,7 +50,7 @@ class PracticeWords extends React.Component {
           return (
           <div>
             <div className='row'>
-              <div className="columns"  onClick={timeoutModal}>
+              <div className='columns'  onClick={timeoutModal}>
                 <img src={`${words[word].imageFile}`}  onClick={() => {
                   request.post('api/v1/players/scores')
                   .send({
@@ -99,8 +99,8 @@ class PracticeWords extends React.Component {
         } else {
           return (
             <div>
-              <div className="row">
-                <div className="columns" onClick={() => dispatch({type: 'INCREMENT_WRONGWORDS'})}>
+              <div className='row'>
+                <div className='columns' onClick={() => dispatch({type: 'INCREMENT_WRONGWORDS'})}>
                   <img src={`${words[word].imageFile}`} onClick={() => {
                       this.playSound(word)
                       setTimeout(() => {dispatch({type: 'SHOW_TRY_AGAIN'})}, 400)
@@ -126,8 +126,8 @@ class PracticeWords extends React.Component {
       } else if (word === answer) {
         return (
         <div>
-          <div className="row">
-            <div className="columns" onClick={timeoutModal}>
+          <div className='row'>
+            <div className='columns' onClick={timeoutModal}>
               <img src={`${words[word].imageFile}`}  onClick={() => {
                   this.playSound(word)
                   setTimeout(() => {dispatch({type: 'HIDE_TRY_AGAIN'})}, 150)
@@ -156,8 +156,8 @@ class PracticeWords extends React.Component {
       } else {
         return (
           <div>
-            <div className="row">
-              <div className="columns" onClick={() => dispatch({type: 'INCREMENT_WRONGWORDS'})}>
+            <div className='row'>
+              <div className='columns' onClick={() => dispatch({type: 'INCREMENT_WRONGWORDS'})}>
                 <img src={`${words[word].imageFile}`} onClick={() => {
                     this.playSound(word)
                     setTimeout(() => {dispatch({type: 'SHOW_TRY_AGAIN'})}, 400)
@@ -201,7 +201,7 @@ class PracticeWords extends React.Component {
           <div className='welcome-prac'>
             {this.generateAnswer(wordsArr, answer, words)}
           </div>
-          <div className="play-box row align-spaced">
+          <div className='play-box row align-spaced'>
             {this.generateWord(wordsArr, words, answer)}
           </div>
           <WrongAnswerCue showWrong={this.props.showWrong}/>

@@ -45,6 +45,6 @@ exports.seed = function(knex, Promise) {
           prac_words_total_wrong: '3',
           group_name: 'group2'
         })
-      ]);
-    });
-};
+      ])
+    })
+}

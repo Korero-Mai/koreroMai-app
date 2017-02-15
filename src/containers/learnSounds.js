@@ -15,72 +15,56 @@ class LearnSounds extends React.Component {
     if (level === 1) {
       return (
         <div>
-
           <div className='welcome-ll'>
             Learn how to pronounce Te Reo!
           </div>
-
           <div className='play-box-ll'>
-
             {this.generateLetter(lettersArr, letters)}
-
             <div>
               <Link to='activity'>
                 <button className='first-back-ll'>
                   ↩
                 </button>
               </Link>
-
               <Link to={activityRoute+(level+1)}>
                 <button className='first-next-ll'>
                   ↪
                 </button>
               </Link>
             </div>
-
           </div>
-
         </div>
       )
     } else if (level === 5){
       return (
         <div>
-
           <div className='welcome-ll'>
             Learn how to pronounce Te Reo!
           </div>
-
           <div className='play-box-ll'>
             {this.generateLetter(lettersArr, letters)}
-
             <div>
               <Link to={activityRoute+(level-1)}>
                 <button className='last-back-ll'>
                   ↩
                 </button>
               </Link>
-
               <button className='finish-ll' onClick={() => dispatch({type: 'TOGGLE_MODAL'})}>
                 ★
               </button>
-
               <Modal isOpen={modal} contentLabel='Modal' className='learn-sounds-modal'>
-
                 <h1>Tumeke! Awesome!</h1>
-
                 <Link to={activityRoute+1}>
                   <button className="button-radius repeat" onClick={() => dispatch({type: 'END_ROUND'})}>
                     Repeat
                   </button>
                 </Link><br />
-
                 <Link to='activity'>
                   <button className="button-radius new-activity" onClick={() => dispatch({type: 'END_ROUND'})}>
                     Choose another activity
                   </button>
                 </Link>
               </Modal>
-
             </div>
           </div>
         </div>
@@ -114,13 +98,13 @@ class LearnSounds extends React.Component {
       return lettersArr.map((letter,index)=>{
         return (
           <div>
-              <audio ref={`${index}`} >
-                <source src={`${letters[letter].soundFile}`} preload='auto'/>
-              </audio>
-              <button onClick={() => this.playSound(index)} className='button-radius'>
-                {letter}
-              </button>
-        </div>
+            <audio ref={`${index}`} >
+              <source src={`${letters[letter].soundFile}`} preload='auto'/>
+            </audio>
+            <button onClick={() => this.playSound(index)} className='button-radius'>
+              {letter}
+            </button>
+          </div>
         )
       })
     }
