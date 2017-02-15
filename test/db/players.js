@@ -19,7 +19,7 @@ test.beforeEach(() => {
 //   return testKnex.migrate.rollback()
 // })
 
-test.only('Delete player from the join table users_players', (t) => {
+test('Delete player from the join table users_players', (t) => {
    t.plan(1)
  // arrange
 const id_player = 4
@@ -117,7 +117,7 @@ return db.addPlayer(table, input)
    })
 })
 
-test('adds a new player score | adds a new score to the scoresTable', (t) => {
+test.only('adds a new player score | adds a new score to the scoresTable', (t) => {
    t.plan(3)
  // arrange
 
@@ -139,7 +139,7 @@ const expected = [ { id_player: 2,
 
 return db.addScore(input)
   .then(function(data){
-      // console.log('db.addScore ', data);
+        console.log('db.addScore ', data);
 //Assert
     t.is(data[0].id_player,expected[0].id_player,
       'adds score to table')
