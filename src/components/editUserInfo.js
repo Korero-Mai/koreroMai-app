@@ -16,7 +16,7 @@ const { connect } = require('react-redux')
             <input type='text' name='name' ref='email' placeholder='User Name' />
             <input type='text' name='email' ref='email' placeholder='Email' />
             <button className='button expanded'
-              onClick={()=>dispatch({type:"EDIT_USER"})}>Submit</button>
+              onClick={()=>dispatch({type:'EDIT_USER'})}>Submit</button>
           </div>
     )
   }

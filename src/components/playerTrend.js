@@ -14,7 +14,7 @@ class PlayersTrend extends React.Component {
       request.get('api/v1/players/player')
       .query(`token=${playerToken}`)
       .end((err,res) => {
-        if (err) return console.log("error!")
+        if (err) return console.log('error!')
         getScoreData(res.body[0].id_player)
       })
 
@@ -22,7 +22,7 @@ class PlayersTrend extends React.Component {
         request.get('api/v1/players/score-data')
           .query(`playerId=${id}`)
           .end((err,res) => {
-            if (err) return console.log("error!")
+            if (err) return console.log('error!')
             dispatch({type:'UPDATE_SCORE_DATA', payload:res.body})
           })
       }

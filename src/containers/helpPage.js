@@ -19,8 +19,8 @@ function HelpPage(props) {
       </p>
       <p>
         The two different types of users are : <br />
-      The <b>teacher</b> can create an admin account and log into it. he has a <b>profile page</b> where he can manage his <b>pupils</b> (create, assign to group, follow their scores' trends)<br />
-    The <b>pupil</b> can login with the <b>token</b> assigned to them by the <b>teacher</b>. Once logged in, their score in the <b>practice</b> activities will be recorded and available to the <b>teacher</b> on their <b>profile page</b>.
+        The <b>teacher</b> can create an admin account and log into it. he has a <b>profile page</b> where he can manage his <b>pupils</b> (create, assign to group, follow their scores' trends)<br />
+        The <b>pupil</b> can login with the <b>token</b> assigned to them by the <b>teacher</b>. Once logged in, their score in the <b>practice</b> activities will be recorded and available to the <b>teacher</b> on their <b>profile page</b>.
       </p>
       <Link to='/'><button className='play-button'>Play!</button></Link>
       <br />

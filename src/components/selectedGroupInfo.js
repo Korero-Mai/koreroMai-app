@@ -30,9 +30,9 @@ class groupInfo extends React.Component {
     const { dispatch, editPlayer, id, users} = this.props
     console.log('selectedGroupInfo', this.props);
     return  (
-      <div className="row">
+      <div className='row'>
         <h2>{this.props.players.group_name} Information:</h2>
-        <table className="hover">
+        <table className='hover'>
             <thead>
               <tr>
                 <th>Student</th>

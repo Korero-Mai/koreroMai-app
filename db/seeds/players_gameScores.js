@@ -69,6 +69,6 @@ exports.seed = function(knex, Promise) {
           prac_words_wrong: 2,
           prac_words_timestamp: ''
         })
-      ]);
-    });
-};
+      ])
+    })
+}

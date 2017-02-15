@@ -42,8 +42,8 @@ module.exports = class RegisterForm extends React.Component {
               }
           }
       })
-
   }
+
   render() {
     return (
       <div>

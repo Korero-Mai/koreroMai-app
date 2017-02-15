@@ -15,16 +15,16 @@ const playerRow = (props) => {
       <td>{player.prac_sounds_total_wrong}</td>
       <td>{player.prac_words_total_wrong}</td>
       <td>
-        <Link to={`/players/${player.player_token}/trend`}><button className="button expanded">Trend</button></Link>
+        <Link to={`/players/${player.player_token}/trend`}><button className='button expanded'>Trend</button></Link>
       </td>
       <td>
         <button className='button expanded'onClick={
-          ()=>dispatch({type:'EDIT_PLAYER', payload:player.player_token})
+          () => dispatch({type:'EDIT_PLAYER', payload:player.player_token})
           }>
             Edit
         </button>
       </td>
-        <button className='button expanded' onClick={()=>handleDelete(dispatch, player.id_player, users.id)}>
+        <button className='button expanded' onClick={() => handleDelete(dispatch, player.id_player, users.id)}>
             Delete
         </button>
       <td>

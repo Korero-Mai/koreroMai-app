@@ -1,6 +1,5 @@
 const React = require('react')
 const { connect } = require('react-redux')
-const { Link } = require('react-router')
 
 function PrivacyPolicy(props) {
   return (
