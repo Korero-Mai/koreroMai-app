@@ -9,7 +9,7 @@ This app is intended to be used as a tool to help children 5 and 6 get acquainte
 * "Practice your learning" : click on "Listen" to hear a letter or word, then choose the right one below.
 ![Practice](/documentation/koreromai_practicewords.png)
 
-Learn more about the features in documentation.md
+[See the app in action on YouTube](https://www.youtube.com/playlist?list=PLRr0G685GhPsSunkM2a9jnKxTCckaUW6s), or learn more about the features in documentation.md
 
 This repository holds the source code of the [Korero Mai App](korero-mai.herokuapp.com),
 the foundation for most of the documentation.
