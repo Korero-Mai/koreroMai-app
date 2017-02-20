@@ -48,8 +48,6 @@ npm run dev
 ````
 Live reloading app at `http://localhost:3000/`
 
-## Deploy
+## `presentationState` branch
 
-```
-npm run deploy
-```
+This is the state of the app after 6 days of development in the context of the final group project for Enspiral Dev Academy Wellington. It represents what we presented on our final day, Februray 17 2017. The slides for the presentation can be found here : http://slides.com/rodrigo-delgado/deck-1
