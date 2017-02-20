@@ -37,12 +37,16 @@ cd my-proj
 npm install
 ```
 
-## Development
-
+## Start development server on local host
+Without nodemon :
 ```
 npm start
 ```
-live reloading app at `http://localhost:3000/`
+With nodemon : 
+````
+npm run dev
+````
+Live reloading app at `http://localhost:3000/`
 
 ## Deploy
 
