@@ -19,6 +19,9 @@ class AddPlayer extends React.Component {
        if (err) return console.log('error!')
        dispatch({type: 'UPDATE_GROUPS', payload: res.body.groups})
       })
+    this.refs.player_name.value = ''
+    this.refs.token.value = ''
+    this.refs.group_name.value = ''
   }
 
   render() {
