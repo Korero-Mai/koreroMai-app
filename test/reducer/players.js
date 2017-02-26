@@ -18,7 +18,7 @@ const request = require('superagent')
 //             id_player: 3,
 //             player_name: "Candis",
 //             player_token: "candis123",
-//             prac_sounds_total_wrong: 3,
+//             prac_letters_total_wrong: 3,
 //             prac_words_total_wrong: 6,
 //             group_name: "group1"
 //           }]
@@ -31,7 +31,7 @@ const request = require('superagent')
 //                 id_player: 3,
 //                 player_name: "Candis",
 //                 player_token: "candis123",
-//                 prac_sounds_total_wrong: 3,
+//                 prac_letters_total_wrong: 3,
 //                 prac_words_total_wrong: 6,
 //                 group_name: "group1"
 //               }]
@@ -52,7 +52,7 @@ const request = require('superagent')
             id_player: 3,
             player_name: "Candis",
             player_token: "candis123",
-            prac_sounds_total_wrong: 3,
+            prac_letters_total_wrong: 3,
             prac_words_total_wrong: 6,
             group_name: "group1"
           }
@@ -76,7 +76,7 @@ const request = require('superagent')
             id_player: 3,
             player_name: "Bob",
             player_token: "candis123",
-            prac_sounds_total_wrong: 3,
+            prac_letters_total_wrong: 3,
             prac_words_total_wrong: 6,
             group_name: "group1"
           }

@@ -16,9 +16,9 @@ const Home = require('./containers/home')
 const PlayersHome = require('./containers/playersHome')
 const PlayerTrend = require('./components/playerTrend')
 const ActivityChoiceBox = require('./containers/activityChoiceBox')
-const LearnSounds = require('./containers/learnSounds')
+const LearnLetters = require('./containers/learnLetters')
 const LearnWords = require('./containers/learnWords')
-const PracticeSounds = require('./containers/practiceSounds')
+const PracticeLetters = require('./containers/practiceLetters')
 const PracticeWords = require('./containers/practiceWords')
 const HelpPage = require('./containers/helpPage')
 const PrivacyPolicy = require('./containers/privacyPolicy')
@@ -49,9 +49,9 @@ const Root = ({store}) => {
         <Route path ='/activity' component={ActivityChoiceBox} />
         <Route path ='/help' component={HelpPage} />
         <Route path ='/privacy-policy' component={PrivacyPolicy} />
-        <Route path ='/activity/learn/sounds/:id' component={LearnSounds} />
+        <Route path ='/activity/learn/letters/:id' component={LearnLetters} />
         <Route path ='/activity/learn/words/:id' component={LearnWords} />
-        <Route path ='/activity/practice/sounds/:id' component={PracticeSounds} />
+        <Route path ='/activity/practice/letters/:id' component={PracticeLetters} />
         <Route path ='/activity/practice/words/:id' component={PracticeWords} />
         <Route path = '/login-register' component={AuthForm} />
         <Route path = 'users/:id/profile' component={UserProfile} />

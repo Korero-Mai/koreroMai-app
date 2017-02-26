@@ -31,11 +31,11 @@ class groupInfo extends React.Component {
                 <th>Student</th>
                 <th>Token</th>
                 <th>Group</th>
-                <th>Practice Sounds Total Score</th>
-                <th>Practice Words Total Score</th>
-                <th>trends</th>
-                <th>Edit</th>
-                <th>Delete</th>
+                <th>Letters Total Incorrect</th>
+                <th>Words Total Incorrect</th>
+                <th>Student progress</th>
+                <th>Edit Student</th>
+                <th>Delete Student</th>
               </tr>
             </thead>
               <tbody>

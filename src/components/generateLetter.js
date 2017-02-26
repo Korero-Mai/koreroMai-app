@@ -34,7 +34,7 @@ function GenerateLetter(props) {
                   </div>
                 </div>
                 <div className='row'>
-                  <div className='columns' onClick={() => dispatch({type: 'INCREMENT_WRONGSOUNDS'})}>
+                  <div className='columns' onClick={() => dispatch({type: 'INCREMENT_WRONGLETTERS'})}>
                     <button onClick={() => this.playSound(letter)} className={`button radius`}>
                       {letter}
                     </button>

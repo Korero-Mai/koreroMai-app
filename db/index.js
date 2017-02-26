@@ -123,7 +123,7 @@ module.exports = function (knex) {
 
 		addScore: function(scoreData){
 			const scores = {
-				prac_sounds_wrong: scoreData.wrongSounds,
+				prac_letters_wrong: scoreData.wrongLetters,
 				prac_words_wrong: scoreData.wrongWords
 			}
 			return this.checkIfPlayerExists('players', scoreData)
@@ -176,11 +176,11 @@ module.exports = function (knex) {
 			 .where('player_id',id)
 			 .select('*')
 			 .then((scores) => {
-				 const wrongSounds = this.calcTotalScore(scores,'prac_sounds_wrong')
+				 const wrongLetters = this.calcTotalScore(scores,'prac_letters_wrong')
 				 const wrongWords = this.calcTotalScore(scores,'prac_words_wrong')
 
 				 const newScores = {
-					 prac_sounds_total_wrong: wrongSounds,
+					 prac_letters_total_wrong: wrongLetters,
 					 prac_words_total_wrong: wrongWords
 				 }
 				 return {
@@ -233,7 +233,7 @@ module.exports = function (knex) {
 				 player.id_player = student.id_player
 				 player.player_name = student.player_name
 				 player.player_token = student.player_token
-				 player.prac_sounds_total_wrong = student.prac_sounds_total_wrong
+				 player.prac_letters_total_wrong = student.prac_letters_total_wrong
 				 player.prac_words_total_wrong = student.prac_words_total_wrong
 				 player.group_name = student.group_name
 

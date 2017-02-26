@@ -23,7 +23,7 @@ module.exports = {
 
   modal: false,
 
-  wrongSounds : 0,
+  wrongLetters : 0,
 
   wrongWords: 0,
 
@@ -90,7 +90,7 @@ module.exports = {
    }
   },
 
-  learnSoundPage :{
+  learnLettersPage :{
      '1':['A','E','H'],
      '2':['K','M','N'],
      '3':['Ng','O','P'],
@@ -98,7 +98,7 @@ module.exports = {
      '5':['W','Wh','I']
   },
 
-  practiceSoundPage:{
+  practiceLettersPage:{
     '1':{
       letters: ['A','E','H'],
       answer: 'A'
@@ -185,7 +185,7 @@ module.exports = {
     }
   },
 
-  learnWordPage:{
+  learnWordsPage:{
        '1':['āniwaniwa','ēkara','hōiho'],
        '2':['kōura','maunga','noke'],
        '3':['ngata','oru','pūrerehua'],
@@ -193,7 +193,7 @@ module.exports = {
        '5':['wētā','whānau','ika']
   },
 
-  practiceWordPage:{
+  practiceWordsPage:{
     '1':{
       words: ['āniwaniwa','ēkara','hōiho'],
       answer: 'āniwaniwa'

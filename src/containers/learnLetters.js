@@ -3,14 +3,14 @@ const { connect } = require('react-redux')
 const { Link } = require('react-router')
 const Modal = require('react-modal');
 
-class LearnSounds extends React.Component {
+class LearnLetters extends React.Component {
 
   render() {
     const props = this.props
     const { dispatch, modal, letters } = this.props
     const level = Number(this.props.params.id)
-    const activityRoute = 'activity/learn/sounds/'
-    const lettersArr = this.props.learnSoundPage[level]
+    const activityRoute = 'activity/learn/letters/'
+    const lettersArr = this.props.learnLettersPage[level]
 
     if (level === 1) {
       return (
@@ -52,7 +52,7 @@ class LearnSounds extends React.Component {
               <button className='finish-ll' onClick={() => dispatch({type: 'TOGGLE_MODAL'})}>
                 ★
               </button>
-              <Modal isOpen={modal} contentLabel='Modal' className='learn-sounds-modal'>
+              <Modal isOpen={modal} contentLabel='Modal' className='learn-letters-modal'>
                 <h1>Tumeke! Awesome!</h1>
                 <Link to={activityRoute+1}>
                   <button className="button-radius repeat" onClick={() => dispatch({type: 'END_ROUND'})}>
@@ -110,4 +110,4 @@ class LearnSounds extends React.Component {
     }
 }
 
-module.exports = connect((state) => state)(LearnSounds)
+module.exports = connect((state) => state)(LearnLetters)

@@ -2,11 +2,11 @@ const { combineReducers } = require('redux')
 const modal = require('./modal')
 const letters = require('./letters')
 const words = require('./words')
-const learnSoundPage = require('./learnSoundPage')
-const practiceSoundPage = require('./practiceSoundPage')
-const learnWordPage = require('./learnWordPage')
-const practiceWordPage = require('./practiceWordPage')
-const wrongSounds = require('./wrongSounds')
+const learnLettersPage = require('./learnLettersPage')
+const practiceLettersPage = require('./practiceLettersPage')
+const learnWordsPage = require('./learnWordsPage')
+const practiceWordsPage = require('./practiceWordsPage')
+const wrongLetters = require('./wrongLetters')
 const wrongWords = require('./wrongWords')
 const users = require('./users')
 const players = require('./players')
@@ -22,12 +22,12 @@ const scoreData = require('./scoreData')
 module.exports = combineReducers({
   modal,
   letters,
-  learnSoundPage,
-  practiceSoundPage,
-  learnWordPage,
-  practiceWordPage,
+  learnLettersPage,
+  practiceLettersPage,
+  learnWordsPage,
+  practiceWordsPage,
   words,
-  wrongSounds,
+  wrongLetters,
   wrongWords,
   users,
   players,
@@ -67,7 +67,7 @@ module.exports = combineReducers({
 //
 //   modal: false,
 //
-//   wrongSounds : 0,
+//   wrongLetters : 0,
 //
 //   wrongWords: 0,
 //
