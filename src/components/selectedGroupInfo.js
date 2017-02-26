@@ -31,9 +31,9 @@ class groupInfo extends React.Component {
                 <th>Student</th>
                 <th>Token</th>
                 <th>Group</th>
-                <th>Practice Sounds Total Score</th>
+                <th>Practice Letters Total Score</th>
                 <th>Practice Words Total Score</th>
-                <th>trends</th>
+                <th>Student progress</th>
                 <th>Edit</th>
                 <th>Delete</th>
               </tr>

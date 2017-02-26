@@ -55,7 +55,7 @@ class PracticeWords extends React.Component {
                   request.post('api/v1/players/scores')
                   .send({
                     player_token: this.props.playerToken,
-                    wrongSounds: this.props.wrongSounds,
+                    wrongLetters: this.props.wrongLetters,
                     wrongWords: this.props.wrongWords
                    })
                    .end((err, res) => {
@@ -75,7 +75,7 @@ class PracticeWords extends React.Component {
                 request.post('api/v1/players/scores')
                 .send({
                   player_token: this.props.playerToken,
-                  wrongSounds: this.props.wrongSounds,
+                  wrongLetters: this.props.wrongLetters,
                   wrongWords: this.props.wrongWords
                  })
                  .end((err, res) => {
@@ -187,8 +187,8 @@ class PracticeWords extends React.Component {
     const { dispatch, modal, words } = this.props
     const level = Number(this.props.params.id)
     const activityRoute = 'activity/practice/words/'
-    const wordsArr = this.props.practiceWordPage[level].words
-    const answer = this.props.practiceWordPage[level].answer
+    const wordsArr = this.props.practiceWordsPage[level].words
+    const answer = this.props.practiceWordsPage[level].answer
 
     function WrongAnswerCue(props){
       return props.showWrong ? <h1>Try again!</h1> : <div></div>

@@ -53,10 +53,10 @@ const request = require('superagent')
             >
             </input>
         </td>
-        <td>{player.prac_sounds_total_wrong}</td>
+        <td>{player.prac_letters_total_wrong}</td>
         <td>{player.prac_words_total_wrong}</td>
         <td>
-          <button className='button expanded'>Trend</button>
+          <button className='button expanded'>Show graph</button>
         </td>
         <td>
           <button className='button expanded' onClick={this.handleSave.bind(this)}>

@@ -34,8 +34,8 @@ class PlayersTrend extends React.Component {
     const labels = _.map(scoreData, (scoreItem) => {
       return scoreItem.id_game
     })
-    const SoundsScores = _.map(scoreData, (scoreItem) => {
-      return scoreItem.prac_sounds_wrong
+    const LettersScores = _.map(scoreData, (scoreItem) => {
+      return scoreItem.prac_letters_wrong
     })
     const WordsScores = _.map(scoreData, (scoreItem) => {
       return scoreItem.prac_words_wrong
@@ -45,7 +45,7 @@ class PlayersTrend extends React.Component {
       labels: labels,
       datasets: [
         {
-          label: 'Practice sounds mistakes',
+          label: 'Practice letters mistakes',
           fill: false,
           lineTension: 0.1,
           backgroundColor: 'rgba(75,192,192,1)',
@@ -63,7 +63,7 @@ class PlayersTrend extends React.Component {
           pointHoverBorderWidth: 2,
           pointRadius: 1,
           pointHitRadius: 10,
-          data: SoundsScores
+          data: LettersScores
         },
         {
           label: 'Practice words mistakes',

@@ -25,7 +25,7 @@
   color: $dark-blue;
 }
 
-.listen-sound-buttons {
+.listen-sound-letters {
   border-radius: 5px;
   background-color: $red;
   box-shadow: 2px 5px 2px 0px  #fd9bb8;
@@ -37,17 +37,17 @@
   color: black;
 }
 
-.listen-sound-buttons:active {
+.listen-sound-letters:active {
   transform: translate(0px, 5px);
   -webkit-transform: translate(0px, 5px);
   box-shadow: 0px 1px 0px 0px;
 }
 
-.listen-sound-buttons:hover{
+.listen-sound-letters:hover{
    background-color: #cc9bfd;
 }
 
-.prac-sounds-modal {
+.prac-letters-modal {
   padding-top: 3em;
   margin-left: 14%;
   margin-top: 5%;
@@ -99,7 +99,7 @@
     padding: .2em;
   }
 
-  .listen-sound-buttons {
+  .listen-sound-letters {
     font-size: 4em;
     margin: .4em;
   }
@@ -116,7 +116,7 @@
 }
 
 @include ipadBoth {
-  .listen-sound-buttons {
+  .listen-sound-letters {
     padding: .3em;
     font-size: 6em;
     margin: .4em;
@@ -124,7 +124,7 @@
 }
 
 @include ipadPortrait {
-  .listen-sound-buttons {
+  .listen-sound-letters {
     padding: .3em;
     font-size: 6em;
     margin: .4em;
@@ -146,7 +146,7 @@
     padding: .3em;
   }
 
-  .listen-sound-buttons {
+  .listen-sound-letters {
     font-size: 5em;
     margin: .4em;
   }
@@ -176,7 +176,7 @@
     margin-bottom: 1em;
   }
 
-  .listen-sound-buttons {
+  .listen-sound-letters {
     font-size: 3.5em;
     margin: 1em;
     min-width: 2em;
@@ -188,7 +188,7 @@
     font-size: 4em;
   }
 
-  .prac-sounds-modal {
+  .prac-letters-modal {
     padding-top: .5em;
     margin-left: 21%;
     margin-top: 5%;

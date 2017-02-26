@@ -10,10 +10,10 @@ const playerRow = (props) => {
       <td>{player.player_name}</td>
       <td>{player.player_token}</td>
       <td>{player.group_name}</td>
-      <td>{player.prac_sounds_total_wrong}</td>
+      <td>{player.prac_letters_total_wrong}</td>
       <td>{player.prac_words_total_wrong}</td>
       <td>
-        <Link to={`/players/${player.player_token}/trend`}><button className='button expanded'>Trend</button></Link>
+        <Link to={`/players/${player.player_token}/trend`}><button className='button expanded'>Show graph</button></Link>
       </td>
       <td>
         <button className='button expanded'onClick={

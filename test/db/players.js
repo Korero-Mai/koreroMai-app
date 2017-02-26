@@ -123,14 +123,14 @@ test('adds a new player score | adds a new score to the scoresTable', (t) => {
 
 const input= {
   player_token:'bobbie123',
-  wrongSounds: 4,
+  wrongLetters: 4,
   wrongWords: 5,
 }
 
 const expected = [ { id_player: 2,
     player_name: 'Bobbie',
     player_token: 'bobbie123',
-    prac_sounds_total_wrong: 8,
+    prac_letters_total_wrong: 8,
     prac_words_total_wrong: 10,
     group_name: 'group1'
   } ]
@@ -143,7 +143,7 @@ return db.addScore(input)
 //Assert
     t.is(data[0].id_player,expected[0].id_player,
       'adds score to table')
-    t.is(data[0].prac_sounds_total_wrong,expected[0].prac_sounds_total_wrong,
+    t.is(data[0].prac_letters_total_wrong,expected[0].prac_letters_total_wrong,
       'adds score to table')
     t.is(data[0].prac_words_total_wrong,expected[0].prac_words_total_wrong,
       'adds score to table')
@@ -178,7 +178,7 @@ test('change player info | updates the total score of a player', (t) => {
  // arrange
 
 const player_id = 5
-const newData = {prac_sounds_total_wrong: 12,
+const newData = {prac_letters_total_wrong: 12,
 prac_words_total_wrong: 6}
 
 const expected = [{
@@ -198,7 +198,7 @@ return db.changePlayerInfo(player_id, newData)
     // console.log('db.changePlayerInfo ', data);
 
     t.is(data.id_player,5,'adds score to table')
-    t.is(data.prac_sounds_total_wrong,12,'adds score to table')
+    t.is(data.prac_letters_total_wrong,12,'adds score to table')
     t.is(data.prac_words_total_wrong,6,'adds score to table')
   })
 })

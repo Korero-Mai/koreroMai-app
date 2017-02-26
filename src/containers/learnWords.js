@@ -5,37 +5,12 @@ const Modal = require('react-modal')
 
 class LearnWords extends React.Component {
 
-  componentWillMount() {
-    Modal.setAppElement('body');
-  }
-
-  playSound(index) {
-    this.refs[index].load()
-    this.refs[index].play()
-  }
-
-  generateWord(wordsArr, words) {
-      return wordsArr.map((word, index) => {
-        return (
-          <div>
-            <audio ref={`${index}`} >
-              <source src={`${words[word].soundFile}`} preload='auto'/>
-            </audio>
-            <img src={`${words[word].imageFile}`} />
-            <button onClick={() => this.playSound(index)} className='lwordbutton'>
-              {word}
-            </button>
-          </div>
-        )
-      })
-    }
-
     render() {
       const props = this.props
       const { dispatch, modal, words } = this.props
       const level = Number(this.props.params.id)
       const activityRoute = 'activity/learn/words/'
-      const wordsArr = this.props.learnWordPage[level]
+      const wordsArr = this.props.learnWordsPage[level]
 
       if (level === 1) {
         return (
@@ -93,5 +68,29 @@ class LearnWords extends React.Component {
         </div>
       )
     }
+    componentWillMount() {
+      Modal.setAppElement('body');
+    }
+
+    playSound(index) {
+      this.refs[index].load()
+      this.refs[index].play()
+    }
+
+    generateWord(wordsArr, words) {
+        return wordsArr.map((word, index) => {
+          return (
+            <div>
+              <audio ref={`${index}`} >
+                <source src={`${words[word].soundFile}`} preload='auto'/>
+              </audio>
+              <img src={`${words[word].imageFile}`} />
+              <button onClick={() => this.playSound(index)} className='lwordbutton'>
+                {word}
+              </button>
+            </div>
+          )
+        })
+      }
 }
     module.exports = connect((state) => state)(LearnWords)
