@@ -139,7 +139,7 @@ module.exports = function (knex) {
 					return this.insertScoreData(scores)
 				})
 				.then((playerScore) => {
-					return this.updatesTotalScores(playerScore[0].player_id)
+					return this.updatesTotalScores(playerScore[0].id_player)
 				})
 		 },
 
