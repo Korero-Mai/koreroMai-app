@@ -135,11 +135,11 @@ module.exports = function (knex) {
 					}
 				})
 				.then((ids) => {
-						scores.player_id = ids[0].id_player
+					scores.player_id = ids[0].id_player
 					return this.insertScoreData(scores)
 				})
 				.then((playerScore) => {
-					return this.updatesTotalScores(playerScore[0].player_id)
+					return this.updatesTotalScores(playerScore[0].id_player)
 				})
 		 },
 
@@ -154,19 +154,20 @@ module.exports = function (knex) {
 			 return knex('players_gameScores')
 			 .insert(newData)
 			 .then(() => {
-				 console.log('insertScoreData', newData.player_id);
 				 return this.findLastEntryinGameScoresByPlayerID(newData.player_id)
+			 })
+			 .then((lastEntry)=>{
+				 return this.updatesTotalScores(lastEntry.player_id)
 			 })
 		 },
 
 		 findLastEntryinGameScoresByPlayerID(player_id){
-			 knex('players_gameScores')
+			 return knex('players_gameScores')
 			 .select('*')
 			 .where('players_gameScores.player_id','=',player_id)
 			 .then((playerScore) =>{
 				 const arrLength = playerScore.length
-				 console.log('playerScore', playerScore[arrLength-1]);
-				 return [playerScore[arrLength-1]]
+				 return playerScore[arrLength-1]
 			 })
 		 },
 
@@ -184,7 +185,7 @@ module.exports = function (knex) {
 				 }
 				 return {
 					 id: scores[0].player_id,
-					 newScores
+					 newScores: newScores
 				 }
 			 })
 			 .then((playerScore) => {

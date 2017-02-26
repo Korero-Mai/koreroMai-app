@@ -50,13 +50,3 @@ module.exports = class LoginForm extends React.Component {
     )
   }
 }
-
-
-//
-// if (todoText.length > 0) {
-//   this.refs.loginText.value = ''
-//   dispatch( actions.startAddTodo(todoText))
-//
-// } else {
-//   this.refs.todoText.focus()
-// }
